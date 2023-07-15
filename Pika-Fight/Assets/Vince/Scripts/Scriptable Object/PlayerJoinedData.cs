@@ -27,6 +27,5 @@ public class PlayerJoinedData : ScriptableObject
             playersJoined[i] = null;
         }
     }
-
     public PlayerConfig[] GetPlayersJoined => playersJoined; 
 }

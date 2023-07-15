@@ -6,7 +6,7 @@ public class UISlotHandler : MonoBehaviour
 {
     [SerializeField] GameObject[] slotsToJoin;
     [SerializeField] List<string> connectedGamePads;
-
+    [SerializeField] PlayerJoinedData playerJoinedData;
     void Update()
     {
         DetectControllers();
@@ -48,6 +48,13 @@ public class UISlotHandler : MonoBehaviour
 
     void PlayerIsReady()
     {
-
+        for (int i = 0; i < playerJoinedData.GetPlayersJoined.Length; i++)
+        {
+            if (playerJoinedData.GetPlayersJoined[i] != null)
+            {
+                slotsToJoin[i].transform.Find("Join").gameObject.SetActive(false);
+                slotsToJoin[i].transform.Find("Ready").gameObject.SetActive(true);
+            }
+        }
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5540633944302776131}
   - component: {fileID: 5540633944302776156}
   m_Layer: 0
-  m_Name: BasicMaleDefault 1
+  m_Name: SalarymanDefault 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

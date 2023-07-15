@@ -1832,7 +1832,7 @@ GameObject:
   - component: {fileID: 5824428352053320409}
   - component: {fileID: 5824428352053320390}
   m_Layer: 0
-  m_Name: BasicMaleDefault 1
+  m_Name: BasicFemaleDefault 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

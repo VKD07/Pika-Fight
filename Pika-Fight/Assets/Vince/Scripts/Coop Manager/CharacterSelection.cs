@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CharacterSelection : MonoBehaviour
 {
+    [SerializeField] ObjectPooling characterPool;
     [SerializeField] PlayerJoinedData playerJoinedData;
     [SerializeField] RectTransform[] pointers;
     [SerializeField] RectTransform[] characters;
@@ -12,7 +14,7 @@ public class CharacterSelection : MonoBehaviour
 
     [Header("Pointer Settings")]
     [SerializeField] float pointerDelay = 0.2f;
-    [SerializeField] bool [] startDelays;
+    [SerializeField] bool[] startDelays;
 
     void Update()
     {
@@ -58,8 +60,16 @@ public class CharacterSelection : MonoBehaviour
                 pointers[i].gameObject.SetActive(true);
                 MovePointers(playerJoinedData.GetPlayersJoined[i].Player_Controls, i);
                 pointers[i].position = characters[characterIndeces[i]].position;
+                UpdateCharacterOnPointerMove(i);
             }
         }
+    }
+
+    void UpdateCharacterOnPointerMove(int characterBtnIndex)
+    {
+        characterPool.GetListOfCharacterSlots[characterBtnIndex].PickItem(characterIndeces[characterBtnIndex]);
+        
+        //characterPool.GetCharactersSlot[characterBtnIndex].transform.Find($"{characters[characterIndeces[characterBtnIndex]].gameObject.GetComponent<CharacterBtn>().CharacterName}(Clone)").gameObject.SetActive(false);
     }
 
     private void MovePointers(PlayerControls playerControl, int i)
@@ -83,7 +93,7 @@ public class CharacterSelection : MonoBehaviour
             {
                 StartCoroutine(TimerDelay(i));
                 characterIndeces[i] -= 5;
-            }   
+            }
             else if (y < 0 && characterIndeces[i] < characters.Length - 5)
             {
                 StartCoroutine(TimerDelay(i));

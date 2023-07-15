@@ -1771,7 +1771,7 @@ GameObject:
   - component: {fileID: 6647494862881504087}
   - component: {fileID: 6647494862881504072}
   m_Layer: 0
-  m_Name: BasicMaleDefault 1
+  m_Name: ChickenDefault 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
