@@ -14,12 +14,6 @@ public class SpawnPlayers : MonoBehaviour
         SpawnCharacters();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void GetNumberOfPlayers()
     {
         for (int i = 0; i < playerJoinedData.GetPlayersJoined.Length; i++)

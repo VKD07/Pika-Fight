@@ -7,8 +7,6 @@ public class PlayerJoinedData : ScriptableObject
 {
     [SerializeField] PlayerConfig[] playersJoined;
     [SerializeField] PlayerConfig[] playerConfig;
-
-
     public void AddPlayer(PlayerControls playerControls)
     {
         for (int i = 0; i < playersJoined.Length; i++)
