@@ -6,11 +6,18 @@ using UnityEngine;
 public class PlayerConfig : ScriptableObject
 {
     [SerializeField] PlayerControls playerControl;
+    [SerializeField] GameObject playerCharacter;
 
     public PlayerControls Player_Controls
     {
         set { playerControl = value; }
         get { return playerControl; }
+    }
+
+    public GameObject PlayerCharacter
+    {
+        get { return playerCharacter; }
+        set { playerCharacter = value; }
     }
 
 

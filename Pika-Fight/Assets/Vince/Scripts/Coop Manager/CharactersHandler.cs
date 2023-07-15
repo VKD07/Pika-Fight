@@ -16,11 +16,15 @@ public class CharactersHandler : MonoBehaviour
     private void Start()
     {
         pooling.InitObjects();
-
     }
 
     private void OnDisable()
     {
+        for (int i = 0; i < pooling.GetListOfCharacterSlots.Count; i++)
+        {
+            pooling.GetListOfCharacterSlots[i].ClearList();
+        }
+
         pooling.ClearList();
     }
 }

@@ -31,8 +31,10 @@ public class SpawnPlayers : MonoBehaviour
         {
             int randomPos = Random.Range(0, playerSpawners.Length);
 
-           GameObject player = Instantiate(character, playerSpawners[randomPos].position, Quaternion.identity);
-           player.GetComponent<PlayerMovement>().SetPlayerControls = playerJoinedData.GetPlayersJoined[i].Player_Controls;
+            GameObject player = Instantiate(playerJoinedData.GetPlayersJoined[i].PlayerCharacter, playerSpawners[randomPos].position, Quaternion.identity);
+            player.GetComponent<Rigidbody>().isKinematic = false;
+            player.GetComponent<PlayerMovement>().enabled = true;
+            player.GetComponent<PlayerMovement>().SetPlayerControls = playerJoinedData.GetPlayersJoined[i].Player_Controls;
         }
     }
 }

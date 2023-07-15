@@ -10,10 +10,7 @@ using UnityEngine.SceneManagement;
 public class PlayerJoinManager : MonoBehaviour
 {
     [Header("Keys to join the game")]
-    [SerializeField] KeyCode Player_WASD = KeyCode.J;
-    [SerializeField] KeyCode Player_Arrow = KeyCode.C;
-    [SerializeField] KeyCode Player_Joystick1 = KeyCode.Joystick1Button0;
-    [SerializeField] KeyCode Player_Joystick2 = KeyCode.Joystick2Button0;
+    [SerializeField] JoinControls joinControls;
 
     [SerializeField] PlayerJoinedData playerJoinedData;
 
@@ -32,10 +29,10 @@ public class PlayerJoinManager : MonoBehaviour
 
     private void PlayerJoins()
     {
-        PlayerJoin(Player_WASD, 0);
-        PlayerJoin(Player_Arrow, 1);
-        PlayerJoin(Player_Joystick1, 2);
-        PlayerJoin(Player_Joystick2, 3);
+        PlayerJoin(joinControls.Player_WASD, 0);
+        PlayerJoin(joinControls.Player_Arrow, 1);
+        PlayerJoin(joinControls.Player_Joystick1, 2);
+        PlayerJoin(joinControls.Player_Joystick2, 3);
     }
 
     void PlayerJoin(KeyCode key, int keyboardControlIndex)

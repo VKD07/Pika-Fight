@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UISlotHandler : MonoBehaviour
 {
     [SerializeField] GameObject[] slotsToJoin;
-    [SerializeField] List<string> connectedGamePads;
     [SerializeField] PlayerJoinedData playerJoinedData;
+    [SerializeField] JoinControls joinControls;
+    [SerializeField] TextMeshProUGUI[] readyTxt;
+    [SerializeField] List<string> connectedGamePads;
+
     void Update()
     {
         DetectControllers();
@@ -54,7 +58,28 @@ public class UISlotHandler : MonoBehaviour
             {
                 slotsToJoin[i].transform.Find("Join").gameObject.SetActive(false);
                 slotsToJoin[i].transform.Find("Ready").gameObject.SetActive(true);
+                UpdateReadyButton(i);
             }
+        }
+    }
+
+    void UpdateReadyButton(int i)
+    {
+        var keyControl = playerJoinedData.GetPlayersJoined[i].Player_Controls.GetMovementAxes;
+        string control = keyControl.ToString();
+        print(control);
+
+        if (keyControl.ToString() == "Joystick1" || keyControl.ToString() == "Joystick2")
+        {
+            readyTxt[i].SetText("A READY?");
+        }
+        else if (keyControl.ToString() == "WASD")
+        {
+            readyTxt[i].SetText("A READY?");
+        }
+        else if (keyControl.ToString() == "Arrow")
+        {
+            readyTxt[i].SetText($"{joinControls.Player_Arrow} READY?");
         }
     }
 }

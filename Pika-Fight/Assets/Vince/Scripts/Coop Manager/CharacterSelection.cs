@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CharacterSelection : MonoBehaviour
 {
     [SerializeField] ObjectPooling characterPool;
     [SerializeField] PlayerJoinedData playerJoinedData;
+    [SerializeField] JoinControls joinControls;
     [SerializeField] RectTransform[] pointers;
     [SerializeField] RectTransform[] characters;
     [SerializeField] int[] characterIndeces;
@@ -65,13 +67,6 @@ public class CharacterSelection : MonoBehaviour
         }
     }
 
-    void UpdateCharacterOnPointerMove(int characterBtnIndex)
-    {
-        characterPool.GetListOfCharacterSlots[characterBtnIndex].PickItem(characterIndeces[characterBtnIndex]);
-        
-        //characterPool.GetCharactersSlot[characterBtnIndex].transform.Find($"{characters[characterIndeces[characterBtnIndex]].gameObject.GetComponent<CharacterBtn>().CharacterName}(Clone)").gameObject.SetActive(false);
-    }
-
     private void MovePointers(PlayerControls playerControl, int i)
     {
         float x = Input.GetAxis($"{playerControl.GetMovementAxes}_Horizontal");
@@ -107,5 +102,21 @@ public class CharacterSelection : MonoBehaviour
         startDelays[i] = true;
         yield return new WaitForSeconds(pointerDelay);
         startDelays[i] = false;
+    }
+
+
+    void UpdateCharacterOnPointerMove(int characterBtnIndex)
+    {
+        characterPool.GetListOfCharacterSlots[characterBtnIndex].PickItem(characterIndeces[characterBtnIndex]);
+        StartCoroutine(ChooseCharacter(characterBtnIndex));
+    }
+
+    IEnumerator ChooseCharacter(int btnIndex)
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (Input.GetKeyDown(joinControls.Player_WASD) || Input.GetKeyDown(joinControls.Player_Arrow) || Input.GetKeyDown(joinControls.Player_Joystick1) || Input.GetKeyDown(joinControls.Player_Joystick2))
+        {
+            playerJoinedData.GetPlayersJoined[btnIndex].PlayerCharacter = characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().GetCharaterPrefab;
+        }
     }
 }

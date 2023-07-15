@@ -35,10 +35,6 @@ public class ObjectPooling : ScriptableObject
     {
         parent.Clear();
 
-        for (int i = 0; i < parent.Count; i++)
-        {
-            listOfCharacterSlots[i].ClearList();
-        }
     }
     public List<Transform> GetCharactersSlot => parent;
     public List<CharacterListContainer> GetListOfCharacterSlots => listOfCharacterSlots;

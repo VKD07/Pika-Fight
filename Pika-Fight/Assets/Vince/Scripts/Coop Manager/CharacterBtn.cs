@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class CharacterBtn : MonoBehaviour
 {
-    [SerializeField] string characterName;
-    
-    public string CharacterName => characterName;
+    [SerializeField] GameObject characterPrefab;
+
+    public string GetCharacterName()
+    {
+        return characterPrefab.name;
+    }
+
+    public GameObject GetCharaterPrefab => characterPrefab;
 }
