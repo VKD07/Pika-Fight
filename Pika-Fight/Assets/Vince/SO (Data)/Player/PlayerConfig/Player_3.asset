@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Player_3
   m_EditorClassIdentifier: 
   playerControl: {fileID: 0}
-  playerCharacter: {fileID: 0}
+  playerCharacter: {fileID: 2435251451558624804, guid: 2e330211d5363e142b5822a97b9c9e95,
+    type: 3}
   playerIsReady: 0

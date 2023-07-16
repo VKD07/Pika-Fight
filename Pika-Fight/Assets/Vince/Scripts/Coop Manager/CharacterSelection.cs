@@ -121,9 +121,10 @@ public class CharacterSelection : MonoBehaviour
     IEnumerator ChooseCharacter(int btnIndex)
     {
         yield return new WaitForSeconds(0.5f);
-        if (Input.GetKeyDown(playerJoinedData.GetPlayersJoined[btnIndex].Player_Controls.PlayerReadyKey))
+        if (Input.GetKeyDown(playerJoinedData.GetPlayersJoined[btnIndex].Player_Controls.PlayerReadyKey) && !characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().CharacterIsTaken)
         {
             playerJoinedData.GetPlayersJoined[btnIndex].PlayerCharacter = characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().GetCharaterPrefab;
+            characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().CharacterIsTaken = true;
             playerJoinedData.GetPlayersJoined[btnIndex].PlayerIsReady = true;
         }
     }
@@ -132,7 +133,10 @@ public class CharacterSelection : MonoBehaviour
     {
         if (playerJoinedData.GetPlayersJoined[btnIndex].PlayerIsReady && Input.GetKeyDown(playerJoinedData.GetPlayersJoined[btnIndex].Player_Controls.PlayerUnreadyKey))
         {
+            characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().CharacterIsTaken = false;
             playerJoinedData.GetPlayersJoined[btnIndex].PlayerIsReady = false;
         }
     }
+
+    //MAKE SURE PLAYER DOESNT PICK THESAME CHAMPIONS (ADD A BOOL SCRIPT TO THE CHARACTERBTN)
 }
