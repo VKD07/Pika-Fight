@@ -15,4 +15,6 @@ MonoBehaviour:
   playerMovementAxes: 0
   attackKey: 101
   dashKey: 306
+  playerReadyKey: 106
+  playerUnreadyKey: 27
   controlIstaken: 0

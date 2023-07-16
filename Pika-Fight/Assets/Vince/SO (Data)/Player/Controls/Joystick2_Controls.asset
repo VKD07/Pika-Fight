@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Joystick2_Controls
   m_EditorClassIdentifier: 
   playerMovementAxes: 3
-  attackKey: 350
+  attackKey: 370
   dashKey: 306
+  playerReadyKey: 370
+  playerUnreadyKey: 371
   controlIstaken: 0

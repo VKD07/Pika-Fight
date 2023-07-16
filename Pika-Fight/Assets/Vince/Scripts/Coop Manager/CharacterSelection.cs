@@ -59,10 +59,17 @@ public class CharacterSelection : MonoBehaviour
         {
             if (playerJoinedData.GetPlayersJoined[i] != null)
             {
-                pointers[i].gameObject.SetActive(true);
-                MovePointers(playerJoinedData.GetPlayersJoined[i].Player_Controls, i);
-                pointers[i].position = characters[characterIndeces[i]].position;
-                UpdateCharacterOnPointerMove(i);
+                if(!playerJoinedData.GetPlayersJoined[i].PlayerIsReady)
+                {
+                    pointers[i].gameObject.SetActive(true);
+                    MovePointers(playerJoinedData.GetPlayersJoined[i].Player_Controls, i);
+                    pointers[i].position = characters[characterIndeces[i]].position;
+                    UpdateCharacterOnPointerMove(i);
+                }
+                else
+                {
+                    RechooseCharacter(i);
+                }
             }
         }
     }
@@ -114,9 +121,18 @@ public class CharacterSelection : MonoBehaviour
     IEnumerator ChooseCharacter(int btnIndex)
     {
         yield return new WaitForSeconds(0.5f);
-        if (Input.GetKeyDown(joinControls.Player_WASD) || Input.GetKeyDown(joinControls.Player_Arrow) || Input.GetKeyDown(joinControls.Player_Joystick1) || Input.GetKeyDown(joinControls.Player_Joystick2))
+        if (Input.GetKeyDown(playerJoinedData.GetPlayersJoined[btnIndex].Player_Controls.PlayerReadyKey))
         {
             playerJoinedData.GetPlayersJoined[btnIndex].PlayerCharacter = characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().GetCharaterPrefab;
+            playerJoinedData.GetPlayersJoined[btnIndex].PlayerIsReady = true;
+        }
+    }
+
+    void RechooseCharacter(int btnIndex)
+    {
+        if (playerJoinedData.GetPlayersJoined[btnIndex].PlayerIsReady && Input.GetKeyDown(playerJoinedData.GetPlayersJoined[btnIndex].Player_Controls.PlayerUnreadyKey))
+        {
+            playerJoinedData.GetPlayersJoined[btnIndex].PlayerIsReady = false;
         }
     }
 }

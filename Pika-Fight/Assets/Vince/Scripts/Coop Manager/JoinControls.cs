@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu (fileName ="JoiningControls", menuName ="JoinControls")]
 public class JoinControls : ScriptableObject
 {
+    [Header("Keys To Join the game")]
     public KeyCode Player_WASD = KeyCode.J;
     public KeyCode Player_Arrow = KeyCode.C;
     public KeyCode Player_Joystick1 = KeyCode.Joystick1Button0;

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -16,7 +17,8 @@ public class UISlotHandler : MonoBehaviour
         DetectControllers();
         RemoveEmptyControllerNames();
         UpdateNumOfSlots();
-        PlayerIsReady();
+        PlayerHasJoined();
+       // Unready();
     }
 
     private void DetectControllers()
@@ -50,36 +52,63 @@ public class UISlotHandler : MonoBehaviour
         }
     }
 
-    void PlayerIsReady()
+    void PlayerHasJoined()
     {
         for (int i = 0; i < playerJoinedData.GetPlayersJoined.Length; i++)
         {
+         
             if (playerJoinedData.GetPlayersJoined[i] != null)
             {
+                var keyControl = playerJoinedData.GetPlayersJoined[i].Player_Controls.GetMovementAxes;
+                string control = keyControl.ToString();
+
                 slotsToJoin[i].transform.Find("Join").gameObject.SetActive(false);
                 slotsToJoin[i].transform.Find("Ready").gameObject.SetActive(true);
-                UpdateReadyButton(i);
+
+                if (!playerJoinedData.GetPlayersJoined[i].PlayerIsReady)
+                {
+                    ShowReadyButton(i, control);
+                }
+                else
+                {
+                    PlayerHasChosenACharacter(i, control);
+                }
             }
         }
     }
 
-    void UpdateReadyButton(int i)
+    void ShowReadyButton(int i, string control)
     {
-        var keyControl = playerJoinedData.GetPlayersJoined[i].Player_Controls.GetMovementAxes;
-        string control = keyControl.ToString();
-        print(control);
-
-        if (keyControl.ToString() == "Joystick1" || keyControl.ToString() == "Joystick2")
+        if (control == "Joystick1" || control == "Joystick2")
         {
             readyTxt[i].SetText("A READY?");
         }
-        else if (keyControl.ToString() == "WASD")
+        else if (control == "WASD")
         {
             readyTxt[i].SetText("A READY?");
         }
-        else if (keyControl.ToString() == "Arrow")
+        else if (control == "Arrow")
         {
             readyTxt[i].SetText($"{joinControls.Player_Arrow} READY?");
+        }
+    }
+
+    void PlayerHasChosenACharacter(int i, string control)
+    {
+        if (playerJoinedData.GetPlayersJoined[i].PlayerIsReady)
+        {
+            if (control == "Joystick1" || control == "Joystick2")
+            {
+                readyTxt[i].SetText("B to Cancel");
+            }
+            else if (control == "WASD")
+            {
+                readyTxt[i].SetText("Esc to Cancel");
+            }
+            else if (control == "Arrow")
+            {
+                readyTxt[i].SetText("Q to Cancel");
+            }
         }
     }
 }

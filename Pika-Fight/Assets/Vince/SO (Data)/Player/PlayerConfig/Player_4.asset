@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Player_4
   m_EditorClassIdentifier: 
   playerControl: {fileID: 0}
+  playerCharacter: {fileID: 0}
+  playerIsReady: 0

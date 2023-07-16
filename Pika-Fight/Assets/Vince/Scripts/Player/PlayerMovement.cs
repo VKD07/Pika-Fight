@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         float horizontal = Input.GetAxis($"{playerControls.GetMovementAxes}_Horizontal");
         float vertical = Input.GetAxis($"{playerControls.GetMovementAxes}_Vertical");
 
-        playerPos = new Vector3(vertical,0,horizontal);
+        playerPos = new Vector3(vertical,0,-horizontal);
         rb.velocity = playerPos * movementSpeed;
     }
 
