@@ -59,7 +59,7 @@ public class CharacterSelection : MonoBehaviour
         {
             if (playerJoinedData.GetPlayersJoined[i] != null)
             {
-                if(!playerJoinedData.GetPlayersJoined[i].PlayerIsReady)
+                if (!playerJoinedData.GetPlayersJoined[i].PlayerIsReady)
                 {
                     pointers[i].gameObject.SetActive(true);
                     MovePointers(playerJoinedData.GetPlayersJoined[i].Player_Controls, i);
@@ -126,6 +126,8 @@ public class CharacterSelection : MonoBehaviour
             playerJoinedData.GetPlayersJoined[btnIndex].PlayerCharacter = characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().GetCharaterPrefab;
             characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().CharacterIsTaken = true;
             playerJoinedData.GetPlayersJoined[btnIndex].PlayerIsReady = true;
+            //Animation when chosen
+            characterPool.GetListOfCharacterSlots[btnIndex].CharacterList[characterIndeces[btnIndex]].GetComponent<Animator>().SetTrigger("Chosen");
         }
     }
 

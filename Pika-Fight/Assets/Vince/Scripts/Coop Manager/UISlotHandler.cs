@@ -85,7 +85,7 @@ public class UISlotHandler : MonoBehaviour
         }
         else if (control == "WASD")
         {
-            readyTxt[i].SetText("A READY?");
+            readyTxt[i].SetText("J READY?");
         }
         else if (control == "Arrow")
         {

@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu (fileName = "CharacterListContainer", menuName = "CharacterListContainer")]
 public class CharacterListContainer : ScriptableObject
 {
     [SerializeField] List<GameObject> list;
-    
     public void AddToList(GameObject item)
     {
         list.Add(item);
@@ -40,4 +40,6 @@ public class CharacterListContainer : ScriptableObject
             }
         }
     }
+
+    public List<GameObject> CharacterList => list;
 }
