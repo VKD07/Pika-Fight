@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 281b3bb3a93779f4ca5ad469b6facb65, type: 3}
-  m_Name: PlayerAnimationData
+  m_Name: PlayerAnimationData_Chicken
   m_EditorClassIdentifier: 
   isThrowing: 0

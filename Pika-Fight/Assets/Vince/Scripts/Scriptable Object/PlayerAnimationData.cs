@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerAnimationData : ScriptableObject
 {
     [SerializeField] bool isThrowing;
-
     public bool IsThrowing
     {
         get { return isThrowing; }

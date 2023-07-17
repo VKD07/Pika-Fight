@@ -25,6 +25,9 @@ public class DodgeBall : MonoBehaviour
     [SerializeField] GameObject directionBar;
     [SerializeField] Slider directionFillBar;
 
+    [Header("Player Animation")]
+    [SerializeField] PlayerAnimationData playerAnimData;
+
 
     private void Start()
     {
@@ -73,6 +76,7 @@ public class DodgeBall : MonoBehaviour
             directionFillBar.value = 0;
             directionBar.SetActive(false);
             playerMovementSpeed.Value = initMovementSpeed;
+            playerAnimData.IsThrowing = false;
         }
     }
 
@@ -82,6 +86,7 @@ public class DodgeBall : MonoBehaviour
         {
             if (ballForce < maxForce)
             {
+                playerAnimData.IsThrowing = true;
                 playerMovementSpeed.Value = 0.5f;
                 velocity.Value = 0f;
                 directionBar.SetActive(true);

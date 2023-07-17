@@ -36,6 +36,7 @@ public class SpawnPlayers : MonoBehaviour
 
             //enabling all scripts
             player.GetComponent<PlayerMovement>().enabled = true;
+            player.GetComponent<Animator>().SetBool("DodgeBall", true);
             player.GetComponent<DodgeBall>().enabled = true;
             player.GetComponent<PlayerAnimation>().enabled = true;
             player.GetComponent<PlayerMovement>().SetPlayerControls = playerJoinedData.GetPlayersJoined[i].Player_Controls;

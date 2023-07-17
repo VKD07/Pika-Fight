@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovementAxes: 3
   attackKey: 370
-  dashKey: 306
+  dashKey: 371
   playerReadyKey: 370
   playerUnreadyKey: 371
   controlIstaken: 0

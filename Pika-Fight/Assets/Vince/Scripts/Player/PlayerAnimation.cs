@@ -25,14 +25,8 @@ public class PlayerAnimation : MonoBehaviour
     }
     public void BallThrowAnim()
     {
-        if (Input.GetKey(playerControls.GetAttackKey))
-        {
-            anim.SetBool("Throw",true);
-        }else if (Input.GetKeyUp(playerControls.GetAttackKey))
-        {
-            anim.SetBool("Throw", false);
-        }
+        anim.SetBool("Throw", playerAnimData.IsThrowing);
     }
-    
+
     public PlayerControls SetPlayerControls { set { playerControls = value; } }
 }

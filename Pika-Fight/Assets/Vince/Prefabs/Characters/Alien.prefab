@@ -1443,6 +1443,7 @@ MonoBehaviour:
     type: 2}
   directionBar: {fileID: 2134517298009944145}
   directionFillBar: {fileID: 6521689219135993220}
+  playerAnimData: {fileID: 11400000, guid: e71a9dfa021a0a243a6abe9dc017abbc, type: 2}
 --- !u!114 &7822592543979492346
 MonoBehaviour:
   m_ObjectHideFlags: 0

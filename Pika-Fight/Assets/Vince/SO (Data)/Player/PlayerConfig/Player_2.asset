@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81306ee4bc7f9148a3cabb7cb223c68, type: 3}
   m_Name: Player_2
   m_EditorClassIdentifier: 
-  playerControl: {fileID: 11400000, guid: 8496037b6201d8d409f324591f76a851, type: 2}
+  playerControl: {fileID: 11400000, guid: 8e1be352d6d596b43abfee919e054f44, type: 2}
   playerCharacter: {fileID: 7032743981702343751, guid: 0329e4d173c6061479c7519ad91be501,
     type: 3}
   playerIsReady: 0
