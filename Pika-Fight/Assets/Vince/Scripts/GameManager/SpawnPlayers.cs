@@ -33,8 +33,14 @@ public class SpawnPlayers : MonoBehaviour
 
             GameObject player = Instantiate(playerJoinedData.GetPlayersJoined[i].PlayerCharacter, playerSpawners[randomPos].position, Quaternion.identity);
             player.GetComponent<Rigidbody>().isKinematic = false;
+
+            //enabling all scripts
             player.GetComponent<PlayerMovement>().enabled = true;
+            player.GetComponent<DodgeBall>().enabled = true;
+            player.GetComponent<PlayerAnimation>().enabled = true;
             player.GetComponent<PlayerMovement>().SetPlayerControls = playerJoinedData.GetPlayersJoined[i].Player_Controls;
+            player.GetComponent<DodgeBall>().SetPlayerControls = playerJoinedData.GetPlayersJoined[i].Player_Controls; ;
+            player.GetComponent<PlayerAnimation>().SetPlayerControls = playerJoinedData.GetPlayersJoined[i].Player_Controls;
         }
     }
 }

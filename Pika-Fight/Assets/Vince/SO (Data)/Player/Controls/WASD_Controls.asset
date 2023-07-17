@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WASD_Controls
   m_EditorClassIdentifier: 
   playerMovementAxes: 0
-  attackKey: 101
+  attackKey: 32
   dashKey: 306
   playerReadyKey: 106
   playerUnreadyKey: 27

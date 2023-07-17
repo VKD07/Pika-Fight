@@ -9,8 +9,9 @@ using static UnityEditor.PlayerSettings;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] PlayerControls playerControls;
-    [SerializeField] float movementSpeed = 10f;
     [SerializeField] float rotationSpeed = 720f;
+    [SerializeField] FloatReference velocity;
+    [SerializeField] FloatReference movementSpeed;
     Vector3 playerPos;
     Rigidbody rb;
     void Start()
@@ -30,7 +31,8 @@ public class PlayerMovement : MonoBehaviour
         float vertical = Input.GetAxis($"{playerControls.GetMovementAxes}_Vertical");
 
         playerPos = new Vector3(vertical,0,-horizontal);
-        rb.velocity = playerPos * movementSpeed;
+        velocity.Value = playerPos.magnitude;
+        rb.velocity = playerPos * movementSpeed.Value;
     }
 
     private void Rotate()
