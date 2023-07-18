@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharactersHandler : MonoBehaviour
 {
-    [SerializeField] ObjectPooling pooling;
+    [SerializeField] CharacterObjectPooling pooling;
     [SerializeField] Transform[] characterModelsSlots;
     void Awake()
     {

@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class CharacterSelection : MonoBehaviour
 {
-    [SerializeField] ObjectPooling characterPool;
+    [SerializeField] CharacterObjectPooling characterPool;
     [SerializeField] PlayerJoinedData playerJoinedData;
     [SerializeField] JoinControls joinControls;
     [SerializeField] RectTransform[] pointers;

@@ -1,41 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ObjectPooling", menuName = "Pattern/CharactersObjPooling")]
+[CreateAssetMenu(fileName ="ObjectPool", menuName = "Pattern/ObjectPooling")]
 public class ObjectPooling : ScriptableObject
 {
-    [SerializeField] GameObject[] gameObjects;
-    [SerializeField] List<CharacterListContainer> listOfCharacterSlots;
-    [SerializeField] List<Transform> parent;
-    bool enableFirstModel;
-
-    public void InitObjects()
+    [SerializeField] GameObject objectToPool;
+    [SerializeField] List<GameObject> listOfObjs;
+    [SerializeField] Transform parent;
+    [SerializeField] float poolAmount;
+    GameObject pickedObj;
+    public void InitPoolOfObjects()
     {
-        for (int i = 0; i < parent.Count; i++)
+        for (int i = 0; i < poolAmount; i++)
         {
-            for (int j = 0; j < gameObjects.Length; j++)
+            GameObject obj = Instantiate(objectToPool, Vector3.zero, Quaternion.identity);
+            obj.transform.SetParent(parent);
+            obj.SetActive(false);
+            listOfObjs.Add(obj);
+        }
+    }
+
+    public void PickObjFromPool(Transform locationToSpawn)
+    {
+        for (int i = 0; i <  listOfObjs.Count; i++)
+        {
+            if (!listOfObjs[i].activeSelf)
             {
-                GameObject obj = Instantiate(gameObjects[j], Vector3.one, Quaternion.Euler(0f, 180f, 0f));
-                obj.SetActive(false);
-                listOfCharacterSlots[i].AddToList(obj);
-                obj.transform.SetParent(parent[i]);
-                obj.transform.position = parent[i].position;
+                listOfObjs[i].transform.position = locationToSpawn.position;
+                listOfObjs[i].SetActive(true);
+                pickedObj = listOfObjs[i];
+                break;
             }
         }
     }
 
-    public void AddParent(Transform parent)
+    public void SetParent(Transform parent)
     {
-        this.parent.Add(parent);
+        this.parent = parent;
     }
-
+    
     public void ClearList()
     {
-        parent.Clear();
-
+        listOfObjs.Clear();
     }
-    public List<Transform> GetCharactersSlot => parent;
-    public List<CharacterListContainer> GetListOfCharacterSlots => listOfCharacterSlots;
+
+    public GameObject GetPickedObj { get { return pickedObj; } }
 }

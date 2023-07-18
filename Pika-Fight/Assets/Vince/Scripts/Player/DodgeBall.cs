@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DodgeBall : MonoBehaviour
 {
-   
+
     [Header("Ball Settings")]
     [SerializeField] float ballForce = 50f;
     [SerializeField] float maxForce = 100f;
@@ -65,10 +65,10 @@ public class DodgeBall : MonoBehaviour
         IncreaseForce();
         if (Input.GetKeyUp(playerControls.GetAttackKey) && ballOnHand)
         {
-            ball.GetComponent<Ball>().BallTaken = false;
             ball.GetComponent<Ball>().SetSphereTrigger(false);
             ball.GetComponent<Rigidbody>().AddForce(transform.forward * ballForce, ForceMode.Impulse);
             ball.GetComponent<Animator>().SetTrigger("Stretch");
+            ball.GetComponent<Ball>().BallTaken = false;
             ball.transform.forward = transform.forward;
             ballOnHand = false;
             ball = null;
@@ -77,6 +77,7 @@ public class DodgeBall : MonoBehaviour
             directionBar.SetActive(false);
             playerMovementSpeed.Value = initMovementSpeed;
             playerAnimData.IsThrowing = false;
+            playerAnimData.BallOnHand = false;
         }
     }
 
@@ -108,7 +109,16 @@ public class DodgeBall : MonoBehaviour
             {
                 ball = collision.gameObject;
                 ball.GetComponent<Ball>().BallTaken = true;
+                playerAnimData.BallOnHand = true;
             }
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (ball != null)
+        {
+            ball.GetComponent<Ball>().BallTaken = true;
         }
     }
 

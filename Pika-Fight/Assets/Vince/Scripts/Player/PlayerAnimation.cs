@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,14 @@ public class PlayerAnimation : MonoBehaviour
     {
         RunAnim();
         BallThrowAnim();
+        BallOnHand();
     }
+
+    private void BallOnHand()
+    {
+        anim.SetBool("BallOnHand", playerAnimData.BallOnHand);
+    }
+
     public void RunAnim()
     {
         anim.SetFloat("Velocity", velocity.Value);

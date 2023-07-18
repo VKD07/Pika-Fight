@@ -6,9 +6,16 @@ using UnityEngine;
 public class PlayerAnimationData : ScriptableObject
 {
     [SerializeField] bool isThrowing;
+    [SerializeField] bool ballOnHand;
     public bool IsThrowing
     {
         get { return isThrowing; }
         set { isThrowing = value; }
+    }
+
+    public bool BallOnHand
+    {
+        get { return ballOnHand; }
+        set { ballOnHand = value; }
     }
 }

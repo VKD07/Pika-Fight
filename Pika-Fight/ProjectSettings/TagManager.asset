@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FxTemporaire
   - Ball
+  - GameParticles
   layers:
   - Default
   - TransparentFX

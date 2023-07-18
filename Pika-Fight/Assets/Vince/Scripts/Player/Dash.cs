@@ -50,4 +50,6 @@ public class Dash : MonoBehaviour
         yield return new WaitForSeconds(dashCoolDown);
         isDashing = false;
     }
+
+    public PlayerControls SetPlayerControls { set { playerControls = value; } }
 }
