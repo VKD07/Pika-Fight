@@ -68,7 +68,8 @@ public class DodgeBall : MonoBehaviour
             ball.GetComponent<Ball>().SetSphereTrigger(false);
             ball.GetComponent<Rigidbody>().AddForce(transform.forward * ballForce, ForceMode.Impulse);
             ball.GetComponent<Animator>().SetTrigger("Stretch");
-            ball.GetComponent<Ball>().BallTaken = false;
+            StartCoroutine(ball.GetComponent<Ball>().AllowBallToBePicked());
+            //ball.GetComponent<Ball>().BallTaken = false;
             ball.transform.forward = transform.forward;
             ballOnHand = false;
             ball = null;
@@ -105,7 +106,7 @@ public class DodgeBall : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ball")
         {
-            if (!collision.gameObject.GetComponent<Ball>().BallTaken)
+            if (!collision.gameObject.GetComponent<Ball>().BallTaken && !ballOnHand)
             {
                 ball = collision.gameObject;
                 ball.GetComponent<Ball>().BallTaken = true;

@@ -42,11 +42,10 @@ public class Ball : MonoBehaviour
     private void SetBallDamage()
     {
         ballDamage = rb.velocity.magnitude;
-
-        if (!rb.isKinematic)
-        {
-            ballTaken = false;
-        }
+        //if (!rb.isKinematic)
+        //{
+        //    //ballTaken = false;
+        //}
     }
 
     public void SetSphereTrigger(bool enable)
@@ -65,6 +64,12 @@ public class Ball : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         sphereCollider.isTrigger = enable;
+    }
+
+    public IEnumerator AllowBallToBePicked()
+    {
+        yield return new WaitForSeconds(2);
+        ballTaken = false;
     }
 
     public bool BallTaken

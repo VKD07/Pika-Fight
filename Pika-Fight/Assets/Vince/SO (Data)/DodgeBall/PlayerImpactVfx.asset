@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f81306ee4bc7f9148a3cabb7cb223c68, type: 3}
-  m_Name: Player_2
+  m_Script: {fileID: 11500000, guid: 2d3573052bc5bac48bb7670722a7b590, type: 3}
+  m_Name: PlayerImpactVfx
   m_EditorClassIdentifier: 
-  playerControl: {fileID: 11400000, guid: 65d70b53c00b69144b60e5b118e3dea8, type: 2}
-  playerCharacter: {fileID: 7032743981702343751, guid: 0329e4d173c6061479c7519ad91be501,
+  objectToPool: {fileID: 1637393177168150189, guid: b676f7f7f027471418d90747dd438f69,
     type: 3}
-  playerIsReady: 0
+  listOfObjs: []
+  parent: {fileID: 0}
+  poolAmount: 4

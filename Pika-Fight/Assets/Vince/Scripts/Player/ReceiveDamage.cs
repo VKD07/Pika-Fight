@@ -14,7 +14,7 @@ public class ReceiveDamage : MonoBehaviour
         initHealth = playerHealth.Value;
     }
 
-    void GetDamage(float damage)
+    public void GetDamage(float damage)
     {
         playerHealth.Value -= damage;
     }
@@ -29,10 +29,10 @@ public class ReceiveDamage : MonoBehaviour
         if(collision.gameObject.tag == "Ball")
         {
             Ball ballScript = collision.gameObject.GetComponent<Ball>();
-            OnImpact.Invoke();
 
             if(ballScript != null)
             {
+                OnImpact.Invoke();
                 GetDamage(ballScript.GetBallDamage);
             }
         }

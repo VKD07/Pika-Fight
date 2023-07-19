@@ -50,6 +50,9 @@ public class SpawnPlayers : MonoBehaviour
             player.GetComponent<Dash>().SetPlayerControls = playerJoinedData.GetPlayersJoined[i].Player_Controls;
 
             player.GetComponent<PlayerVfx>().enabled = true;
+
+            player.GetComponent<HealthBar>().enabled = true;
+            player.GetComponent<HealthBar>().healthValue = 100f;
         }
     }
 }
