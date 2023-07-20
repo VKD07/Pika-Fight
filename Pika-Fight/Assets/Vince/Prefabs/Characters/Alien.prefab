@@ -1302,6 +1302,7 @@ GameObject:
   - component: {fileID: 9178754861169326664}
   - component: {fileID: 2859203378024270355}
   - component: {fileID: -7732585177032625801}
+  - component: {fileID: 3371894334029019124}
   - component: {fileID: -3626555683173393365}
   - component: {fileID: 439555097510620726}
   - component: {fileID: -4340403042845905283}
@@ -1385,8 +1386,21 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &3371894334029019124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5861507685882267482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9fd402fb7a8e34884ff5228527db0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerConfig: {fileID: 0}
 --- !u!114 &-3626555683173393365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1598,7 +1612,67 @@ MonoBehaviour:
   playerHealth: {fileID: 11400000, guid: b44d5caf7943b904a8b676ed362049a3, type: 2}
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2859203378024270355}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dead
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -3392094542521479936}
+        m_TargetAssemblyTypeName: PlayerStatus, Assembly-CSharp
+        m_MethodName: EnableScripts
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dead
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -7732585177032625801}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_isKinematic
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dead
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 3371894334029019124}
+        m_TargetAssemblyTypeName: PlayerConfigBridge, Assembly-CSharp
+        m_MethodName: SetDeathStatus
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dead
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 80559163d8f0f7e46b3031b0d0e4d7fe, type: 2}
+        m_TargetAssemblyTypeName: FloatReference, Assembly-CSharp
+        m_MethodName: AddValue
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: Dead
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &5881290733531644294
 GameObject:
   m_ObjectHideFlags: 0

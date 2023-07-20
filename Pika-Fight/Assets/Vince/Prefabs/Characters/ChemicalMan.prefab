@@ -300,8 +300,9 @@ GameObject:
   - component: {fileID: 7614518488268110969}
   - component: {fileID: 7455783498897495399}
   - component: {fileID: 2168239340660746809}
-  - component: {fileID: -5024701652583468758}
   - component: {fileID: 3237192091140884129}
+  - component: {fileID: 3033826161121864121}
+  - component: {fileID: -5024701652583468758}
   - component: {fileID: 5702964599528428019}
   - component: {fileID: 4230661295526918627}
   - component: {fileID: -5893682402716925746}
@@ -383,24 +384,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &-5024701652583468758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2435251451558624804}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 491916d40a2a81443a16ceeb0f6c15a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerControls: {fileID: 0}
-  rotationSpeed: 720
-  velocity: {fileID: 11400000, guid: eddb9e7a70483ec44b3b93283cdbd583, type: 2}
-  movementSpeed: {fileID: 11400000, guid: 3f3541fcf6eafb94997da70ed85b9305, type: 2}
 --- !u!136 &3237192091140884129
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -424,6 +409,35 @@ CapsuleCollider:
   m_Height: 1.9119809
   m_Direction: 1
   m_Center: {x: 0.008795083, y: 0.9831222, z: 0}
+--- !u!114 &3033826161121864121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2435251451558624804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9fd402fb7a8e34884ff5228527db0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerConfig: {fileID: 0}
+--- !u!114 &-5024701652583468758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2435251451558624804}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491916d40a2a81443a16ceeb0f6c15a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerControls: {fileID: 0}
+  rotationSpeed: 720
+  velocity: {fileID: 11400000, guid: eddb9e7a70483ec44b3b93283cdbd583, type: 2}
+  movementSpeed: {fileID: 11400000, guid: 3f3541fcf6eafb94997da70ed85b9305, type: 2}
 --- !u!114 &5702964599528428019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,7 +610,55 @@ MonoBehaviour:
   playerHealth: {fileID: 11400000, guid: 12e8b3e9413f5da4fae70a2c4457e77e, type: 2}
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7455783498897495399}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dead
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2399899113205715931}
+        m_TargetAssemblyTypeName: PlayerStatus, Assembly-CSharp
+        m_MethodName: EnableScripts
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dead
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2168239340660746809}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_isKinematic
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dead
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 80559163d8f0f7e46b3031b0d0e4d7fe, type: 2}
+        m_TargetAssemblyTypeName: FloatReference, Assembly-CSharp
+        m_MethodName: AddValue
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: Dead
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &3071376565380201002
 GameObject:
   m_ObjectHideFlags: 0

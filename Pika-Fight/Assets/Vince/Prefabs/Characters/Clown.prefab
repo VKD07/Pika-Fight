@@ -42,8 +42,9 @@ GameObject:
   - component: {fileID: 8093215494716883473}
   - component: {fileID: 8836070117022675314}
   - component: {fileID: 7227130729059723520}
-  - component: {fileID: 7727602170621009416}
   - component: {fileID: 1972330265847400543}
+  - component: {fileID: 1033998921975833702}
+  - component: {fileID: 7727602170621009416}
   - component: {fileID: 8721734732806859585}
   - component: {fileID: 7175932056174666059}
   - component: {fileID: 3485785187570656968}
@@ -125,24 +126,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &7727602170621009416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 366099384126448805}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 491916d40a2a81443a16ceeb0f6c15a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerControls: {fileID: 0}
-  rotationSpeed: 720
-  velocity: {fileID: 11400000, guid: 16a128c424120f0428a0b94df97e2be0, type: 2}
-  movementSpeed: {fileID: 11400000, guid: eac6fa851f8bba646b8834aec5ffcfe5, type: 2}
 --- !u!136 &1972330265847400543
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -166,6 +151,35 @@ CapsuleCollider:
   m_Height: 1.9603672
   m_Direction: 1
   m_Center: {x: 0.008795083, y: 0.95892906, z: 0}
+--- !u!114 &1033998921975833702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366099384126448805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9fd402fb7a8e34884ff5228527db0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerConfig: {fileID: 0}
+--- !u!114 &7727602170621009416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366099384126448805}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491916d40a2a81443a16ceeb0f6c15a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerControls: {fileID: 0}
+  rotationSpeed: 720
+  velocity: {fileID: 11400000, guid: 16a128c424120f0428a0b94df97e2be0, type: 2}
+  movementSpeed: {fileID: 11400000, guid: eac6fa851f8bba646b8834aec5ffcfe5, type: 2}
 --- !u!114 &8721734732806859585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,7 +352,43 @@ MonoBehaviour:
   playerHealth: {fileID: 11400000, guid: 1dda9b13a1b9a7642b2a04250f93100f, type: 2}
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8836070117022675314}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dead
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2049286901795758149}
+        m_TargetAssemblyTypeName: PlayerStatus, Assembly-CSharp
+        m_MethodName: EnableScripts
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dead
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 80559163d8f0f7e46b3031b0d0e4d7fe, type: 2}
+        m_TargetAssemblyTypeName: FloatReference, Assembly-CSharp
+        m_MethodName: AddValue
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: Dead
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &400285586703606124
 GameObject:
   m_ObjectHideFlags: 0

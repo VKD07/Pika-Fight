@@ -33,7 +33,6 @@ public class ReceiveDamage : MonoBehaviour
             if(ballScript != null)
             {
                 OnImpact.Invoke();
-                GetDamage(ballScript.GetBallDamage);
             }
         }
     }

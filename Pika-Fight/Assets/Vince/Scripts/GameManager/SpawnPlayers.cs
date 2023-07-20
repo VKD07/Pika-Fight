@@ -32,26 +32,16 @@ public class SpawnPlayers : MonoBehaviour
             int randomPos = Random.Range(0, playerSpawners.Length);
 
             GameObject player = Instantiate(playerJoinedData.GetPlayersJoined[i].PlayerCharacter, playerSpawners[randomPos].position, Quaternion.identity);
+            player.GetComponent<PlayerConfigBridge>().SetPlayerConfig = playerJoinedData.GetPlayersJoined[i];
             player.GetComponent<Rigidbody>().isKinematic = false;
 
             //enabling all scripts
-            player.GetComponent<PlayerMovement>().enabled = true;
+            player.GetComponent<PlayerStatus>().EnableScripts(true);
             player.GetComponent<PlayerMovement>().SetPlayerControls = playerJoinedData.GetPlayersJoined[i].Player_Controls;
-
             player.GetComponent<Animator>().SetBool("DodgeBall", true);
-
-            player.GetComponent<DodgeBall>().enabled = true;
             player.GetComponent<DodgeBall>().SetPlayerControls = playerJoinedData.GetPlayersJoined[i].Player_Controls; ;
-
-            player.GetComponent<PlayerAnimation>().enabled = true;
             player.GetComponent<PlayerAnimation>().SetPlayerControls = playerJoinedData.GetPlayersJoined[i].Player_Controls;
-
-            player.GetComponent<Dash>().enabled = true;
             player.GetComponent<Dash>().SetPlayerControls = playerJoinedData.GetPlayersJoined[i].Player_Controls;
-
-            player.GetComponent<PlayerVfx>().enabled = true;
-
-            player.GetComponent<HealthBar>().enabled = true;
             player.GetComponent<HealthBar>().healthValue = 100f;
         }
     }

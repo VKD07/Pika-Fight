@@ -25379,6 +25379,7 @@ GameObject:
   - component: {fileID: 1263745420}
   - component: {fileID: 1263745419}
   - component: {fileID: 1263745421}
+  - component: {fileID: 1263745422}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -25437,6 +25438,38 @@ MonoBehaviour:
   ball: {fileID: 3626448332105603644, guid: 1bed23c96229791449fc9b805f98e744, type: 3}
   spawnPoint: {fileID: 1263745420}
   ballsSpawned: []
+--- !u!114 &1263745422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263745418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bc3ed7eb8cef204c9d067b22e08487f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerJoinedData: {fileID: 11400000, guid: 7e9c4ddcd905cae479e8c9ba51ce6c8e, type: 2}
+  numOfPlayersDied: {fileID: 11400000, guid: 80559163d8f0f7e46b3031b0d0e4d7fe, type: 2}
+  OnWinnerDeclared:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1263745422}
+        m_TargetAssemblyTypeName: LastManStanding, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: VinceTest
+          m_BoolArgument: 0
+        m_CallState: 2
+  numOfPlayers: 0
+  cam: {fileID: 1600838092}
+  player: {fileID: 0}
 --- !u!1001 &1264476574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35081,8 +35114,6 @@ GameObject:
   - component: {fileID: 1600838093}
   - component: {fileID: 1600838092}
   - component: {fileID: 1600838091}
-  - component: {fileID: 1600838090}
-  - component: {fileID: 1600838089}
   - component: {fileID: 1600838094}
   m_Layer: 8
   m_Name: Main Camera
@@ -35091,30 +35122,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1600838089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600838088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1600838090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600838088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!81 &1600838091
 AudioListener:
   m_ObjectHideFlags: 0

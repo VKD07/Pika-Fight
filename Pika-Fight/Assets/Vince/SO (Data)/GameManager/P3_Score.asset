@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97061c92999bcb34692d5737ba21ae2e, type: 3}
-  m_Name: Health_Robot
+  m_Name: P3_Score
   m_EditorClassIdentifier: 
-  value: 100
+  value: 0

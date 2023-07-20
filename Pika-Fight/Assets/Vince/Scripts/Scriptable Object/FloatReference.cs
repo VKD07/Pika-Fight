@@ -12,4 +12,9 @@ public class FloatReference : ScriptableObject
         get { return value; }
         set { this.value = value; }
     }
+
+    public void AddValue(float value)
+    {
+        this.value += value;
+    }
 }

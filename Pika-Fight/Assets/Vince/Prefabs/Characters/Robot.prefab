@@ -699,8 +699,9 @@ GameObject:
   - component: {fileID: 6851290532001959948}
   - component: {fileID: 2286812289005618883}
   - component: {fileID: 3714685995949362538}
-  - component: {fileID: 6124898874325685}
   - component: {fileID: -1825398725046937773}
+  - component: {fileID: 6492041355249348916}
+  - component: {fileID: 6124898874325685}
   - component: {fileID: 92915397507811732}
   - component: {fileID: 5071040916854350901}
   - component: {fileID: -6831677520288556904}
@@ -782,24 +783,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &6124898874325685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3073818340599491789}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 491916d40a2a81443a16ceeb0f6c15a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerControls: {fileID: 0}
-  rotationSpeed: 720
-  velocity: {fileID: 11400000, guid: 1ffb5a226d2e74943bdfc1f8f5ee8529, type: 2}
-  movementSpeed: {fileID: 11400000, guid: e2e6e4d457aabe347ac52f396e155399, type: 2}
 --- !u!136 &-1825398725046937773
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -823,6 +808,35 @@ CapsuleCollider:
   m_Height: 1.9603672
   m_Direction: 1
   m_Center: {x: 0.008795083, y: 0.95892906, z: 0}
+--- !u!114 &6492041355249348916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3073818340599491789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9fd402fb7a8e34884ff5228527db0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerConfig: {fileID: 0}
+--- !u!114 &6124898874325685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3073818340599491789}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491916d40a2a81443a16ceeb0f6c15a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerControls: {fileID: 0}
+  rotationSpeed: 720
+  velocity: {fileID: 11400000, guid: 1ffb5a226d2e74943bdfc1f8f5ee8529, type: 2}
+  movementSpeed: {fileID: 11400000, guid: e2e6e4d457aabe347ac52f396e155399, type: 2}
 --- !u!114 &92915397507811732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -996,7 +1010,55 @@ MonoBehaviour:
   playerHealth: {fileID: 11400000, guid: 0eeb124c1fbd2754c95e91ea98711520, type: 2}
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2286812289005618883}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dash
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -6195141166034218946}
+        m_TargetAssemblyTypeName: PlayerStatus, Assembly-CSharp
+        m_MethodName: EnableScripts
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dash
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3714685995949362538}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_isKinematic
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dash
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 80559163d8f0f7e46b3031b0d0e4d7fe, type: 2}
+        m_TargetAssemblyTypeName: FloatReference, Assembly-CSharp
+        m_MethodName: AddValue
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: Dash
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &3092472197777879923
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayerJoinedData
   m_EditorClassIdentifier: 
   playersJoined:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 3ceabe4c8ad3d50429deb642601b1328, type: 2}
+  - {fileID: 11400000, guid: 0842a67814b07a143807f36ccd740b40, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   playerConfig:

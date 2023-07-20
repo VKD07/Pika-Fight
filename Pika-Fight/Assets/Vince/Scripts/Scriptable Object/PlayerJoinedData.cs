@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static PlayerControls;
 
 [CreateAssetMenu (fileName = "PlayerJoinedData", menuName = "Player/Player_Joined_Data")]
 public class PlayerJoinedData : ScriptableObject
 {
     [SerializeField] PlayerConfig[] playersJoined;
     [SerializeField] PlayerConfig[] playerConfig;
+    float num;
     public void AddPlayer(PlayerControls playerControls)
     {
         for (int i = 0; i < playersJoined.Length; i++)
@@ -27,5 +29,24 @@ public class PlayerJoinedData : ScriptableObject
             playersJoined[i] = null;
         }
     }
+
+    public float GetNumberOfPlayersJoined()
+    {
+        num = 0;
+        for (int i = 0; i < playersJoined.Length; i++)
+        {
+            if (playersJoined[i] != null)
+            {
+                num++;
+            }
+            else
+            {
+                return num;
+            }
+        }
+
+        return 0;
+    }
+
     public PlayerConfig[] GetPlayersJoined => playersJoined; 
 }

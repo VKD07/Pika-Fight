@@ -90,6 +90,7 @@ public class Ball : MonoBehaviour
         if(collision.gameObject.tag == "Player" &&  rb.velocity.magnitude > 10)
         {
             OnPlayerImpact.Invoke();
+            collision.gameObject.GetComponent<ReceiveDamage>().GetDamage(ballDamage);
         }
     }
 }
