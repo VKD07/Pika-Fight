@@ -28,7 +28,6 @@ public class DodgeBall : MonoBehaviour
     [Header("Player Animation")]
     [SerializeField] PlayerAnimationData playerAnimData;
 
-
     private void Start()
     {
         InitDirectionBar();
@@ -47,8 +46,6 @@ public class DodgeBall : MonoBehaviour
         directionFillBar.maxValue = maxForce;
         directionFillBar.value = 0;
     }
-
-
     private void PickUpBall()
     {
         if (ball != null)
@@ -67,7 +64,6 @@ public class DodgeBall : MonoBehaviour
         {
             ball.GetComponent<Ball>().SetSphereTrigger(false);
             ball.GetComponent<Rigidbody>().AddForce(transform.forward * ballForce, ForceMode.Impulse);
-            ball.GetComponent<Animator>().SetTrigger("Stretch");
             StartCoroutine(ball.GetComponent<Ball>().AllowBallToBePicked());
             //ball.GetComponent<Ball>().BallTaken = false;
             ball.transform.forward = transform.forward;
@@ -122,6 +118,5 @@ public class DodgeBall : MonoBehaviour
             ball.GetComponent<Ball>().BallTaken = true;
         }
     }
-
     public PlayerControls SetPlayerControls { set { playerControls = value; } }
 }

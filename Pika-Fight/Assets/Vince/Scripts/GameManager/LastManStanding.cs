@@ -10,9 +10,7 @@ public class LastManStanding : MonoBehaviour
     [SerializeField] PlayerJoinedData playerJoinedData;
     [SerializeField] FloatReference numOfPlayersDied;
     [SerializeField] UnityEvent OnWinnerDeclared;
-    [SerializeField] float numOfPlayers;
-    [SerializeField] Camera cam;
-    [SerializeField] Transform player;
+    float numOfPlayers;
     void Start()
     {
         numOfPlayers = 0;
@@ -40,7 +38,7 @@ public class LastManStanding : MonoBehaviour
     {
         for(int i = 0; i < playerJoinedData.GetPlayersJoined.Length; i++)
         {
-            if (!playerJoinedData.GetPlayersJoined[i].PlayerIsDead)
+            if (playerJoinedData.GetPlayersJoined[i] != null && !playerJoinedData.GetPlayersJoined[i].PlayerIsDead)
             {
                 playerJoinedData.GetPlayersJoined[i].Winner = true;
                 break;
@@ -58,7 +56,6 @@ public class LastManStanding : MonoBehaviour
     {
         numOfPlayersDied.Value = 0;
     }
-
 
     //Loading Score scene
     public void LoadScene(string sceneName)
