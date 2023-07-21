@@ -18,5 +18,5 @@ public class PlayerScoreSheet : MonoBehaviour
             scoreImg[i].color = Color.white;
         }
     }
-    public float SetScore { set => currentScore.Value = value; }
+    public float SetScoreValue { set => currentScore.Value = value; }
 }

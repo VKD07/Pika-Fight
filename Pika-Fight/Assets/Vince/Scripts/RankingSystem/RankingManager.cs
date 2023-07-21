@@ -16,15 +16,8 @@ public class RankingManager : MonoBehaviour
     void Start()
     {
         ResetDeath();
-        for (int i = 0; i < playerJoinedData.GetPlayersJoined.Length; i++)
-        {
-            playersScorePanel[i].GetComponent<PlayerScoreSheet>().SetScore = playerJoinedData.GetPlayersJoined[i].PlayerScore;
-          
-
-        }
+        SetPlayerScore();
         StartCoroutine(AddScore());
-
-        
     }
 
     void DeactivateAllPanels()
@@ -60,15 +53,28 @@ public class RankingManager : MonoBehaviour
         yield return new WaitForSeconds(0);
         for (int i = 0; i < playerJoinedData.GetPlayersJoined.Length; i++)
         {
-            if (playerJoinedData.GetPlayersJoined[i].Winner)
+            if (playerJoinedData.GetPlayersJoined[i] != null && playerJoinedData.GetPlayersJoined[i].Winner)
             {
                 playerJoinedData.GetPlayersJoined[i].PlayerScore += 1;
                 playerJoinedData.GetPlayersJoined[i].Winner = false;
-               // StartCoroutine(LoadScene());
+                StartCoroutine(LoadScene());
                 break;
             }
         }
+        SetPlayerScore();
     }
+
+    private void SetPlayerScore()
+    {
+        for (int i = 0; i < playerJoinedData.GetPlayersJoined.Length; i++)
+        {
+            if (playerJoinedData.GetPlayersJoined[i] != null)
+            {
+                playersScorePanel[i].GetComponent<PlayerScoreSheet>().SetScoreValue = playerJoinedData.GetPlayersJoined[i].PlayerScore;
+            }
+        }
+    }
+
     //Load Back to Scene
     IEnumerator LoadScene()
     {
