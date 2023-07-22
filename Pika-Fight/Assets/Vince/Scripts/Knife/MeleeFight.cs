@@ -14,11 +14,26 @@ public class MeleeFight : MonoBehaviour
     [SerializeField] LayerMask layerToStab;
     [Header("Script references")]
     [SerializeField] PlayerControls playerControls;
+
+    [Header("Dashing")]
+    Rigidbody rb;
+    [SerializeField] float dashForce = 10f;
+    [SerializeField] float dashTime = 1f;
+    [SerializeField] float dashCoolDown = 2f;
+    [SerializeField] UnityEvent IsDashing;
+    [SerializeField] UnityEvent IsNotDashing;
     [SerializeField] UnityEvent OnStab;
+    bool isDashing;
+    
     Animator anim;
     public bool playerDetected;
     RaycastHit hit;
     Ray ray;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     private void OnEnable()
     {
@@ -50,11 +65,37 @@ public class MeleeFight : MonoBehaviour
 
     void Stab()
     {
-        if (Input.GetKeyDown(playerControls.GetAttackKey))
+        if (Input.GetKeyDown(playerControls.GetAttackKey) && !isDashing)
         {
-            GetComponent<Rigidbody>().AddForce(transform.forward * 50f, ForceMode.Impulse);
+            BeginDash();
             OnStab.Invoke();
         }
+
+        if (playerDetected && isDashing)
+        {
+            hit.collider.GetComponent<ReceiveDamage>().GetDamage(weaponDamage);
+        }
+    }
+    private void BeginDash()
+    {
+        IsDashing.Invoke();
+        rb.velocity = transform.forward * dashForce;
+        isDashing = true;
+        StartCoroutine(StopDash());
+        StartCoroutine(EnableDash());
+    }
+
+    IEnumerator StopDash()
+    {
+        yield return new WaitForSeconds(dashTime);
+        IsNotDashing.Invoke();
+        rb.velocity = Vector3.zero;
+    }
+
+    IEnumerator EnableDash()
+    {
+        yield return new WaitForSeconds(dashCoolDown);
+        isDashing = false;
     }
 
     public void GiveDamage()
@@ -70,4 +111,6 @@ public class MeleeFight : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawRay(weaponRangeOrigin.position, weaponRangeOrigin.forward * weaponAttackRange);
     }
+
+    public PlayerControls SetPlayerControls { set { playerControls = value; } }
 }

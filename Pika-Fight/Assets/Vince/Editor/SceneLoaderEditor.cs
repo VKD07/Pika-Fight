@@ -17,7 +17,7 @@ public class SceneLoaderEditor : EditorWindow
         EditorGUILayout.BeginHorizontal();
         LoadSceneButton("Player Join Scene", "PlayerJoin");
         LoadSceneButton("Normal Map Test", "VinceTest");
-        LoadSceneButton("Score Scene", "SceneScene");
+        LoadSceneButton("Score Scene", "ScoreScene");
         EditorGUILayout.EndHorizontal();
     }
 
