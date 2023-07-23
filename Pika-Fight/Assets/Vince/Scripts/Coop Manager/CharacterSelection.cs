@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterSelection : MonoBehaviour
 {
@@ -125,6 +126,7 @@ public class CharacterSelection : MonoBehaviour
         {
             // playerJoinedData.GetPlayersJoined[btnIndex].PlayerCharacter = characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().GetCharaterPrefab;
             playerJoinedData.GetPlayersJoined[btnIndex].CharacterName = characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().CharacterName;
+            playerJoinedData.GetPlayersJoined[btnIndex].CharacterSprite = characters[characterIndeces[btnIndex]].GetComponent<Image>().sprite;
             characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().CharacterIsTaken = true;
             playerJoinedData.GetPlayersJoined[btnIndex].PlayerIsReady = true;
             //Animation when chosen

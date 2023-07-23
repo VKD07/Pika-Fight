@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class RankingManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class RankingManager : MonoBehaviour
     {
         DeactivateAllPanels();
         ActivateScorePanels();
+        SetPlayerCharacterImages();
     }
     void Start()
     {
@@ -33,6 +35,17 @@ public class RankingManager : MonoBehaviour
         for (int i = 0; i < playerJoinedData.GetNumberOfPlayersJoined(); i++)
         {
             playersScorePanel[i].SetActive(true);
+        }
+    }
+
+    void SetPlayerCharacterImages()
+    {
+        for (int i = 0; i < playerJoinedData.GetNumberOfPlayersJoined(); i++)
+        {
+            if (playerJoinedData.GetPlayersJoined[i] != null)
+            {
+                playersScorePanel[i].transform.Find("PlayerImage").GetComponent<Image>().sprite = playerJoinedData.GetPlayersJoined[i].CharacterSprite;
+            }
         }
     }
 
