@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 1547263187632839733}
   - component: {fileID: 7183983542188790318}
   - component: {fileID: 8222816641149189929}
+  - component: {fileID: 5728158992278109700}
   m_Layer: 6
   m_Name: Player_
   m_TagString: Player
@@ -227,7 +228,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172739463345340268}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -244,8 +245,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 0
+  m_Constraints: 112
+  m_CollisionDetection: 1
 --- !u!136 &6723121581440766611
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -805,6 +806,25 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &5728158992278109700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172739463345340268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3567cd126c5384f4aa914429084b1a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatList:
+  - combatEvent: {fileID: 11400000, guid: a2624dfc719570e46a20a193e46fba87, type: 2}
+    listOfScriptsToEnable:
+    - {fileID: 3531109993917728510}
+  - combatEvent: {fileID: 11400000, guid: 54ab58b038440504f864b74059dcab4a, type: 2}
+    listOfScriptsToEnable:
+    - {fileID: 7183983542188790318}
 --- !u!1 &175767610502570561
 GameObject:
   m_ObjectHideFlags: 0

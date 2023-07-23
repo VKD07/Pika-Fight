@@ -33,6 +33,7 @@ public class DodgeBall : MonoBehaviour
         InitDirectionBar();
         initMovementSpeed = playerMovementSpeed.Value;
     }
+ 
     private void Update()
     {
         PickUpBall();

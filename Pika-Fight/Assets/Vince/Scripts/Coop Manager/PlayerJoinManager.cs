@@ -19,11 +19,6 @@ public class PlayerJoinManager : MonoBehaviour
     private void Update()
     {
         PlayerJoins();
-
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            SceneManager.LoadScene("VinceTest");
-        }
     }
 
     private void PlayerJoins()

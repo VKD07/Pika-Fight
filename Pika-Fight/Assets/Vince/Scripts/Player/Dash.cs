@@ -32,6 +32,7 @@ public class Dash : MonoBehaviour
         if (Input.GetKeyDown(playerControls.GetDashKey) && !isDashing)
         {
             IsDashing.Invoke();
+
             rb.velocity = transform.forward * dashForce;
             isDashing = true;
             StartCoroutine(StopDash());

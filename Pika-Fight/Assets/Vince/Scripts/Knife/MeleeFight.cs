@@ -29,7 +29,10 @@ public class MeleeFight : MonoBehaviour
     public bool playerDetected;
     RaycastHit hit;
     Ray ray;
-
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -37,9 +40,14 @@ public class MeleeFight : MonoBehaviour
 
     private void OnEnable()
     {
-        anim = GetComponent<Animator>();
         knifeWeapon.SetActive(true);
         anim.SetBool("Knife", true);
+    }
+
+    private void OnDisable()
+    {
+        knifeWeapon.SetActive(false);
+        anim.SetBool("Knife", false);
     }
 
     // Update is called once per frame
@@ -88,6 +96,7 @@ public class MeleeFight : MonoBehaviour
     IEnumerator StopDash()
     {
         yield return new WaitForSeconds(dashTime);
+        isDashing = false;
         IsNotDashing.Invoke();
         rb.velocity = Vector3.zero;
     }

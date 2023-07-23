@@ -9,6 +9,11 @@ public class Ball : MonoBehaviour
 {
     [SerializeField] bool ballTaken;
     [SerializeField] float ballDamage;
+    [Header("Raycast")]
+    [SerializeField] float rayDistance = 1f;
+    [SerializeField] LayerMask playerLayer;
+    RaycastHit hit;
+    [Header("Events")]
     [SerializeField] UnityEvent OnImpact;
     [SerializeField] UnityEvent OnPlayerImpact;
     Rigidbody rb;
@@ -25,6 +30,7 @@ public class Ball : MonoBehaviour
     {
         ActivateTrail();
         SetBallDamage();
+        DetectPlayer();
     }
 
     private void ActivateTrail()
@@ -46,6 +52,18 @@ public class Ball : MonoBehaviour
         //{
         //    //ballTaken = false;
         //}
+    }
+
+    private void DetectPlayer()
+    {
+        if (Physics.Raycast(transform.position, transform.forward, out hit, rayDistance, playerLayer))
+        {
+            if(rb.velocity.magnitude > 10)
+            {
+                hit.collider.GetComponent<ReceiveDamage>().GetDamage(ballDamage);
+                OnPlayerImpact.Invoke();
+            }
+        }
     }
 
     public void SetSphereTrigger(bool enable)
@@ -87,7 +105,7 @@ public class Ball : MonoBehaviour
             OnImpact.Invoke();
         }
 
-        if(collision.gameObject.tag == "Player" &&  rb.velocity.magnitude > 10)
+        if (collision.gameObject.tag == "Player" && rb.velocity.magnitude > 20)
         {
             OnPlayerImpact.Invoke();
             collision.gameObject.GetComponent<ReceiveDamage>().GetDamage(ballDamage);

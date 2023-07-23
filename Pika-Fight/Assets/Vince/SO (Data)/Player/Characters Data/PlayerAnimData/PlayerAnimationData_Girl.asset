@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PlayerAnimationData_Girl
   m_EditorClassIdentifier: 
   isThrowing: 0
+  ballOnHand: 0

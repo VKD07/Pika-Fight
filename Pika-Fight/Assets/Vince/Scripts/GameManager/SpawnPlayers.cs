@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpawnPlayers : MonoBehaviour
 {
     [SerializeField] PlayerJoinedData playerJoinedData;
-    [SerializeField] Transform[] playerSpawners;
-    [SerializeField] GameObject playerPrefab;
     [SerializeField] PlayerDataDictionary playerDataDictionary;
+    [SerializeField] GameObject playerPrefab;
     [SerializeField] int numberOfPlayers;
-
+    [SerializeField] public Transform playerSpawnerParent;
+    [SerializeField] List<Transform> playerSpawners;
+    [SerializeField] UnityEvent OnSpawn;
     private void Awake()
     {
         //putting all the values in the dictionary
@@ -37,21 +39,23 @@ public class SpawnPlayers : MonoBehaviour
     {
         for (int i = 0; i < numberOfPlayers; i++)
         {
-            int randomPos = Random.Range(0, playerSpawners.Length);
+            GameObject player = Instantiate(playerPrefab, playerSpawners[i].position, Quaternion.identity);
 
-            GameObject player = Instantiate(playerPrefab, playerSpawners[randomPos].position, Quaternion.identity);
+            //set Name
+            player.name = $"{playerJoinedData.GetPlayersJoined[i].name}_{playerJoinedData.GetPlayersJoined[i].CharacterName}";
 
-            player.transform.Find(playerJoinedData.GetPlayersJoined[i].CharacterName + "_Head").gameObject.SetActive(true);
-            player.transform.Find(playerJoinedData.GetPlayersJoined[i].CharacterName + "_Body").gameObject.SetActive(true);
+            EnableCharacterModel(player, playerJoinedData.GetPlayersJoined[i].CharacterName);
 
             player.GetComponent<PlayerConfigBridge>().SetPlayerConfig = playerJoinedData.GetPlayersJoined[i];
             player.GetComponent<Rigidbody>().isKinematic = false;
 
             //enabling all scripts
             player.GetComponent<PlayerStatus>().EnableScripts(true);
-            player.GetComponent<MeleeFight>().enabled = false;
             //player.GetComponent<Animator>().SetBool("DodgeBall", true);
-            SetPlayerControlsToPlayerScripts(player,playerJoinedData.GetPlayersJoined[i].Player_Controls);
+            OnSpawn.Invoke();
+
+            //Setting player data from player data dictionary
+            SetPlayerControlsToPlayerScripts(player, playerJoinedData.GetPlayersJoined[i].Player_Controls);
             SetPlayerVelocityVariable(player, playerDataDictionary.myDict[playerJoinedData.GetPlayersJoined[i].CharacterName].playerVeloctiy);
             SetPlayerMovementSpeed(player, playerDataDictionary.myDict[playerJoinedData.GetPlayersJoined[i].CharacterName].movementSpeed);
             SetPlayerAnimationData(player, playerDataDictionary.myDict[playerJoinedData.GetPlayersJoined[i].CharacterName].playerAnimData);
@@ -59,7 +63,13 @@ public class SpawnPlayers : MonoBehaviour
         }
     }
 
-    public void SetPlayerControlsToPlayerScripts(GameObject player, PlayerControls playerControls)
+    void EnableCharacterModel(GameObject player, string characterName)
+    {
+        player.transform.Find($"{characterName}_Head").gameObject.SetActive(true);
+        player.transform.Find($"{characterName}_Body").gameObject.SetActive(true);
+    }
+
+    void SetPlayerControlsToPlayerScripts(GameObject player, PlayerControls playerControls)
     {
         player.GetComponent<PlayerMovement>().SetPlayerControls = playerControls;
         player.GetComponent<DodgeBall>().SetPlayerControls = playerControls;
@@ -95,5 +105,11 @@ public class SpawnPlayers : MonoBehaviour
         player.GetComponent<PlayerAnimation>().PlayerAnimData = playerAnimData;
     }
 
+    public void AddToSpawnList(Transform spawner)
+    {
+        playerSpawners.Add(spawner);
+    }
 
+    public Transform SpawnerParent { get => SpawnerParent; }
+    public List<Transform> PlayerSpawners { get => playerSpawners;}
 }

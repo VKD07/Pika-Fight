@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81306ee4bc7f9148a3cabb7cb223c68, type: 3}
   m_Name: Player_1
   m_EditorClassIdentifier: 
-  playerControl: {fileID: 11400000, guid: 316dc08d453899747bb5e3b72bc8ddcf, type: 2}
-  characterName: Clown
+  playerControl: {fileID: 0}
+  characterName: Girl
   playerScore: 0
   winner: 0
   playerIsReady: 0

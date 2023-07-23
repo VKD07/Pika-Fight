@@ -6,9 +6,23 @@ public class BallSpawner : MonoBehaviour
 {
     [SerializeField] GameObject ball;
     [SerializeField] Transform spawnPoint;
+    [SerializeField] Transform dodgeBallsParent;
+    [SerializeField] GameRandomizer gameRandomizer;
     [SerializeField] List<GameObject> ballsSpawned;
     public GameObject GetBall => ball;
     public Transform GetSpawnPoint => spawnPoint;
+
+    private void Start()
+    {
+        if(gameRandomizer.randomCombat == 0)
+        {
+            dodgeBallsParent.gameObject.SetActive(true);
+        }
+        else
+        {
+            dodgeBallsParent.gameObject.SetActive(false);
+        }
+    }
 
     public void AddToList(GameObject ball)
     {
