@@ -11,6 +11,12 @@ public class LastManStanding : MonoBehaviour
     [SerializeField] FloatReference numOfPlayersDied;
     [SerializeField] UnityEvent OnWinnerDeclared;
     float numOfPlayers;
+
+    private void Awake()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     void Start()
     {
         numOfPlayers = 0;

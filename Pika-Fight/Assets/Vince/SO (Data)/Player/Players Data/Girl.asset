@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec24c9a7dbbc331478505f74c30c51e0, type: 3}
+  m_Name: Girl
+  m_EditorClassIdentifier: 
+  playerVeloctiy: {fileID: 11400000, guid: c51adfe55f1a7734488e2ee3dca99091, type: 2}
+  movementSpeed: {fileID: 11400000, guid: edd7227f90e803541a5e3d9d2277471b, type: 2}
+  playerHealth: {fileID: 11400000, guid: 954d98b07a5c84e4b9a96b91d2e14f92, type: 2}
+  playerAnimData: {fileID: 11400000, guid: 70d74de1b085c1e4abc5834530731888, type: 2}

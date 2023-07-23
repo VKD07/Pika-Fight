@@ -7,12 +7,12 @@ using UnityEngine;
 public class PlayerDataDictionary : ScriptableObject
 {
     [NonReorderable]
-    public List<KeyValuePair> MyList = new List<KeyValuePair>();
+    public List<DataDictionary> characterDatas = new List<DataDictionary>();
     public Dictionary<string, PlayerData> myDict = new Dictionary<string, PlayerData>();
 
     public void InitDictionary()
     {
-        foreach (var kvp in MyList)
+        foreach (var kvp in characterDatas)
         {
             myDict[kvp.key] = kvp.playerData;
         }
@@ -20,7 +20,7 @@ public class PlayerDataDictionary : ScriptableObject
 }
 
 [Serializable]
-public class KeyValuePair
+public class DataDictionary
 {
     public string key;
     public PlayerData playerData;

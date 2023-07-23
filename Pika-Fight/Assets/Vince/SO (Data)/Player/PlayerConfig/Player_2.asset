@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player_2
   m_EditorClassIdentifier: 
   playerControl: {fileID: 11400000, guid: 8e1be352d6d596b43abfee919e054f44, type: 2}
-  characterName: Bear
+  characterName: PaperHead
   playerScore: 0
   winner: 0
   playerIsReady: 0

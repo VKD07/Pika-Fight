@@ -49,7 +49,7 @@ public class SpawnPlayers : MonoBehaviour
 
             //enabling all scripts
             player.GetComponent<PlayerStatus>().EnableScripts(true);
-            player.GetComponent<DodgeBall>().enabled = false;
+            player.GetComponent<MeleeFight>().enabled = false;
             //player.GetComponent<Animator>().SetBool("DodgeBall", true);
             SetPlayerControlsToPlayerScripts(player,playerJoinedData.GetPlayersJoined[i].Player_Controls);
             SetPlayerVelocityVariable(player, playerDataDictionary.myDict[playerJoinedData.GetPlayersJoined[i].CharacterName].playerVeloctiy);

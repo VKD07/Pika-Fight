@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81306ee4bc7f9148a3cabb7cb223c68, type: 3}
   m_Name: Player_3
   m_EditorClassIdentifier: 
-  playerControl: {fileID: 0}
-  characterName: 
-  playerCharacter: {fileID: 172739463345340268, guid: 3c83bfbe1232d794e8481268fa4d5a69,
-    type: 3}
+  playerControl: {fileID: 11400000, guid: 8496037b6201d8d409f324591f76a851, type: 2}
+  characterName: Girl
   playerScore: 0
   winner: 0
   playerIsReady: 0

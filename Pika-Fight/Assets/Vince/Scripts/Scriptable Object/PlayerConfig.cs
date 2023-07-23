@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Timeline;
 
-[CreateAssetMenu(fileName = "Player_", menuName = "Player/Create_New_Player")]
+[CreateAssetMenu(fileName = "Player_", menuName = "Player/Create_New_PlayerConfig")]
 public class PlayerConfig : ScriptableObject
 {
     [Header("Player Data")]

@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 8222816641149189929}
   m_Layer: 6
   m_Name: Player_
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -352,8 +352,8 @@ MonoBehaviour:
   ballPlaceHolder: {fileID: 2443891340130965687}
   velocity: {fileID: 0}
   playerMovementSpeed: {fileID: 0}
-  directionBar: {fileID: 0}
-  directionFillBar: {fileID: 0}
+  directionBar: {fileID: 6926154132959489112}
+  directionFillBar: {fileID: 2810318297871952269}
   playerAnimData: {fileID: 0}
 --- !u!114 &6179963009041346734
 MonoBehaviour:
@@ -2479,7 +2479,7 @@ GameObject:
   - component: {fileID: 2117534706664633993}
   - component: {fileID: 5994588517512774499}
   m_Layer: 6
-  m_Name: Paper_Body
+  m_Name: PaperHead_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2763,7 +2763,7 @@ GameObject:
   - component: {fileID: 7237081277227476800}
   - component: {fileID: 4156946402822314671}
   m_Layer: 6
-  m_Name: Paper_Head
+  m_Name: PaperHead_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4732,6 +4732,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35473b241680cee42b5a1821d7fcc6c1, type: 3}
+--- !u!114 &2810318297871952269 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 913382461308268849, guid: 35473b241680cee42b5a1821d7fcc6c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3147098152350898364}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926154132959489112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &6926154132959489112 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5454450018780886244, guid: 35473b241680cee42b5a1821d7fcc6c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3147098152350898364}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8047588994285815644 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4900614125213065184, guid: 35473b241680cee42b5a1821d7fcc6c1,

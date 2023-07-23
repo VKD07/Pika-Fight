@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu (fileName ="PlayerData_", menuName = "Player/New_PlayerData")]
+[CreateAssetMenu (fileName ="CharacterData_", menuName = "Player/New_CharacterData")]
 public class PlayerData : ScriptableObject
 {
     public FloatReference playerVeloctiy;

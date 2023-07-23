@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec24c9a7dbbc331478505f74c30c51e0, type: 3}
+  m_Name: PaperHead
+  m_EditorClassIdentifier: 
+  playerVeloctiy: {fileID: 11400000, guid: 1d2d38a905c14b94d981cd27c5ff148d, type: 2}
+  movementSpeed: {fileID: 11400000, guid: 6c1ca2aca5f4b5a47b03531736367a7c, type: 2}
+  playerHealth: {fileID: 11400000, guid: 762ee525c8e23604ea899230b1d5ad1b, type: 2}
+  playerAnimData: {fileID: 11400000, guid: 6143db0748818ab4287b8da945888f0e, type: 2}
