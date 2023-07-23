@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53d4b9f3fde2114498022e2e175a937, type: 3}
+  m_Name: PlayersDataDictionary
+  m_EditorClassIdentifier: 
+  MyList:
+  - key: Alien
+    playerData: {fileID: 11400000, guid: 8cac8b3bc5ecc6546b9a6718e12e6bc0, type: 2}
+  - key: Bear
+    playerData: {fileID: 11400000, guid: acae02c527713e345af8a5f463412fa8, type: 2}

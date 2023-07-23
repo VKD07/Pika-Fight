@@ -36,4 +36,6 @@ public class ReceiveDamage : MonoBehaviour
             }
         }
     }
+
+    public FloatReference PlayerHealth { set =>  playerHealth = value; }
 }

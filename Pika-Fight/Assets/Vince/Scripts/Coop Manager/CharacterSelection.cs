@@ -123,7 +123,8 @@ public class CharacterSelection : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (Input.GetKeyDown(playerJoinedData.GetPlayersJoined[btnIndex].Player_Controls.PlayerReadyKey) && !characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().CharacterIsTaken)
         {
-            playerJoinedData.GetPlayersJoined[btnIndex].PlayerCharacter = characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().GetCharaterPrefab;
+            // playerJoinedData.GetPlayersJoined[btnIndex].PlayerCharacter = characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().GetCharaterPrefab;
+            playerJoinedData.GetPlayersJoined[btnIndex].CharacterName = characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().CharacterName;
             characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().CharacterIsTaken = true;
             playerJoinedData.GetPlayersJoined[btnIndex].PlayerIsReady = true;
             //Animation when chosen

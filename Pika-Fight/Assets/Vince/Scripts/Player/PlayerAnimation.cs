@@ -37,4 +37,6 @@ public class PlayerAnimation : MonoBehaviour
     }
 
     public PlayerControls SetPlayerControls { set { playerControls = value; } }
+    public FloatReference PlayerVelocity { set => velocity = value; }
+    public PlayerAnimationData PlayerAnimData { set => playerAnimData = value; }
 }

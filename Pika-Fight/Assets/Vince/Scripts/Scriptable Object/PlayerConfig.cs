@@ -8,7 +8,7 @@ public class PlayerConfig : ScriptableObject
 {
     [Header("Player Data")]
     [SerializeField] PlayerControls playerControl;
-    [SerializeField] GameObject playerCharacter;
+    [SerializeField] string characterName;
     [SerializeField] int playerScore;
     [SerializeField] bool winner;
     [SerializeField] bool playerIsReady;
@@ -20,11 +20,7 @@ public class PlayerConfig : ScriptableObject
         get { return playerControl; }
     }
 
-    public GameObject PlayerCharacter
-    {
-        get { return playerCharacter; }
-        set { playerCharacter = value; }
-    }
+    public string CharacterName { get => characterName; set => characterName = value; } 
 
     public int PlayerScore { get => playerScore; set => playerScore = value; }
 

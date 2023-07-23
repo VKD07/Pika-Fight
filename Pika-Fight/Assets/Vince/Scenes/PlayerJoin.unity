@@ -778,6 +778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 4724938619719301259, guid: 72324f59befd2034387ce60c6ba5dfbc,
     type: 3}
+  characterName: 
   characterIsTaken: 0
 --- !u!1 &713997295
 GameObject:
@@ -1050,6 +1051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 3073818340599491789, guid: 04f4bc6bdbd1e6b43a62072af666c2ed,
     type: 3}
+  characterName: 
   characterIsTaken: 0
 --- !u!1 &739438433
 GameObject:
@@ -1567,6 +1569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 2435251451558624804, guid: 2e330211d5363e142b5822a97b9c9e95,
     type: 3}
+  characterName: 
   characterIsTaken: 0
 --- !u!1 &955291690
 GameObject:
@@ -1887,6 +1890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 5861507685882267482, guid: ba128691428cd68478841eff49f4c26e,
     type: 3}
+  characterName: Alien
   characterIsTaken: 0
 --- !u!1 &1280409531
 GameObject:
@@ -2024,6 +2028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 3869439605163870521, guid: 459f67e56227daf4c8afa713ef3516c6,
     type: 3}
+  characterName: 
   characterIsTaken: 0
 --- !u!1 &1296235878
 GameObject:
@@ -3103,6 +3108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 7032743981702343751, guid: 0329e4d173c6061479c7519ad91be501,
     type: 3}
+  characterName: Bear
   characterIsTaken: 0
 --- !u!1 &1912154287
 GameObject:
@@ -3500,6 +3506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 5191527098949881722, guid: e0d653268c88c8a42958fe0767280b06,
     type: 3}
+  characterName: 
   characterIsTaken: 0
 --- !u!1 &2064427090
 GameObject:
@@ -3637,6 +3644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 4006341026387044044, guid: b51e16215cb9496479ea06f18763034c,
     type: 3}
+  characterName: 
   characterIsTaken: 0
 --- !u!1 &2077926848
 GameObject:
@@ -3881,6 +3889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 4213983663638008978, guid: e5d903857d9cf0844bf4134993c45596,
     type: 3}
+  characterName: 
   characterIsTaken: 0
 --- !u!1 &2106841864
 GameObject:
@@ -4153,4 +4162,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 366099384126448805, guid: 327af7dea87408449acdf22cd9462420,
     type: 3}
+  characterName: 
   characterIsTaken: 0

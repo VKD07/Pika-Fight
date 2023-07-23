@@ -119,4 +119,7 @@ public class DodgeBall : MonoBehaviour
         }
     }
     public PlayerControls SetPlayerControls { set { playerControls = value; } }
+    public FloatReference PlayerVelocity { set => velocity = value; }
+    public FloatReference PlayerMovementSpeed { set => playerMovementSpeed = value; }
+    public PlayerAnimationData PlayerAnimData { set => playerAnimData = value; }
 }
