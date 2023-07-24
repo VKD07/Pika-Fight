@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6726408806405618124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 779292798855881366}
+  - component: {fileID: 5779866630211974340}
+  - component: {fileID: 3402056829991837997}
+  - component: {fileID: 2401644715036114578}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &779292798855881366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6726408806405618124}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -37.07, y: 9.76, z: 49.89}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5779866630211974340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6726408806405618124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6162a85750265c74a9f5108a6b5a56f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerJoinedData: {fileID: 11400000, guid: 7e9c4ddcd905cae479e8c9ba51ce6c8e, type: 2}
+  playerDataDictionary: {fileID: 11400000, guid: 1f462b492cf6cb8478cf3be48cf57c81,
+    type: 2}
+  playerPrefab: {fileID: 172739463345340268, guid: 3c83bfbe1232d794e8481268fa4d5a69,
+    type: 3}
+  numberOfPlayers: 0
+  playerSpawnerParent: {fileID: 0}
+  playerSpawners:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  OnSpawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 64396c5ae0b16e54eb875a731d352909, type: 2}
+        m_TargetAssemblyTypeName: GameRandomizer, Assembly-CSharp
+        m_MethodName: ApplyGeneratedRandoms
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3402056829991837997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6726408806405618124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce15b4f187819241aedd9bec52b8843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 3626448332105603644, guid: 1bed23c96229791449fc9b805f98e744, type: 3}
+  spawnPoint: {fileID: 779292798855881366}
+  dodgeBallsParent: {fileID: 0}
+  gameRandomizer: {fileID: 11400000, guid: 64396c5ae0b16e54eb875a731d352909, type: 2}
+  ballsSpawned: []
+--- !u!114 &2401644715036114578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6726408806405618124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bc3ed7eb8cef204c9d067b22e08487f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerJoinedData: {fileID: 11400000, guid: 7e9c4ddcd905cae479e8c9ba51ce6c8e, type: 2}
+  numOfPlayersDied: {fileID: 11400000, guid: 80559163d8f0f7e46b3031b0d0e4d7fe, type: 2}
+  OnWinnerDeclared:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2401644715036114578}
+        m_TargetAssemblyTypeName: LastManStanding, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ScoreScene
+          m_BoolArgument: 0
+        m_CallState: 2

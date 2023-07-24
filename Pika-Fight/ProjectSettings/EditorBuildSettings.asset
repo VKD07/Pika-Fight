@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Vince/Scenes/ScoreScene.unity
     guid: be82ca015f98e8b4b8a6020ed4b6589b
+  - enabled: 1
+    path: Assets/Adam/adam.unity
+    guid: 0c3a3ed3099b9b84ba62ee9afa7ea487
   m_configObjects: {}
