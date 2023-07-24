@@ -18,4 +18,4 @@ MonoBehaviour:
   playerReadyKey: 350
   playerUnreadyKey: 351
   playerStartKey: 357
-  controlIstaken: 1
+  controlIstaken: 0

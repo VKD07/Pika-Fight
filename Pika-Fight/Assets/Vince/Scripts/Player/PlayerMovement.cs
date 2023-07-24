@@ -24,6 +24,14 @@ public class PlayerMovement : MonoBehaviour
         Move();
         Rotate();
     }
+
+    void FixedUpdate()
+    {
+        Vector3 velocity = rb.velocity;
+        velocity.y -= 20f * Time.fixedDeltaTime;
+        rb.velocity = velocity;
+    }
+
     private void Move()
     {
         float horizontal = Input.GetAxis($"{playerControls.GetMovementAxes}_Horizontal");
