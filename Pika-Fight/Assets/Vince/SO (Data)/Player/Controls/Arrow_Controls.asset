@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: Arrow_Controls
   m_EditorClassIdentifier: 
   playerMovementAxes: 1
-  attackKey: 101
-  dashKey: 306
+  attackKey: 106
+  dashKey: 305
+  playerReadyKey: 99
+  playerUnreadyKey: 113
+  playerStartKey: 13
+  controlIstaken: 0

@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: Player_2
   m_EditorClassIdentifier: 
   playerControl: {fileID: 0}
+  characterName: Knight
+  playerScore: 0
+  winner: 0
+  playerIsReady: 0
+  playerIsDead: 0

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53d4b9f3fde2114498022e2e175a937, type: 3}
+  m_Name: PlayersDataDictionary
+  m_EditorClassIdentifier: 
+  characterDatas:
+  - key: Alien
+    playerData: {fileID: 11400000, guid: 8cac8b3bc5ecc6546b9a6718e12e6bc0, type: 2}
+  - key: Bear
+    playerData: {fileID: 11400000, guid: acae02c527713e345af8a5f463412fa8, type: 2}
+  - key: ChemicalMan
+    playerData: {fileID: 11400000, guid: 551ed82dd82032541a4c8b3d0f58963a, type: 2}
+  - key: Chicken
+    playerData: {fileID: 11400000, guid: 04a96189b79246a47b857e0c5ad33dfc, type: 2}
+  - key: Clown
+    playerData: {fileID: 11400000, guid: bdd23cf7c83270247b6376d6e1578a1e, type: 2}
+  - key: Girl
+    playerData: {fileID: 11400000, guid: 0951449e0eef7ae4badf6191060af5c8, type: 2}
+  - key: Knight
+    playerData: {fileID: 11400000, guid: 879c94b0dc887744ebde124a514471a0, type: 2}
+  - key: PaperHead
+    playerData: {fileID: 11400000, guid: 84e9bc7c531c20e46856492a7b593022, type: 2}
+  - key: Robot
+    playerData: {fileID: 11400000, guid: ba222df5bc4ec13479d346d0ef506231, type: 2}
+  - key: Samurai
+    playerData: {fileID: 11400000, guid: 98c9d8e4494d3df4abe5a7e95ee99d97, type: 2}

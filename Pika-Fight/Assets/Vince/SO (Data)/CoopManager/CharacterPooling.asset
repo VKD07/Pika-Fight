@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056473268dcfa0d4293d4238368607e8, type: 3}
+  m_Name: CharacterPooling
+  m_EditorClassIdentifier: 
+  gameObjects:
+  - {fileID: 5861507685882267482, guid: ba128691428cd68478841eff49f4c26e, type: 3}
+  - {fileID: 7032743981702343751, guid: 0329e4d173c6061479c7519ad91be501, type: 3}
+  - {fileID: 2435251451558624804, guid: 2e330211d5363e142b5822a97b9c9e95, type: 3}
+  - {fileID: 4724938619719301259, guid: 72324f59befd2034387ce60c6ba5dfbc, type: 3}
+  - {fileID: 366099384126448805, guid: 327af7dea87408449acdf22cd9462420, type: 3}
+  - {fileID: 4006341026387044044, guid: b51e16215cb9496479ea06f18763034c, type: 3}
+  - {fileID: 3869439605163870521, guid: 459f67e56227daf4c8afa713ef3516c6, type: 3}
+  - {fileID: 4213983663638008978, guid: e5d903857d9cf0844bf4134993c45596, type: 3}
+  - {fileID: 3073818340599491789, guid: 04f4bc6bdbd1e6b43a62072af666c2ed, type: 3}
+  - {fileID: 5191527098949881722, guid: e0d653268c88c8a42958fe0767280b06, type: 3}
+  listOfCharacterSlots:
+  - {fileID: 11400000, guid: 8136f83264cea3542b594d001576cc16, type: 2}
+  - {fileID: 11400000, guid: b2bef0655933919498291e702c25dd2c, type: 2}
+  - {fileID: 11400000, guid: ac257cb8d1127ad4790042f52d461dd8, type: 2}
+  - {fileID: 11400000, guid: 8d67236209b35a3408c703e3e23ef869, type: 2}
+  parent: []
