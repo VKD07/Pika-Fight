@@ -92,6 +92,6 @@ public class RankingManager : MonoBehaviour
     IEnumerator LoadScene()
     {
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("VinceTest");
+        SceneManager.LoadScene("adam");
     }
 }

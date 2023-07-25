@@ -99,18 +99,18 @@ public class DodgeBall : MonoBehaviour
         directionFillBar.value = ballForce;
     }
 
-    //private void OnCollisionStay(Collision collision)
-    //{
-    //    if (collision.gameObject.tag == "Ball")
-    //    {
-    //        if (!collision.gameObject.GetComponent<Ball>().BallTaken && !ballOnHand)
-    //        {
-    //            ball = collision.gameObject;
-    //            ball.GetComponent<Ball>().BallTaken = true;
-    //            playerAnimData.BallOnHand = true;
-    //        }
-    //    }
-    //}
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ball")
+        {
+            if (!collision.gameObject.GetComponent<Ball>().BallTaken && !ballOnHand)
+            {
+                ball = collision.gameObject;
+                ball.GetComponent<Ball>().BallTaken = true;
+                playerAnimData.BallOnHand = true;
+            }
+        }
+    }
 
     private void OnCollisionExit(Collision collision)
     {

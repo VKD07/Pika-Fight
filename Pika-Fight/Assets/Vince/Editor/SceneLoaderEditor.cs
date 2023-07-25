@@ -19,6 +19,7 @@ public class SceneLoaderEditor : EditorWindow
         LoadSceneButton("Normal Map Test", "VinceTest");
         LoadSceneButton("Score Scene", "ScoreScene");
         EditorGUILayout.EndHorizontal();
+        LoadAdamSceneButton("Adam Scene", "adam");
     }
 
     void LoadSceneButton(string btnName, string SceneName)
@@ -27,6 +28,15 @@ public class SceneLoaderEditor : EditorWindow
         {
             EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
             EditorSceneManager.OpenScene("Assets/Vince/Scenes/" + SceneName + ".unity");
+        }
+    }
+
+    void LoadAdamSceneButton(string btnName, string SceneName)
+    {
+        if (GUILayout.Button(btnName))
+        {
+            EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
+            EditorSceneManager.OpenScene("Assets/Adam/" + SceneName + ".unity");
         }
     }
 }
