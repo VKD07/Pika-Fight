@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Adam/adam.unity
     guid: 0c3a3ed3099b9b84ba62ee9afa7ea487
+  - enabled: 1
+    path: Assets/Vince/Scenes/FinalRanking.unity
+    guid: d1298594d9180a247a411f641f3d8812
   m_configObjects: {}

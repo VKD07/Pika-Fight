@@ -75,14 +75,15 @@ public class MeleeFight : MonoBehaviour
     {
         if (Input.GetKeyDown(playerControls.GetAttackKey) && !isDashing)
         {
+            if (playerDetected)
+            {
+                hit.collider.GetComponent<ReceiveDamage>().GetDamage(weaponDamage);
+            }
             BeginDash();
             OnStab.Invoke();
         }
 
-        if (playerDetected && isDashing)
-        {
-            hit.collider.GetComponent<ReceiveDamage>().GetDamage(weaponDamage);
-        }
+      
     }
     private void BeginDash()
     {
@@ -96,7 +97,6 @@ public class MeleeFight : MonoBehaviour
     IEnumerator StopDash()
     {
         yield return new WaitForSeconds(dashTime);
-        isDashing = false;
         IsNotDashing.Invoke();
         rb.velocity = Vector3.zero;
     }

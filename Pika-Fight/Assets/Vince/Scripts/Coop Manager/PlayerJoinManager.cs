@@ -16,6 +16,11 @@ public class PlayerJoinManager : MonoBehaviour
     [Header("PlayerControls")]
     [SerializeField] PlayerControls[] availableControls;
 
+    private void Awake()
+    {
+        ResetCoopData();
+    }
+
     private void Update()
     {
         PlayerJoins();
@@ -35,6 +40,18 @@ public class PlayerJoinManager : MonoBehaviour
         {
             availableControls[keyboardControlIndex].ControlIsTaken = true;
             playerJoinedData.AddPlayer(availableControls[keyboardControlIndex]);
+        }
+    }
+
+    void ResetCoopData()
+    {
+        for (int i = 0; i < playerJoinedData.GetPlayersJoined.Length; i++)
+        {
+            playerJoinedData.GetPlayersJoined[i] = null;
+            playerJoinedData.GetPlayConfig[i].PlayerScore = 0;
+            playerJoinedData.GetPlayConfig[i].Winner = false;
+            playerJoinedData.GetPlayConfig[i].PlayerIsReady = false;
+            playerJoinedData.GetPlayConfig[i].PlayerIsDead = false;
         }
     }
 

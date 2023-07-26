@@ -15,14 +15,17 @@ public class SceneLoaderEditor : EditorWindow
     {
         EditorGUILayout.LabelField("Select A Scene To Go", EditorStyles.boldLabel);
         EditorGUILayout.BeginHorizontal();
-        LoadSceneButton("Player Join Scene", "PlayerJoin");
-        LoadSceneButton("Normal Map Test", "VinceTest");
-        LoadSceneButton("Score Scene", "ScoreScene");
+        LoadVinceScenes("Player Join Scene", "PlayerJoin");
+        LoadVinceScenes("Normal Map Test", "VinceTest");
+        LoadVinceScenes("Score Scene", "ScoreScene");
         EditorGUILayout.EndHorizontal();
+        EditorGUILayout.BeginHorizontal();
         LoadAdamSceneButton("Adam Scene", "adam");
+        LoadVinceScenes("Final Ranking", "FinalRanking");
+        EditorGUILayout.EndHorizontal();
     }
 
-    void LoadSceneButton(string btnName, string SceneName)
+    void LoadVinceScenes(string btnName, string SceneName)
     {
         if (GUILayout.Button(btnName))
         {

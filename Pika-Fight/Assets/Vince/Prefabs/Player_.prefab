@@ -400,7 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashForce: 20
   dashTime: 0.2
-  dashCoolDown: 1
+  dashCoolDown: 2
   playerControls: {fileID: 11400000, guid: 8e1be352d6d596b43abfee919e054f44, type: 2}
   IsDashing:
     m_PersistentCalls:
@@ -577,7 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knifeWeapon: {fileID: 3943647301283290373}
-  weaponDamage: 20
+  weaponDamage: 200
   weaponAttackRange: 3
   weaponRangeOrigin: {fileID: 4405882507540821448}
   layerToStab:

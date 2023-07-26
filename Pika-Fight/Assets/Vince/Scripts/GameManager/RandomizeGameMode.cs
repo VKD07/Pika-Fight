@@ -9,6 +9,5 @@ public class RandomizeGameMode : MonoBehaviour
     private void Awake()
     {
         gameRandomizer.RandomizeGameMode();
-
     }
 }
