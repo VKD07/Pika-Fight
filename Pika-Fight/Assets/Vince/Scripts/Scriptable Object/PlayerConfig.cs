@@ -11,6 +11,7 @@ public class PlayerConfig : ScriptableObject
     [SerializeField] Sprite characterSprite;
     [SerializeField] string characterName;
     [SerializeField] int playerScore;
+    [SerializeField] float gemScore;
     [SerializeField] bool winner;
     [SerializeField] bool playerIsReady;
     [SerializeField] bool playerIsDead;
@@ -26,6 +27,8 @@ public class PlayerConfig : ScriptableObject
     public string CharacterName { get => characterName; set => characterName = value; } 
 
     public int PlayerScore { get => playerScore; set => playerScore = value; }
+
+    public float GemScore { get => gemScore; set => gemScore = value; }
 
     public bool Winner { get => winner; set => winner = value; }
     public bool PlayerIsReady

@@ -4,8 +4,8 @@ using UnityEngine;
 
 
 [System.Serializable]
-public class CombatListDrawer
+public class GameModeListDrawer
 {
-    public Combat combatEvent;
+    public GameMode gameMode;
     public MonoBehaviour[] listOfScriptsToEnable;
 }

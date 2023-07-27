@@ -26,8 +26,6 @@ public class StartGame : MonoBehaviour
         ShowStartBtn();
         playerJoinedData.GetNumOfPlayersReady();
         playerJoinedData.GetNumberOfPlayersJoined();
-        print(playerJoinedData.GetNumOfPlayersReady());
-        print(playerJoinedData.GetNumberOfPlayersJoined());
     }
 
     private void ShowStartBtn()

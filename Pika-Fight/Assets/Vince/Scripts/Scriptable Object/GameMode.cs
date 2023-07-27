@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CombatEvent_", menuName = "CombatEvent/Combat")]
-public class Combat : ScriptableObject
+[CreateAssetMenu(fileName = "GameMode", menuName = "GameMode/Create_New_Mode")]
+public class GameMode : ScriptableObject
 {
     public List<MonoBehaviour> scriptToEnable;
 

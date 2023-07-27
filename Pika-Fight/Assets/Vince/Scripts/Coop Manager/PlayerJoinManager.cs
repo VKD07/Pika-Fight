@@ -49,6 +49,7 @@ public class PlayerJoinManager : MonoBehaviour
         {
             playerJoinedData.GetPlayersJoined[i] = null;
             playerJoinedData.GetPlayConfig[i].PlayerScore = 0;
+            playerJoinedData.GetPlayConfig[i].GemScore = 0;
             playerJoinedData.GetPlayConfig[i].Winner = false;
             playerJoinedData.GetPlayConfig[i].PlayerIsReady = false;
             playerJoinedData.GetPlayConfig[i].PlayerIsDead = false;
