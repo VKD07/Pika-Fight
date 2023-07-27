@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97061c92999bcb34692d5737ba21ae2e, type: 3}
   m_Name: MovementSpeed_Paperhead
   m_EditorClassIdentifier: 
-  value: 5
+  value: 7

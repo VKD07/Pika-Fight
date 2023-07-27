@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Vince/Scenes/FinalRanking.unity
     guid: d1298594d9180a247a411f641f3d8812
+  - enabled: 1
+    path: Assets/Ali/Scenes/ShrinkLevel1.unity
+    guid: ab83516550d081a4fa3341d65abad340
   m_configObjects: {}

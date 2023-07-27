@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BallSpawner : MonoBehaviour
 {
@@ -9,19 +10,13 @@ public class BallSpawner : MonoBehaviour
     [SerializeField] Transform dodgeBallsParent;
     [SerializeField] GameRandomizer gameRandomizer;
     [SerializeField] List<GameObject> ballsSpawned;
+    [SerializeField] UnityEvent OnEnableScript;
     public GameObject GetBall => ball;
     public Transform GetSpawnPoint => spawnPoint;
 
-    private void Start()
+    private void OnEnable()
     {
-        if(gameRandomizer.randomCombat == 0)
-        {
-            dodgeBallsParent.gameObject.SetActive(true);
-        }
-        else
-        {
-            dodgeBallsParent.gameObject.SetActive(false);
-        }
+        OnEnableScript.Invoke();
     }
 
     public void AddToList(GameObject ball)

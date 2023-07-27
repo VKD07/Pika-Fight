@@ -21,7 +21,7 @@ public class ReceiveDamage : MonoBehaviour
 
     private void OnDisable()
     {
-        playerHealth.Value = initHealth;
+       // playerHealth.Value = initHealth;
     }
 
     private void OnCollisionEnter(Collision collision)
