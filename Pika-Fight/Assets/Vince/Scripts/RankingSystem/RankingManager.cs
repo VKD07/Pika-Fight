@@ -82,6 +82,10 @@ public class RankingManager : MonoBehaviour
                 StartCoroutine(LoadBackToGameScene());
                 break;
             }
+            else
+            {
+                StartCoroutine(LoadBackToGameScene());
+            }
         }
         SetPlayerScore();
     }

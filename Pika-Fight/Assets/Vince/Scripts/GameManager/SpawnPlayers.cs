@@ -52,7 +52,6 @@ public class SpawnPlayers : MonoBehaviour
 
             //enabling all scripts
             player.GetComponent<PlayerStatus>().EnableScripts(true);
-            //player.GetComponent<Animator>().SetBool("DodgeBall", true);
             OnSpawn.Invoke();
             //Setting player data from player data dictionary
             SetPlayerControlsToPlayerScripts(player, playerJoinedData.GetPlayersJoined[i].Player_Controls);
@@ -119,6 +118,7 @@ public class SpawnPlayers : MonoBehaviour
         {
             if (playersFound.GetComponent<PlayerConfigBridge>().PlayerConfig.PlayerIsDead)
             {
+                playersFound.GetComponent<HealthBar>().healthValue = 100f;
                 playersFound.GetComponent<PlayerStatus>().ReEnableScriptsAfterRespawning();
                 playersFound.GetComponent<Rigidbody>().isKinematic = false;
                 ResetPlayerData(playersFound.GetComponent<PlayerConfigBridge>().PlayerConfig);
@@ -129,7 +129,6 @@ public class SpawnPlayers : MonoBehaviour
     
     void ResetPlayerData(PlayerConfig playerConfig)
     {
-        playerConfig.PlayerScore = 0;
         playerConfig.GemScore = 0;
         playerConfig.PlayerIsDead = false;
     }

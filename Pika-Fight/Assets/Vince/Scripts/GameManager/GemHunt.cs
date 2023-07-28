@@ -68,13 +68,13 @@ public class GemHunt : MonoBehaviour
     {
         for (int i = 0; i < playerJoinedData.NumberOfPlayersJoined; i++)
         {
-            if (playerJoinedData.GetPlayersJoined[i].GemScore > highestGemScore)
+            if (playerJoinedData.GetPlayersJoined[i].GemScore > highestGemScore && playerJoinedData.GetPlayersJoined[i].GemScore > 0)
             {
                 highestGemScore = playerJoinedData.GetPlayersJoined[i].GemScore;
                 playerIndex = i;
+                playerJoinedData.GetPlayersJoined[playerIndex].Winner = true;
             }
         }
-        playerJoinedData.GetPlayersJoined[playerIndex].Winner = true;
     }
 
     public void LoadScene(string sceneName)

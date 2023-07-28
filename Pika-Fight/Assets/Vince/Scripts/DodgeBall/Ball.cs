@@ -58,7 +58,7 @@ public class Ball : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.forward, out hit, rayDistance, playerLayer))
         {
-            if(rb.velocity.magnitude > 10)
+            if(rb.velocity.magnitude > 10 && ballTaken)
             {
                 hit.collider.GetComponent<ReceiveDamage>().GetDamage(ballDamage);
                 OnPlayerImpact.Invoke();
@@ -105,7 +105,7 @@ public class Ball : MonoBehaviour
             OnImpact.Invoke();
         }
 
-        if (collision.gameObject.tag == "Player" && rb.velocity.magnitude > 20)
+        if (collision.gameObject.tag == "Player" && rb.velocity.magnitude > 20 && ballTaken)
         {
             OnPlayerImpact.Invoke();
             collision.gameObject.GetComponent<ReceiveDamage>().GetDamage(ballDamage);
