@@ -60,7 +60,7 @@ public class PickUpChicken : MonoBehaviour
 
     void IncreaseHoldPercentage()
     {
-        configBridge.PlayerConfig.HoldPercentage += 0.5f;
+        configBridge.PlayerConfig.HoldPercentage += percentageRate;
     }
 
     public void DropChicken()

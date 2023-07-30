@@ -15,8 +15,9 @@ MonoBehaviour:
   playerControl: {fileID: 0}
   characterSprite: {fileID: 21300000, guid: db26e4c05499b46419c71822a7abffc6, type: 3}
   characterName: Bear
-  playerScore: 2
-  gemScore: 14
+  playerOverallScore: 0
+  gemScore: 0
+  holdPercentage: 0
   winner: 0
   playerIsReady: 1
   playerIsDead: 0

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class DodgeBall : MonoBehaviour
@@ -11,6 +12,7 @@ public class DodgeBall : MonoBehaviour
     [SerializeField] float ballForce = 50f;
     [SerializeField] float maxForce = 100f;
     [SerializeField] float forceIncreaseRate = 20f;
+    bool allowToThrow = true;
 
     [Header("DodgeBall Reference")]
     [SerializeField] GameObject ball;
@@ -28,7 +30,6 @@ public class DodgeBall : MonoBehaviour
 
     [Header("Player Animation")]
     [SerializeField] PlayerAnimationData playerAnimData;
-
 
     private void Start()
     {
@@ -54,7 +55,7 @@ public class DodgeBall : MonoBehaviour
 
     void IfBallIsCollided()
     {
-        if (collisionDetection.BallDetected != null  && !ballOnHand)
+        if (collisionDetection.BallDetected != null && !ballOnHand)
         {
             ball = collisionDetection.BallDetected;
             ball.GetComponent<Ball>().BallTaken = true;
@@ -76,7 +77,18 @@ public class DodgeBall : MonoBehaviour
     private void ThrowBall()
     {
         IncreaseForce();
-        if (Input.GetKeyUp(playerControls.GetAttackKey) && ballOnHand)
+        if (Input.GetKeyDown(playerControls.GetDashKey)) //fake throw
+        {
+            allowToThrow = false;
+            ballForce = 0f;
+            directionFillBar.value = 0;
+            playerMovementSpeed.Value = initMovementSpeed;
+            directionBar.SetActive(false);
+            playerAnimData.IsThrowing = false;
+            StartCoroutine(ThrowDelay());
+            return;
+        }
+        else if (Input.GetKeyUp(playerControls.GetAttackKey) && ballOnHand && allowToThrow)
         {
             ball.GetComponent<Ball>().SetSphereTrigger(false);
             ball.GetComponent<Rigidbody>().AddForce(transform.forward * ballForce, ForceMode.Impulse);
@@ -85,7 +97,7 @@ public class DodgeBall : MonoBehaviour
             ball.transform.forward = transform.forward;
             ballOnHand = false;
             ball = null;
-            collisionDetection.BallDetected = null;   
+            collisionDetection.BallDetected = null;
             ballForce = 0f;
             directionFillBar.value = 0;
             directionBar.SetActive(false);
@@ -97,7 +109,7 @@ public class DodgeBall : MonoBehaviour
 
     private void IncreaseForce()
     {
-        if (Input.GetKey(playerControls.GetAttackKey) && ballOnHand)
+        if (Input.GetKey(playerControls.GetAttackKey) && ballOnHand && allowToThrow)
         {
             if (ballForce < maxForce)
             {
@@ -108,6 +120,12 @@ public class DodgeBall : MonoBehaviour
                 ballForce += Time.deltaTime * forceIncreaseRate;
             }
         }
+    }
+
+    IEnumerator ThrowDelay()
+    {
+        yield return new WaitForSeconds(1);
+        allowToThrow = true;
     }
 
     private void UpdateDirectionBar()

@@ -590,7 +590,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0e24b08cfa2c344abc5aa71165779a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObjectDetected: {fileID: 0}
 --- !u!114 &1547263187632839733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3380,7 +3379,8 @@ MonoBehaviour:
   chicken: {fileID: 0}
   playerVelocity: {fileID: 0}
   chickenPos: {fileID: 6518057199187452670}
-  percentageRate: 0.5
+  percentageRate: 0.05
+  playerHealth: {fileID: 0}
 --- !u!114 &2666406194243344039
 MonoBehaviour:
   m_ObjectHideFlags: 0

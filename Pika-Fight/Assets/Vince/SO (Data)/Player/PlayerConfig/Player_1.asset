@@ -15,8 +15,9 @@ MonoBehaviour:
   playerControl: {fileID: 0}
   characterSprite: {fileID: 21300000, guid: 8b299d26bed996b43a695e2a78d025a6, type: 3}
   characterName: Alien
-  playerScore: 1
-  gemScore: 12
+  playerOverallScore: 0
+  gemScore: 0
+  holdPercentage: 0
   winner: 0
   playerIsReady: 1
   playerIsDead: 0

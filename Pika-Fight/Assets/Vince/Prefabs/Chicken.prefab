@@ -155,7 +155,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480074225533264591}
-  m_LocalRotation: {x: -0, y: -0.15447688, z: -0, w: 0.98799646}
+  m_LocalRotation: {x: 0, y: -0.15447764, z: 0, w: 0.98799634}
   m_LocalPosition: {x: -33.322178, y: 2.073, z: 45.645435}
   m_LocalScale: {x: 1.8574, y: 1.8574, z: 1.8574}
   m_ConstrainProportionsScale: 0
@@ -166,7 +166,7 @@ Transform:
   - {fileID: 2643296636991996130}
   - {fileID: 5655846225976234216}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: -17.773, z: 0}
 --- !u!95 &3043337490869777172
 Animator:
@@ -204,9 +204,10 @@ MonoBehaviour:
   centrePoint: {fileID: 0}
   walkingRange: 10
   timeDelayToWalk: 6
-  playerRadiusDetection: 3.57
-  speed: 10
-  acceleration: 10
+  playerRadiusDetection: 5
+  speed: 15
+  acceleration: 13
+  isTaken: 0
 --- !u!195 &4237621006308838787
 NavMeshAgent:
   m_ObjectHideFlags: 0

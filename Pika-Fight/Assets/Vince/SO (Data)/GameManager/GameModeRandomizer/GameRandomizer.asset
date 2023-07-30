@@ -22,4 +22,5 @@ MonoBehaviour:
   randomGoal: 0
   sceneNames:
   - VinceTest
+  - ShrinkLevel1
   randomScenes: 0

@@ -28,7 +28,7 @@ public class HoldPercentageUI : MonoBehaviour
         percentageUI.transform.SetParent(GameObject.Find("PlayerHealthManager").transform);
         percentageUI.name = playerConfigBridge.PlayerConfig.name + "_Percentage";
         int percentage = (int)playerConfigBridge.PlayerConfig.HoldPercentage;
-        percentageUI.GetComponentInChildren<TextMeshProUGUI>().SetText(percentage.ToString());
+        percentageUI.GetComponentInChildren<TextMeshProUGUI>().SetText(percentage.ToString() +"%");
     }
 
     // Update is called once per frame
