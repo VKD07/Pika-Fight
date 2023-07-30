@@ -8,6 +8,7 @@ TagManager:
   - Ball
   - GameParticles
   - Gem
+  - Chicken
   layers:
   - Default
   - TransparentFX

@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 velocity = rb.velocity;
-        velocity.y -= 3f;
+        velocity.y -= 2f;
         rb.velocity = velocity;
     }
 

@@ -82,6 +82,7 @@ public class SpawnPlayers : MonoBehaviour
         player.GetComponent<PlayerMovement>().PlayerVelocity = playerVelocityVar;
         player.GetComponent<DodgeBall>().PlayerVelocity = playerVelocityVar;
         player.GetComponent<PlayerAnimation>().PlayerVelocity = playerVelocityVar;
+        player.GetComponent<PickUpChicken>().PlayerVelocity = playerVelocityVar;
     }
 
     void SetPlayerMovementSpeed(GameObject player, FloatReference playerMovementSpeed)
@@ -95,6 +96,7 @@ public class SpawnPlayers : MonoBehaviour
         player.GetComponent<HealthBar>().PlayerHealth = playerHealth;
         player.GetComponent<ReceiveDamage>().PlayerHealth = playerHealth;
         player.GetComponent<PlayerStatus>().PlayerHealth = playerHealth;
+        player.GetComponent<PickUpChicken>().PlayerHealth = playerHealth;
         player.GetComponent<HealthBar>().healthValue = 100f;
     }
 

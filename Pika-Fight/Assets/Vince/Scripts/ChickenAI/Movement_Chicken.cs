@@ -6,53 +6,86 @@ using UnityEngine.AI;
 
 public class Movement_Chicken : MonoBehaviour
 {
-    public NavMeshAgent agent;
-    public float range; //radius of sphere
-
-    public Transform centrePoint; //centre of the area the agent wants to move around in
-    public float sphereRadius = 5f;
-
+    [Space]
+    [SerializeField] Transform centrePoint;
+    [SerializeField] float walkingRange;
     [SerializeField] float timeDelayToWalk = 2f;
-    bool walking;
+    [Header("Player Detected Settings")]
+    [SerializeField] float playerRadiusDetection = 5f;
+    [SerializeField] float speed = 10f;
+    [SerializeField] float acceleration = 10f;
+    float initAccel;
+    float initSpeed;
+    bool isWalking;
+    [SerializeField] bool isTaken;
+    NavMeshAgent agent;
+
+    Animator anim;
+
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
+        initAccel = agent.acceleration;
+        initSpeed = agent.speed;
     }
 
     void Update()
     {
-        if (agent.remainingDistance <= agent.stoppingDistance && !walking) //done with path
+        WalkInRandomPos();
+        RunAwayIfPlayerIsDetected();
+        ChickenAnimation();
+    }
+
+    private void RunAwayIfPlayerIsDetected()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, playerRadiusDetection);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.tag == "Player")
+            {
+                agent.acceleration = acceleration;
+                agent.speed = speed;
+                isWalking = false;
+                WalkInRandomPos();
+            }
+            else
+            {
+                agent.acceleration = initAccel;
+                agent.speed = initSpeed;
+            }
+        }
+    }
+
+    void ChickenAnimation()
+    {
+        if (agent.velocity.magnitude > 0)
+        {
+            anim.SetBool("Walk", true);
+            anim.SetBool("Eat", false);
+        }
+        else
+        {
+            anim.SetBool("Walk", false);
+            anim.SetBool("Eat", true);
+        }
+    }
+
+    void WalkInRandomPos()
+    {
+        if (agent.remainingDistance <= agent.stoppingDistance && !isWalking) //done with path
         {
             Vector3 point;
-            if (RandomPoint(centrePoint.position, range, out point)) //pass in our centre point and radius of area
+            if (RandomPoint(centrePoint.position, walkingRange, out point)) //pass in our centre point and radius of area
             {
-                walking = true;
+                isWalking = true;
                 Debug.DrawRay(point, Vector3.up, UnityEngine.Color.blue, 1.0f); //so you can see with gizmos
                 agent.SetDestination(point);
                 StartCoroutine(StartWalking());
             }
         }
-
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, sphereRadius);
-        foreach (var hitCollider in hitColliders)
-        {
-            if(hitCollider.tag == "Player")
-            {
-                if (agent.remainingDistance <= agent.stoppingDistance) //done with path
-                {
-                    Vector3 point;
-                    if (RandomPoint(centrePoint.position, range, out point)) //pass in our centre point and radius of area
-                    {
-                        walking = true;
-                        Debug.DrawRay(point, Vector3.up, UnityEngine.Color.blue, 1.0f); //so you can see with gizmos
-                        agent.SetDestination(point);
-                    }
-                }
-            }
-        }
     }
-
 
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
@@ -70,12 +103,14 @@ public class Movement_Chicken : MonoBehaviour
     IEnumerator StartWalking()
     {
         yield return new WaitForSeconds(timeDelayToWalk);
-        walking = false;
+        isWalking = false;
     }
+
+    public bool ChickenIsTaken { get => isTaken; set => isTaken = value; }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = UnityEngine.Color.red;
-        Gizmos.DrawWireSphere(transform.position, sphereRadius);
+        Gizmos.DrawWireSphere(transform.position, playerRadiusDetection);
     }
 }
