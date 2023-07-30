@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerConfigBridge))]
 public class DropGems : MonoBehaviour
 {
     [SerializeField] GameObject gemPrefab;
@@ -11,7 +10,7 @@ public class DropGems : MonoBehaviour
     bool deathPointMarked;
     private void Start()
     {
-        playerConfigBridge = GetComponent<PlayerConfigBridge>();
+        playerConfigBridge = GetComponentInParent<PlayerConfigBridge>();
     }
 
     public void DropGem()

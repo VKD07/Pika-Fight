@@ -51997,6 +51997,11 @@ PrefabInstance:
       propertyPath: OnEnableScript.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3644612050680397664, guid: b504d5c5b6c17b24083ac89bc36a770b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4151039240955235448, guid: b504d5c5b6c17b24083ac89bc36a770b,
         type: 3}
       propertyPath: gameModeList.Array.size
@@ -52043,6 +52048,11 @@ PrefabInstance:
       propertyPath: playerSpawners.Array.data[3]
       value: 
       objectReference: {fileID: 1261507868}
+    - target: {fileID: 6679406306178813757, guid: b504d5c5b6c17b24083ac89bc36a770b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6726408806405618124, guid: b504d5c5b6c17b24083ac89bc36a770b,
         type: 3}
       propertyPath: m_Name

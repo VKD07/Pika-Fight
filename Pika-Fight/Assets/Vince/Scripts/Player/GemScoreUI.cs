@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerConfigBridge))]
 public class GemScoreUI : MonoBehaviour
 {
     [SerializeField] GameObject gemScoreUI;
     [SerializeField] Transform scoreLocation;
     PlayerConfigBridge playerConfigBridge;
     GameObject scoreUI;
+
     void Start()
     {
-        playerConfigBridge = GetComponent<PlayerConfigBridge>();
+        playerConfigBridge = GetComponentInParent<PlayerConfigBridge>();
         InitGemScore();
     }
     private void OnEnable()

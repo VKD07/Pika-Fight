@@ -31,11 +31,11 @@ public class MeleeFight : MonoBehaviour
     Ray ray;
     private void Awake()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponentInParent<Animator>();
     }
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponentInParent<Rigidbody>();
     }
 
     private void OnEnable()
