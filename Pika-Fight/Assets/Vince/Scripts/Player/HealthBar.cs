@@ -15,10 +15,19 @@ public class HealthBar : MonoBehaviour
         InitHealthBar();
     }
 
+    private void OnEnable()
+    {
+        if (healthBar != null)
+        {
+            healthBar.SetActive(true);
+        }
+    }
+
     private void InitHealthBar()
     {
         healthBar = Instantiate(healthBarUI);
         healthBar.transform.SetParent(GameObject.Find("PlayerHealthManager").transform);
+        healthBar.name = playerHealth.name;
         healthBarSlider = healthBar.GetComponent<Slider>();
         healthBarSlider.maxValue = playerHealth.Value;
         healthBarSlider.value = playerHealth.Value;
@@ -45,8 +54,13 @@ public class HealthBar : MonoBehaviour
 
         if (playerHealth.Value <= 0)
         {
-            Destroy(healthBar);
+            healthBar.SetActive(false);
         }
+    }
+
+    private void OnDisable()
+    {
+        healthBarSlider.value = playerHealth.Value;
     }
 
     public float healthValue

@@ -10,7 +10,9 @@ public class PlayerConfig : ScriptableObject
     [SerializeField] PlayerControls playerControl;
     [SerializeField] Sprite characterSprite;
     [SerializeField] string characterName;
-    [SerializeField] int playerScore;
+    [SerializeField] int playerOverallScore;
+    [SerializeField] float gemScore;
+    [SerializeField] float holdPercentage;
     [SerializeField] bool winner;
     [SerializeField] bool playerIsReady;
     [SerializeField] bool playerIsDead;
@@ -25,7 +27,11 @@ public class PlayerConfig : ScriptableObject
 
     public string CharacterName { get => characterName; set => characterName = value; } 
 
-    public int PlayerScore { get => playerScore; set => playerScore = value; }
+    public int PlayerScore { get => playerOverallScore; set => playerOverallScore = value; }
+
+    public float GemScore { get => gemScore; set => gemScore = value; }
+
+    public float HoldPercentage { get => holdPercentage; set => holdPercentage = value; }
 
     public bool Winner { get => winner; set => winner = value; }
     public bool PlayerIsReady

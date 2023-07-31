@@ -9,9 +9,34 @@ public class PlayerStatus : MonoBehaviour
     [SerializeField] FloatReference playerHealth;
     [SerializeField] UnityEvent OnDeath;
     MonoBehaviour[] playerScripts;
+    [SerializeField] List<MonoBehaviour> playerSciptsEnabled;
     private void Awake()
     {
         playerScripts = GetComponents<MonoBehaviour>();
+    }
+
+    private void Start()
+    {
+        GetScriptsThatAreEnabled();
+    }
+
+    private void GetScriptsThatAreEnabled()
+    {
+        foreach (var script in playerScripts)
+        {
+            if (script.enabled)
+            {
+                playerSciptsEnabled.Add(script);
+            }
+        }
+    }
+
+    public void ReEnableScriptsAfterRespawning()
+    {
+        for (int i = 0; i < playerSciptsEnabled.Count; i++)
+        {
+            playerSciptsEnabled[i].enabled = true;
+        }
     }
 
     public void EnableScripts(bool enable)

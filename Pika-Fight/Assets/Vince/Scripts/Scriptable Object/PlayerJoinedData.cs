@@ -41,13 +41,8 @@ public class PlayerJoinedData : ScriptableObject
             {
                 numOfPlayersJoined++;
             }
-            else
-            {
-                return numOfPlayersJoined;
-            }
         }
-
-        return 0;
+        return numOfPlayersJoined;
     }
 
     public float GetNumOfPlayersReady()
@@ -60,12 +55,8 @@ public class PlayerJoinedData : ScriptableObject
             {
                 numOfPlayersReady++;
             }
-            else
-            {
-                return numOfPlayersReady;
-            }
         }
-        return 0;
+        return numOfPlayersReady;
     }
 
     public PlayerConfig[] GetPlayersJoined => playersJoined;

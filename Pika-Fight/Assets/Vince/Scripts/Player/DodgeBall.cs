@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class DodgeBall : MonoBehaviour
@@ -11,6 +12,7 @@ public class DodgeBall : MonoBehaviour
     [SerializeField] float ballForce = 50f;
     [SerializeField] float maxForce = 100f;
     [SerializeField] float forceIncreaseRate = 20f;
+    bool allowToThrow = true;
 
     [Header("DodgeBall Reference")]
     [SerializeField] GameObject ball;
@@ -19,6 +21,7 @@ public class DodgeBall : MonoBehaviour
     [SerializeField] Transform ballPlaceHolder;
     [SerializeField] FloatReference velocity;
     [SerializeField] FloatReference playerMovementSpeed;
+    CollisionDetection collisionDetection;
     float initMovementSpeed;
 
     [Header("Direction UI")]
@@ -32,10 +35,12 @@ public class DodgeBall : MonoBehaviour
     {
         InitDirectionBar();
         initMovementSpeed = playerMovementSpeed.Value;
+        collisionDetection = GetComponentInParent<CollisionDetection>();
     }
- 
+
     private void Update()
     {
+        IfBallIsCollided();
         PickUpBall();
         ThrowBall();
         UpdateDirectionBar();
@@ -47,6 +52,17 @@ public class DodgeBall : MonoBehaviour
         directionFillBar.maxValue = maxForce;
         directionFillBar.value = 0;
     }
+
+    void IfBallIsCollided()
+    {
+        if (collisionDetection.BallDetected != null && !ballOnHand)
+        {
+            ball = collisionDetection.BallDetected;
+            ball.GetComponent<Ball>().BallTaken = true;
+            playerAnimData.BallOnHand = true;
+        }
+    }
+
     private void PickUpBall()
     {
         if (ball != null)
@@ -61,7 +77,18 @@ public class DodgeBall : MonoBehaviour
     private void ThrowBall()
     {
         IncreaseForce();
-        if (Input.GetKeyUp(playerControls.GetAttackKey) && ballOnHand)
+        if (Input.GetKeyDown(playerControls.GetDashKey)) //fake throw
+        {
+            allowToThrow = false;
+            ballForce = 0f;
+            directionFillBar.value = 0;
+            playerMovementSpeed.Value = initMovementSpeed;
+            directionBar.SetActive(false);
+            playerAnimData.IsThrowing = false;
+            StartCoroutine(ThrowDelay());
+            return;
+        }
+        else if (Input.GetKeyUp(playerControls.GetAttackKey) && ballOnHand && allowToThrow)
         {
             ball.GetComponent<Ball>().SetSphereTrigger(false);
             ball.GetComponent<Rigidbody>().AddForce(transform.forward * ballForce, ForceMode.Impulse);
@@ -70,6 +97,7 @@ public class DodgeBall : MonoBehaviour
             ball.transform.forward = transform.forward;
             ballOnHand = false;
             ball = null;
+            collisionDetection.BallDetected = null;
             ballForce = 0f;
             directionFillBar.value = 0;
             directionBar.SetActive(false);
@@ -81,7 +109,7 @@ public class DodgeBall : MonoBehaviour
 
     private void IncreaseForce()
     {
-        if (Input.GetKey(playerControls.GetAttackKey) && ballOnHand)
+        if (Input.GetKey(playerControls.GetAttackKey) && ballOnHand && allowToThrow)
         {
             if (ballForce < maxForce)
             {
@@ -94,31 +122,40 @@ public class DodgeBall : MonoBehaviour
         }
     }
 
+    IEnumerator ThrowDelay()
+    {
+        yield return new WaitForSeconds(1);
+        allowToThrow = true;
+    }
+
     private void UpdateDirectionBar()
     {
         directionFillBar.value = ballForce;
     }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.tag == "Ball")
-        {
-            if (!collision.gameObject.GetComponent<Ball>().BallTaken && !ballOnHand)
-            {
-                ball = collision.gameObject;
-                ball.GetComponent<Ball>().BallTaken = true;
-                playerAnimData.BallOnHand = true;
-            }
-        }
-    }
+    //private void OnCollisionStay(Collision collision)
+    //{
+    //    if (collision.transform.parent == transform.parent && parentRigidBody != null)
+    //    {
+    //        if (collision.gameObject.tag == "Ball")
+    //        {
+    //            if (!collision.gameObject.GetComponent<Ball>().BallTaken && !ballOnHand)
+    //            {
+    //                ball = collision.gameObject;
+    //                ball.GetComponent<Ball>().BallTaken = true;
+    //                playerAnimData.BallOnHand = true;
+    //            }
+    //        }
+    //    }
+    //}
 
-    private void OnCollisionExit(Collision collision)
-    {
-        if (ball != null)
-        {
-            ball.GetComponent<Ball>().BallTaken = true;
-        }
-    }
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (ball != null)
+    //    {
+    //        ball.GetComponent<Ball>().BallTaken = true;
+    //    }
+    //}
     public PlayerControls SetPlayerControls { set { playerControls = value; } }
     public FloatReference PlayerVelocity { set => velocity = value; }
     public FloatReference PlayerMovementSpeed { set => playerMovementSpeed = value; }

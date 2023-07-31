@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Player_1
   m_EditorClassIdentifier: 
   playerControl: {fileID: 0}
-  characterName: Girl
-  playerScore: 0
+  characterSprite: {fileID: 21300000, guid: 8b299d26bed996b43a695e2a78d025a6, type: 3}
+  characterName: Alien
+  playerOverallScore: 0
+  gemScore: 0
+  holdPercentage: 0
   winner: 0
-  playerIsReady: 0
+  playerIsReady: 1
   playerIsDead: 0

@@ -8,6 +8,7 @@ public class SpawnPlayers : MonoBehaviour
     [SerializeField] PlayerJoinedData playerJoinedData;
     [SerializeField] PlayerDataDictionary playerDataDictionary;
     [SerializeField] GameObject playerPrefab;
+    [SerializeField] float timeToSpawn = 2f;
     [SerializeField] int numberOfPlayers;
     [SerializeField] public Transform playerSpawnerParent;
     [SerializeField] List<Transform> playerSpawners;
@@ -46,15 +47,13 @@ public class SpawnPlayers : MonoBehaviour
 
             EnableCharacterModel(player, playerJoinedData.GetPlayersJoined[i].CharacterName);
 
-            player.GetComponent<PlayerConfigBridge>().SetPlayerConfig = playerJoinedData.GetPlayersJoined[i];
+            player.GetComponent<PlayerConfigBridge>().PlayerConfig = playerJoinedData.GetPlayersJoined[i];
             player.GetComponent<Rigidbody>().isKinematic = false;
 
             //enabling all scripts
             player.GetComponent<PlayerStatus>().EnableScripts(true);
-            //player.GetComponent<Animator>().SetBool("DodgeBall", true);
             OnSpawn.Invoke();
-
-            //Setting player data from player data dictionary
+            ////Setting player data from player data dictionary
             SetPlayerControlsToPlayerScripts(player, playerJoinedData.GetPlayersJoined[i].Player_Controls);
             SetPlayerVelocityVariable(player, playerDataDictionary.myDict[playerJoinedData.GetPlayersJoined[i].CharacterName].playerVeloctiy);
             SetPlayerMovementSpeed(player, playerDataDictionary.myDict[playerJoinedData.GetPlayersJoined[i].CharacterName].movementSpeed);
@@ -72,23 +71,24 @@ public class SpawnPlayers : MonoBehaviour
     void SetPlayerControlsToPlayerScripts(GameObject player, PlayerControls playerControls)
     {
         player.GetComponent<PlayerMovement>().SetPlayerControls = playerControls;
-        player.GetComponent<DodgeBall>().SetPlayerControls = playerControls;
+        player.GetComponentInChildren<DodgeBall>().SetPlayerControls = playerControls;
         player.GetComponent<PlayerAnimation>().SetPlayerControls = playerControls;
         player.GetComponent<Dash>().SetPlayerControls = playerControls;
-        player.GetComponent<MeleeFight>().SetPlayerControls = playerControls;
+        player.GetComponentInChildren<MeleeFight>().SetPlayerControls = playerControls;
     }
 
     void SetPlayerVelocityVariable(GameObject player, FloatReference playerVelocityVar)
     {
         player.GetComponent<PlayerMovement>().PlayerVelocity = playerVelocityVar;
-        player.GetComponent<DodgeBall>().PlayerVelocity = playerVelocityVar;
+        player.GetComponentInChildren<DodgeBall>().PlayerVelocity = playerVelocityVar;
         player.GetComponent<PlayerAnimation>().PlayerVelocity = playerVelocityVar;
+        player.GetComponentInChildren<PickUpChicken>().PlayerVelocity = playerVelocityVar;
     }
 
     void SetPlayerMovementSpeed(GameObject player, FloatReference playerMovementSpeed)
     {
         player.GetComponent<PlayerMovement>().PlayerMovementSpeed = playerMovementSpeed;
-        player.GetComponent<DodgeBall>().PlayerMovementSpeed = playerMovementSpeed;
+        player.GetComponentInChildren<DodgeBall>().PlayerMovementSpeed = playerMovementSpeed;
     }
 
     void SetPlayerHealth(GameObject player, FloatReference playerHealth)
@@ -96,13 +96,49 @@ public class SpawnPlayers : MonoBehaviour
         player.GetComponent<HealthBar>().PlayerHealth = playerHealth;
         player.GetComponent<ReceiveDamage>().PlayerHealth = playerHealth;
         player.GetComponent<PlayerStatus>().PlayerHealth = playerHealth;
+        player.GetComponentInChildren<PickUpChicken>().PlayerHealth = playerHealth;
         player.GetComponent<HealthBar>().healthValue = 100f;
     }
 
     void SetPlayerAnimationData(GameObject player, PlayerAnimationData playerAnimData)
     {
-        player.GetComponent<DodgeBall>().PlayerAnimData = playerAnimData;
+        player.GetComponentInChildren<DodgeBall>().PlayerAnimData = playerAnimData;
         player.GetComponent<PlayerAnimation>().PlayerAnimData = playerAnimData;
+    }
+
+    public void SpawnAPlayer()
+    {
+        StartCoroutine(Spawn());
+    }
+
+    IEnumerator Spawn()
+    {
+        yield return new WaitForSeconds(timeToSpawn);
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+        foreach (GameObject playersFound in players)
+        {
+            if (playersFound.GetComponent<PlayerConfigBridge>().PlayerConfig.PlayerIsDead)
+            {
+                playersFound.GetComponent<HealthBar>().healthValue = 100f;
+                playersFound.GetComponent<PlayerStatus>().ReEnableScriptsAfterRespawning();
+                playersFound.GetComponent<Rigidbody>().isKinematic = false;
+                ResetPlayerData(playersFound.GetComponent<PlayerConfigBridge>().PlayerConfig);
+                SpawnPlayerRandomly(playersFound);
+            }
+        }
+    }
+    
+    void ResetPlayerData(PlayerConfig playerConfig)
+    {
+        playerConfig.GemScore = 0;
+        playerConfig.PlayerIsDead = false;
+    }
+
+    void SpawnPlayerRandomly(GameObject player)
+    {
+        int randomPos = Random.Range(0, playerSpawners.Count);
+        player.transform.position = playerSpawners[randomPos].position;
     }
 
     public void AddToSpawnList(Transform spawner)

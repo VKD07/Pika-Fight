@@ -6,11 +6,10 @@ public class PlayerConfigBridge : MonoBehaviour
 {
     [SerializeField] PlayerConfig playerConfig;
     
-    public PlayerConfig SetPlayerConfig { set => playerConfig = value; }
+    public PlayerConfig PlayerConfig { get => playerConfig; set => playerConfig = value; }
 
     public void SetDeathStatus(bool enable)
     {
         playerConfig.PlayerIsDead = enable;
     }
-
 }

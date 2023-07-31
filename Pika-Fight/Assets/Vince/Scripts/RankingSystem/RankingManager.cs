@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -9,6 +10,10 @@ public class RankingManager : MonoBehaviour
 {
     [SerializeField] GameObject[] playersScorePanel;
     [SerializeField] PlayerJoinedData playerJoinedData;
+    [SerializeField] FloatReference maxScoreToWin;
+    [SerializeField] UnityEvent OnFinishScoring;
+    [SerializeField] UnityEvent OnDeclareWinner;
+    bool declareWinner;
     private void Awake()
     {
         DeactivateAllPanels();
@@ -19,7 +24,11 @@ public class RankingManager : MonoBehaviour
     {
         ResetDeath();
         SetPlayerScore();
-        StartCoroutine(AddScore());
+        DeclareOverallWinner();
+        if (!declareWinner)
+        {
+            StartCoroutine(AddScore());
+        }
     }
 
     void DeactivateAllPanels()
@@ -70,11 +79,28 @@ public class RankingManager : MonoBehaviour
             {
                 playerJoinedData.GetPlayersJoined[i].PlayerScore += 1;
                 playerJoinedData.GetPlayersJoined[i].Winner = false;
-                StartCoroutine(LoadScene());
+                StartCoroutine(LoadBackToGameScene());
                 break;
+            }
+            else
+            {
+                StartCoroutine(LoadBackToGameScene());
             }
         }
         SetPlayerScore();
+    }
+
+    void DeclareOverallWinner()
+    {
+        for (int i = 0; i < playerJoinedData.GetPlayersJoined.Length; i++)
+        {
+            if (playerJoinedData.GetPlayersJoined[i] != null && playerJoinedData.GetPlayersJoined[i].PlayerScore >= maxScoreToWin.Value)
+            {
+                declareWinner = true;
+                StartCoroutine(LoadToRanking());
+                break;
+            }
+        }
     }
 
     private void SetPlayerScore()
@@ -89,9 +115,20 @@ public class RankingManager : MonoBehaviour
     }
 
     //Load Back to Scene
-    IEnumerator LoadScene()
+    IEnumerator LoadBackToGameScene()
     {
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("VinceTest");
+        OnFinishScoring.Invoke();
+    }
+
+    IEnumerator LoadToRanking()
+    {
+        yield return new WaitForSeconds(2);
+        OnDeclareWinner.Invoke();
+    }
+
+    public void LoadScene(string name)
+    {
+        SceneManager.LoadScene(name);
     }
 }

@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerVfx : MonoBehaviour
 {
     [SerializeField] ObjectPooling dashVfxPool;
-    [SerializeField] Transform gameParticlesParent;
     [SerializeField] Transform dashVfxSpawnPoint;
+    Transform gameParticlesParent;
+
     void Start()
     {
         gameParticlesParent = GameObject.FindGameObjectWithTag("GameParticles").transform;
@@ -21,7 +22,8 @@ public class PlayerVfx : MonoBehaviour
         StartCoroutine(DisableObj());
     }
 
-    private void OnDisable()
+
+    private void OnDestroy()
     {
         dashVfxPool.ClearList();
     }
