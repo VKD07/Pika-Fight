@@ -8,6 +8,7 @@ public class PlayerConfig : ScriptableObject
 {
     [Header("Player Data")]
     [SerializeField] PlayerControls playerControl;
+    [SerializeField] Color playerColor;
     [SerializeField] Sprite characterSprite;
     [SerializeField] string characterName;
     [SerializeField] int playerOverallScore;
@@ -24,6 +25,8 @@ public class PlayerConfig : ScriptableObject
     }
 
     public Sprite CharacterSprite { get => characterSprite; set => characterSprite = value; }
+
+    public Color PlayerColor {get => playerColor;}
 
     public string CharacterName { get => characterName; set => characterName = value; } 
 

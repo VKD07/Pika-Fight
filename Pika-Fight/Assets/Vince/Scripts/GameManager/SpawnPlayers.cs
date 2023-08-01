@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class SpawnPlayers : MonoBehaviour
 {
@@ -42,11 +44,13 @@ public class SpawnPlayers : MonoBehaviour
         {
             GameObject player = Instantiate(playerPrefab, playerSpawners[i].position, Quaternion.identity);
 
-            //set Name
+            //set game object name
             player.name = $"{playerJoinedData.GetPlayersJoined[i].name}_{playerJoinedData.GetPlayersJoined[i].CharacterName}";
-
+            //enable specific character 3D model
             EnableCharacterModel(player, playerJoinedData.GetPlayersJoined[i].CharacterName);
-
+            //setting player UI identifier color
+            player.GetComponent<PlayerIdentifierUI>().PlayerColor = playerJoinedData.GetPlayersJoined[i].PlayerColor;
+            
             player.GetComponent<PlayerConfigBridge>().PlayerConfig = playerJoinedData.GetPlayersJoined[i];
             player.GetComponent<Rigidbody>().isKinematic = false;
 
@@ -67,6 +71,7 @@ public class SpawnPlayers : MonoBehaviour
         player.transform.Find($"{characterName}_Head").gameObject.SetActive(true);
         player.transform.Find($"{characterName}_Body").gameObject.SetActive(true);
     }
+
 
     void SetPlayerControlsToPlayerScripts(GameObject player, PlayerControls playerControls)
     {
@@ -97,6 +102,7 @@ public class SpawnPlayers : MonoBehaviour
         player.GetComponent<ReceiveDamage>().PlayerHealth = playerHealth;
         player.GetComponent<PlayerStatus>().PlayerHealth = playerHealth;
         player.GetComponentInChildren<PickUpChicken>().PlayerHealth = playerHealth;
+        player.GetComponent<Stun>().PlayerHealth = playerHealth;    
         player.GetComponent<HealthBar>().healthValue = 100f;
     }
 
@@ -104,6 +110,7 @@ public class SpawnPlayers : MonoBehaviour
     {
         player.GetComponentInChildren<DodgeBall>().PlayerAnimData = playerAnimData;
         player.GetComponent<PlayerAnimation>().PlayerAnimData = playerAnimData;
+        player.GetComponent<Stun>().PlayerAnimationData = playerAnimData;
     }
 
     public void SpawnAPlayer()

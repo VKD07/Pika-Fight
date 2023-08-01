@@ -22,6 +22,7 @@ public class DodgeBall : MonoBehaviour
     [SerializeField] FloatReference velocity;
     [SerializeField] FloatReference playerMovementSpeed;
     CollisionDetection collisionDetection;
+    [SerializeField] bool isStunned;
     float initMovementSpeed;
 
     [Header("Direction UI")]
@@ -41,9 +42,13 @@ public class DodgeBall : MonoBehaviour
     private void Update()
     {
         IfBallIsCollided();
-        PickUpBall();
-        ThrowBall();
-        UpdateDirectionBar();
+
+        if (!isStunned)
+        {
+            PickUpBall();
+            ThrowBall();
+            UpdateDirectionBar();
+        }
     }
 
     private void InitDirectionBar()
@@ -156,8 +161,11 @@ public class DodgeBall : MonoBehaviour
     //        ball.GetComponent<Ball>().BallTaken = true;
     //    }
     //}
+
     public PlayerControls SetPlayerControls { set { playerControls = value; } }
     public FloatReference PlayerVelocity { set => velocity = value; }
     public FloatReference PlayerMovementSpeed { set => playerMovementSpeed = value; }
     public PlayerAnimationData PlayerAnimData { set => playerAnimData = value; }
+
+    public bool IsStunned { set => isStunned = value; }
 }

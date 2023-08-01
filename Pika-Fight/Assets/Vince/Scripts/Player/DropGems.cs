@@ -6,8 +6,6 @@ public class DropGems : MonoBehaviour
 {
     [SerializeField] GameObject gemPrefab;
     PlayerConfigBridge playerConfigBridge;
-    Vector3 deathpoint;
-    bool deathPointMarked;
     private void Start()
     {
         playerConfigBridge = GetComponentInParent<PlayerConfigBridge>();
@@ -17,7 +15,6 @@ public class DropGems : MonoBehaviour
     {
         if (this.enabled && playerConfigBridge.PlayerConfig.GemScore > 0)
         {
-            deathpoint = transform.position;
             StartCoroutine(DropWithDelay());
         }
     }
@@ -25,7 +22,7 @@ public class DropGems : MonoBehaviour
     IEnumerator DropWithDelay()
     {
         yield return new WaitForSeconds(1.9f);
-        var gem = Instantiate(gemPrefab, deathpoint + Vector3.up, Quaternion.Euler(-90f, 0, 0));
+        var gem = Instantiate(gemPrefab, transform.position + Vector3.up, Quaternion.Euler(-90f, 0, 0));
         gem.GetComponent<Gem>().GemValue = playerConfigBridge.PlayerConfig.GemScore;
     }
 }

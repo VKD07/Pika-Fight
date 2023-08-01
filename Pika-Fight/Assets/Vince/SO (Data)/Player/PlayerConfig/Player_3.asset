@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Player_3
   m_EditorClassIdentifier: 
   playerControl: {fileID: 0}
+  playerColor: {r: 0.33490568, g: 1, b: 0.50343955, a: 0.34901962}
   characterSprite: {fileID: 21300000, guid: d71da8b1b83171f4c856876145bc5f08, type: 3}
   characterName: Girl
-  playerScore: 1
-  gemScore: 20
+  playerOverallScore: 0
+  gemScore: 0
+  holdPercentage: 0
   winner: 0
-  playerIsReady: 1
+  playerIsReady: 0
   playerIsDead: 0
