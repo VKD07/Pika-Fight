@@ -9846,7 +9846,7 @@ Transform:
   - {fileID: 497964255596416742}
   - {fileID: 1401530234592646361}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7135909281974803485
 MonoBehaviour:
@@ -9865,8 +9865,8 @@ MonoBehaviour:
   bombDuration: 5
   explosionVfx: {fileID: 1892078723244562, guid: 34f4fbe714c8217408bf48d7a5785b18,
     type: 3}
-  randomPlayer: 0
-  playerCarrier: {fileID: 0}
+  playerJoinedData: {fileID: 11400000, guid: 7e9c4ddcd905cae479e8c9ba51ce6c8e, type: 2}
+  numOfPlayersDead: {fileID: 11400000, guid: 80559163d8f0f7e46b3031b0d0e4d7fe, type: 2}
 --- !u!135 &3369154590241839931
 SphereCollider:
   m_ObjectHideFlags: 0

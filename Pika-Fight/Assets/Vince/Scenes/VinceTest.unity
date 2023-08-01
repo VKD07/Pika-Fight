@@ -7039,7 +7039,7 @@ PrefabInstance:
     - target: {fileID: 7135909281974803485, guid: 2c8c48d02a2c7854fbc3814cb0dad0b7,
         type: 3}
       propertyPath: bombDuration
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

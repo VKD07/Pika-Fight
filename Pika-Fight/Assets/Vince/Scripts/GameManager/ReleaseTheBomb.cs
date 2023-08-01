@@ -7,6 +7,7 @@ public class ReleaseTheBomb : MonoBehaviour
 {
     [SerializeField] UnityEvent OnEnableScript;
 
+
     private void OnEnable()
     {
         OnEnableScript.Invoke();
