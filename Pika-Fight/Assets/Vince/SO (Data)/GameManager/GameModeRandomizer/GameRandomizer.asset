@@ -18,7 +18,7 @@ MonoBehaviour:
   environmentalEvents: []
   randomEnvironmental: 0
   gameGoals:
-  - {fileID: 11400000, guid: b450d1687db372a47972076eb1bb7f03, type: 2}
+  - {fileID: 11400000, guid: 3151b1debb5832d4798c55cb19a45296, type: 2}
   randomGoal: 0
   sceneNames:
   - VinceTest

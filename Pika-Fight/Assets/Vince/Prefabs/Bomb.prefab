@@ -9822,13 +9822,14 @@ GameObject:
   m_Component:
   - component: {fileID: 2114386837817447052}
   - component: {fileID: 7135909281974803485}
+  - component: {fileID: 3369154590241839931}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2114386837817447052
 Transform:
   m_ObjectHideFlags: 0
@@ -9861,7 +9862,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playersInScene: []
   positionName: BagPackPos
+  bombDuration: 5
+  explosionVfx: {fileID: 1892078723244562, guid: 34f4fbe714c8217408bf48d7a5785b18,
+    type: 3}
   randomPlayer: 0
+  playerCarrier: {fileID: 0}
+--- !u!135 &3369154590241839931
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6666691734689713306}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3.2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7877438177214439585
 GameObject:
   m_ObjectHideFlags: 0
