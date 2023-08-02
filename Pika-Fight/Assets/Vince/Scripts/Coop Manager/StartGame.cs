@@ -46,7 +46,7 @@ public class StartGame : MonoBehaviour
     {
         if (Input.GetKey(playerJoinedData.GetPlayersJoined[0].Player_Controls.PlayerStartKey))
         {
-            startSlider.value += 0.5f * Time.deltaTime;
+            startSlider.value += 1f * Time.deltaTime;
 
             if (startSlider.value >= 1)
             {

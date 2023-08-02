@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d3573052bc5bac48bb7670722a7b590, type: 3}
-  m_Name: PlayerImpactVfx
+  m_Script: {fileID: 11500000, guid: a51b2249b1c66db4d9926dc81deeb6ed, type: 3}
+  m_Name: Goal_KillTheChicken
   m_EditorClassIdentifier: 
-  objectToPool: {fileID: 1637393177168150189, guid: b676f7f7f027471418d90747dd438f69,
-    type: 3}
-  listOfObjs: []
-  parent: {fileID: 0}
-  poolAmount: 2
+  scriptToEnable: []

@@ -30,13 +30,13 @@ public class Bomb : MonoBehaviour
 
         numOfPlayersJoined = playerJoinedData.GetNumberOfPlayersJoined();
         StartCoroutine(RandomizePlayerCarrier());
-        DisablePlayersRecevingDamage();
     }
     // Update is called once per frame
     void Update()
     {
         SetPosToPlayer();
         StartBombCountDown();
+        DisablePlayersRecevingDamage();
     }
 
     void SetPosToPlayer()

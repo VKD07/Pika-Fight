@@ -12,7 +12,7 @@ public class DodgeBall : MonoBehaviour
     [SerializeField] float ballForce = 50f;
     [SerializeField] float maxForce = 100f;
     [SerializeField] float forceIncreaseRate = 20f;
-    bool allowToThrow = true;
+    [SerializeField] bool allowToThrow = true;
 
     [Header("DodgeBall Reference")]
     [SerializeField] GameObject ball;
@@ -74,6 +74,7 @@ public class DodgeBall : MonoBehaviour
         {
             ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
             ball.GetComponent<Ball>().SetSphereTrigger(true);
+            ball.GetComponent<Ball>().PreviousOwner = gameObject;
             ballOnHand = true;
             ball.transform.position = ballPlaceHolder.position;
         }
@@ -129,7 +130,7 @@ public class DodgeBall : MonoBehaviour
 
     IEnumerator ThrowDelay()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
         allowToThrow = true;
     }
 

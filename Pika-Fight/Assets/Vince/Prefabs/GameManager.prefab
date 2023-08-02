@@ -375,6 +375,72 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &5082190338214649268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1751633322827175603}
+  - component: {fileID: 409034331756731122}
+  - component: {fileID: 6704292662798145531}
+  m_Layer: 0
+  m_Name: KillTheChicken_Mode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1751633322827175603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082190338214649268}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 779292798855881366}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &409034331756731122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082190338214649268}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142a71f1e2a764c47a2b17e216dda968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInScene: []
+  normalPlayers: []
+  timeToSelectADifferentPlayer: 5
+  randomPlayer: 0
+  currentChicken: {fileID: 0}
+--- !u!114 &6704292662798145531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082190338214649268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3567cd126c5384f4aa914429084b1a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameModeList:
+  - gameMode: {fileID: 11400000, guid: ea101f23b1dd4ef448dc4f92cd77e48a, type: 2}
+    listOfScriptsToEnable:
+    - {fileID: 409034331756731122}
 --- !u!1 &6679406306178813757
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +493,7 @@ GameObject:
   - component: {fileID: 2401644715036114578}
   - component: {fileID: 2259696436231071102}
   - component: {fileID: 5441943028806140975}
+  - component: {fileID: 4494449143909261758}
   - component: {fileID: 4151039240955235448}
   - component: {fileID: 3644612050680397664}
   m_Layer: 0
@@ -449,8 +516,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1455403951205425745}
+  - {fileID: 1751633322827175603}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5779866630211974340
 MonoBehaviour:
@@ -499,7 +567,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6726408806405618124}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ce15b4f187819241aedd9bec52b8843, type: 3}
   m_Name: 
@@ -511,7 +579,19 @@ MonoBehaviour:
   ballsSpawned: []
   OnEnableScript:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &2401644715036114578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,7 +635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 6679406306178813757}
   timerValue: {fileID: 2116122501905430931}
-  timerDuration: 10
+  timerDuration: 60
   OnTimerDone:
     m_PersistentCalls:
       m_Calls:
@@ -575,18 +655,6 @@ MonoBehaviour:
   OnEnableScript:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3644612050680397664}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -615,7 +683,19 @@ MonoBehaviour:
   percentageValueToWin: 100
   OnEnableScript:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnWinnerDeclared:
     m_PersistentCalls:
       m_Calls:
@@ -631,6 +711,33 @@ MonoBehaviour:
           m_StringArgument: ScoreScene
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4494449143909261758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6726408806405618124}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c833064007f01d94d93903a826b76fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnableScript:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &4151039240955235448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,6 +751,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameModeList:
+  - gameMode: {fileID: 11400000, guid: a2624dfc719570e46a20a193e46fba87, type: 2}
+    listOfScriptsToEnable:
+    - {fileID: 3402056829991837997}
   - gameMode: {fileID: 11400000, guid: 954e42fbeef1aed418461457efe1ca52, type: 2}
     listOfScriptsToEnable:
     - {fileID: 2401644715036114578}
@@ -655,6 +765,10 @@ MonoBehaviour:
     listOfScriptsToEnable:
     - {fileID: 5441943028806140975}
     - {fileID: 3644612050680397664}
+  - gameMode: {fileID: 11400000, guid: 3151b1debb5832d4798c55cb19a45296, type: 2}
+    listOfScriptsToEnable:
+    - {fileID: 4494449143909261758}
+    - {fileID: 2401644715036114578}
 --- !u!114 &3644612050680397664
 MonoBehaviour:
   m_ObjectHideFlags: 0

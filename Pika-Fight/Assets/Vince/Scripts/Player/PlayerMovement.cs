@@ -13,9 +13,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] FloatReference movementSpeed;
     Vector3 playerPos;
     Rigidbody rb;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        movementSpeed.Value = 7f;
     }
 
     // Update is called once per frame

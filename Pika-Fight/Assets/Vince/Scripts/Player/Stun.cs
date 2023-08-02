@@ -26,7 +26,17 @@ public class Stun : MonoBehaviour
 
     private void TriggerStun()
     {
-        if (playerIsStunned && playerHealth.Value > 0)
+        if(playerIsStunned)
+        {
+            StartCoroutine(StunDelay()); // adding delay to avoid getting stunned and dying at thesame time
+        }
+    }
+    
+    IEnumerator StunDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        if (playerHealth.Value > 0)
         {
             OnStunned.Invoke();
             playerAnimData.IsStunned = true;

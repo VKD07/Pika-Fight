@@ -88,12 +88,14 @@ public class SpawnPlayers : MonoBehaviour
         player.GetComponentInChildren<DodgeBall>().PlayerVelocity = playerVelocityVar;
         player.GetComponent<PlayerAnimation>().PlayerVelocity = playerVelocityVar;
         player.GetComponentInChildren<PickUpChicken>().PlayerVelocity = playerVelocityVar;
+        player.GetComponentInChildren<ChickenMode>().PlayerVelocity = playerVelocityVar;
     }
 
     void SetPlayerMovementSpeed(GameObject player, FloatReference playerMovementSpeed)
     {
         player.GetComponent<PlayerMovement>().PlayerMovementSpeed = playerMovementSpeed;
         player.GetComponentInChildren<DodgeBall>().PlayerMovementSpeed = playerMovementSpeed;
+        player.GetComponentInChildren<ChickenMode>().PlayerMovementSpeed = playerMovementSpeed;
     }
 
     void SetPlayerHealth(GameObject player, FloatReference playerHealth)

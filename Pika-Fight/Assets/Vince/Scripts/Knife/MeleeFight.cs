@@ -15,6 +15,7 @@ public class MeleeFight : MonoBehaviour
     [SerializeField] LayerMask layerToStab;
     [Header("Script references")]
     [SerializeField] PlayerControls playerControls;
+    PlayerConfigBridge playerConfigBridge;
 
     [Header("Dashing")]
     Rigidbody rb;
@@ -34,6 +35,7 @@ public class MeleeFight : MonoBehaviour
     private void Awake()
     {
         anim = GetComponentInParent<Animator>();
+        playerConfigBridge = GetComponentInParent<PlayerConfigBridge>();
     }
     private void Start()
     {
@@ -91,6 +93,7 @@ public class MeleeFight : MonoBehaviour
                 for (int i = 0; i < players.Length; i++)
                 {
                     players[i].GetComponent<ReceiveDamage>().GetDamage(weaponDamage);
+                    ChickenMode(players[i].gameObject, weaponDamage);
                 }
             }
             BeginDash();
@@ -126,6 +129,15 @@ public class MeleeFight : MonoBehaviour
             hit.collider.GetComponent<ReceiveDamage>().GetDamage(weaponDamage);
         }
     }
+
+    void ChickenMode(GameObject player, float damageDealt)
+    {
+        if(player.GetComponentInChildren<ChickenMode>().enabled)
+        {
+            playerConfigBridge.PlayerConfig.DamageDealtToChicken += damageDealt;
+        }
+    }
+
 
     private void OnDrawGizmos()
     {

@@ -14,6 +14,7 @@ public class PlayerConfig : ScriptableObject
     [SerializeField] int playerOverallScore;
     [SerializeField] float gemScore;
     [SerializeField] float holdPercentage;
+    [SerializeField] float damageDealtToChicken;
     [SerializeField] bool winner;
     [SerializeField] bool playerIsReady;
     [SerializeField] bool playerIsDead;
@@ -35,6 +36,8 @@ public class PlayerConfig : ScriptableObject
     public float GemScore { get => gemScore; set => gemScore = value; }
 
     public float HoldPercentage { get => holdPercentage; set => holdPercentage = value; }
+
+    public float DamageDealtToChicken { get => damageDealtToChicken; set => damageDealtToChicken = value; }
 
     public bool Winner { get => winner; set => winner = value; }
     public bool PlayerIsReady
