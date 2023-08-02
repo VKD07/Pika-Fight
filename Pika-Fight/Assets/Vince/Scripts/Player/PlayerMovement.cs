@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-using static UnityEditor.PlayerSettings;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
@@ -14,9 +13,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] FloatReference movementSpeed;
     Vector3 playerPos;
     Rigidbody rb;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        movementSpeed.Value = 7f;
     }
 
     // Update is called once per frame
@@ -25,6 +26,14 @@ public class PlayerMovement : MonoBehaviour
         Move();
         Rotate();
     }
+
+    void FixedUpdate()
+    {
+        Vector3 velocity = rb.velocity;
+        velocity.y -= 2f;
+        rb.velocity = velocity;
+    }
+
     private void Move()
     {
         float horizontal = Input.GetAxis($"{playerControls.GetMovementAxes}_Horizontal");
@@ -45,4 +54,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public PlayerControls SetPlayerControls { set { playerControls = value; } }
+    public FloatReference PlayerVelocity { set => velocity = value; }
+    public FloatReference PlayerMovementSpeed { set => movementSpeed = value; }
 }

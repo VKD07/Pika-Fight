@@ -18,11 +18,15 @@ public class PlayerJoinedDataEditor : Editor
 
     private void ClearPlayerJoined(PlayerJoinedData pjd)
     {
-        if(GUILayout.Button("Clear Player Joined"))
+        if(GUILayout.Button("Reset Data"))
         {
             for (int i = 0; i < pjd.GetPlayersJoined.Length; i++)
             {
                 pjd.GetPlayersJoined[i] = null;
+                pjd.GetPlayConfig[i].PlayerScore = 0;
+                pjd.GetPlayConfig[i].Winner = false;
+                pjd.GetPlayConfig[i].PlayerIsReady = false;
+                pjd.GetPlayConfig[i].PlayerIsDead = false;
             }
         }
     }

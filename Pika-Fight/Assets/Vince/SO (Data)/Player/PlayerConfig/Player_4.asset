@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Player_4
   m_EditorClassIdentifier: 
   playerControl: {fileID: 0}
-  playerCharacter: {fileID: 4724938619719301259, guid: 72324f59befd2034387ce60c6ba5dfbc,
-    type: 3}
+  playerColor: {r: 1, g: 0.92376935, b: 0.25943398, a: 0.34901962}
+  characterSprite: {fileID: 0}
+  characterName: 
+  playerOverallScore: 0
+  gemScore: 0
+  holdPercentage: 0
+  winner: 0
   playerIsReady: 0
+  playerIsDead: 0

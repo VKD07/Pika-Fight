@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec24c9a7dbbc331478505f74c30c51e0, type: 3}
+  m_Name: Chicken
+  m_EditorClassIdentifier: 
+  playerVeloctiy: {fileID: 11400000, guid: 5f7e7783ae8e3174ba99c611ab4f423d, type: 2}
+  movementSpeed: {fileID: 11400000, guid: 0c93cc4a8d311624b8e356338a14ed1f, type: 2}
+  playerHealth: {fileID: 11400000, guid: 52f95354a2621a34fa3890d5d33c5446, type: 2}
+  playerAnimData: {fileID: 11400000, guid: adbd276bece9ebd4d8c8ff2ca4c31ef3, type: 2}

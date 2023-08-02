@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Player_2
   m_EditorClassIdentifier: 
   playerControl: {fileID: 11400000, guid: 8e1be352d6d596b43abfee919e054f44, type: 2}
-  playerCharacter: {fileID: 4213983663638008978, guid: e5d903857d9cf0844bf4134993c45596,
-    type: 3}
-  playerIsReady: 0
+  playerColor: {r: 0.21226418, g: 0.53388184, b: 1, a: 0.34901962}
+  characterSprite: {fileID: 21300000, guid: db26e4c05499b46419c71822a7abffc6, type: 3}
+  characterName: Bear
+  playerOverallScore: 0
+  gemScore: 0
+  holdPercentage: 0
+  winner: 0
+  playerIsReady: 1
+  playerIsDead: 0

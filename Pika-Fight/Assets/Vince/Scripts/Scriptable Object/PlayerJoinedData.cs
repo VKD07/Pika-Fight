@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static PlayerControls;
 
-[CreateAssetMenu (fileName = "PlayerJoinedData", menuName = "Player/Player_Joined_Data")]
+[CreateAssetMenu(fileName = "PlayerJoinedData", menuName = "Player/Player_Joined_Data")]
 public class PlayerJoinedData : ScriptableObject
 {
     [SerializeField] PlayerConfig[] playersJoined;
     [SerializeField] PlayerConfig[] playerConfig;
+    float numOfPlayersJoined;
+    float numOfPlayersReady;
+
     public void AddPlayer(PlayerControls playerControls)
     {
         for (int i = 0; i < playersJoined.Length; i++)
@@ -27,5 +31,36 @@ public class PlayerJoinedData : ScriptableObject
             playersJoined[i] = null;
         }
     }
-    public PlayerConfig[] GetPlayersJoined => playersJoined; 
+
+    public float GetNumberOfPlayersJoined()
+    {
+        numOfPlayersJoined = 0;
+        for (int i = 0; i < playersJoined.Length; i++)
+        {
+            if (playersJoined[i] != null)
+            {
+                numOfPlayersJoined++;
+            }
+        }
+        return numOfPlayersJoined;
+    }
+
+    public float GetNumOfPlayersReady()
+    {
+        numOfPlayersReady = 0;
+
+        for (int i = 0; i < playersJoined.Length; i++)
+        {
+            if (playersJoined[i] != null && playersJoined[i].PlayerIsReady)
+            {
+                numOfPlayersReady++;
+            }
+        }
+        return numOfPlayersReady;
+    }
+
+    public PlayerConfig[] GetPlayersJoined => playersJoined;
+    public PlayerConfig[] GetPlayConfig => playerConfig;
+    public float NumberOfPlayersJoined { get => numOfPlayersJoined; set => numOfPlayersJoined = value; }
+    public float NumberOfPlayersReady { get => numOfPlayersReady; set => numOfPlayersReady = value; }
 }

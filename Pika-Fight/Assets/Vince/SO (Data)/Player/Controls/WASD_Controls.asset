@@ -17,4 +17,5 @@ MonoBehaviour:
   dashKey: 306
   playerReadyKey: 106
   playerUnreadyKey: 27
+  playerStartKey: 13
   controlIstaken: 0

@@ -13,6 +13,7 @@ public class PlayerControls : ScriptableObject
     [Header("Player Join Game Controls")]
     [SerializeField] KeyCode playerReadyKey = KeyCode.J;
     [SerializeField] KeyCode playerUnreadyKey = KeyCode.Escape;
+    [SerializeField] KeyCode playerStartKey = KeyCode.J;
     [SerializeField] public bool controlIstaken;
     public PlayerControl GetMovementAxes => playerMovementAxes;
     public KeyCode GetAttackKey => attackKey;
@@ -20,6 +21,7 @@ public class PlayerControls : ScriptableObject
 
     public KeyCode PlayerReadyKey => playerReadyKey;
     public KeyCode PlayerUnreadyKey => playerUnreadyKey;
+    public KeyCode PlayerStartKey => playerStartKey;
 
     public bool ControlIsTaken
     {

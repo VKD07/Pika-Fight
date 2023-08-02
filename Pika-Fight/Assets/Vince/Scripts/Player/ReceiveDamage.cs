@@ -14,14 +14,18 @@ public class ReceiveDamage : MonoBehaviour
         initHealth = playerHealth.Value;
     }
 
-    void GetDamage(float damage)
+    public void GetDamage(float damage)
     {
-        playerHealth.Value -= damage;
+        if(this.enabled)
+        {
+            playerHealth.Value -= damage;
+        }
+        OnImpact.Invoke();
     }
 
     private void OnDisable()
     {
-        playerHealth.Value = initHealth;
+       // playerHealth.Value = initHealth;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -29,12 +33,12 @@ public class ReceiveDamage : MonoBehaviour
         if(collision.gameObject.tag == "Ball")
         {
             Ball ballScript = collision.gameObject.GetComponent<Ball>();
-            OnImpact.Invoke();
 
             if(ballScript != null)
             {
-                GetDamage(ballScript.GetBallDamage);
             }
         }
     }
+
+    public FloatReference PlayerHealth { set =>  playerHealth = value; }
 }

@@ -10,16 +10,23 @@ public class PlayerAnimation : MonoBehaviour
     [SerializeField] PlayerControls playerControls;
     [SerializeField] FloatReference velocity;
     [SerializeField] PlayerAnimationData playerAnimData;
-    void Start()
+    void Awake()
     {
         anim = GetComponent<Animator>();
     }
+
+    private void OnEnable()
+    {
+        anim.SetBool("Alive", true);
+    }
+
 
     private void Update()
     {
         RunAnim();
         BallThrowAnim();
         BallOnHand();
+        Stunned();
     }
 
     private void BallOnHand()
@@ -36,5 +43,18 @@ public class PlayerAnimation : MonoBehaviour
         anim.SetBool("Throw", playerAnimData.IsThrowing);
     }
 
+    void Stunned()
+    {
+        anim.SetBool("Stunned", playerAnimData.IsStunned);
+    }
+
+    private void OnDisable()
+    {
+        playerAnimData.BallOnHand = false;
+        anim.SetBool("Alive", false);
+    }
+
     public PlayerControls SetPlayerControls { set { playerControls = value; } }
+    public FloatReference PlayerVelocity { set => velocity = value; }
+    public PlayerAnimationData PlayerAnimData { set => playerAnimData = value; }
 }
