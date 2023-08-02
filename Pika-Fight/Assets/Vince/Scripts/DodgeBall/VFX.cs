@@ -12,7 +12,7 @@ public class VFX : MonoBehaviour
     {
         gameParticlesParent = GameObject.FindGameObjectWithTag("GameParticles").transform;
         vfxPool.SetParent(gameParticlesParent);
-        vfxPool.InitPoolOfObjects();
+        vfxPool.InitPoolOfObjects(Quaternion.identity);
     }
 
     public void SpawnFx()

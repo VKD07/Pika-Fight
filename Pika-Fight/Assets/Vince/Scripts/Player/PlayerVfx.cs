@@ -12,7 +12,7 @@ public class PlayerVfx : MonoBehaviour
     {
         gameParticlesParent = GameObject.FindGameObjectWithTag("GameParticles").transform;
         dashVfxPool.SetParent(gameParticlesParent);
-        dashVfxPool.InitPoolOfObjects();
+        dashVfxPool.InitPoolOfObjects(Quaternion.identity);
     }
 
     public void SpawnDashFx()
