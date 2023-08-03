@@ -21,6 +21,8 @@ public class ItemSpawnerRandomizerEditor : Editor
         {
             GameObject spawnPoint = new GameObject();
             spawnPoint.name = "spawnPoint (1)";
+
+
             itemSpawnerRandomizer.AddToList(spawnPoint);
         }
     }

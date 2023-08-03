@@ -9861,12 +9861,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playersInScene: []
+  playersAlive: []
   positionName: BagPackPos
-  bombDuration: 5
+  bombDuration: 10
   explosionVfx: {fileID: 1892078723244562, guid: 34f4fbe714c8217408bf48d7a5785b18,
     type: 3}
   playerJoinedData: {fileID: 11400000, guid: 7e9c4ddcd905cae479e8c9ba51ce6c8e, type: 2}
   numOfPlayersDead: {fileID: 11400000, guid: 80559163d8f0f7e46b3031b0d0e4d7fe, type: 2}
+  numOfPlayersJoined: 0
+  randomPlayer: 0
+  playerCarrier: {fileID: 0}
 --- !u!135 &3369154590241839931
 SphereCollider:
   m_ObjectHideFlags: 0

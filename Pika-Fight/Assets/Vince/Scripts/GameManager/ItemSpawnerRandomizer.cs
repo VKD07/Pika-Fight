@@ -45,6 +45,6 @@ public class ItemSpawnerRandomizer : MonoBehaviour
 
     private void OnDisable()
     {
-        objectPool.ClearList();
+      //  objectPool.ClearList();
     }
 }
