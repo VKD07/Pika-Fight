@@ -1280,7 +1280,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   playerControls: {fileID: 11400000, guid: 8e1be352d6d596b43abfee919e054f44, type: 2}
-  dashForce: 30
+  dashForce: 15
   dashTime: 0.1
   attackCoolDown: 0.5
   IsDashing:
@@ -1783,7 +1783,7 @@ GameObject:
   - component: {fileID: 9173909381516654655}
   - component: {fileID: 6980898480729912018}
   m_Layer: 6
-  m_Name: Chicken_head
+  m_Name: Chicken_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5461,6 +5461,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7994510231722265040, guid: 35473b241680cee42b5a1821d7fcc6c1,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9022080875054190464, guid: 35473b241680cee42b5a1821d7fcc6c1,
         type: 3}

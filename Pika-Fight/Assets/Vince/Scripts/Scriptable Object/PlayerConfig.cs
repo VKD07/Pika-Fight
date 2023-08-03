@@ -21,15 +21,18 @@ public class PlayerConfig : ScriptableObject
 
     public PlayerControls Player_Controls
     {
-        set { playerControl = value; }
+        set { 
+            playerControl = value;
+            ForceSerialization();
+        }
         get { return playerControl; }
     }
 
     public Sprite CharacterSprite { get => characterSprite; set => characterSprite = value; }
 
-    public Color PlayerColor {get => playerColor;}
+    public Color PlayerColor { get => playerColor; }
 
-    public string CharacterName { get => characterName; set => characterName = value; } 
+    public string CharacterName { get => characterName; set => characterName = value; }
 
     public int PlayerScore { get => playerOverallScore; set => playerOverallScore = value; }
 
@@ -51,5 +54,12 @@ public class PlayerConfig : ScriptableObject
     private void OnDisable()
     {
         playerControl = null;
+    }
+
+    void ForceSerialization()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorUtility.SetDirty(this);
+#endif
     }
 }

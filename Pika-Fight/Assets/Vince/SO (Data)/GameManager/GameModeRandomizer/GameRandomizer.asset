@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: GameRandomizer
   m_EditorClassIdentifier: 
   combatEvents:
-  - {fileID: 11400000, guid: a2624dfc719570e46a20a193e46fba87, type: 2}
   - {fileID: 11400000, guid: 54ab58b038440504f864b74059dcab4a, type: 2}
   randomCombat: 0
   environmentalEvents: []
@@ -24,7 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ea101f23b1dd4ef448dc4f92cd77e48a, type: 2}
   - {fileID: 11400000, guid: 954e42fbeef1aed418461457efe1ca52, type: 2}
   - {fileID: 11400000, guid: 3151b1debb5832d4798c55cb19a45296, type: 2}
-  randomGoal: 0
+  randomGoal: 3
   sceneNames:
   - ExplosionLevel
   - ShrinkLevel1
