@@ -58,16 +58,6 @@ public class ChickenStateManager : MonoBehaviour
         state.OnEnterState(this);
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-       
-    }
-
     IEnumerator DecreaseSpeed()
     {
         yield return new WaitForSeconds(5);

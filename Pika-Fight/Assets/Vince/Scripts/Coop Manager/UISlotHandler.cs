@@ -11,6 +11,7 @@ public class UISlotHandler : MonoBehaviour
     [SerializeField] JoinControls joinControls;
     [SerializeField] TextMeshProUGUI[] readyTxt;
     [SerializeField] List<string> connectedGamePads;
+    bool vfxPlayed;
 
     void Update()
     {
@@ -18,7 +19,7 @@ public class UISlotHandler : MonoBehaviour
         RemoveEmptyControllerNames();
         UpdateNumOfSlots();
         PlayerHasJoined();
-       // Unready();
+        // Unready();
     }
 
     private void DetectControllers()
@@ -56,7 +57,7 @@ public class UISlotHandler : MonoBehaviour
     {
         for (int i = 0; i < playerJoinedData.GetPlayersJoined.Length; i++)
         {
-         
+
             if (playerJoinedData.GetPlayersJoined[i] != null)
             {
                 var keyControl = playerJoinedData.GetPlayersJoined[i].Player_Controls.GetMovementAxes;
@@ -64,9 +65,10 @@ public class UISlotHandler : MonoBehaviour
 
                 slotsToJoin[i].transform.Find("Join").gameObject.SetActive(false);
                 slotsToJoin[i].transform.Find("Ready").gameObject.SetActive(true);
-
+                slotsToJoin[i].transform.Find("Cancel").gameObject.SetActive(false);
                 if (!playerJoinedData.GetPlayersJoined[i].PlayerIsReady)
                 {
+                    slotsToJoin[i].transform.Find("CharacterJoinVfx").gameObject.SetActive(false);
                     ShowReadyButton(i, control);
                 }
                 else
@@ -109,6 +111,11 @@ public class UISlotHandler : MonoBehaviour
             {
                 readyTxt[i].SetText("Q to Cancel");
             }
+
+
+            slotsToJoin[i].transform.Find("Ready").gameObject.SetActive(false);
+            slotsToJoin[i].transform.Find("Cancel").gameObject.SetActive(true);
+            slotsToJoin[i].transform.Find("CharacterJoinVfx").gameObject.SetActive(true);
         }
     }
 }
