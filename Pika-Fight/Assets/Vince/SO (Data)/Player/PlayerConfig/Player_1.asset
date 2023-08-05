@@ -18,7 +18,7 @@ MonoBehaviour:
   characterName: Alien
   playerOverallScore: 0
   gemScore: 0
-  holdPercentage: 100.04005
+  holdPercentage: 24.88019
   damageDealtToChicken: 50
   winner: 0
   playerIsReady: 1
