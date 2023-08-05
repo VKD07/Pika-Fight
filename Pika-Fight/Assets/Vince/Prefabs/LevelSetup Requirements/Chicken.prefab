@@ -137,7 +137,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4349509703333967750}
   - component: {fileID: 3043337490869777172}
-  - component: {fileID: 4127689707013983166}
+  - component: {fileID: 7551007467936327008}
+  - component: {fileID: 2194538449989194376}
   - component: {fileID: 4237621006308838787}
   - component: {fileID: 3252564252259179589}
   - component: {fileID: 4687790046567310038}
@@ -166,7 +167,7 @@ Transform:
   - {fileID: 2643296636991996130}
   - {fileID: 5655846225976234216}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -17.773, z: 0}
 --- !u!95 &3043337490869777172
 Animator:
@@ -189,7 +190,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4127689707013983166
+--- !u!114 &7551007467936327008
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,16 +199,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1480074225533264591}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 856d9f63dd6d0ac40a03c3678bafcf26, type: 3}
+  m_Script: {fileID: 11500000, guid: d50941aa077384a43895ef90709ce1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centrePoint: {fileID: 0}
-  walkingRange: 10
-  timeDelayToWalk: 6
-  playerRadiusDetection: 5
-  speed: 15
-  acceleration: 13
-  isTaken: 0
+  centerPosition: {fileID: 0}
+  initSpeed: 5
+  maxSpeed: 16
+  walkingrange: 3
+  walkDelay: 5
+  detectionRadius: 4.5
+  obstaclesLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  players: []
+  flee: 0
+--- !u!114 &2194538449989194376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480074225533264591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34063ca83176fc499710f3f05647b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &4237621006308838787
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -249,7 +266,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.39
+  m_Radius: 0.64
   m_Center: {x: 0, y: 0.21, z: 0}
 --- !u!54 &4687790046567310038
 Rigidbody:

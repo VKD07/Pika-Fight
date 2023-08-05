@@ -29,7 +29,7 @@ public class PickUpChicken : MonoBehaviour
     {
         if (collisionDetection.ChickenDetected != null)
         {
-            if (!collisionDetection.ChickenDetected.GetComponent<Movement_Chicken>().ChickenIsTaken)
+            if (!collisionDetection.ChickenDetected.GetComponent<ChickenStateManager>().ChickenIsTaken)
             {
                 chicken = collisionDetection.ChickenDetected;
             }
@@ -43,8 +43,8 @@ public class PickUpChicken : MonoBehaviour
             IncreaseHoldPercentage();
             chicken.transform.position = chickenPos.position;
             chicken.transform.forward = chickenPos.forward;
-            chicken.GetComponent<Movement_Chicken>().enabled = false;
-            chicken.GetComponent<Movement_Chicken>().ChickenIsTaken = true;
+            chicken.GetComponent<ChickenStateManager>().enabled = false;
+            chicken.GetComponent<ChickenStateManager>().ChickenIsTaken = true;
             chicken.GetComponent<Animator>().SetBool("Walk", false);
             if (playerVelocity.Value > 0)
             {

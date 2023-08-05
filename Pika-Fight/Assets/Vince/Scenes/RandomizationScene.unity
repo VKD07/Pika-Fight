@@ -1026,7 +1026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f361f797aa3b7f45af91e15673a9b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTime: 5
+  delayTime: 1
   startGamePlay:
     m_PersistentCalls:
       m_Calls:
