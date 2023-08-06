@@ -67,8 +67,8 @@ public class PickUpChicken : MonoBehaviour
     {
         if (chicken != null && playerHealth.Value <=0)
         {
-            chicken.GetComponent<Movement_Chicken>().ChickenIsTaken = false;
-            chicken.GetComponent<Movement_Chicken>().enabled = true;
+            chicken.GetComponent<ChickenStateManager>().ChickenIsTaken = false;
+            chicken.GetComponent<ChickenStateManager>().enabled = true;
             chicken.GetComponent<Animator>().SetBool("Flap", false);
             chicken = null;
             collisionDetection.ChickenDetected = null;

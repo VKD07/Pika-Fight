@@ -22,6 +22,4 @@ MonoBehaviour:
   randomGoal: 0
   sceneNames:
   - AdamMap
-  - ShrinkLevel1
-  - ExplosionLevel
   randomScenes: 0

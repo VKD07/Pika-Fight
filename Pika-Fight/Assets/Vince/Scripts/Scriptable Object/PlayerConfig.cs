@@ -18,6 +18,7 @@ public class PlayerConfig : ScriptableObject
     [SerializeField] bool winner;
     [SerializeField] bool playerIsReady;
     [SerializeField] bool playerIsDead;
+    [SerializeField] GameObject playerCharacter;
 
     public PlayerControls Player_Controls
     {
@@ -50,6 +51,8 @@ public class PlayerConfig : ScriptableObject
     }
 
     public bool PlayerIsDead { get => playerIsDead; set => playerIsDead = value; }
+
+    public GameObject PlayerCharacter { get => playerCharacter; set => playerCharacter = value; }
 
     private void OnDisable()
     {

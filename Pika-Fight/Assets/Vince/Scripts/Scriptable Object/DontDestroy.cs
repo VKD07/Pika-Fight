@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
 {
-   [SerializeField] PlayerConfig[] playerConfig;
+    [SerializeField] PlayerConfig[] playerConfig;
+    [SerializeField] PlayerJoinedData playerJoinedData;
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

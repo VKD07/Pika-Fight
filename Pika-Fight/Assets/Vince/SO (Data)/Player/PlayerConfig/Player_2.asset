@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81306ee4bc7f9148a3cabb7cb223c68, type: 3}
   m_Name: Player_2
   m_EditorClassIdentifier: 
-  playerControl: {fileID: 11400000, guid: 8496037b6201d8d409f324591f76a851, type: 2}
+  playerControl: {fileID: 0}
   playerColor: {r: 0.21226418, g: 0.53388184, b: 1, a: 0.34901962}
   characterSprite: {fileID: 21300000, guid: b238d04ed0528c941ab3895684b22cb8, type: 3}
   characterName: Bear
   playerOverallScore: 0
   gemScore: 0
-  holdPercentage: 0
+  holdPercentage: 11.719991
   damageDealtToChicken: 0
   winner: 0
   playerIsReady: 1
   playerIsDead: 0
+  playerCharacter: {fileID: 7032743981702343751, guid: 0329e4d173c6061479c7519ad91be501,
+    type: 3}

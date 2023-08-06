@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81306ee4bc7f9148a3cabb7cb223c68, type: 3}
   m_Name: Player_1
   m_EditorClassIdentifier: 
-  playerControl: {fileID: 11400000, guid: 8e1be352d6d596b43abfee919e054f44, type: 2}
+  playerControl: {fileID: 0}
   playerColor: {r: 1, g: 0.2688679, b: 0.2688679, a: 0.34901962}
   characterSprite: {fileID: 21300000, guid: e7b955809a2a6bc42879f468542b3568, type: 3}
   characterName: Alien
   playerOverallScore: 0
   gemScore: 0
-  holdPercentage: 24.88019
+  holdPercentage: 63.081062
   damageDealtToChicken: 50
   winner: 0
   playerIsReady: 1
   playerIsDead: 0
+  playerCharacter: {fileID: 5861507685882267482, guid: ba128691428cd68478841eff49f4c26e,
+    type: 3}

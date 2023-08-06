@@ -13,7 +13,6 @@ public class Chicken_WalkingState : ChickenState
 
     public override void OnUpdateState(ChickenStateManager state)
     {
-        Debug.Log("Walking State");
         WalkInRandomPos(state.navAgent, state.centerPos, state.WalkRange);
         WalkingDelayTimer(state.WalkDelay);
     }

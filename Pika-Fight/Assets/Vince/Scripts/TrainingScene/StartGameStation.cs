@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -11,9 +12,13 @@ public class StartGameStation : MonoBehaviour
     [SerializeField] PlayerJoinedData playerJoinedData;
     [SerializeField] Slider startGameSlider;
     [SerializeField] TextMeshProUGUI numofPlayersTxt;
+    [SerializeField] Image transitionimage;
     [SerializeField] float timeToStart = 5f;
+    [SerializeField] float transitionTime = 3f;
     [SerializeField] UnityEvent OnStartGame;
+    bool startTransition;
     float currentTime;
+    float currentTransitionTime;
     float numOfPlayersJoined;
     int numOfPlayersInTheArea;
     private void Start()
@@ -25,7 +30,14 @@ public class StartGameStation : MonoBehaviour
 
     private void Update()
     {
-        Timer();
+        if (!startTransition)
+        {
+            Timer();
+        }
+        else
+        {
+            TransitionTimer();
+        }
         startGameSlider.value = currentTime;
         numofPlayersTxt.SetText($"{numOfPlayersInTheArea}/{numOfPlayersJoined}");
     }
@@ -41,6 +53,20 @@ public class StartGameStation : MonoBehaviour
             currentTime = 0;
         }
         else if(currentTime >= timeToStart && numOfPlayersInTheArea >= numOfPlayersJoined)
+        {
+            startTransition = true;
+        }
+    }
+
+    void TransitionTimer()
+    {
+        if(currentTransitionTime < transitionTime)
+        {
+            currentTransitionTime += Time.deltaTime;
+            Color color = new Color(transitionimage.color.r, transitionimage.color.g, transitionimage.color.b, currentTransitionTime);
+            transitionimage.color = color;
+        }
+        else
         {
             OnStartGame.Invoke();
         }
