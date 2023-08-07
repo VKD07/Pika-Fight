@@ -129,6 +129,7 @@ public class CharacterSelection : MonoBehaviour
             playerJoinedData.GetPlayersJoined[btnIndex].CharacterSprite = characters[characterIndeces[btnIndex]].GetComponent<Image>().sprite;
             characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().CharacterIsTaken = true;
             playerJoinedData.GetPlayersJoined[btnIndex].PlayerIsReady = true;
+            playerJoinedData.GetPlayersJoined[btnIndex].PlayerCharacter = characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().GetCharaterPrefab;
             //Animation when chosen
             characterPool.GetListOfCharacterSlots[btnIndex].CharacterList[characterIndeces[btnIndex]].GetComponent<Animator>().SetTrigger("Chosen");
         }

@@ -11,10 +11,11 @@ public class SpawnPlayers : MonoBehaviour
     [SerializeField] PlayerDataDictionary playerDataDictionary;
     [SerializeField] GameObject playerPrefab;
     [SerializeField] float timeToSpawn = 2f;
-    [SerializeField] int numberOfPlayers;
+    //[SerializeField] int numberOfPlayers;
     [SerializeField] public Transform playerSpawnerParent;
     [SerializeField] List<Transform> playerSpawners;
     [SerializeField] UnityEvent OnSpawn;
+    float numberOfPlayers;
     private void Awake()
     {
         //putting all the values in the dictionary
@@ -23,7 +24,8 @@ public class SpawnPlayers : MonoBehaviour
 
     void Start()
     {
-        GetNumberOfPlayers();
+        numberOfPlayers = playerJoinedData.GetNumberOfPlayersJoined();
+        //GetNumberOfPlayers();
         SpawnCharacters();
     }
 

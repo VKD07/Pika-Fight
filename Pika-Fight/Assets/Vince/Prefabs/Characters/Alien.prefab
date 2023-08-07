@@ -1473,7 +1473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashForce: 20
   dashTime: 0.2
-  dashCoolDown: 1
+  dashCooldown: {fileID: 0}
   playerControls: {fileID: 11400000, guid: 8e1be352d6d596b43abfee919e054f44, type: 2}
   IsDashing:
     m_PersistentCalls:
@@ -1542,7 +1542,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashVfxPool: {fileID: 11400000, guid: db027f86b34e0af4099a2c2041375466, type: 2}
-  gameParticlesParent: {fileID: 0}
   dashVfxSpawnPoint: {fileID: 6777716424109760459}
 --- !u!114 &4280057877567463834
 MonoBehaviour:
@@ -1652,6 +1651,7 @@ MonoBehaviour:
           m_StringArgument: Dead
           m_BoolArgument: 1
         m_CallState: 2
+  playerSciptsEnabled: []
 --- !u!114 &-4340403042845905283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1667,6 +1667,7 @@ MonoBehaviour:
   ballForce: 0
   maxForce: 60
   forceIncreaseRate: 60
+  allowToThrow: 1
   ball: {fileID: 0}
   ballOnHand: 0
   playerControls: {fileID: 11400000, guid: 8e1be352d6d596b43abfee919e054f44, type: 2}
@@ -1674,6 +1675,7 @@ MonoBehaviour:
   velocity: {fileID: 11400000, guid: a354f49c464b6074697ef4fdd0defc17, type: 2}
   playerMovementSpeed: {fileID: 11400000, guid: ab1bdf165e1b10a45a7a1c63d32c902a,
     type: 2}
+  isStunned: 0
   directionBar: {fileID: 2134517298009944145}
   directionFillBar: {fileID: 6521689219135993220}
   playerAnimData: {fileID: 11400000, guid: e71a9dfa021a0a243a6abe9dc017abbc, type: 2}
@@ -1692,6 +1694,7 @@ MonoBehaviour:
   knifeWeapon: {fileID: 638534111364189655}
   weaponDamage: 20
   weaponAttackRange: 3
+  playerDetected: 0
   weaponRangeOrigin: {fileID: 6439111657366614929}
   layerToStab:
     serializedVersion: 2
@@ -1699,7 +1702,7 @@ MonoBehaviour:
   playerControls: {fileID: 11400000, guid: 8e1be352d6d596b43abfee919e054f44, type: 2}
   dashForce: 30
   dashTime: 0.1
-  dashCoolDown: 2
+  attackCoolDown: 2
   IsDashing:
     m_PersistentCalls:
       m_Calls:
@@ -1805,7 +1808,6 @@ MonoBehaviour:
           m_StringArgument: Stab
           m_BoolArgument: 0
         m_CallState: 2
-  playerDetected: 0
 --- !u!96 &6513171113843616045
 TrailRenderer:
   serializedVersion: 3

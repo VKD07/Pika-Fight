@@ -9,6 +9,7 @@ public class LastManStanding : MonoBehaviour
 {
     [SerializeField] PlayerJoinedData playerJoinedData;
     [SerializeField] FloatReference numOfPlayersDied;
+    [SerializeField] UnityEvent OnWinnerFound;
     [SerializeField] UnityEvent OnWinnerDeclared;
     float numOfPlayers;
 
@@ -32,11 +33,9 @@ public class LastManStanding : MonoBehaviour
     {
         if(numOfPlayersDied.Value >= numOfPlayers -1)
         {
-            OnWinnerDeclared.Invoke();
+            StartCoroutine(OnWinnerDeclare());
+            OnWinnerFound.Invoke();
             GiveScoreToPlayer();
-            Time.timeScale = 0.3f;
-            StartCoroutine(DisableSlowMo());
-
         }
     }
 
@@ -52,11 +51,12 @@ public class LastManStanding : MonoBehaviour
         }
     }
 
-    IEnumerator DisableSlowMo()
+    IEnumerator OnWinnerDeclare()
     {
-        yield return new WaitForSeconds(1);
-        Time.timeScale = 1f;
+        yield return new WaitForSeconds(2f);
+        OnWinnerDeclared.Invoke();
     }
+
 
     private void OnDisable()
     {

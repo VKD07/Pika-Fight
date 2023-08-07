@@ -20,7 +20,7 @@ public class Gem : MonoBehaviour
                 OnPickup.Invoke();
                 player.GetComponentInChildren<GemScoreUI>().AddScore(gemValue);
                 Destroy(vfx, 1);
-                Destroy(gameObject,1);
+                gameObject.SetActive(false);
             }
         }
     }

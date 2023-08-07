@@ -24,11 +24,9 @@ public class RankingManager : MonoBehaviour
     {
         ResetDeath();
         SetPlayerScore();
-        DeclareOverallWinner();
-        if (!declareWinner)
-        {
-            StartCoroutine(AddScore());
-        }
+        //DeclareOverallWinner();
+        StartCoroutine(AddScore());
+
     }
 
     void DeactivateAllPanels()
@@ -79,29 +77,40 @@ public class RankingManager : MonoBehaviour
             {
                 playerJoinedData.GetPlayersJoined[i].PlayerScore += 1;
                 playerJoinedData.GetPlayersJoined[i].Winner = false;
-                StartCoroutine(LoadBackToGameScene());
-                break;
+
+                //check if there is already player who reach the max score
+                if (playerJoinedData.GetPlayersJoined[i].PlayerScore >= maxScoreToWin.Value)
+                {
+                    declareWinner = true;
+                    StartCoroutine(LoadToRanking());
+                    break;
+                }
+                else
+                {
+                    StartCoroutine(LoadBackToGameScene());
+                    break;
+                }
             }
             else
             {
-                StartCoroutine(LoadBackToGameScene());
+                StartCoroutine(LoadBackToGameScene()); //tie
             }
         }
         SetPlayerScore();
     }
 
-    void DeclareOverallWinner()
-    {
-        for (int i = 0; i < playerJoinedData.GetPlayersJoined.Length; i++)
-        {
-            if (playerJoinedData.GetPlayersJoined[i] != null && playerJoinedData.GetPlayersJoined[i].PlayerScore >= maxScoreToWin.Value)
-            {
-                declareWinner = true;
-                StartCoroutine(LoadToRanking());
-                break;
-            }
-        }
-    }
+    //void DeclareOverallWinner()
+    //{
+    //    for (int i = 0; i < playerJoinedData.GetPlayersJoined.Length; i++)
+    //    {
+    //        if (playerJoinedData.GetPlayersJoined[i] != null && playerJoinedData.GetPlayersJoined[i].PlayerScore >= maxScoreToWin.Value)
+    //        {
+    //            declareWinner = true;
+    //            StartCoroutine(LoadToRanking());
+    //            break;
+    //        }
+    //    }
+    //}
 
     private void SetPlayerScore()
     {
@@ -118,6 +127,7 @@ public class RankingManager : MonoBehaviour
     IEnumerator LoadBackToGameScene()
     {
         yield return new WaitForSeconds(2);
+
         OnFinishScoring.Invoke();
     }
 

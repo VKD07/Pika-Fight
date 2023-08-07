@@ -27,7 +27,7 @@ public class ParticleLoopDelay : MonoBehaviour
             yield return new WaitForSeconds(DelayTimer);
             Fire.SetActive(true);
             FireIsWorking = true;
-            yield return StartCoroutine(FireIsActivated()); // Wait for FireIsActivated coroutine to finish
+            yield return StartCoroutine(FireIsActivated());
         }
     }
 
@@ -40,13 +40,9 @@ public class ParticleLoopDelay : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && FireIsWorking)
         {
-            print("PlayerIsDetected");
             other.GetComponent<ReceiveDamage>().GetDamage(Damage);
         }
     }
-
-
-
 }

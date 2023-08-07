@@ -17,6 +17,7 @@ public class KillTheChickenTimer : MonoBehaviour
 
     [Header("Player Reference")]
     [SerializeField] PlayerJoinedData playerJoinedData;
+    [SerializeField] UnityEvent OnWinnerFound;
     [SerializeField] UnityEvent OnEnableScript;
 
     float highestDamageDealt;
@@ -72,6 +73,7 @@ public class KillTheChickenTimer : MonoBehaviour
                 highestDamageDealt = playerJoinedData.GetPlayersJoined[i].DamageDealtToChicken;
                 playerIndex = i;
                 playerJoinedData.GetPlayersJoined[playerIndex].Winner = true;
+                OnWinnerFound.Invoke();
             }
         }
     }
@@ -83,7 +85,7 @@ public class KillTheChickenTimer : MonoBehaviour
 
     IEnumerator Scene(string sceneName)
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(sceneName);
 
     }
