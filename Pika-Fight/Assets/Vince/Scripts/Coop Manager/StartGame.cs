@@ -8,17 +8,16 @@ using UnityEngine.UI;
 
 public class StartGame : MonoBehaviour
 {
-    [SerializeField] GameObject startGameBtn;
-    [SerializeField] Slider startSlider;
+    [SerializeField] GameObject countDown;
+    [SerializeField] GameObject selectCharacterTxt;
+    [SerializeField] GameObject GameStartsInTxt;
     [SerializeField] PlayerJoinedData playerJoinedData;
     [SerializeField] UnityEvent OnStart;
 
     private void Start()
     {
-        startGameBtn.SetActive(false);
         playerJoinedData.NumberOfPlayersReady = 0;
         playerJoinedData.NumberOfPlayersJoined = 0;
-        startSlider.value = 0;
     }
 
     void Update()
@@ -32,30 +31,15 @@ public class StartGame : MonoBehaviour
     {
         if (playerJoinedData.GetNumOfPlayersReady() > 1 && playerJoinedData.GetNumOfPlayersReady() >= playerJoinedData.GetNumberOfPlayersJoined())
         {
-            startGameBtn.SetActive(true);
-            StartTheGame();
+            selectCharacterTxt.SetActive(false);
+            GameStartsInTxt.SetActive(true);
+            countDown.SetActive(true);
         }
         else
         {
-            startSlider.value = 0;
-            startGameBtn.SetActive(false);
-        }
-    }
-
-    void StartTheGame()
-    {
-        if (Input.GetKey(playerJoinedData.GetPlayersJoined[0].Player_Controls.PlayerStartKey))
-        {
-            startSlider.value += 0.5f * Time.deltaTime;
-
-            if (startSlider.value >= 1)
-            {
-                OnStart.Invoke();
-            }
-        }
-        else
-        {
-            startSlider.value = 0;
+            selectCharacterTxt.SetActive(true);
+            GameStartsInTxt.SetActive(false);
+            countDown.SetActive(false);
         }
     }
 

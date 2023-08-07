@@ -19,6 +19,8 @@ public class Ball : MonoBehaviour
     Rigidbody rb;
     SphereCollider sphereCollider;
     TrailRenderer trailRenderer;
+    //To Collect the damage dealt from previous owner
+    [SerializeField] GameObject previousOwner;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -61,6 +63,7 @@ public class Ball : MonoBehaviour
             if(rb.velocity.magnitude > 10 && ballTaken)
             {
                 hit.collider.GetComponent<ReceiveDamage>().GetDamage(ballDamage);
+                ChickenMode(hit.collider.gameObject, ballDamage);
                 OnPlayerImpact.Invoke();
             }
         }
@@ -90,6 +93,15 @@ public class Ball : MonoBehaviour
         ballTaken = false;
     }
 
+    //for the chicken game mode
+    void ChickenMode(GameObject player, float damageDealt)
+    {
+        if(player.GetComponentInChildren<ChickenMode>().enabled && previousOwner != null)
+        {
+            previousOwner.GetComponentInParent<PlayerConfigBridge>().PlayerConfig.DamageDealtToChicken += damageDealt;
+        }
+    }
+
     public bool BallTaken
     {
         get { return ballTaken; }
@@ -97,6 +109,8 @@ public class Ball : MonoBehaviour
     }
 
     public float GetBallDamage => ballDamage;
+
+    public GameObject PreviousOwner { get => previousOwner; set { previousOwner = value; } }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -109,6 +123,7 @@ public class Ball : MonoBehaviour
         {
             OnPlayerImpact.Invoke();
             collision.gameObject.GetComponent<ReceiveDamage>().GetDamage(ballDamage);
+            ChickenMode(collision.gameObject, ballDamage);
         }
     }
 }

@@ -25,4 +25,3 @@ public class DataDictionary
     public string key;
     public PlayerData playerData;
 }
-

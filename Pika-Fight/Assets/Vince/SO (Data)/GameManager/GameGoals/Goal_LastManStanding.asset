@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a51b2249b1c66db4d9926dc81deeb6ed, type: 3}
   m_Name: Goal_LastManStanding
   m_EditorClassIdentifier: 
-  scriptToEnable: []
+  scriptToEnable:
+  - {fileID: 0}

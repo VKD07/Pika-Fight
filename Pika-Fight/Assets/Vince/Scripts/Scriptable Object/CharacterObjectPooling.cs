@@ -16,7 +16,7 @@ public class CharacterObjectPooling : ScriptableObject
         {
             for (int j = 0; j < gameObjects.Length; j++)
             {
-                GameObject obj = Instantiate(gameObjects[j], Vector3.one, Quaternion.Euler(0f, 180f, 0f));
+                GameObject obj = Instantiate(gameObjects[j], Vector3.one, Quaternion.Euler(0f, 0, 0f));
                 obj.SetActive(false);
                 listOfCharacterSlots[i].AddToList(obj);
                 obj.transform.SetParent(parent[i]);

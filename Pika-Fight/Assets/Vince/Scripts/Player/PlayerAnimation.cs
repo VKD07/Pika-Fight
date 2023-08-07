@@ -26,6 +26,7 @@ public class PlayerAnimation : MonoBehaviour
         RunAnim();
         BallThrowAnim();
         BallOnHand();
+        Stunned();
     }
 
     private void BallOnHand()
@@ -40,6 +41,11 @@ public class PlayerAnimation : MonoBehaviour
     public void BallThrowAnim()
     {
         anim.SetBool("Throw", playerAnimData.IsThrowing);
+    }
+
+    void Stunned()
+    {
+        anim.SetBool("Stunned", playerAnimData.IsStunned);
     }
 
     private void OnDisable()

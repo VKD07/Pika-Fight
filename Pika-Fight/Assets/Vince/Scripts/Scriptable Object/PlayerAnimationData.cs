@@ -7,6 +7,7 @@ public class PlayerAnimationData : ScriptableObject
 {
     [SerializeField] bool isThrowing;
     [SerializeField] bool ballOnHand;
+    [SerializeField] bool isStunned;
     public bool IsThrowing
     {
         get { return isThrowing; }
@@ -18,4 +19,6 @@ public class PlayerAnimationData : ScriptableObject
         get { return ballOnHand; }
         set { ballOnHand = value; }
     }
+
+    public bool IsStunned { get => isStunned; set => isStunned = value; }
 }

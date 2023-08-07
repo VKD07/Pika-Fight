@@ -15,8 +15,8 @@ MonoBehaviour:
   playersJoined:
   - {fileID: 11400000, guid: 3ceabe4c8ad3d50429deb642601b1328, type: 2}
   - {fileID: 11400000, guid: 0842a67814b07a143807f36ccd740b40, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 25c6d9b34665037419eae4d6c0a36247, type: 2}
+  - {fileID: 11400000, guid: 50dac636d537b74499e823b7ce3ac673, type: 2}
   playerConfig:
   - {fileID: 11400000, guid: 3ceabe4c8ad3d50429deb642601b1328, type: 2}
   - {fileID: 11400000, guid: 0842a67814b07a143807f36ccd740b40, type: 2}

@@ -10,11 +10,11 @@ public class ObjectPooling : ScriptableObject
     [SerializeField] Transform parent;
     [SerializeField] float poolAmount;
     GameObject pickedObj;
-    public void InitPoolOfObjects()
+    public void InitPoolOfObjects(Quaternion objRotation)
     {
         for (int i = 0; i < poolAmount; i++)
         {
-            GameObject obj = Instantiate(objectToPool, Vector3.zero, Quaternion.identity);
+            GameObject obj = Instantiate(objectToPool, Vector3.zero, objRotation);
             obj.transform.SetParent(parent);
             obj.SetActive(false);
             listOfObjs.Add(obj);

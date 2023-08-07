@@ -65,6 +65,7 @@ public class HealthBar : MonoBehaviour
 
     public float healthValue
     {
+        get { return playerHealth.Value; }
         set { playerHealth.Value = value; }
     }
     public FloatReference PlayerHealth { set { playerHealth = value; } }

@@ -10,6 +10,7 @@ public class CaptureAndDefend : MonoBehaviour
     [SerializeField] PlayerJoinedData playerJoinedData;
     [SerializeField] float percentageValueToWin = 100f;
     [SerializeField] UnityEvent OnEnableScript;
+    [SerializeField] UnityEvent OnWinnerFound;
     [SerializeField] UnityEvent OnWinnerDeclared;
 
     private void OnEnable()
@@ -44,10 +45,17 @@ public class CaptureAndDefend : MonoBehaviour
             if (playerJoinedData.GetPlayConfig[i].HoldPercentage >= percentageValueToWin)
             {
                 playerJoinedData.GetPlayConfig[i].Winner = true;
-                OnWinnerDeclared.Invoke();
+                OnWinnerFound.Invoke();
+                StartCoroutine(OnWinnerDeclare());
                 break;
             }
         }
+    }
+
+    IEnumerator OnWinnerDeclare()
+    {
+        yield return new WaitForSeconds(2f);
+        OnWinnerDeclared.Invoke();
     }
 
     public void LoadScene(string sceneName)

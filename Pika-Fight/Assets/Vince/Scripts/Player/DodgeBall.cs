@@ -12,7 +12,7 @@ public class DodgeBall : MonoBehaviour
     [SerializeField] float ballForce = 50f;
     [SerializeField] float maxForce = 100f;
     [SerializeField] float forceIncreaseRate = 20f;
-    bool allowToThrow = true;
+    [SerializeField] bool allowToThrow = true;
 
     [Header("DodgeBall Reference")]
     [SerializeField] GameObject ball;
@@ -22,6 +22,7 @@ public class DodgeBall : MonoBehaviour
     [SerializeField] FloatReference velocity;
     [SerializeField] FloatReference playerMovementSpeed;
     CollisionDetection collisionDetection;
+    [SerializeField] bool isStunned;
     float initMovementSpeed;
 
     [Header("Direction UI")]
@@ -41,9 +42,13 @@ public class DodgeBall : MonoBehaviour
     private void Update()
     {
         IfBallIsCollided();
-        PickUpBall();
-        ThrowBall();
-        UpdateDirectionBar();
+
+        if (!isStunned)
+        {
+            PickUpBall();
+            ThrowBall();
+            UpdateDirectionBar();
+        }
     }
 
     private void InitDirectionBar()
@@ -69,6 +74,7 @@ public class DodgeBall : MonoBehaviour
         {
             ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
             ball.GetComponent<Ball>().SetSphereTrigger(true);
+            ball.GetComponent<Ball>().PreviousOwner = gameObject;
             ballOnHand = true;
             ball.transform.position = ballPlaceHolder.position;
         }
@@ -124,7 +130,7 @@ public class DodgeBall : MonoBehaviour
 
     IEnumerator ThrowDelay()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
         allowToThrow = true;
     }
 
@@ -156,8 +162,11 @@ public class DodgeBall : MonoBehaviour
     //        ball.GetComponent<Ball>().BallTaken = true;
     //    }
     //}
+
     public PlayerControls SetPlayerControls { set { playerControls = value; } }
     public FloatReference PlayerVelocity { set => velocity = value; }
     public FloatReference PlayerMovementSpeed { set => playerMovementSpeed = value; }
     public PlayerAnimationData PlayerAnimData { set => playerAnimData = value; }
+
+    public bool IsStunned { set => isStunned = value; }
 }

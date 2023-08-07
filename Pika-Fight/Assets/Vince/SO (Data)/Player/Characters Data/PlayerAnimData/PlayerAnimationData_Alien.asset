@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isThrowing: 0
   ballOnHand: 0
+  isStunned: 0

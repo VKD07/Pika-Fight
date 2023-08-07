@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ public class Dash : MonoBehaviour
     Rigidbody rb;
     [SerializeField] float dashForce = 10f;
     [SerializeField] float dashTime = 1f;
-    [SerializeField] float dashCoolDown = 2f;
+    [SerializeField] FloatReference dashCooldown;
     [SerializeField] PlayerControls playerControls;
     [SerializeField] UnityEvent IsDashing;
     [SerializeField] UnityEvent IsNotDashing;
@@ -49,7 +48,7 @@ public class Dash : MonoBehaviour
 
     IEnumerator EnableDash()
     {
-        yield return new WaitForSeconds(dashCoolDown);
+        yield return new WaitForSeconds(dashCooldown.Value);
         isDashing = false;
     }
 

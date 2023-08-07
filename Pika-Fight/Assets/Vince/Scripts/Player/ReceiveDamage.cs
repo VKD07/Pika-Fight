@@ -16,7 +16,11 @@ public class ReceiveDamage : MonoBehaviour
 
     public void GetDamage(float damage)
     {
-        playerHealth.Value -= damage;
+        if(this.enabled)
+        {
+            playerHealth.Value -= damage;
+        }
+        OnImpact.Invoke();
     }
 
     private void OnDisable()
@@ -32,7 +36,6 @@ public class ReceiveDamage : MonoBehaviour
 
             if(ballScript != null)
             {
-                OnImpact.Invoke();
             }
         }
     }

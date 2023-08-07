@@ -16,4 +16,4 @@ MonoBehaviour:
     type: 3}
   listOfObjs: []
   parent: {fileID: 0}
-  poolAmount: 4
+  poolAmount: 2
