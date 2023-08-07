@@ -89,6 +89,7 @@ public class VersusManager : MonoBehaviour
         versusUI.SetActive(false);
         readyTxt.SetActive(false);
         //EnablePlayerMovement(true, 1f);
+        //DisablePlayerCamera();
         EnablePlayerMovement(true);
     }
 
@@ -124,5 +125,13 @@ public class VersusManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.3f);
         fightTxt.SetActive(false);
+    }
+
+    void DisablePlayerCamera()
+    {
+        for (int i = 0; i < players.Length; i++)
+        {
+            players[i].transform.Find("PlayerCamera").gameObject.SetActive(false);
+        }
     }
 }

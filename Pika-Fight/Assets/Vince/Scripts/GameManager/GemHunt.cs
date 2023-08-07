@@ -18,6 +18,7 @@ public class GemHunt : MonoBehaviour
 
     [Header("Player Reference")]
     [SerializeField] PlayerJoinedData playerJoinedData;
+    [SerializeField] UnityEvent OnWinnerFound;
     [SerializeField] UnityEvent OnEnableScript;
 
     float highestGemScore;
@@ -55,7 +56,8 @@ public class GemHunt : MonoBehaviour
         {
             currentTime = 0;
             LookForHighestGemScore();
-            OnTimerDone.Invoke();
+            OnWinnerFound.Invoke();
+            StartCoroutine(OnWinnerDeclare());
         }
     }
 
@@ -76,6 +78,13 @@ public class GemHunt : MonoBehaviour
             }
         }
     }
+
+    IEnumerator OnWinnerDeclare()
+    {
+        yield return new WaitForSeconds(2f);
+        OnTimerDone.Invoke();
+    }
+
 
     public void LoadScene(string sceneName)
     {

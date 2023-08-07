@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6031107201488715172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 244370332434522675}
+  - component: {fileID: 3384883609536434870}
+  m_Layer: 0
+  m_Name: '[VersusManager]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &244370332434522675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6031107201488715172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 936.6637, y: 1046.1624, z: -1168.7406}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3384883609536434870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6031107201488715172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c12dbe8bef5e584db3363a9b026c5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  versusSlotManager:
+  - Name: 2 Players
+    renderTextures:
+    - {fileID: 8400000, guid: d78e8f3f4c45bc94eaf54fbed72681d3, type: 2}
+    - {fileID: 8400000, guid: 237324ee15550954bb5abb59b959e557, type: 2}
+    imageUI:
+    - {fileID: 0}
+    - {fileID: 0}
+    slotsParent: {fileID: 0}
+  - Name: 3 Players
+    renderTextures:
+    - {fileID: 8400000, guid: e1ae2725ae0833d44a2fb66daecc2b82, type: 2}
+    - {fileID: 8400000, guid: 3965d134302277d4c91b89bb61ec34e7, type: 2}
+    - {fileID: 8400000, guid: d7600af68ef800b478c710a841ca5a66, type: 2}
+    imageUI:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    slotsParent: {fileID: 0}
+  - Name: 4 Players
+    renderTextures:
+    - {fileID: 8400000, guid: 7b7436121d8dd3f48bca7ad63d475f60, type: 2}
+    - {fileID: 8400000, guid: 3f71487ec272ee84b92b80d37e5d6dde, type: 2}
+    - {fileID: 8400000, guid: b8bc4a75f7acca041b977a9b8906d45e, type: 2}
+    - {fileID: 8400000, guid: e5b8ecef9ac33af49921f43ea2d9f705, type: 2}
+    imageUI:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    slotsParent: {fileID: 0}
+  players: []
+  versusUI: {fileID: 0}
+  readyTxt: {fileID: 0}
+  fightTxt: {fileID: 0}
