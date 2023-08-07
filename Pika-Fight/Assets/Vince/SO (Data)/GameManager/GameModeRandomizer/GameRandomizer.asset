@@ -21,5 +21,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3151b1debb5832d4798c55cb19a45296, type: 2}
   randomGoal: 0
   sceneNames:
+  - ShrinkLevel1
   - AdamMap
+  - ExplosionLevel
   randomScenes: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81306ee4bc7f9148a3cabb7cb223c68, type: 3}
   m_Name: Player_3
   m_EditorClassIdentifier: 
-  playerControl: {fileID: 0}
+  playerControl: {fileID: 11400000, guid: 316dc08d453899747bb5e3b72bc8ddcf, type: 2}
   playerColor: {r: 0.33490568, g: 1, b: 0.50343955, a: 0.34901962}
   characterSprite: {fileID: 21300000, guid: d9fa197881899eb40885bc20c76adf0e, type: 3}
   characterName: Girl
@@ -21,7 +21,7 @@ MonoBehaviour:
   holdPercentage: 0
   damageDealtToChicken: 0
   winner: 0
-  playerIsReady: 0
-  playerIsDead: 0
+  playerIsReady: 1
+  playerIsDead: 1
   playerCharacter: {fileID: 4006341026387044044, guid: b51e16215cb9496479ea06f18763034c,
     type: 3}

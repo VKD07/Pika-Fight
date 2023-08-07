@@ -18,6 +18,8 @@ public class PlayerWinCamera : MonoBehaviour
             if (players[i].GetComponent<PlayerConfigBridge>().PlayerConfig.Winner)
             {
                 players[i].transform.Find("WinCamera").gameObject.SetActive(true);
+                players[i].GetComponent<Animator>().SetTrigger("ModeWinner");
+                players[i].GetComponent<PlayerMovement>().enabled = false;
                 winBanner.SetActive(true);
                 break;
             }

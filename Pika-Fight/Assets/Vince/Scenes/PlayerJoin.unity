@@ -6659,7 +6659,7 @@ GameObject:
   - component: {fileID: 562485798}
   - component: {fileID: 562485797}
   m_Layer: 0
-  m_Name: Players Data
+  m_Name: Sealed Data
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6683,6 +6683,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 25c6d9b34665037419eae4d6c0a36247, type: 2}
   - {fileID: 11400000, guid: 50dac636d537b74499e823b7ce3ac673, type: 2}
   playerJoinedData: {fileID: 11400000, guid: 7e9c4ddcd905cae479e8c9ba51ce6c8e, type: 2}
+  versusScreen: {fileID: 11400000, guid: 232986fd248790744a63ddefb70f0080, type: 2}
 --- !u!4 &562485798
 Transform:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
   playerColor: {r: 0.21226418, g: 0.53388184, b: 1, a: 0.34901962}
   characterSprite: {fileID: 21300000, guid: b238d04ed0528c941ab3895684b22cb8, type: 3}
   characterName: Bear
-  playerOverallScore: 1
+  playerOverallScore: 0
   gemScore: 0
   holdPercentage: 111.6003
   damageDealtToChicken: 350

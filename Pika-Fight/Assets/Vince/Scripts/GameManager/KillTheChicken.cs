@@ -16,7 +16,7 @@ public class KillTheChicken : MonoBehaviour
     void Start()
     {
         FindPlayersInSceneAndAddItTotheList();
-        StartCoroutine(TransformPlayerIntoChicken(2));
+        StartCoroutine(TransformPlayerIntoChicken(5));
     }
 
     void Update()
