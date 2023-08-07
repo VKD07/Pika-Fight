@@ -148,6 +148,6 @@ public class MeleeFight : MonoBehaviour
 
     public PlayerControls SetPlayerControls { set { playerControls = value; } }
     public bool IStunned { set => isStunned = value; }
-
+    public bool Stabbing => isDashing;
     public float AttackCoolDown { get => attackCoolDown; set => attackCoolDown = value; }
 }

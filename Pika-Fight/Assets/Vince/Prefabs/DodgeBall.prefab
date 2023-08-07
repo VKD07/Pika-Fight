@@ -156,6 +156,11 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+  exploding: 0
+  explosionRadius: 5
+  explosionDamage: 50
+  explodingVfx: {fileID: 1892078723244562, guid: 34f4fbe714c8217408bf48d7a5785b18,
+    type: 3}
   OnImpact:
     m_PersistentCalls:
       m_Calls:
@@ -186,6 +191,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  previousOwner: {fileID: 0}
 --- !u!96 &5394353892054288957
 TrailRenderer:
   serializedVersion: 3
