@@ -5,22 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public int NumberSceneToLoad;
+    public int MenuNumberSceneToLoad;
+    public int OptionNumberSceneToLoad;
+    public int BackButtonNumberSceneToLoad;
 
     IEnumerator PlayGame1() 
     {
         yield return new WaitForSeconds(1.0f);
     
-        SceneManager.LoadScene(NumberSceneToLoad);
+        SceneManager.LoadScene(MenuNumberSceneToLoad);
     }
-
-    //IEnumerator QuitGame1() 
-    //{
-      //  yield return new WaitForSeconds(1.0f);
-    
-      //  Application.Quit();
-    //}
-    
 
     public void PlayGame ()
     {
@@ -28,6 +22,30 @@ public class MainMenu : MonoBehaviour
      
        //SceneManager.LoadScene(NumberSceneToLoad);
        // SceneManager.LoadScene("ShrinkLevel1"); // or to use scene numbers remoive brackets and type the number (also drag scene into build settings)
+    }
+
+    IEnumerator OptionsButton1()
+    {
+        yield return new WaitForSeconds(1.0f);
+
+        SceneManager.LoadScene(OptionNumberSceneToLoad);
+    }
+
+    public void OptionsButton ()
+    {
+        StartCoroutine(OptionsButton1());
+    }
+
+    IEnumerator BackButton1()
+    {
+        yield return new WaitForSeconds(1.0f);
+
+        SceneManager.LoadScene(BackButtonNumberSceneToLoad);
+    }
+
+    public void BackButton()
+    {
+        StartCoroutine(BackButton1());
     }
 
 
