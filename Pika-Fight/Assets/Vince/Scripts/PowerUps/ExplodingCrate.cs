@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ExplodingCrate : MonoBehaviour
@@ -42,10 +43,15 @@ public class ExplodingCrate : MonoBehaviour
     {
         yield return new WaitForSeconds(timeToExplode);
 
-        Collider[] playersDetected = Physics.OverlapSphere(transform.position, explosionRadius, layersAffected);
-        foreach (Collider players in playersDetected)
+        Collider[] objsDetected = Physics.OverlapSphere(transform.position, explosionRadius, layersAffected);
+        foreach (Collider objs in objsDetected)
         {
-            players.GetComponent<ReceiveDamage>().GetDamage(explosionDamage);
+            if(objs.GetComponent<ReceiveDamage>() != null)
+            {
+                objs.GetComponent<ReceiveDamage>().GetDamage(explosionDamage);
+            }
+
+            objs.GetComponent<Rigidbody>().AddForce(-objs.transform.forward * 20f, ForceMode.Impulse);
         }
         ExplosionVFX();
         Destroy(gameObject);

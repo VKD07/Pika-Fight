@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5394353892054288957}
   - component: {fileID: 2180820873031080473}
   - component: {fileID: 8555918568223852687}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DodgeBall
   m_TagString: Ball
   m_Icon: {fileID: 0}
@@ -161,6 +161,9 @@ MonoBehaviour:
   explosionDamage: 50
   explodingVfx: {fileID: 1892078723244562, guid: 34f4fbe714c8217408bf48d7a5785b18,
     type: 3}
+  chickenTransformVfx: {fileID: 0}
+  chickenBall: 0
+  chickenDebuffDuration: 5
   OnImpact:
     m_PersistentCalls:
       m_Calls:
