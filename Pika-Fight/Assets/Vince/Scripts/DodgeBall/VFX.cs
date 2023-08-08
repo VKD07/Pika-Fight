@@ -29,6 +29,9 @@ public class VFX : MonoBehaviour
     IEnumerator DisableObj()
     {
         yield return new WaitForSeconds(1f);
-        vfxPool.GetPickedObj.SetActive(false);
+        if (vfxPool.GetPickedObj != null)
+        {
+            vfxPool.GetPickedObj.SetActive(false);
+        }
     }
 }

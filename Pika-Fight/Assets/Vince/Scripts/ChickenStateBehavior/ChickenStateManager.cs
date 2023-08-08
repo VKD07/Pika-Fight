@@ -25,6 +25,7 @@ public class ChickenStateManager : MonoBehaviour
     public bool flee;
     void Start()
     {
+        centerPosition = GameObject.Find("CenterOfTheMap").transform;
         agent = GetComponent<NavMeshAgent>();
         agent.speed = initSpeed;
         currentState = walkingState;

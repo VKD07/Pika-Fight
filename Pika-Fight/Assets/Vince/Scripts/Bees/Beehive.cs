@@ -8,6 +8,12 @@ public class Beehive : MonoBehaviour
     [SerializeField] float beesDuration = 10f;
     [SerializeField] float numberOfBees = 4;
     [SerializeField] GameObject vfx;
+    Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     public void InstantiateBees(Transform spawnLoc, Transform target)
     {
@@ -20,7 +26,8 @@ public class Beehive : MonoBehaviour
                 Destroy(bee, beesDuration);
             }
         }
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        rb.velocity = Vector3.zero;
         Vfx();
     }
 

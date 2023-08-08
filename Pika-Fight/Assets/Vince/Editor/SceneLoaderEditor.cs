@@ -23,6 +23,7 @@ public class SceneLoaderEditor : EditorWindow
         EditorGUILayout.BeginHorizontal();
         LoadVinceScenes("Final Ranking", "FinalRanking");
         LoadVinceScenes("Score Scene", "ScoreScene");
+        LoadVinceScenes("Random Scene", "RandomizationScene");
         EditorGUILayout.EndHorizontal();
     }
 

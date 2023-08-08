@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemSpawnerRandomizer : MonoBehaviour
+public class PowerUpSpawner : MonoBehaviour
 {
-    [SerializeField] ObjectPooling objectPool;
+    [SerializeField] ObjectsPooling objectsToPool;
     [SerializeField] Transform poolParent;
     [SerializeField] List<Transform> spawnPoints;
     [SerializeField] float disableAfterSpawnDuration = 10f;
@@ -14,8 +14,8 @@ public class ItemSpawnerRandomizer : MonoBehaviour
     float randomSpawnTime;
     void Start()
     {
-        objectPool.SetParent(poolParent);
-        objectPool.InitPoolOfObjects(Quaternion.Euler(-90,0,0));
+        objectsToPool.SetParent(poolParent);
+        objectsToPool.InitPoolOfObjects(Quaternion.Euler(-90, 0, 0));
         StartCoroutine(StartSpawning());
     }
 
@@ -25,19 +25,18 @@ public class ItemSpawnerRandomizer : MonoBehaviour
         {
             randomSpawnTime = Random.Range(minSpawnTime, maxSpawnTime);
             yield return new WaitForSeconds(randomSpawnTime);
-            randomIndex = Random.Range(0,spawnPoints.Count);
-            objectPool.PickObjFromPool(spawnPoints[randomIndex]);
+            randomIndex = Random.Range(0, spawnPoints.Count);
+            objectsToPool.PickObjFromPoolRandomly(spawnPoints[randomIndex]);
             StartCoroutine(DisableObj());
         }
     }
 
-
     IEnumerator DisableObj()
     {
         yield return new WaitForSeconds(disableAfterSpawnDuration);
-        if (objectPool.GetPickedObj.GetComponent<Ball>() != null && !objectPool.GetPickedObj.GetComponent<Ball>().BallTaken)
+        if(objectsToPool.GetPickedObj.GetComponent<Ball>() != null && !objectsToPool.GetPickedObj.GetComponent<Ball>().BallTaken)
         {
-            objectPool.GetPickedObj.SetActive(false);
+            objectsToPool.GetPickedObj.SetActive(false);
         }
     }
 
@@ -57,6 +56,6 @@ public class ItemSpawnerRandomizer : MonoBehaviour
 
     private void OnDisable()
     {
-      //  objectPool.ClearList();
+        //  objectPool.ClearList();
     }
 }

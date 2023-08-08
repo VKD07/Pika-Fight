@@ -146,7 +146,8 @@ public class Ball : MonoBehaviour
         GameObject explosion = Instantiate(explodingVfx, spawnLoc.position, Quaternion.identity);
         explosion.transform.localScale = Vector3.one * 2f;
         Destroy(explosion, 1f);
-        Destroy(gameObject);
+        rb.velocity = Vector3.zero;
+        gameObject.SetActive(false);
     }
 
     // Chicken Ball
@@ -155,11 +156,15 @@ public class Ball : MonoBehaviour
         if (chickenBall)
         {
             ChickenDebuf chickenDebuff = player.GetComponentInChildren<ChickenDebuf>();
-            chickenDebuff.ChickenDuration = chickenDebuffDuration;
-            chickenDebuff.enabled = true;
-            GameObject vfx = Instantiate(chickenTransformVfx, transform.position, Quaternion.identity);
-            Destroy(vfx, 1f);
-            Destroy(gameObject);
+            if(chickenDebuff != null)
+            {
+                chickenDebuff.ChickenDuration = chickenDebuffDuration;
+                chickenDebuff.enabled = true;
+                GameObject vfx = Instantiate(chickenTransformVfx, transform.position, Quaternion.identity);
+                Destroy(vfx, 1f);
+            }
+            rb.velocity = Vector3.zero;
+            gameObject.SetActive(false);
         }
     }
 
@@ -190,7 +195,7 @@ public class Ball : MonoBehaviour
             OnImpact.Invoke();
         }
 
-        if (collision.gameObject.tag == "Player" && rb.velocity.magnitude > 20 && ballTaken)
+        if (collision.gameObject.tag == "Player" && rb.velocity.magnitude > 10 && ballTaken)
         {
             OnPlayerImpact.Invoke();
             collision.gameObject.GetComponent<ReceiveDamage>().GetDamage(ballDamage);
@@ -204,7 +209,7 @@ public class Ball : MonoBehaviour
             Beehive(collision.gameObject.transform);
         }
 
-        if (exploding && rb.velocity.magnitude > 20 && ballTaken)
+        if (exploding && rb.velocity.magnitude > 10 && ballTaken)
         {
             OnImpact.Invoke();
             InstantiateExplosion(transform);

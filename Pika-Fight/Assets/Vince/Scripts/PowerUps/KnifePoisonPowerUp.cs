@@ -17,7 +17,8 @@ public class KnifePoisonPowerUp : MonoBehaviour
             poisonousKnife.PoisonDamage = poisonDamage;
             poisonousKnife.AttackInterval = attackInterval;
             poisonousKnife.enabled = true;
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
