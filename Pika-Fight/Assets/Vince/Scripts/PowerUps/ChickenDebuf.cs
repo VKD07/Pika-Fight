@@ -35,7 +35,7 @@ public class ChickenDebuf : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         NormalForm(true);
-        gameObject.SetActive(false);
+        this.enabled = false;
     }
 
     public float ChickenDuration {  set => chickenDuration = value; }

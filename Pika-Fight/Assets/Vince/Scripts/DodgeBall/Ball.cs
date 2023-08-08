@@ -184,14 +184,14 @@ public class Ball : MonoBehaviour
             ChickenMode(collision.gameObject, ballDamage);
         }
 
-        if (collision.gameObject.tag == "Player" && ballTaken)
+        if (collision.gameObject.tag == "Player" && ballTaken && rb.velocity.magnitude > 20)
         {
             OnPlayerImpact.Invoke();
             collision.gameObject.GetComponent<ReceiveDamage>().GetDamage(ballDamage);
             ChickenBall(collision.gameObject);
         }
  
-        if (exploding && rb.velocity.magnitude > 10 && ballTaken)
+        if (exploding && rb.velocity.magnitude > 20 && ballTaken)
         {
             InstantiateExplosion(transform);
         }

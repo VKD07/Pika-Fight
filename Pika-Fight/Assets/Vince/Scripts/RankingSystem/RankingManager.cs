@@ -11,6 +11,7 @@ public class RankingManager : MonoBehaviour
     [SerializeField] GameObject[] playersScorePanel;
     [SerializeField] PlayerJoinedData playerJoinedData;
     [SerializeField] FloatReference maxScoreToWin;
+    [SerializeField] float timeToLoad = 4f;
     [SerializeField] UnityEvent OnFinishScoring;
     [SerializeField] UnityEvent OnDeclareWinner;
     bool declareWinner;
@@ -51,7 +52,7 @@ public class RankingManager : MonoBehaviour
         {
             if (playerJoinedData.GetPlayersJoined[i] != null)
             {
-                playersScorePanel[i].transform.Find("PlayerImage").GetComponent<Image>().sprite = playerJoinedData.GetPlayersJoined[i].CharacterSprite;
+                playersScorePanel[i].transform.Find("PlayerImage").Find("Image").GetComponent<Image>().sprite = playerJoinedData.GetPlayersJoined[i].CharacterSprite;
             }
         }
     }
@@ -70,7 +71,7 @@ public class RankingManager : MonoBehaviour
     //Looking for player winner and adding score
     IEnumerator AddScore()
     {
-        yield return new WaitForSeconds(0);
+        yield return new WaitForSeconds(0.2f);
         for (int i = 0; i < playerJoinedData.GetPlayersJoined.Length; i++)
         {
             if (playerJoinedData.GetPlayersJoined[i] != null && playerJoinedData.GetPlayersJoined[i].Winner)
@@ -126,14 +127,14 @@ public class RankingManager : MonoBehaviour
     //Load Back to Scene
     IEnumerator LoadBackToGameScene()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(timeToLoad);
 
         OnFinishScoring.Invoke();
     }
 
     IEnumerator LoadToRanking()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(timeToLoad - 1);
         OnDeclareWinner.Invoke();
     }
 
