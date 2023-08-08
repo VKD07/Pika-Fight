@@ -22,6 +22,6 @@ MonoBehaviour:
   damageDealtToChicken: 350
   winner: 0
   playerIsReady: 1
-  playerIsDead: 0
+  playerIsDead: 1
   playerCharacter: {fileID: 7032743981702343751, guid: 0329e4d173c6061479c7519ad91be501,
     type: 3}

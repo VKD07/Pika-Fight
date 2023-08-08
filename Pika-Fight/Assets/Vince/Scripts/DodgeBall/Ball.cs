@@ -25,6 +25,8 @@ public class Ball : MonoBehaviour
     [SerializeField] bool chickenBall;
     [SerializeField] float chickenDebuffDuration = 5f;
 
+    Beehive beehive;
+
     bool exploded;
     [Header("Events")]
     [SerializeField] UnityEvent OnImpact;
@@ -39,6 +41,7 @@ public class Ball : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         sphereCollider = GetComponent<SphereCollider>();
         trailRenderer = GetComponent<TrailRenderer>();
+        beehive = GetComponent<Beehive>();
     }
 
     private void Update()
@@ -160,6 +163,16 @@ public class Ball : MonoBehaviour
         }
     }
 
+    //beehive
+
+    void Beehive(Transform target)
+    {
+        if(beehive != null)
+        {
+            beehive.InstantiateBees(transform, target);
+        }
+    }
+
     public bool BallTaken
     {
         get { return ballTaken; }
@@ -182,17 +195,18 @@ public class Ball : MonoBehaviour
             OnPlayerImpact.Invoke();
             collision.gameObject.GetComponent<ReceiveDamage>().GetDamage(ballDamage);
             ChickenMode(collision.gameObject, ballDamage);
-        }
-
-        if (collision.gameObject.tag == "Player" && ballTaken && rb.velocity.magnitude > 20)
-        {
-            OnPlayerImpact.Invoke();
-            collision.gameObject.GetComponent<ReceiveDamage>().GetDamage(ballDamage);
             ChickenBall(collision.gameObject);
         }
- 
+
+        if (rb.velocity.magnitude > 10 && ballTaken)
+        {
+            OnImpact.Invoke();
+            Beehive(collision.gameObject.transform);
+        }
+
         if (exploding && rb.velocity.magnitude > 20 && ballTaken)
         {
+            OnImpact.Invoke();
             InstantiateExplosion(transform);
         }
     }

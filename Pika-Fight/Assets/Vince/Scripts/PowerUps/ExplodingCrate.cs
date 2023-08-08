@@ -51,6 +51,11 @@ public class ExplodingCrate : MonoBehaviour
                 objs.GetComponent<ReceiveDamage>().GetDamage(explosionDamage);
             }
 
+            if(objs.GetComponent<beeAttack>() != null)
+            {
+                Destroy(objs);
+            }
+
             objs.GetComponent<Rigidbody>().AddForce(-objs.transform.forward * 20f, ForceMode.Impulse);
         }
         ExplosionVFX();
