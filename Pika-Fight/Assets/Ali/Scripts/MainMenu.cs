@@ -7,7 +7,9 @@ public class MainMenu : MonoBehaviour
 {
     public int MenuNumberSceneToLoad;
     public int OptionNumberSceneToLoad;
-    public int BackButtonNumberSceneToLoad;
+    public int BackToMenuButtonNumberSceneToLoad;
+    public int ControlSheetButtonToLoad;
+    public int BackToOptionsNumberSceneToLoad;
 
     IEnumerator PlayGame1() 
     {
@@ -36,17 +38,49 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(OptionsButton1());
     }
 
-    IEnumerator BackButton1()
+
+
+    IEnumerator BackToMenuButton1()
     {
         yield return new WaitForSeconds(1.0f);
 
-        SceneManager.LoadScene(BackButtonNumberSceneToLoad);
+        SceneManager.LoadScene(BackToMenuButtonNumberSceneToLoad);
     }
 
-    public void BackButton()
+    public void BackToMenuButton()
     {
-        StartCoroutine(BackButton1());
+        StartCoroutine(BackToMenuButton1());
     }
+
+
+
+    IEnumerator BackToOptionsButton1()
+    {
+        yield return new WaitForSeconds(1.0f);
+
+        SceneManager.LoadScene(BackToOptionsNumberSceneToLoad);
+    }
+
+    public void BackToOptionsButton()
+    {
+        StartCoroutine(BackToOptionsButton1());
+    }
+
+
+
+    IEnumerator OpenButton1()
+    {
+        yield return new WaitForSeconds(1.0f);
+
+        SceneManager.LoadScene(ControlSheetButtonToLoad);
+    }
+
+    public void OpenButton()
+    {
+        StartCoroutine(OpenButton1());
+    }
+
+
 
 
     public void QuitGame ()
