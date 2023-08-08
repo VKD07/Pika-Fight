@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 908917372}
   - component: {fileID: 908917371}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Ps4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1317,7 +1317,7 @@ GameObject:
   - component: {fileID: 1821415676}
   - component: {fileID: 1821415675}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Xbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
