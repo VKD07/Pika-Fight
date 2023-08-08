@@ -13,6 +13,8 @@ public class MeleeFight : MonoBehaviour
     [SerializeField] public bool playerDetected;
     [SerializeField] Transform weaponRangeOrigin;
     [SerializeField] LayerMask layerToStab;
+    [SerializeField] PoisonousKnife poisonousKnife;
+
     [Header("Script references")]
     [SerializeField] PlayerControls playerControls;
     PlayerConfigBridge playerConfigBridge;
@@ -93,6 +95,7 @@ public class MeleeFight : MonoBehaviour
                 for (int i = 0; i < players.Length; i++)
                 {
                     players[i].GetComponent<ReceiveDamage>().GetDamage(weaponDamage);
+                    ApplyPoison(players[0].gameObject);
                     ChickenMode(players[i].gameObject, weaponDamage);
                 }
             }
@@ -135,6 +138,15 @@ public class MeleeFight : MonoBehaviour
         if(player.GetComponentInChildren<ChickenMode>().enabled)
         {
             playerConfigBridge.PlayerConfig.DamageDealtToChicken += damageDealt;
+        }
+    }
+
+    void ApplyPoison(GameObject targetPlayer)
+    {
+        if (poisonousKnife.enabled)
+        {
+            poisonousKnife.GivePoison(targetPlayer);
+            poisonousKnife.DisablePoisonKnife();
         }
     }
 
