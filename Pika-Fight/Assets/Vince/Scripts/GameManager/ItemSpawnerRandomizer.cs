@@ -15,7 +15,7 @@ public class ItemSpawnerRandomizer : MonoBehaviour
     void Start()
     {
         objectPool.SetParent(poolParent);
-        objectPool.InitPoolOfObjects(Quaternion.Euler(-90,0,0));
+        objectPool.InitPoolOfObjects(Quaternion.Euler(-90, 0, 0));
         StartCoroutine(StartSpawning());
     }
 
@@ -25,7 +25,7 @@ public class ItemSpawnerRandomizer : MonoBehaviour
         {
             randomSpawnTime = Random.Range(minSpawnTime, maxSpawnTime);
             yield return new WaitForSeconds(randomSpawnTime);
-            randomIndex = Random.Range(0,spawnPoints.Count);
+            randomIndex = Random.Range(0, spawnPoints.Count);
             objectPool.PickObjFromPool(spawnPoints[randomIndex]);
             StartCoroutine(DisableObj());
         }
@@ -35,10 +35,7 @@ public class ItemSpawnerRandomizer : MonoBehaviour
     IEnumerator DisableObj()
     {
         yield return new WaitForSeconds(disableAfterSpawnDuration);
-        if (objectPool.GetPickedObj.GetComponent<Ball>() != null && !objectPool.GetPickedObj.GetComponent<Ball>().BallTaken)
-        {
-            objectPool.GetPickedObj.SetActive(false);
-        }
+        objectPool.GetPickedObj.SetActive(false);
     }
 
     public void AddToList(GameObject point)
@@ -57,6 +54,6 @@ public class ItemSpawnerRandomizer : MonoBehaviour
 
     private void OnDisable()
     {
-      //  objectPool.ClearList();
+        //  objectPool.ClearList();
     }
 }

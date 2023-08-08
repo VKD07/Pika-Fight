@@ -38,6 +38,10 @@ public class PowerUpSpawner : MonoBehaviour
         {
             objectsToPool.GetPickedObj.SetActive(false);
         }
+        else
+        {
+            objectsToPool.GetPickedObj.SetActive(false);
+        }
     }
 
     public void AddToList(GameObject point)

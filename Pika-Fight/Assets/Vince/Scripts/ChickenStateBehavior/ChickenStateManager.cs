@@ -15,6 +15,7 @@ public class ChickenStateManager : MonoBehaviour
     [SerializeField] float detectionRadius = 5f;
     [SerializeField] LayerMask obstaclesLayer;
     [SerializeField] Collider[] players;
+    [SerializeField] GameObject chickenUI;
     bool chickenIsTaken;
     GameObject playerDetected;
 
@@ -63,6 +64,16 @@ public class ChickenStateManager : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         agent.speed = initSpeed;
+    }
+
+    private void OnDisable()
+    {
+        chickenUI.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        chickenUI.SetActive(true);
     }
 
     public Transform centerPos => centerPosition;

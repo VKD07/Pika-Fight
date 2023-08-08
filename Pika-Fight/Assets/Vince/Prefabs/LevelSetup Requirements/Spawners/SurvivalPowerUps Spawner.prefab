@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1325515399015486241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7373257301550963305}
+  - component: {fileID: 5909678498056060044}
+  - component: {fileID: 6625309413833467733}
+  m_Layer: 0
+  m_Name: SurvivalPowerUps Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7373257301550963305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325515399015486241}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5909678498056060044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325515399015486241}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948ff80153b157d49a3a80ff5f9ee89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToPool: {fileID: 11400000, guid: 5a4035e405fd77b4eb9311463a0654d2, type: 2}
+  poolParent: {fileID: 0}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  disableAfterSpawnDuration: 10
+  minSpawnTime: 20
+  maxSpawnTime: 25
+--- !u!114 &6625309413833467733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325515399015486241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3567cd126c5384f4aa914429084b1a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameModeList:
+  - gameMode: {fileID: 11400000, guid: 954e42fbeef1aed418461457efe1ca52, type: 2}
+    listOfScriptsToEnable:
+    - {fileID: 5909678498056060044}
+  - gameMode: {fileID: 11400000, guid: 8c181b59f8809ed45818fb719a6c16d0, type: 2}
+    listOfScriptsToEnable:
+    - {fileID: 5909678498056060044}
+  - gameMode: {fileID: 11400000, guid: b450d1687db372a47972076eb1bb7f03, type: 2}
+    listOfScriptsToEnable:
+    - {fileID: 5909678498056060044}

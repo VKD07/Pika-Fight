@@ -8949,7 +8949,7 @@ MonoBehaviour:
   chicken: {fileID: 0}
   playerVelocity: {fileID: 0}
   chickenPos: {fileID: 6518057199187452670}
-  percentageRate: 0.04
+  percentageRate: 2
   playerHealth: {fileID: 0}
 --- !u!114 &2666406194243344039
 MonoBehaviour:
