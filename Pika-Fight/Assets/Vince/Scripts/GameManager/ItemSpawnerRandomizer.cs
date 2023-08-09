@@ -33,6 +33,7 @@ public class ItemSpawnerRandomizer : MonoBehaviour
 
 
     IEnumerator DisableObj()
+
     {
         yield return new WaitForSeconds(disableAfterSpawnDuration);
         objectPool.GetPickedObj.SetActive(false);

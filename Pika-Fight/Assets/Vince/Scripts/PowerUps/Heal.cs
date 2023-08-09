@@ -14,7 +14,8 @@ public class Heal : MonoBehaviour
         {
             HealThePlayer(other.GetComponent<HealthBar>());
             PickUpVfx();
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

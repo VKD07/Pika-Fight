@@ -68,12 +68,12 @@ public class ChickenStateManager : MonoBehaviour
 
     private void OnDisable()
     {
-        chickenUI.SetActive(false);
+        chickenUI?.SetActive(false);
     }
 
     private void OnEnable()
     {
-        chickenUI.SetActive(true);
+        chickenUI?.SetActive(true);
     }
 
     public Transform centerPos => centerPosition;
