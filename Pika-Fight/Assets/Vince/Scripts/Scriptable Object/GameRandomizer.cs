@@ -33,6 +33,10 @@ public class GameRandomizer : ScriptableObject
     public void ApplyGeneratedRandoms()
     {
         ResetModes();
+    }
+
+    public void EnableScripts()
+    {
         combatEvents[randomCombat].EnableMode();
         gameGoals[randomGoal].EnableMode();
     }

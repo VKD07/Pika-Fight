@@ -7,6 +7,7 @@ public class DontDestroy : MonoBehaviour
     [SerializeField] PlayerConfig[] playerConfig;
     [SerializeField] PlayerJoinedData playerJoinedData;
     [SerializeField] BoolReference versusScreen;
+    [SerializeField] GameRandomizer gameRandomizer;
 
     void Awake()
     {

@@ -14,6 +14,8 @@ public class GamePlayCountdown : MonoBehaviour
     [SerializeField] float toScale = 0.3665984f;
     [SerializeField] BoolReference versusScreenPlayed;
     [SerializeField] GameObject versusScreen;
+    [SerializeField] UnityEvent OnCount;
+    [SerializeField] UnityEvent OnFightTxt;
     int imgIndex;
     private void Start()
     {
@@ -26,6 +28,7 @@ public class GamePlayCountdown : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         if (versusScreenPlayed && !versusScreen.activeSelf)
         {
+            OnCount.Invoke();
             countdownImage.enabled = true;
             TextAnimation(toScale);
             players = GameObject.FindGameObjectsWithTag("Player");
@@ -41,12 +44,14 @@ public class GamePlayCountdown : MonoBehaviour
             yield return new WaitForSeconds(timeInterval);
             if (imgIndex == 3)
             {
+                OnFightTxt.Invoke();
                 PlayerMovement(true);
                 this.gameObject.SetActive(false);
                 break;
             }
             else
             {
+                OnCount.Invoke();
                 imgIndex++;
                 countdownImage.sprite = countdownSprites[imgIndex];
                 TextAnimation(toScale);
