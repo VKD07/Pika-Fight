@@ -16,10 +16,10 @@ MonoBehaviour:
   playerColor: {r: 1, g: 0.2688679, b: 0.2688679, a: 0.34901962}
   characterSprite: {fileID: -1955456937, guid: 52cc04a7a8bfed34cb68725879f90b91, type: 3}
   characterName: Alien
-  playerOverallScore: 0
-  gemScore: 0
-  holdPercentage: 100.03848
-  damageDealtToChicken: 60
+  playerOverallScore: 6
+  gemScore: 8
+  holdPercentage: 100.023186
+  damageDealtToChicken: 58.361755
   winner: 0
   playerIsReady: 1
   playerIsDead: 0

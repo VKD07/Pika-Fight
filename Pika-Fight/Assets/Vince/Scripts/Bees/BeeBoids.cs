@@ -12,9 +12,10 @@ public class BeeBoids : MonoBehaviour
     [SerializeField] float maxSpeed = 10f;
     [SerializeField] float attractionStrength;
     [SerializeField] public Transform targetObject;
+
     void Start()
     {
-        velocity = Random.insideUnitSphere * 10;
+        velocity = Random.insideUnitSphere * 2;
         neighbours = new CustomLinkedList<BeeBoids>();
     }
 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6240981901838994792}
   - component: {fileID: 3117384526077434601}
   - component: {fileID: 5513412069544054190}
+  - component: {fileID: 5720977916971312997}
   m_Layer: 0
   m_Name: PoisonKnife
   m_TagString: Untagged
@@ -141,6 +142,19 @@ MonoBehaviour:
   bounceSpeed: 6
   bounceAmplitude: 0.45
   rotationSpeed: 90
+--- !u!114 &5720977916971312997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3401064111677948664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b24572caccd77a44ba069f371985a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDisable: 10
 --- !u!1 &6666213727137600067
 GameObject:
   m_ObjectHideFlags: 0

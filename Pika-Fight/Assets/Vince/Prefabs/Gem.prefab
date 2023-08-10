@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1667206241580606954}
   - component: {fileID: 7414165950596530487}
   - component: {fileID: 7754035299649891052}
+  - component: {fileID: 7361725962104798386}
   m_Layer: 0
   m_Name: Gem
   m_TagString: Gem
@@ -121,6 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560ee110ea7052040803761efb667e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickUpVfx: {fileID: 5824670795371433373, guid: 6d042c1a687ef5c4aac53f3533a0c804,
+    type: 3}
   OnPickup:
     m_PersistentCalls:
       m_Calls:
@@ -160,8 +163,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  pickUpVfx: {fileID: 5824670795371433373, guid: 6d042c1a687ef5c4aac53f3533a0c804,
-    type: 3}
+  OnEnableObj:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1667206241580606954}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 23000011085638434}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   gemValue: 1
 --- !u!114 &7754035299649891052
 MonoBehaviour:
@@ -176,6 +204,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
+--- !u!114 &7361725962104798386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013656696560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b24572caccd77a44ba069f371985a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDisable: 15
+  deactivate: 0
 --- !u!1001 &7250421356179054985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -184,6 +226,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4000011756025136}
     m_Modifications:
+    - target: {fileID: 114139348869542028, guid: 5c54d088e99df7642ba2ae51d31788b3,
+        type: 3}
+      propertyPath: clearBehavior
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4863468975456228605, guid: 5c54d088e99df7642ba2ae51d31788b3,
         type: 3}
       propertyPath: m_RootOrder

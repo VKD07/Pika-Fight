@@ -5,9 +5,14 @@ using UnityEngine.Events;
 
 public class Gem : MonoBehaviour
 {
-    [SerializeField] UnityEvent OnPickup;
     [SerializeField] GameObject pickUpVfx;
+    [SerializeField] UnityEvent OnPickup;
+    [SerializeField] UnityEvent OnEnableObj;
     [SerializeField] float gemValue = 1;
+    private void OnEnable()
+    {
+       OnEnableObj.Invoke();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")

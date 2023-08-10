@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1769045362718307886}
   - component: {fileID: 7365536030237849459}
   - component: {fileID: 5174202685161332313}
+  - component: {fileID: 7431214888375650722}
   m_Layer: 8
   m_Name: BombBall2
   m_TagString: Ball
@@ -153,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballTaken: 0
   ballDamage: 0
+  ballForce: 10
   rayDistance: 1
   playerLayer:
     serializedVersion: 2
@@ -160,8 +162,24 @@ MonoBehaviour:
   exploding: 1
   explosionRadius: 5
   explosionDamage: 50
+  explosionForce: 15
   explodingVfx: {fileID: 1892078723244562, guid: 34f4fbe714c8217408bf48d7a5785b18,
     type: 3}
+  OnExplosion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 47ace0493c7810f42bc9a979e3650fbd, type: 2}
+        m_TargetAssemblyTypeName: CameraShakeSO, Assembly-CSharp
+        m_MethodName: TriggerShake
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   chickenTransformVfx: {fileID: 0}
   chickenBall: 0
   chickenDebuffDuration: 5
@@ -344,6 +362,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vfxPool: {fileID: 11400000, guid: e313fd3ed4dc31741a9db03f0152772b, type: 2}
   vfxSpawnPoint: {fileID: 1678158435678173370}
+--- !u!114 &7431214888375650722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8333360118942424845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b24572caccd77a44ba069f371985a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDisable: 10
 --- !u!1001 &7874698425585026097
 PrefabInstance:
   m_ObjectHideFlags: 0

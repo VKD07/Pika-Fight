@@ -16,6 +16,7 @@ public class Bomb : MonoBehaviour
     [SerializeField] float numOfPlayersJoined;
     [SerializeField] int randomPlayer;
     [SerializeField] GameObject playerCarrier;
+    [SerializeField] UnityEvent OnExplosion;
     bool transfered;
     float currentTime;
 
@@ -109,6 +110,7 @@ public class Bomb : MonoBehaviour
 
     void ExplosionVfx()
     {
+        OnExplosion.Invoke();
         GameObject explosion = Instantiate(explosionVfx, transform.position, Quaternion.identity);
         Destroy(explosion, 2f);
     }

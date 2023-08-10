@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
 {
     [SerializeField] bool ballTaken;
     [SerializeField] float ballDamage;
+    [SerializeField] float ballForce = 10f;
     [Header("Raycast")]
     [SerializeField] float rayDistance = 1f;
     [SerializeField] LayerMask playerLayer;
@@ -18,7 +19,9 @@ public class Ball : MonoBehaviour
     [SerializeField] bool exploding;
     [SerializeField] float explosionRadius = 5f;
     [SerializeField] float explosionDamage = 50f;
+    [SerializeField] float explosionForce = 15f;
     [SerializeField] GameObject explodingVfx;
+    [SerializeField] UnityEvent OnExplosion;
 
     [Header("Chicken Ball")]
     [SerializeField] GameObject chickenTransformVfx;
@@ -138,11 +141,13 @@ public class Ball : MonoBehaviour
             exploded = true;
             foreach (Collider playersInside in playersDetected)
             {
+                playersInside.GetComponent<PlayerMovement>().enabled = false;
                 playersInside.GetComponent<ReceiveDamage>().GetDamage(explosionDamage);
-
+                playersInside.GetComponent<Rigidbody>().AddForce((playersInside.transform.position - transform.position).normalized * explosionForce, ForceMode.Impulse);
             }
         }
 
+        OnExplosion.Invoke();
         GameObject explosion = Instantiate(explodingVfx, spawnLoc.position, Quaternion.identity);
         explosion.transform.localScale = Vector3.one * 2f;
         Destroy(explosion, 1f);
@@ -198,6 +203,8 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.tag == "Player" && rb.velocity.magnitude > 10 && ballTaken)
         {
             OnPlayerImpact.Invoke();
+            collision.gameObject.GetComponent<PlayerMovement>().enabled = false;
+            collision.gameObject.GetComponent<Rigidbody>().AddForce((transform.position - collision.transform.position).normalized * ballForce, ForceMode.Impulse);
             collision.gameObject.GetComponent<ReceiveDamage>().GetDamage(ballDamage);
             ChickenMode(collision.gameObject, ballDamage);
             ChickenBall(collision.gameObject);

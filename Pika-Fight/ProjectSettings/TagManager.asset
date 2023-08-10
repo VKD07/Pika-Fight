@@ -10,6 +10,7 @@ TagManager:
   - Gem
   - Chicken
   - Bee
+  - GameCamera
   layers:
   - Default
   - TransparentFX

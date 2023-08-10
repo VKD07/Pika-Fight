@@ -155,6 +155,22 @@ MonoBehaviour:
   layersAffected:
     serializedVersion: 2
     m_Bits: 832
+  explosionForce: 20
+  OnExplosion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 47ace0493c7810f42bc9a979e3650fbd, type: 2}
+        m_TargetAssemblyTypeName: CameraShakeSO, Assembly-CSharp
+        m_MethodName: TriggerShake
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &7460552857899834602
 Rigidbody:
   m_ObjectHideFlags: 0

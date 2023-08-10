@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d3573052bc5bac48bb7670722a7b590, type: 3}
-  m_Name: MeleePowerUp
+  m_Script: {fileID: 11500000, guid: c75fa5cfd19a1634fbd6f7bfa3a1b7b4, type: 3}
+  m_Name: CrateExplosion
   m_EditorClassIdentifier: 
-  objectToPool: {fileID: 3401064111677948664, guid: a24a21d230b2dbd4bbb37b0fafa183af,
-    type: 3}
-  listOfObjs: []
-  parent: {fileID: 0}
-  poolAmount: 1
+  shakeIntensity: 2
+  shakeTime: 1

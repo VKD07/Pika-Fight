@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 5506402464541079431}
   - component: {fileID: 5556153368137266526}
   - component: {fileID: 4141694176290978347}
+  - component: {fileID: 1444847415099621846}
   m_Layer: 11
   m_Name: ChickenBall
   m_TagString: Ball
@@ -120,6 +121,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   players: []
+  chickenUI: {fileID: 0}
   flee: 0
 --- !u!114 &4486119472933831378
 MonoBehaviour:
@@ -217,6 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballTaken: 0
   ballDamage: 0
+  ballForce: 10
   rayDistance: 1
   playerLayer:
     serializedVersion: 2
@@ -224,14 +227,30 @@ MonoBehaviour:
   exploding: 0
   explosionRadius: 5
   explosionDamage: 50
+  explosionForce: 15
   explodingVfx: {fileID: 0}
+  OnExplosion:
+    m_PersistentCalls:
+      m_Calls: []
   chickenTransformVfx: {fileID: 745864697251991867, guid: f1d4bef6f901e2c4abe8b37cbc5928fa,
     type: 3}
   chickenBall: 1
   chickenDebuffDuration: 5
   OnImpact:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: d3fee69748f2e644d9febd7f747c7062, type: 2}
+        m_TargetAssemblyTypeName: CameraShakeSO, Assembly-CSharp
+        m_MethodName: TriggerShake
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnPlayerImpact:
     m_PersistentCalls:
       m_Calls: []
@@ -349,6 +368,19 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &1444847415099621846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662690805175574387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b24572caccd77a44ba069f371985a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDisable: 10
 --- !u!1 &981542544308144749
 GameObject:
   m_ObjectHideFlags: 0

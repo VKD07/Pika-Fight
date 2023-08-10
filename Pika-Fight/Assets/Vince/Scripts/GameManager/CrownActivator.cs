@@ -41,6 +41,10 @@ public class CrownActivator : MonoBehaviour
                 isTie = true;
             }
         }
-        players[highestScorePlayerIndex].GetComponentInChildren<ActivateCrown>().ActivateTheCrown(!isTie);
+
+        if(players.Length > 0)
+        {
+            players[highestScorePlayerIndex].GetComponentInChildren<ActivateCrown>().ActivateTheCrown(!isTie);
+        }
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PowerUpSpawner : MonoBehaviour
@@ -7,7 +8,6 @@ public class PowerUpSpawner : MonoBehaviour
     [SerializeField] ObjectsPooling objectsToPool;
     [SerializeField] Transform poolParent;
     [SerializeField] List<Transform> spawnPoints;
-    [SerializeField] float disableAfterSpawnDuration = 10f;
     [SerializeField] float minSpawnTime;
     [SerializeField] float maxSpawnTime;
     int randomIndex;
@@ -24,25 +24,42 @@ public class PowerUpSpawner : MonoBehaviour
         while (true)
         {
             randomSpawnTime = Random.Range(minSpawnTime, maxSpawnTime);
-            yield return new WaitForSeconds(randomSpawnTime);
             randomIndex = Random.Range(0, spawnPoints.Count);
             objectsToPool.PickObjFromPoolRandomly(spawnPoints[randomIndex]);
-            StartCoroutine(DisableObj());
+            CheckIfItsAGemPowerUP();
+            yield return new WaitForSeconds(randomSpawnTime);
+            //StartCoroutine(DisableObj());
         }
     }
 
-    IEnumerator DisableObj()
+    void CheckIfItsAGemPowerUP()
     {
-        yield return new WaitForSeconds(disableAfterSpawnDuration);
-        if(objectsToPool.GetPickedObj.GetComponent<Ball>() != null && !objectsToPool.GetPickedObj.GetComponent<Ball>().BallTaken)
+        if (objectsToPool.GetPickedObj.GetComponent<Gem>()!= null)
         {
-            objectsToPool.GetPickedObj.SetActive(false);
-        }
-        else
-        {
-            objectsToPool.GetPickedObj.SetActive(false);
+            objectsToPool.GetPickedObj.GetComponent<Gem>().enabled = true;
         }
     }
+
+    //IEnumerator DisableObj()
+    //{
+    //    yield return new WaitForSeconds(disableAfterSpawnDuration);
+
+    //    Ball ball = objectsToPool.GetPickedObj.GetComponent<Ball>();
+    //    ExplodingCrate explodingCrate = objectsToPool.GetPickedObj.GetComponent<ExplodingCrate>();
+
+    //    if (ball != null && !ball.BallTaken)
+    //    {
+    //        objectsToPool.GetPickedObj.SetActive(false);
+    //    }
+    //    else if (explodingCrate != null)
+    //    {
+    //        //Nothing
+    //    }
+    //    else
+    //    {
+    //        objectsToPool.GetPickedObj.SetActive(false);
+    //    }
+    //}
 
     public void AddToList(GameObject point)
     {
@@ -60,6 +77,6 @@ public class PowerUpSpawner : MonoBehaviour
 
     private void OnDisable()
     {
-        //  objectPool.ClearList();
+        //objectPool.ClearList();
     }
 }

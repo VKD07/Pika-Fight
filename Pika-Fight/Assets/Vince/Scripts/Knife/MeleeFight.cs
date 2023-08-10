@@ -14,6 +14,7 @@ public class MeleeFight : MonoBehaviour
     [SerializeField] Transform weaponRangeOrigin;
     [SerializeField] LayerMask layerToStab;
     [SerializeField] PoisonousKnife poisonousKnife;
+    [SerializeField] ObjectSpawner swordSparkVfx;
 
     [Header("Script references")]
     [SerializeField] PlayerControls playerControls;
@@ -27,7 +28,8 @@ public class MeleeFight : MonoBehaviour
     [SerializeField] UnityEvent IsDashing;
     [SerializeField] UnityEvent IsNotDashing;
     [SerializeField] UnityEvent OnStab;
-    bool isDashing;
+    [SerializeField] UnityEvent OnPlayerImpact;
+    public bool isDashing;
     bool isStunned;
 
     Animator anim;
@@ -55,8 +57,6 @@ public class MeleeFight : MonoBehaviour
         knifeWeapon.SetActive(false);
         anim.SetBool("Knife", false);
     }
-
-    // Update is called once per frame
     void Update()
     {
         DetectPlayerEnemy();
@@ -94,9 +94,19 @@ public class MeleeFight : MonoBehaviour
             {
                 for (int i = 0; i < players.Length; i++)
                 {
-                    players[i].GetComponent<ReceiveDamage>().GetDamage(weaponDamage);
+                    if (players[i].GetComponentInChildren<MeleeFight>().isDashing)
+                    {
+                        swordSparkVfx.InstantiateObj(knifeWeapon.transform, Quaternion.identity);
+                        rb.velocity = Vector3.zero;
+                        players[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    }
+                    else
+                    {
+                        ChickenMode(players[i].gameObject, weaponDamage);
+                        players[i].GetComponent<ReceiveDamage>().GetDamage(weaponDamage);
+                    }
+                    OnPlayerImpact.Invoke();
                     ApplyPoison(players[0].gameObject);
-                    ChickenMode(players[i].gameObject, weaponDamage);
                 }
             }
             BeginDash();
@@ -135,7 +145,7 @@ public class MeleeFight : MonoBehaviour
 
     void ChickenMode(GameObject player, float damageDealt)
     {
-        if(player.GetComponentInChildren<ChickenMode>().enabled)
+        if (player.GetComponentInChildren<ChickenMode>().enabled)
         {
             playerConfigBridge.PlayerConfig.DamageDealtToChicken += damageDealt;
         }

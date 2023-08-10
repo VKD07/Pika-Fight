@@ -6,13 +6,18 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GemHunt : MonoBehaviour
 {
     [Header("Timer Settings")]
-    [SerializeField] GameObject timer;
-    [SerializeField] TextMeshProUGUI timerValue;
+    [SerializeField] Slider timer;
+    [SerializeField] float showTimerDelay = 3f;
     [SerializeField] float timerDuration = 60f;
+    [SerializeField] Gradient timerGradient;
+    [SerializeField] Image fillImage;
+    Animator timerAnim;
+    float timeToStartAnim;
     [SerializeField] UnityEvent OnTimerDone;
     float currentTime;
 
@@ -26,10 +31,21 @@ public class GemHunt : MonoBehaviour
 
     private void OnEnable()
     {
-        timer.SetActive(true);
+        StartCoroutine(ShowTimer());
+        timerAnim = timer.gameObject.GetComponent<Animator>();
+        timeToStartAnim = timerDuration / 2;
+        timer.maxValue = timerDuration - 5;
+        timer.value = timerDuration;
+        fillImage.color = timerGradient.Evaluate(1f);
         currentTime = timerDuration;
         OnEnableScript.Invoke();
         ResetGemScore();
+    }
+
+    IEnumerator ShowTimer()
+    {
+        yield return new WaitForSeconds(showTimerDelay);
+        timer.gameObject.SetActive(true);
     }
 
     void Update()
@@ -48,7 +64,7 @@ public class GemHunt : MonoBehaviour
 
     void StartTimer()
     {
-        if(currentTime > 0)
+        if (currentTime > 0)
         {
             currentTime -= Time.deltaTime;
         }
@@ -63,7 +79,13 @@ public class GemHunt : MonoBehaviour
 
     private void UpdateTimerText()
     {
-        timerValue.SetText(MathF.Round(currentTime,2).ToString());
+        timer.value = currentTime;
+        fillImage.color = timerGradient.Evaluate(timer.normalizedValue);
+        if (timer.value <= timeToStartAnim)
+        {
+            float speedValue = 1.0f - (currentTime / timerDuration);
+            timerAnim.SetFloat("AnimationSpeed", speedValue * 2f);
+        }
     }
 
     void LookForHighestGemScore()

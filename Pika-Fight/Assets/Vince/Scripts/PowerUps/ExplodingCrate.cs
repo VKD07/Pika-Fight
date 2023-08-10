@@ -1,7 +1,9 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ExplodingCrate : MonoBehaviour
 {
@@ -10,8 +12,10 @@ public class ExplodingCrate : MonoBehaviour
     [SerializeField] float explosionRadius = 5f;
     [SerializeField] float timeToExplode = 2f;
     [SerializeField] LayerMask layersAffected;
+    [SerializeField] float explosionForce = 20f;
+    [SerializeField] UnityEvent OnExplosion;
     Animator anim;
-    private void Start()
+    private void OnEnable()
     {
         anim = GetComponent<Animator>();
     }
@@ -49,6 +53,7 @@ public class ExplodingCrate : MonoBehaviour
             if(objs.GetComponent<ReceiveDamage>() != null)
             {
                 objs.GetComponent<ReceiveDamage>().GetDamage(explosionDamage);
+                objs.GetComponent<PlayerMovement>().enabled = false;
             }
 
             if(objs.GetComponent<beeAttack>() != null)
@@ -56,10 +61,10 @@ public class ExplodingCrate : MonoBehaviour
                 Destroy(objs);
             }
 
-            objs.GetComponent<Rigidbody>().AddForce(-objs.transform.forward * 20f, ForceMode.Impulse);
         }
+        OnExplosion.Invoke();
         ExplosionVFX();
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
     
     void ExplosionVFX()
