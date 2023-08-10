@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class rotation : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float  rotationSpeed= 5f;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         transform.Rotate(0, 10, 0, Space.Self);

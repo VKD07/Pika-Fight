@@ -1523,6 +1523,7 @@ GameObject:
   - component: {fileID: 281661126}
   - component: {fileID: 281661125}
   - component: {fileID: 281661124}
+  - component: {fileID: 281661127}
   m_Layer: 0
   m_Name: damange zone (1)
   m_TagString: Untagged
@@ -1617,6 +1618,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281661122}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &281661127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281661122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95ffca732974a94e812d7ab36b479e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 5
+  damage: 5
 --- !u!1001 &288965486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1724,6 +1739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5013f01b19b10de40a93eaaad8c3493f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 5
 --- !u!1001 &306306902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2248,6 +2264,7 @@ GameObject:
   - component: {fileID: 368814494}
   - component: {fileID: 368814493}
   - component: {fileID: 368814492}
+  - component: {fileID: 368814495}
   m_Layer: 0
   m_Name: damange zone (3)
   m_TagString: Untagged
@@ -2342,6 +2359,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368814490}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &368814495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368814490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95ffca732974a94e812d7ab36b479e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 5
+  damage: 5
 --- !u!1001 &371193503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7752,6 +7783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5013f01b19b10de40a93eaaad8c3493f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 5
 --- !u!1001 &1151937029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8598,6 +8630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5013f01b19b10de40a93eaaad8c3493f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 5
 --- !u!1001 &1335318450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9996,6 +10029,7 @@ GameObject:
   - component: {fileID: 1408650576}
   - component: {fileID: 1408650575}
   - component: {fileID: 1408650574}
+  - component: {fileID: 1408650577}
   m_Layer: 0
   m_Name: damange zone
   m_TagString: Untagged
@@ -10090,6 +10124,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408650572}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1408650577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408650572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95ffca732974a94e812d7ab36b479e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 5
+  damage: 5
 --- !u!1001 &1425383988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14004,6 +14052,7 @@ GameObject:
   - component: {fileID: 1960865023}
   - component: {fileID: 1960865022}
   - component: {fileID: 1960865021}
+  - component: {fileID: 1960865024}
   m_Layer: 0
   m_Name: damange zone (2)
   m_TagString: Untagged
@@ -14098,6 +14147,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960865019}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1960865024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960865019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95ffca732974a94e812d7ab36b479e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 5
+  damage: 5
 --- !u!1001 &1978340322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16313,6 +16376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5013f01b19b10de40a93eaaad8c3493f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 5
 --- !u!65 &6922401867671466104
 BoxCollider:
   m_ObjectHideFlags: 0
