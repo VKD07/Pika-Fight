@@ -13,6 +13,7 @@ public class DodgeBall : MonoBehaviour
     [SerializeField] float maxForce = 100f;
     [SerializeField] float forceIncreaseRate = 20f;
     [SerializeField] bool allowToThrow = true;
+    bool ballCharging;
 
     [Header("DodgeBall Reference")]
     [SerializeField] GameObject ball;
@@ -31,6 +32,9 @@ public class DodgeBall : MonoBehaviour
 
     [Header("Player Animation")]
     [SerializeField] PlayerAnimationData playerAnimData;
+    [Space]
+    [SerializeField] UnityEvent ChargeThrow;
+    [SerializeField] UnityEvent BallThrow;
 
     private void Start()
     {
@@ -85,6 +89,7 @@ public class DodgeBall : MonoBehaviour
         IncreaseForce();
         if (Input.GetKeyDown(playerControls.GetDashKey)) //fake throw
         {
+            ballCharging = false;
             allowToThrow = false;
             ballForce = 0f;
             directionFillBar.value = 0;
@@ -96,6 +101,8 @@ public class DodgeBall : MonoBehaviour
         }
         else if (Input.GetKeyUp(playerControls.GetAttackKey) && ballOnHand && allowToThrow)
         {
+            BallThrow.Invoke();
+            ballCharging = false;
             ball.GetComponent<Ball>().SetSphereTrigger(false);
             ball.GetComponent<Rigidbody>().AddForce(transform.forward * ballForce, ForceMode.Impulse);
             StartCoroutine(ball.GetComponent<Ball>().AllowBallToBePicked());
@@ -119,6 +126,7 @@ public class DodgeBall : MonoBehaviour
         {
             if (ballForce < maxForce)
             {
+                ChargeBallVfx();
                 playerAnimData.IsThrowing = true;
                 playerMovementSpeed.Value = 0.5f;
                 velocity.Value = 0f;
@@ -137,6 +145,15 @@ public class DodgeBall : MonoBehaviour
     private void UpdateDirectionBar()
     {
         directionFillBar.value = ballForce;
+    }
+
+    void ChargeBallVfx()
+    {
+        if (!ballCharging)
+        {
+            ballCharging = true;
+            ChargeThrow.Invoke();
+        }
     }
 
     //private void OnCollisionStay(Collision collision)

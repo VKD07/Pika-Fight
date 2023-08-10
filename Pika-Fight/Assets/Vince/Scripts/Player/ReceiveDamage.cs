@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class ReceiveDamage : MonoBehaviour
 {
     [SerializeField] FloatReference playerHealth;
+    [SerializeField] GameObject shield;
     [SerializeField] UnityEvent OnImpact;
     float initHealth;
 
@@ -16,7 +17,7 @@ public class ReceiveDamage : MonoBehaviour
 
     public void GetDamage(float damage)
     {
-        if(this.enabled)
+        if(this.enabled && !shield.activeSelf)
         {
             playerHealth.Value -= damage;
         }
@@ -33,11 +34,18 @@ public class ReceiveDamage : MonoBehaviour
         if(collision.gameObject.tag == "Ball")
         {
             Ball ballScript = collision.gameObject.GetComponent<Ball>();
-
-            if(ballScript != null)
-            {
-            }
         }
+    }
+
+    public void DeactivateShield(float shieldDuration)
+    {
+        StartCoroutine(DisableShield(shieldDuration));
+    }
+
+    IEnumerator DisableShield(float shieldDuration)
+    {
+        yield return new WaitForSeconds(shieldDuration);
+        shield.SetActive(false);     
     }
 
     public FloatReference PlayerHealth { set =>  playerHealth = value; }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
 
@@ -12,10 +13,22 @@ public class VersusManager : MonoBehaviour
     [SerializeField] GameObject versusUI;
     [SerializeField] GameObject readyTxt;
     [SerializeField] GameObject fightTxt;
+    [SerializeField] BoolReference versusScreenPlayed;
+    [SerializeField] UnityEvent charactersShowcase;
+    [SerializeField] UnityEvent ReadyTxt;
+    [SerializeField] UnityEvent FightTxt;
 
     private void Start()
     {
-        StartCoroutine(FindPlayers());
+        if (!versusScreenPlayed.value)
+        {
+            versusScreenPlayed.value = true;
+            StartCoroutine(FindPlayers());
+        }
+        else
+        {
+            versusUI.SetActive(false);
+        }
     }
 
     IEnumerator FindPlayers()
@@ -81,6 +94,8 @@ public class VersusManager : MonoBehaviour
 
             StartCoroutine(DisableUI());
         }
+
+        charactersShowcase.Invoke();
     }
 
     IEnumerator DisableUI()
@@ -104,6 +119,7 @@ public class VersusManager : MonoBehaviour
     void EnablePlayerMovement(bool value)
     {
         fightTxt.SetActive(true);
+        FightTxt.Invoke();
         LeanTween.scale(fightTxt, new Vector3(0.6f, 0.6f, 0.6f), .8f).setEaseInOutBack();
         LeanTween.scale(fightTxt, new Vector3(0.4f, 0.4f, 0.4f), .8f).setEaseOutBack().setDelay(0.4f);
         for (int i = 0; i < players.Length; i++)
@@ -116,6 +132,7 @@ public class VersusManager : MonoBehaviour
     IEnumerator ReadyTextEnable()
     {
         yield return new WaitForSeconds(0.6f);
+        ReadyTxt.Invoke();
         readyTxt.SetActive(true);
         LeanTween.scale(readyTxt, new Vector3(0.6f, 0.6f, 0.6f), .8f).setEaseInOutBack();
         LeanTween.scale(readyTxt, new Vector3(0.4f, 0.4f, 0.4f), .8f).setEaseOutBack().setDelay(0.4f);
@@ -124,6 +141,7 @@ public class VersusManager : MonoBehaviour
     IEnumerator FightTxtDisable()
     {
         yield return new WaitForSeconds(1.3f);
+        DisablePlayerCamera();
         fightTxt.SetActive(false);
     }
 

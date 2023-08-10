@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5394353892054288957}
   - component: {fileID: 2180820873031080473}
   - component: {fileID: 8555918568223852687}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DodgeBall
   m_TagString: Ball
   m_Icon: {fileID: 0}
@@ -152,10 +152,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballTaken: 0
   ballDamage: 0
+  ballForce: 0.05
   rayDistance: 1
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+  exploding: 0
+  explosionRadius: 5
+  explosionDamage: 50
+  explosionForce: 15
+  explodingVfx: {fileID: 1892078723244562, guid: 34f4fbe714c8217408bf48d7a5785b18,
+    type: 3}
+  chickenTransformVfx: {fileID: 0}
+  chickenBall: 0
+  chickenDebuffDuration: 5
   OnImpact:
     m_PersistentCalls:
       m_Calls:
@@ -174,10 +184,10 @@ MonoBehaviour:
   OnPlayerImpact:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
-        m_Mode: 6
+      - m_Target: {fileID: 11400000, guid: d3fee69748f2e644d9febd7f747c7062, type: 2}
+        m_TargetAssemblyTypeName: CameraShakeSO, Assembly-CSharp
+        m_MethodName: TriggerShake
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -186,6 +196,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  previousOwner: {fileID: 0}
 --- !u!96 &5394353892054288957
 TrailRenderer:
   serializedVersion: 3

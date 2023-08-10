@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterBtn : MonoBehaviour
 {
     [SerializeField] GameObject characterPrefab;
+    [SerializeField] Sprite characterSprite;
     [SerializeField] string characterName;
     [SerializeField] bool characterIsTaken;
 
@@ -14,6 +15,7 @@ public class CharacterBtn : MonoBehaviour
     }
 
     public GameObject GetCharaterPrefab => characterPrefab;
+    public Sprite CharacterSprite => characterSprite;
     public bool CharacterIsTaken
     {
         get { return characterIsTaken; }

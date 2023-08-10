@@ -90,6 +90,16 @@ public class CustomLinkedList<T>
         }
     }
 
+    public IEnumerator<T> GetEnumerator()
+    {
+        Node<T> current = first;
+        while (current != null)
+        {
+            yield return current.data;
+            current = current.next;
+        }
+    }
+
     public void ShowList()
     {
         Debug.Log($"First: {first.data}");

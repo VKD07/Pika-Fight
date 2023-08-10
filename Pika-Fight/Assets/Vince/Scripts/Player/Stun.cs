@@ -11,12 +11,15 @@ public class Stun : MonoBehaviour
     [SerializeField] FloatReference playerHealth;
     [SerializeField] UnityEvent OnStunned;
     [SerializeField] UnityEvent UnStunned;
+    [SerializeField] UnityEvent StunSound;
+    bool stunned;
 
     bool playerIsStunned;
 
     private void OnEnable()
     {
         playerIsStunned = false;
+        StunSfx();
     }
 
     private void Update()
@@ -35,7 +38,6 @@ public class Stun : MonoBehaviour
     IEnumerator StunDelay()
     {
         yield return new WaitForSeconds(0.1f);
-
         if (playerHealth.Value > 0)
         {
             OnStunned.Invoke();
@@ -47,9 +49,19 @@ public class Stun : MonoBehaviour
     IEnumerator DisableStun()
     {
         yield return new WaitForSeconds(stunDuration);
+        stunned = false;
         UnStunned.Invoke();
         playerAnimData.IsStunned = false;
         playerIsStunned = false;
+    }
+
+    void StunSfx()
+    {
+        if (!stunned)
+        {
+            stunned = true;
+            StunSound.Invoke();
+        }
     }
 
     public PlayerAnimationData PlayerAnimationData { get => playerAnimData; set => playerAnimData = value; }

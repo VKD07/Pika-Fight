@@ -14,8 +14,20 @@ public class TrainingMode : MonoBehaviour
 
     void Update()
     {
-        
+        DisablePlayersReceivingDamage();
     }
+
+    private void DisablePlayersReceivingDamage()
+    {
+        if (players != null)
+        {
+            foreach (var player in players)
+            {
+                player.GetComponent<ReceiveDamage>().enabled = false;
+            }
+        }
+    }
+
     IEnumerator EnableDodgeBall()
     {
         yield return new WaitForSeconds(2f);
@@ -25,7 +37,6 @@ public class TrainingMode : MonoBehaviour
             for (int i = 0; i < players.Length; i++)
             {
                 players[i].GetComponentInChildren<DodgeBall>().enabled = true;
-                players[i].GetComponent<ReceiveDamage>().enabled = false;
             }
         }
     }

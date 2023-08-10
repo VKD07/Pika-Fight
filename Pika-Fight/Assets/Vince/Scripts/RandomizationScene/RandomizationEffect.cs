@@ -18,6 +18,7 @@ public class RandomizationEffect : MonoBehaviour
     [SerializeField] float randomInterval = 1f;
     [SerializeField] float chooseDelaytime = 5f;
     [SerializeField] GameRandomizer gameRandomizer;
+    [SerializeField] UnityEvent OnChoosing;
     [SerializeField] UnityEvent finishedChoosing;
     bool startChoosing;
     void Start()
@@ -33,6 +34,8 @@ public class RandomizationEffect : MonoBehaviour
             int randomImage = Random.Range(0, images.Length);
             mainImage.sprite = images[randomImage];
             yield return new WaitForSeconds(randomInterval);
+            //OnChoosing.Invoke();
+
         }
     }
 

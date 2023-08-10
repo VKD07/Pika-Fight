@@ -13,6 +13,9 @@ public class MeleeFight : MonoBehaviour
     [SerializeField] public bool playerDetected;
     [SerializeField] Transform weaponRangeOrigin;
     [SerializeField] LayerMask layerToStab;
+    [SerializeField] PoisonousKnife poisonousKnife;
+    [SerializeField] ObjectSpawner swordSparkVfx;
+
     [Header("Script references")]
     [SerializeField] PlayerControls playerControls;
     PlayerConfigBridge playerConfigBridge;
@@ -25,7 +28,9 @@ public class MeleeFight : MonoBehaviour
     [SerializeField] UnityEvent IsDashing;
     [SerializeField] UnityEvent IsNotDashing;
     [SerializeField] UnityEvent OnStab;
-    bool isDashing;
+    [SerializeField] UnityEvent OnPlayerImpact;
+    [SerializeField] UnityEvent OnSwordCollide;
+    public bool isDashing;
     bool isStunned;
 
     Animator anim;
@@ -53,8 +58,6 @@ public class MeleeFight : MonoBehaviour
         knifeWeapon.SetActive(false);
         anim.SetBool("Knife", false);
     }
-
-    // Update is called once per frame
     void Update()
     {
         DetectPlayerEnemy();
@@ -92,8 +95,20 @@ public class MeleeFight : MonoBehaviour
             {
                 for (int i = 0; i < players.Length; i++)
                 {
-                    players[i].GetComponent<ReceiveDamage>().GetDamage(weaponDamage);
-                    ChickenMode(players[i].gameObject, weaponDamage);
+                    if (players[i].GetComponentInChildren<MeleeFight>().isDashing)
+                    {
+                        swordSparkVfx.InstantiateObj(knifeWeapon.transform, Quaternion.identity);
+                        rb.velocity = Vector3.zero;
+                        players[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
+                        OnSwordCollide.Invoke();
+                    }
+                    else
+                    {
+                        ChickenMode(players[i].gameObject, weaponDamage);
+                        players[i].GetComponent<ReceiveDamage>().GetDamage(weaponDamage);
+                    }
+                    OnPlayerImpact.Invoke();
+                    ApplyPoison(players[0].gameObject);
                 }
             }
             BeginDash();
@@ -132,9 +147,18 @@ public class MeleeFight : MonoBehaviour
 
     void ChickenMode(GameObject player, float damageDealt)
     {
-        if(player.GetComponentInChildren<ChickenMode>().enabled)
+        if (player.GetComponentInChildren<ChickenMode>().enabled)
         {
             playerConfigBridge.PlayerConfig.DamageDealtToChicken += damageDealt;
+        }
+    }
+
+    void ApplyPoison(GameObject targetPlayer)
+    {
+        if (poisonousKnife.enabled)
+        {
+            poisonousKnife.GivePoison(targetPlayer);
+            poisonousKnife.DisablePoisonKnife();
         }
     }
 
@@ -148,6 +172,6 @@ public class MeleeFight : MonoBehaviour
 
     public PlayerControls SetPlayerControls { set { playerControls = value; } }
     public bool IStunned { set => isStunned = value; }
-
+    public bool Stabbing => isDashing;
     public float AttackCoolDown { get => attackCoolDown; set => attackCoolDown = value; }
 }

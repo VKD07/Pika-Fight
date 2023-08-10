@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class PlayerJoinManager : MonoBehaviour
@@ -15,6 +16,8 @@ public class PlayerJoinManager : MonoBehaviour
 
     [Header("PlayerControls")]
     [SerializeField] PlayerControls[] availableControls;
+
+    [SerializeField] UnityEvent OnCharacterJoin;
 
     private void Awake()
     {
@@ -38,6 +41,7 @@ public class PlayerJoinManager : MonoBehaviour
     {
         if (Input.GetKeyDown(key) && !availableControls[keyboardControlIndex].ControlIsTaken)
         {
+            OnCharacterJoin.Invoke();
             availableControls[keyboardControlIndex].ControlIsTaken = true;
             playerJoinedData.AddPlayer(availableControls[keyboardControlIndex]);
         }

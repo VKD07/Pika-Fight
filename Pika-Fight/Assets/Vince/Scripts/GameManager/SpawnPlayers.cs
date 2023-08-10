@@ -20,6 +20,7 @@ public class SpawnPlayers : MonoBehaviour
     {
         //putting all the values in the dictionary
         playerDataDictionary.InitDictionary();
+
     }
 
     void Start()
@@ -27,6 +28,7 @@ public class SpawnPlayers : MonoBehaviour
         numberOfPlayers = playerJoinedData.GetNumberOfPlayersJoined();
         //GetNumberOfPlayers();
         SpawnCharacters();
+
     }
 
     private void GetNumberOfPlayers()
@@ -55,10 +57,10 @@ public class SpawnPlayers : MonoBehaviour
             
             player.GetComponent<PlayerConfigBridge>().PlayerConfig = playerJoinedData.GetPlayersJoined[i];
             player.GetComponent<Rigidbody>().isKinematic = false;
+            OnSpawn.Invoke();
 
             //enabling all scripts
             player.GetComponent<PlayerStatus>().EnableScripts(true);
-            OnSpawn.Invoke();
             ////Setting player data from player data dictionary
             SetPlayerControlsToPlayerScripts(player, playerJoinedData.GetPlayersJoined[i].Player_Controls);
             SetPlayerVelocityVariable(player, playerDataDictionary.myDict[playerJoinedData.GetPlayersJoined[i].CharacterName].playerVeloctiy);

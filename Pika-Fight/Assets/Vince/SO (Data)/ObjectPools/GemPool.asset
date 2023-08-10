@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d3573052bc5bac48bb7670722a7b590, type: 3}
+  m_Script: {fileID: 11500000, guid: e7945d7399f8dc243b69ec4dcf75626d, type: 3}
   m_Name: GemPool
   m_EditorClassIdentifier: 
-  objectToPool: {fileID: 1000013656696560, guid: cd34118c604e29141afea74caecd70f2,
-    type: 3}
+  objectsToPool:
+  - {fileID: 1000013656696560, guid: cd34118c604e29141afea74caecd70f2, type: 3}
+  - {fileID: 1000013656696560, guid: cd34118c604e29141afea74caecd70f2, type: 3}
+  - {fileID: 1000013656696560, guid: cd34118c604e29141afea74caecd70f2, type: 3}
   listOfObjs: []
   parent: {fileID: 0}
-  poolAmount: 10
+  poolAmount: 3

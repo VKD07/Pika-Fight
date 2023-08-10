@@ -11,15 +11,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float rotationSpeed = 720f;
     [SerializeField] FloatReference velocity;
     [SerializeField] FloatReference movementSpeed;
+    TrailRenderer trailRenderer;
     Vector3 playerPos;
     Rigidbody rb;
+    float initSpeed;
 
     void Start()
     {
+        trailRenderer = GetComponent<TrailRenderer>();
         rb = GetComponent<Rigidbody>();
         movementSpeed.Value = 7f;
+        initSpeed = movementSpeed.Value;
     }
-
+     
     // Update is called once per frame
     void Update()
     {
@@ -53,7 +57,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void DisableSpeedUp(float delayTime)
+    {
+        StartCoroutine(ReduceSpeed(delayTime));
+    }
+
+    IEnumerator ReduceSpeed(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        trailRenderer.enabled = false;
+        movementSpeed.Value = initSpeed;
+    }
+
     public PlayerControls SetPlayerControls { set { playerControls = value; } }
     public FloatReference PlayerVelocity { set => velocity = value; }
-    public FloatReference PlayerMovementSpeed { set => movementSpeed = value; }
+    public FloatReference PlayerMovementSpeed { get => movementSpeed; set => movementSpeed = value; }
 }

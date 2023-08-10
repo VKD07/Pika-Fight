@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerVfx : MonoBehaviour
 {
     [SerializeField] ObjectPooling dashVfxPool;
     [SerializeField] Transform dashVfxSpawnPoint;
+    [SerializeField] GameObject respawnVfx;
+    [SerializeField] UnityEvent OnEnableScript;
     Transform gameParticlesParent;
 
     void Start()
@@ -26,6 +30,17 @@ public class PlayerVfx : MonoBehaviour
     private void OnDestroy()
     {
         dashVfxPool.ClearList();
+    }
+
+    private void OnEnable()
+    {
+        OnEnableScript.Invoke();
+        respawnVfx.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        respawnVfx.SetActive(false);
     }
 
     IEnumerator DisableObj()

@@ -16,12 +16,14 @@ public class SceneLoaderEditor : EditorWindow
         EditorGUILayout.LabelField("Select A Scene To Go", EditorStyles.boldLabel);
         EditorGUILayout.BeginHorizontal();
         LoadVinceScenes("Player Join Scene", "PlayerJoin");
-        LoadVinceScenes("Normal Map Test", "VinceTest");
-        LoadVinceScenes("Score Scene", "ScoreScene");
+        LoadAdamSceneButton("Adam Scene", "AdamMap");
+        LoadAlyScenes("Moving Land", "ShrinkLevel1");
+        LoadAlyScenes("Fiery Land", "ExplosionLevel");
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.BeginHorizontal();
-        LoadAdamSceneButton("Adam Scene", "adam");
         LoadVinceScenes("Final Ranking", "FinalRanking");
+        LoadVinceScenes("Score Scene", "ScoreScene");
+        LoadVinceScenes("Random Scene", "RandomizationScene");
         EditorGUILayout.EndHorizontal();
     }
 
@@ -31,6 +33,15 @@ public class SceneLoaderEditor : EditorWindow
         {
             EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
             EditorSceneManager.OpenScene("Assets/Vince/Scenes/" + SceneName + ".unity");
+        }
+    }
+
+    void LoadAlyScenes(string btnName, string SceneName)
+    {
+        if (GUILayout.Button(btnName))
+        {
+            EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
+            EditorSceneManager.OpenScene("Assets/Ali/Scenes/" + SceneName + ".unity");
         }
     }
 
