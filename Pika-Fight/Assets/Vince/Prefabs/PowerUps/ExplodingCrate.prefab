@@ -156,6 +156,33 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 832
   explosionForce: 20
+  OnIgnite:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: FindAudioSource
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TntIgnite
+          m_BoolArgument: 0
+        m_CallState: 2
   OnExplosion:
     m_PersistentCalls:
       m_Calls:
@@ -169,6 +196,30 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: FindAudioSource
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Explosion
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!54 &7460552857899834602

@@ -10,11 +10,13 @@ public class PlayerJoinCountdown : MonoBehaviour
     [SerializeField] Sprite[] numbers;
     [SerializeField] float timeInterval = 3f;
     [SerializeField] UnityEvent OnFinishCount;
+    [SerializeField] UnityEvent OnCount;
     Vector3 initScale;
     int num;
 
     private void OnEnable()
     {
+        OnCount.Invoke();
         initScale = new Vector3(0.7077497f, 0.7077497f, 0.7077497f);
         PopAnimation(1.104441f);
         countdownImage.sprite = numbers[num];
@@ -44,6 +46,7 @@ public class PlayerJoinCountdown : MonoBehaviour
         while (num < 3)
         {
             yield return new WaitForSeconds(timeInterval);
+            OnCount.Invoke();
             countdownImage.gameObject.transform.localScale = initScale;
             PopAnimation(1.104441f);
             num++;

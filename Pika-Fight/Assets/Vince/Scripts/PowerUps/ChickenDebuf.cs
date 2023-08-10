@@ -12,6 +12,7 @@ public class ChickenDebuf : MonoBehaviour
     float chickenDuration;
     private void OnEnable()
     {
+        OnChickenMode.Invoke();
         NormalForm(false);
         StartCoroutine(DisableChickenForm());
     }

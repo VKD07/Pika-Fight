@@ -29,6 +29,7 @@ public class MeleeFight : MonoBehaviour
     [SerializeField] UnityEvent IsNotDashing;
     [SerializeField] UnityEvent OnStab;
     [SerializeField] UnityEvent OnPlayerImpact;
+    [SerializeField] UnityEvent OnSwordCollide;
     public bool isDashing;
     bool isStunned;
 
@@ -99,6 +100,7 @@ public class MeleeFight : MonoBehaviour
                         swordSparkVfx.InstantiateObj(knifeWeapon.transform, Quaternion.identity);
                         rb.velocity = Vector3.zero;
                         players[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
+                        OnSwordCollide.Invoke();
                     }
                     else
                     {

@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerControl: {fileID: 11400000, guid: 8496037b6201d8d409f324591f76a851, type: 2}
   playerColor: {r: 0.33490568, g: 1, b: 0.50343955, a: 0.34901962}
-  characterSprite: {fileID: 50399517, guid: 231f7547bca149740a5872a0c4c3bc98, type: 3}
-  characterName: Girl
-  playerOverallScore: 1
+  characterSprite: {fileID: 1644535876, guid: 95258e6548789df44b6121b200640da8, type: 3}
+  characterName: Chicken
+  playerOverallScore: 0
   gemScore: 0
   holdPercentage: 0
   damageDealtToChicken: 0
   winner: 0
   playerIsReady: 1
   playerIsDead: 0
-  playerCharacter: {fileID: 4006341026387044044, guid: b51e16215cb9496479ea06f18763034c,
+  playerCharacter: {fileID: 4724938619719301259, guid: 72324f59befd2034387ce60c6ba5dfbc,
     type: 3}

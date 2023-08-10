@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class CharacterSelection : MonoBehaviour
@@ -18,6 +19,9 @@ public class CharacterSelection : MonoBehaviour
     [Header("Pointer Settings")]
     [SerializeField] float pointerDelay = 0.2f;
     [SerializeField] bool[] startDelays;
+    [Space]
+    [SerializeField] UnityEvent OnPointerMove;
+    [SerializeField] UnityEvent OnCharacterChoose;
 
     void Update()
     {
@@ -84,21 +88,25 @@ public class CharacterSelection : MonoBehaviour
         {
             if (x > 0 && characterIndeces[i] < characters.Length - 1)
             {
+                OnPointerMove.Invoke();
                 StartCoroutine(TimerDelay(i));
                 characterIndeces[i]++;
             }
             else if (x < 0 && characterIndeces[i] > 0)
             {
+                OnPointerMove.Invoke();
                 StartCoroutine(TimerDelay(i));
                 characterIndeces[i]--;
             }
             else if (y > 0 && characterIndeces[i] >= 5)
             {
+                OnPointerMove.Invoke();
                 StartCoroutine(TimerDelay(i));
                 characterIndeces[i] -= 5;
             }
             else if (y < 0 && characterIndeces[i] < characters.Length - 5)
             {
+                OnPointerMove.Invoke();
                 StartCoroutine(TimerDelay(i));
                 characterIndeces[i] += 5;
             }
@@ -124,6 +132,7 @@ public class CharacterSelection : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (Input.GetKeyDown(playerJoinedData.GetPlayersJoined[btnIndex].Player_Controls.PlayerReadyKey) && !characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().CharacterIsTaken)
         {
+            OnCharacterChoose.Invoke();
             // playerJoinedData.GetPlayersJoined[btnIndex].PlayerCharacter = characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().GetCharaterPrefab;
             playerJoinedData.GetPlayersJoined[btnIndex].CharacterName = characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().CharacterName;
             playerJoinedData.GetPlayersJoined[btnIndex].CharacterSprite = characters[characterIndeces[btnIndex]].GetComponent<CharacterBtn>().CharacterSprite;

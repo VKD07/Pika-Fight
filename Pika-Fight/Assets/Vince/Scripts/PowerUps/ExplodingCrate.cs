@@ -13,6 +13,7 @@ public class ExplodingCrate : MonoBehaviour
     [SerializeField] float timeToExplode = 2f;
     [SerializeField] LayerMask layersAffected;
     [SerializeField] float explosionForce = 20f;
+    [SerializeField] UnityEvent OnIgnite;
     [SerializeField] UnityEvent OnExplosion;
     Animator anim;
     private void OnEnable()
@@ -25,6 +26,7 @@ public class ExplodingCrate : MonoBehaviour
         {
             if(collision.gameObject.GetComponent<Ball>().GetBallDamage > 10)
             {
+                OnIgnite.Invoke();
                 anim.SetTrigger("Explode");
                 StartCoroutine(Explode());
             }
