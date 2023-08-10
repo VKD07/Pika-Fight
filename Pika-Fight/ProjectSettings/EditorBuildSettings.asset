@@ -32,4 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Vince/Scenes/RandomizationScene.unity
     guid: 3e16c21fcfd3fe941847c9e178d0fc8a
+  - enabled: 1
+    path: Assets/Ali/Scenes/OptionsMenu.unity
+    guid: b9633c45258dc5a4c8bdfadf37515907
+  - enabled: 1
+    path: Assets/Ali/Scenes/StartMenu.unity
+    guid: 0bd5a7bfebd1c0548bb954f120405ea6
+  - enabled: 1
+    path: Assets/Ali/Scenes/ControlsSheet.unity
+    guid: 92adbe128c9840c48a4799fa2e7ef430
   m_configObjects: {}
