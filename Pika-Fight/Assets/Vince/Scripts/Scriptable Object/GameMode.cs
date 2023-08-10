@@ -24,6 +24,8 @@ public class GameMode : ScriptableObject
 
     public void EnableMode()
     {
+        scriptToEnable.RemoveAll(script => script == null);
+
         for (int i = 0; i < scriptToEnable.Count; i++)
         {
             scriptToEnable[i].enabled = true;
@@ -32,6 +34,7 @@ public class GameMode : ScriptableObject
 
     public void DisbleModes()
     {
+        scriptToEnable.RemoveAll(script => script == null);
         for (int i = 0; i < scriptToEnable.Count; i++)
         {
             scriptToEnable[i].enabled = false;

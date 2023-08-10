@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d9a31d6fbc5d94dac27a0cdcb773d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 172739463345340268, guid: 3c83bfbe1232d794e8481268fa4d5a69,
+  playerPrefab: {fileID: 8413177583846242522, guid: 3c83bfbe1232d794e8481268fa4d5a69,
     type: 3}
   winnerPos: {fileID: 1319233962}
   otherPlayersPos:

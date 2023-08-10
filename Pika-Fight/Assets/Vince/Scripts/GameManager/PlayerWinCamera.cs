@@ -1,28 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerWinCamera : MonoBehaviour
 {
     [SerializeField] GameObject[] players;
     [SerializeField] GameObject winBanner;
+    [SerializeField] UnityEvent OnWinnerFound;
+    int index;
     void Start()
     {
-        players = GameObject.FindGameObjectsWithTag("Player");
     }
 
-    public void EnableWinCamera()
+    private void Update()
     {
+        FindPlayerWinner();
+    }
+
+    private void FindPlayerWinner()
+    {
+        players = GameObject.FindGameObjectsWithTag("Player");
+
         for (int i = 0; i < players.Length; i++)
         {
             if (players[i].GetComponent<PlayerConfigBridge>().PlayerConfig.Winner)
             {
-                players[i].transform.Find("WinCamera").gameObject.SetActive(true);
-                players[i].GetComponent<Animator>().SetTrigger("ModeWinner");
-                players[i].GetComponent<PlayerMovement>().enabled = false;
-                winBanner.SetActive(true);
+                OnWinnerFound.Invoke();
+                index = i;
                 break;
             }
         }
+    }
+
+    public void EnableWinCamera()
+    {
+        OnWinnerFound.Invoke();
+        players[index].GetComponentInChildren<PlayerWinCameraEnabler>().EnableCamera();
+        players[index].GetComponent<Animator>().SetTrigger("ModeWinner");
+        players[index].GetComponent<PlayerMovement>().enabled = false;
+        winBanner.SetActive(true);
     }
 }

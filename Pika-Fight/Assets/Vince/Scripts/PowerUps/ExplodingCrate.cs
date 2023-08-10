@@ -62,11 +62,16 @@ public class ExplodingCrate : MonoBehaviour
             {
                 Destroy(objs);
             }
-
+            ExplosionForce(objs.gameObject);
         }
         OnExplosion.Invoke();
         ExplosionVFX();
         gameObject.SetActive(false);
+    }
+
+    void ExplosionForce(GameObject obj)
+    {
+        obj.GetComponent<Rigidbody>().AddForce((obj.transform.position -transform.position).normalized * explosionForce, ForceMode.Impulse);
     }
     
     void ExplosionVFX()

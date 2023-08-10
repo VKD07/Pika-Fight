@@ -13,11 +13,6 @@ public class LastManStanding : MonoBehaviour
     [SerializeField] UnityEvent OnWinnerDeclared;
     float numOfPlayers;
 
-    private void Awake()
-    {
-        Time.timeScale = 1.0f;
-    }
-
     void Start()
     {
         numOfPlayers = 0;
@@ -33,11 +28,12 @@ public class LastManStanding : MonoBehaviour
     {
         if(numOfPlayersDied.Value >= numOfPlayers -1)
         {
+            StartCoroutine(Invoke());
             StartCoroutine(OnWinnerDeclare());
-            OnWinnerFound.Invoke();
             GiveScoreToPlayer();
         }
     }
+
 
     void GiveScoreToPlayer()
     {
@@ -49,6 +45,13 @@ public class LastManStanding : MonoBehaviour
                 break;
             }
         }
+    }
+
+    IEnumerator Invoke()
+    {
+        yield return null;
+        OnWinnerFound.Invoke();
+
     }
 
     IEnumerator OnWinnerDeclare()

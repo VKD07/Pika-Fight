@@ -45452,6 +45452,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5779866630211974340, guid: b504d5c5b6c17b24083ac89bc36a770b,
         type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 8413177583846242522, guid: 3c83bfbe1232d794e8481268fa4d5a69,
+        type: 3}
+    - target: {fileID: 5779866630211974340, guid: b504d5c5b6c17b24083ac89bc36a770b,
+        type: 3}
       propertyPath: playerSpawnerParent
       value: 
       objectReference: {fileID: 573798019}
@@ -45483,7 +45489,7 @@ PrefabInstance:
     - target: {fileID: 5779866630211974340, guid: b504d5c5b6c17b24083ac89bc36a770b,
         type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5779866630211974340, guid: b504d5c5b6c17b24083ac89bc36a770b,
         type: 3}
@@ -45575,6 +45581,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   players: []
   winBanner: {fileID: 381739625}
+  OnWinnerFound:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &914684390 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 779292798855881366, guid: b504d5c5b6c17b24083ac89bc36a770b,
