@@ -15,4 +15,4 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: ac68b530da7cbcf45b23cf98cf3ae70e, type: 3}
   playOneShot: 1
   looping: 0
-  soundVolume: 0.783
+  soundVolume: 1

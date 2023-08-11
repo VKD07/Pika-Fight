@@ -33,7 +33,11 @@ public class AudioManager : ScriptableObject
 
     public void FindAudioSource()
     {
-        audioSource = FindObjectOfType<AudioSource>();
+        while(audioSource == null)
+        {
+            audioSource = FindObjectOfType<AudioSource>();
+            Debug.Log(audioSource);
+        }
     }
 
     SoundData GetSoundData(string soundName)

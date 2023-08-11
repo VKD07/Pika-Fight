@@ -136,17 +136,6 @@ public class DodgeBall : MonoBehaviour
         }
     }
 
-    IEnumerator ThrowDelay()
-    {
-        yield return new WaitForSeconds(0.1f);
-        allowToThrow = true;
-    }
-
-    private void UpdateDirectionBar()
-    {
-        directionFillBar.value = ballForce;
-    }
-
     void ChargeBallVfx()
     {
         if (!ballCharging)
@@ -154,6 +143,17 @@ public class DodgeBall : MonoBehaviour
             ballCharging = true;
             ChargeThrow.Invoke();
         }
+    }
+
+    IEnumerator ThrowDelay()
+    {
+        yield return new WaitForSeconds(0f);
+        allowToThrow = true;
+    }
+
+    private void UpdateDirectionBar()
+    {
+        directionFillBar.value = ballForce;
     }
 
     //private void OnCollisionStay(Collision collision)

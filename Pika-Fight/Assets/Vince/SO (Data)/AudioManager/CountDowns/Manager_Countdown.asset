@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326d510fee913d94c92199d844cd5fd3, type: 3}
+  m_Name: Manager_Countdown
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 11400000, guid: 7dc86d14d3980c34c90e08effc61d037, type: 2}
+  - {fileID: 11400000, guid: 3a64597d04215854085b6539eb1eedaa, type: 2}
+  - {fileID: 11400000, guid: bf3e634a35f4b5746bc5294b15a31d62, type: 2}

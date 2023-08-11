@@ -16,6 +16,7 @@ public class ExplodingCrate : MonoBehaviour
     [SerializeField] UnityEvent OnIgnite;
     [SerializeField] UnityEvent OnExplosion;
     Animator anim;
+    bool ignited;
     private void OnEnable()
     {
         anim = GetComponent<Animator>();
@@ -26,7 +27,7 @@ public class ExplodingCrate : MonoBehaviour
         {
             if(collision.gameObject.GetComponent<Ball>().GetBallDamage > 10)
             {
-                OnIgnite.Invoke();
+                Ignite();
                 anim.SetTrigger("Explode");
                 StartCoroutine(Explode());
             }
@@ -39,9 +40,19 @@ public class ExplodingCrate : MonoBehaviour
         {
             if (collision.gameObject.GetComponentInChildren<MeleeFight>().Stabbing)
             {
+                Ignite();
                 anim.SetTrigger("Explode");
                 StartCoroutine(Explode());
             }
+        }
+    }
+
+    void Ignite()
+    {
+        if (!ignited)
+        {
+            ignited = true;
+            OnIgnite.Invoke();
         }
     }
 
@@ -78,7 +89,7 @@ public class ExplodingCrate : MonoBehaviour
     {
         GameObject vfx = Instantiate(explodingVfx, transform.position, Quaternion.identity);
         vfx.transform.localScale = Vector3.one * 2f;
-        Destroy(vfx, 1f);
+        Destroy(vfx, 2f);
     }
     //private void OnDrawGizmos()
     //{

@@ -35572,6 +35572,150 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 232986fd248790744a63ddefb70f0080,
         type: 2}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnCount.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnFightTxt.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnCount.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnCount.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnCount.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 8026f59540540964cbe9c3d033a5950e,
+        type: 2}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnCount.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 8026f59540540964cbe9c3d033a5950e,
+        type: 2}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnFightTxt.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnFightTxt.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnCount.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnCount.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnFightTxt.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: a2790c19a4b4ddf4f8a4b65506cd21e1,
+        type: 2}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnFightTxt.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: a2790c19a4b4ddf4f8a4b65506cd21e1,
+        type: 2}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnCount.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FindAudioSource
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnCount.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnFightTxt.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnFightTxt.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnFightTxt.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FindAudioSource
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnFightTxt.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnCount.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnCount.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnFightTxt.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnFightTxt.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnCount.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Count
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnFightTxt.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Fight
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnCount.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnCount.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnFightTxt.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788278388349533481, guid: 346121fce095673469ced0cd960d062c,
+        type: 3}
+      propertyPath: OnFightTxt.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8910553024426905429, guid: 346121fce095673469ced0cd960d062c,
         type: 3}
       propertyPath: m_Pivot.x
@@ -75525,25 +75669,25 @@ PrefabInstance:
         type: 3}
       propertyPath: FightTxt.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42,
+      objectReference: {fileID: 11400000, guid: a2790c19a4b4ddf4f8a4b65506cd21e1,
         type: 2}
     - target: {fileID: 3384883609536434870, guid: 7f36962a008804e44a76381fa168b26e,
         type: 3}
       propertyPath: FightTxt.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42,
+      objectReference: {fileID: 11400000, guid: a2790c19a4b4ddf4f8a4b65506cd21e1,
         type: 2}
     - target: {fileID: 3384883609536434870, guid: 7f36962a008804e44a76381fa168b26e,
         type: 3}
       propertyPath: ReadyTxt.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42,
+      objectReference: {fileID: 11400000, guid: a2790c19a4b4ddf4f8a4b65506cd21e1,
         type: 2}
     - target: {fileID: 3384883609536434870, guid: 7f36962a008804e44a76381fa168b26e,
         type: 3}
       propertyPath: ReadyTxt.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42,
+      objectReference: {fileID: 11400000, guid: a2790c19a4b4ddf4f8a4b65506cd21e1,
         type: 2}
     - target: {fileID: 3384883609536434870, guid: 7f36962a008804e44a76381fa168b26e,
         type: 3}
@@ -75599,13 +75743,13 @@ PrefabInstance:
         type: 3}
       propertyPath: charactersShowcase.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42,
+      objectReference: {fileID: 11400000, guid: a2790c19a4b4ddf4f8a4b65506cd21e1,
         type: 2}
     - target: {fileID: 3384883609536434870, guid: 7f36962a008804e44a76381fa168b26e,
         type: 3}
       propertyPath: charactersShowcase.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42,
+      objectReference: {fileID: 11400000, guid: a2790c19a4b4ddf4f8a4b65506cd21e1,
         type: 2}
     - target: {fileID: 3384883609536434870, guid: 7f36962a008804e44a76381fa168b26e,
         type: 3}
@@ -93380,7 +93524,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: 2285ce03a8de17749a65f82ee869af49, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetAudioSource
         m_Mode: 2
@@ -93392,7 +93536,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: 2285ce03a8de17749a65f82ee869af49, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 5
@@ -93419,7 +93563,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: d3fee69748f2e644d9febd7f747c7062, type: 2}
+      - m_Target: {fileID: 11400000, guid: 2285ce03a8de17749a65f82ee869af49, type: 2}
         m_TargetAssemblyTypeName: CameraShakeSO, Assembly-CSharp
         m_MethodName: TriggerShake
         m_Mode: 1
@@ -93431,7 +93575,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: 2285ce03a8de17749a65f82ee869af49, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 5
@@ -94035,7 +94179,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: 2285ce03a8de17749a65f82ee869af49, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetAudioSource
         m_Mode: 2
@@ -94047,7 +94191,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: 2285ce03a8de17749a65f82ee869af49, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 5
@@ -94074,7 +94218,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: d3fee69748f2e644d9febd7f747c7062, type: 2}
+      - m_Target: {fileID: 11400000, guid: 2285ce03a8de17749a65f82ee869af49, type: 2}
         m_TargetAssemblyTypeName: CameraShakeSO, Assembly-CSharp
         m_MethodName: TriggerShake
         m_Mode: 1
@@ -94086,7 +94230,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: 2285ce03a8de17749a65f82ee869af49, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 5
@@ -94145,7 +94289,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: 2285ce03a8de17749a65f82ee869af49, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetAudioSource
         m_Mode: 2
@@ -94157,7 +94301,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: 2285ce03a8de17749a65f82ee869af49, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 5
@@ -94184,7 +94328,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: d3fee69748f2e644d9febd7f747c7062, type: 2}
+      - m_Target: {fileID: 11400000, guid: 2285ce03a8de17749a65f82ee869af49, type: 2}
         m_TargetAssemblyTypeName: CameraShakeSO, Assembly-CSharp
         m_MethodName: TriggerShake
         m_Mode: 1
@@ -94196,7 +94340,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: 2285ce03a8de17749a65f82ee869af49, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 5
@@ -94486,7 +94630,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: 2285ce03a8de17749a65f82ee869af49, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetAudioSource
         m_Mode: 2
@@ -94498,7 +94642,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: 2285ce03a8de17749a65f82ee869af49, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 5
@@ -94525,7 +94669,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: d3fee69748f2e644d9febd7f747c7062, type: 2}
+      - m_Target: {fileID: 11400000, guid: 2285ce03a8de17749a65f82ee869af49, type: 2}
         m_TargetAssemblyTypeName: CameraShakeSO, Assembly-CSharp
         m_MethodName: TriggerShake
         m_Mode: 1
@@ -94537,7 +94681,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: 2285ce03a8de17749a65f82ee869af49, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 5

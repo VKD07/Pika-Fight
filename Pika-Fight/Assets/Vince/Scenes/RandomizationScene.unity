@@ -303,7 +303,7 @@ MonoBehaviour:
   OnChoosing:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: b8ea3a5ed669aee44a576e832663f909, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetAudioSource
         m_Mode: 2
@@ -315,7 +315,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: b8ea3a5ed669aee44a576e832663f909, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 5
@@ -330,7 +330,7 @@ MonoBehaviour:
   finishedChoosing:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: f0a635bd4b045a7498bde6af0a9b4c70, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetAudioSource
         m_Mode: 2
@@ -342,7 +342,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: f0a635bd4b045a7498bde6af0a9b4c70, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 5
@@ -819,7 +819,7 @@ MonoBehaviour:
   OnChoosing:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: b8ea3a5ed669aee44a576e832663f909, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetAudioSource
         m_Mode: 2
@@ -831,7 +831,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: b8ea3a5ed669aee44a576e832663f909, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 5
@@ -846,19 +846,7 @@ MonoBehaviour:
   finishedChoosing:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1956323516}
-        m_TargetAssemblyTypeName: StartTheGame, Assembly-CSharp
-        m_MethodName: set_DoneChoosing
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: f0a635bd4b045a7498bde6af0a9b4c70, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetAudioSource
         m_Mode: 2
@@ -870,10 +858,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: f0a635bd4b045a7498bde6af0a9b4c70, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: CharacterReady
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1956323516}
+        m_TargetAssemblyTypeName: StartTheGame, Assembly-CSharp
+        m_MethodName: set_DoneChoosing
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1020,7 +1020,7 @@ MonoBehaviour:
   OnChoosing:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: b8ea3a5ed669aee44a576e832663f909, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetAudioSource
         m_Mode: 2
@@ -1032,7 +1032,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: b8ea3a5ed669aee44a576e832663f909, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 5
@@ -1047,19 +1047,19 @@ MonoBehaviour:
   finishedChoosing:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: f0a635bd4b045a7498bde6af0a9b4c70, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: FindAudioSource
-        m_Mode: 1
+        m_MethodName: SetAudioSource
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 805367386}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: CharacterReady
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 5e6060dd225af4f4a8fe6f2280361a42, type: 2}
+      - m_Target: {fileID: 11400000, guid: f0a635bd4b045a7498bde6af0a9b4c70, type: 2}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 5

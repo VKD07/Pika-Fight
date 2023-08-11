@@ -112,7 +112,7 @@ public class Ball : MonoBehaviour
 
     public IEnumerator AllowBallToBePicked()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         ballTaken = false;
     }
 
@@ -150,7 +150,7 @@ public class Ball : MonoBehaviour
         OnExplosion.Invoke();
         GameObject explosion = Instantiate(explodingVfx, spawnLoc.position, Quaternion.identity);
         explosion.transform.localScale = Vector3.one * 2f;
-        Destroy(explosion, 1f);
+        Destroy(explosion, 2f);
         rb.velocity = Vector3.zero;
         gameObject.SetActive(false);
     }
