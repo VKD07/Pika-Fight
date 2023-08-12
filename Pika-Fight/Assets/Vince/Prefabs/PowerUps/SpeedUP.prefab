@@ -237,6 +237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDisable: 10
+  deactivate: 0
+  currentTime: 0
 --- !u!1001 &3681020228826466336
 PrefabInstance:
   m_ObjectHideFlags: 0

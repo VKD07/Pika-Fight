@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PlayerScoreSheet : MonoBehaviour
@@ -12,6 +13,7 @@ public class PlayerScoreSheet : MonoBehaviour
     [SerializeField] Vector3 scorePanelInitScale;
     [SerializeField] Vector3 toScale;
     bool animated;
+    [SerializeField] UnityEvent OnAddingScore;
     private void Start()
     {
         initScore = currentScore.Value;
@@ -24,6 +26,7 @@ public class PlayerScoreSheet : MonoBehaviour
 
             if (scoreImg[i].color == Color.white && !animated && currentScore.Value > initScore)
             {
+                OnAddingScore.Invoke();
                 animated = true;
                 UIAnimation(gameObject);
             }

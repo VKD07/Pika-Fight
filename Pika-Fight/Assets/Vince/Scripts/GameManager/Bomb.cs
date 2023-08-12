@@ -17,6 +17,8 @@ public class Bomb : MonoBehaviour
     [SerializeField] int randomPlayer;
     [SerializeField] GameObject playerCarrier;
     [SerializeField] UnityEvent OnExplosion;
+    [SerializeField] UnityEvent OnChangeCarrier;
+    [SerializeField] float bombStartDelay = 5f;
     bool transfered;
     float currentTime;
 
@@ -30,7 +32,7 @@ public class Bomb : MonoBehaviour
         }
 
         numOfPlayersJoined = playerJoinedData.GetNumberOfPlayersJoined();
-        StartCoroutine(RandomizePlayerCarrier());
+        StartCoroutine(RandomizePlayerCarrier(bombStartDelay));
     }
     // Update is called once per frame
     void Update()
@@ -78,7 +80,7 @@ public class Bomb : MonoBehaviour
         else
         {
             //randomize again if theres remaining players left
-            StartCoroutine(RandomizePlayerCarrier());
+            StartCoroutine(RandomizePlayerCarrier(0));
         }
     }
 
@@ -93,9 +95,9 @@ public class Bomb : MonoBehaviour
         }
     }
 
-    IEnumerator RandomizePlayerCarrier()
+    IEnumerator RandomizePlayerCarrier(float startDelay)
     {
-        yield return new WaitForSeconds(0);
+        yield return new WaitForSeconds(startDelay);
         randomPlayer = Random.Range(0, playersAlive.Count);
         playerCarrier = playersAlive[randomPlayer];
     }
@@ -119,7 +121,10 @@ public class Bomb : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            OnChangeCarrier.Invoke();
             playerCarrier = other.gameObject;
         }
     }
+
+    public float CurrentTime => currentTime;
 }

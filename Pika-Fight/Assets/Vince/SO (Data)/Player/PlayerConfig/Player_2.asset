@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81306ee4bc7f9148a3cabb7cb223c68, type: 3}
   m_Name: Player_2
   m_EditorClassIdentifier: 
-  playerControl: {fileID: 11400000, guid: 8e1be352d6d596b43abfee919e054f44, type: 2}
+  playerControl: {fileID: 11400000, guid: 8496037b6201d8d409f324591f76a851, type: 2}
   playerColor: {r: 0.21226418, g: 0.53388184, b: 1, a: 0.34901962}
   characterSprite: {fileID: 1075911197, guid: 2862c9382961ea5409eda079359e9b05, type: 3}
   characterName: Bear

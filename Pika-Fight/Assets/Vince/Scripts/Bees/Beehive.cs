@@ -34,6 +34,6 @@ public class Beehive : MonoBehaviour
     void Vfx()
     {
         GameObject vfxImpact = Instantiate(vfx, transform.position, Quaternion.identity);
-        Destroy(vfxImpact, 1);
+        Destroy(vfxImpact, 2);
     }
 }

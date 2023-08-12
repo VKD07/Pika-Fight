@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class ChickenStateManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class ChickenStateManager : MonoBehaviour
     [SerializeField] LayerMask obstaclesLayer;
     [SerializeField] Collider[] players;
     [SerializeField] GameObject chickenUI;
+    [SerializeField] UnityEvent OnDisableScript;
     bool chickenIsTaken;
     GameObject playerDetected;
 
@@ -76,6 +78,7 @@ public class ChickenStateManager : MonoBehaviour
 
     private void OnEnable()
     {
+        OnDisableScript.Invoke();
         if (chickenUI != null)
         {
             chickenUI.SetActive(true);

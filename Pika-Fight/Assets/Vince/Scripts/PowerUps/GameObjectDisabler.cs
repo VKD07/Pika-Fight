@@ -6,8 +6,8 @@ public class GameObjectDisabler : MonoBehaviour
 {
     [SerializeField] float timeToDisable = 10f;
     [SerializeField] bool deactivate;
-    public float currentTime;
-    bool runTimer;
+    float currentTime;
+    public bool runTimer;
   
 
     private void OnEnable()

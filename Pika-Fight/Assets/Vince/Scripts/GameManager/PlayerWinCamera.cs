@@ -26,7 +26,6 @@ public class PlayerWinCamera : MonoBehaviour
         {
             if (players[i].GetComponent<PlayerConfigBridge>().PlayerConfig.Winner)
             {
-                OnWinnerFound.Invoke();
                 index = i;
                 break;
             }
@@ -35,10 +34,10 @@ public class PlayerWinCamera : MonoBehaviour
 
     public void EnableWinCamera()
     {
-        OnWinnerFound.Invoke();
         players[index].GetComponentInChildren<PlayerWinCameraEnabler>().EnableCamera();
         players[index].GetComponent<Animator>().SetTrigger("ModeWinner");
         players[index].GetComponent<PlayerMovement>().enabled = false;
         winBanner.SetActive(true);
+        OnWinnerFound.Invoke();
     }
 }

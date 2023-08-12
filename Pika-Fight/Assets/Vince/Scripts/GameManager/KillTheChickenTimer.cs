@@ -33,14 +33,19 @@ public class KillTheChickenTimer : MonoBehaviour
     private void OnEnable()
     {
         StartCoroutine(ShowTimer());
+        InitTimer();
+        OnEnableScript.Invoke();
+        ResetGemScore();
+    }
+
+    private void InitTimer()
+    {
         timerAnim = timer.gameObject.GetComponent<Animator>();
         timeToStartAnim = timerDuration / 2;
         timer.maxValue = timerDuration - 5;
         timer.value = timerDuration;
         fillImage.color = timerGradient.Evaluate(1f);
         currentTime = timerDuration;
-        OnEnableScript.Invoke();
-        ResetGemScore();
     }
 
     IEnumerator ShowTimer()

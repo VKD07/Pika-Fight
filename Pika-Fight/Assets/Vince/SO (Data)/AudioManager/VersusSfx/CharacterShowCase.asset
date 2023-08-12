@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcda980e49e614b4989af229df99166d, type: 3}
   m_Name: CharacterShowCase
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 0e478cb55ded74446af3c448dedf6047, type: 3}
+  audioClip: {fileID: 8300000, guid: 755ad43d39278914eaa55c708e5b1a47, type: 3}
   playOneShot: 1
   looping: 0
-  soundVolume: 1
+  soundVolume: 0.7

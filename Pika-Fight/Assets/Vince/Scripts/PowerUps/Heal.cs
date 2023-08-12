@@ -2,12 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Heal : MonoBehaviour
 {
     [SerializeField] GameObject pickUpVfx;
     [SerializeField] float healValue = 50f;
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")

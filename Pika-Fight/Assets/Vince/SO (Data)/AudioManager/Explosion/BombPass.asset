@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcda980e49e614b4989af229df99166d, type: 3}
+  m_Name: BombPass
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: bea487ebcda964544b2cf5be13406693, type: 3}
+  playOneShot: 0
+  looping: 0
+  soundVolume: 0.881

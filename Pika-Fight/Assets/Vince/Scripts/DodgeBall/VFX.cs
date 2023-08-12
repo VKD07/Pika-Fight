@@ -18,20 +18,10 @@ public class VFX : MonoBehaviour
     public void SpawnFx()
     {
         vfxPool.PickObjFromPool(vfxSpawnPoint);
-        StartCoroutine(DisableObj());
     }
 
     private void OnDisable()
     {
         vfxPool.ClearList();
-    }
-
-    IEnumerator DisableObj()
-    {
-        yield return new WaitForSeconds(1f);
-        if (vfxPool.GetPickedObj != null)
-        {
-            vfxPool.GetPickedObj.SetActive(false);
-        }
     }
 }

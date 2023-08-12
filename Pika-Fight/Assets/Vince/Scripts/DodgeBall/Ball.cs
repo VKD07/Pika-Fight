@@ -27,13 +27,14 @@ public class Ball : MonoBehaviour
     [SerializeField] GameObject chickenTransformVfx;
     [SerializeField] bool chickenBall;
     [SerializeField] float chickenDebuffDuration = 5f;
-
-    Beehive beehive;
-
-    bool exploded;
+   
     [Header("Events")]
     [SerializeField] UnityEvent OnImpact;
     [SerializeField] UnityEvent OnPlayerImpact;
+    [SerializeField] UnityEvent OnChickenCatched;
+    bool collidedWithPlayer;
+    Beehive beehive;
+    bool exploded;
     Rigidbody rb;
     SphereCollider sphereCollider;
     TrailRenderer trailRenderer;
@@ -87,7 +88,7 @@ public class Ball : MonoBehaviour
                 }
                 ChickenBall(hit.collider.gameObject);
                 ChickenMode(hit.collider.gameObject, ballDamage);
-                OnPlayerImpact.Invoke();
+                PlayerImpactInvoke();
             }
         }
     }
@@ -161,7 +162,7 @@ public class Ball : MonoBehaviour
         if (chickenBall)
         {
             ChickenDebuf chickenDebuff = player.GetComponentInChildren<ChickenDebuf>();
-            if(chickenDebuff != null)
+            if (chickenDebuff != null)
             {
                 chickenDebuff.ChickenDuration = chickenDebuffDuration;
                 chickenDebuff.enabled = true;
@@ -173,6 +174,13 @@ public class Ball : MonoBehaviour
         }
     }
 
+    void ChickenSound()
+    {
+        if (chickenBall)
+        {
+            OnChickenCatched.Invoke();
+        }
+    }
     //beehive
 
     void Beehive(Transform target)
@@ -183,10 +191,26 @@ public class Ball : MonoBehaviour
         }
     }
 
+    void PlayerImpactInvoke()
+    {
+        if (!collidedWithPlayer)
+        {
+            collidedWithPlayer = true;
+            OnPlayerImpact.Invoke();
+            StartCoroutine(EnablePlayerImpactEvent());
+        }
+    }
+
+    IEnumerator EnablePlayerImpactEvent()
+    {
+        yield return new WaitForSeconds(0.5f);
+        collidedWithPlayer = false;
+    }
+
     public bool BallTaken
     {
         get { return ballTaken; }
-        set { ballTaken = value; }
+        set { ballTaken = value; ChickenSound(); }
     }
 
     public float GetBallDamage => ballDamage;
@@ -202,7 +226,7 @@ public class Ball : MonoBehaviour
 
         if (collision.gameObject.tag == "Player" && rb.velocity.magnitude > 10 && ballTaken)
         {
-            OnPlayerImpact.Invoke();
+            PlayerImpactInvoke();
             collision.gameObject.GetComponent<PlayerMovement>().enabled = false;
             collision.gameObject.GetComponent<Rigidbody>().AddForce((transform.position - collision.transform.position).normalized * ballForce, ForceMode.Impulse);
             collision.gameObject.GetComponent<ReceiveDamage>().GetDamage(ballDamage);

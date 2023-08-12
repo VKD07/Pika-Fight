@@ -16,8 +16,8 @@ public class MushroomPosionManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(ActivatePosionRandomly());
         SetMushroomPointsData();
+        StartCoroutine(ActivatePosionRandomly());
     }
 
     IEnumerator ActivatePosionRandomly()
@@ -26,9 +26,8 @@ public class MushroomPosionManager : MonoBehaviour
         {
             randomTime = Random.Range(minActivatePoisonTime, maxActivatePoisonTime);
             randomPoint = Random.Range(0, mushroomPoints.Length);
-            yield return new WaitForSeconds(minActivatePoisonTime);
-            mushroomPoints[randomPoint].SetActive(true);
-            StartCoroutine(DeactivatePoison(mushroomPoints[randomPoint]));
+            yield return new WaitForSeconds(randomTime);
+            mushroomPoints[randomPoint].GetComponent<MushroomPoint>().TriggerPoison();
         }
     }
 
@@ -38,12 +37,7 @@ public class MushroomPosionManager : MonoBehaviour
         {
             mushrooms.GetComponent<MushroomPoint>().Damage = poisonDamage;
             mushrooms.GetComponent<MushroomPoint>().DamageInterval = damageInterval;
+            mushrooms.GetComponent<MushroomPoint>().PoisonDuration = poisonCloudDuration;
         }
-    }
-
-    IEnumerator DeactivatePoison(GameObject mushroomPoint)
-    {
-        yield return new WaitForSeconds(poisonCloudDuration);
-        mushroomPoint.SetActive(false);
     }
 }

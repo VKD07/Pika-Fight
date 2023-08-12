@@ -106,7 +106,6 @@ public class DodgeBall : MonoBehaviour
             ball.GetComponent<Ball>().SetSphereTrigger(false);
             ball.GetComponent<Rigidbody>().AddForce(transform.forward * ballForce, ForceMode.Impulse);
             StartCoroutine(ball.GetComponent<Ball>().AllowBallToBePicked());
-            //ball.GetComponent<Ball>().BallTaken = false;
             ball.transform.forward = transform.forward;
             ballOnHand = false;
             ball = null;
@@ -155,30 +154,6 @@ public class DodgeBall : MonoBehaviour
     {
         directionFillBar.value = ballForce;
     }
-
-    //private void OnCollisionStay(Collision collision)
-    //{
-    //    if (collision.transform.parent == transform.parent && parentRigidBody != null)
-    //    {
-    //        if (collision.gameObject.tag == "Ball")
-    //        {
-    //            if (!collision.gameObject.GetComponent<Ball>().BallTaken && !ballOnHand)
-    //            {
-    //                ball = collision.gameObject;
-    //                ball.GetComponent<Ball>().BallTaken = true;
-    //                playerAnimData.BallOnHand = true;
-    //            }
-    //        }
-    //    }
-    //}
-
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    if (ball != null)
-    //    {
-    //        ball.GetComponent<Ball>().BallTaken = true;
-    //    }
-    //}
 
     public PlayerControls SetPlayerControls { set { playerControls = value; } }
     public FloatReference PlayerVelocity { set => velocity = value; }

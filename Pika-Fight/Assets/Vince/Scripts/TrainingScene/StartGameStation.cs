@@ -15,7 +15,9 @@ public class StartGameStation : MonoBehaviour
     [SerializeField] Image transitionimage;
     [SerializeField] float timeToStart = 5f;
     [SerializeField] float transitionTime = 3f;
+    [SerializeField] UnityEvent OnPlayerEntered;
     [SerializeField] UnityEvent OnStartGame;
+    Animator anim;
     bool startTransition;
     float currentTime;
     float currentTransitionTime;
@@ -23,6 +25,7 @@ public class StartGameStation : MonoBehaviour
     int numOfPlayersInTheArea;
     private void Start()
     {
+        anim = GetComponent<Animator>();
         numOfPlayersJoined = playerJoinedData.GetNumberOfPlayersJoined();
         numofPlayersTxt.SetText($"{numOfPlayersInTheArea}/{numOfPlayersJoined}");
         startGameSlider.maxValue = timeToStart;
@@ -80,6 +83,8 @@ public class StartGameStation : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            OnPlayerEntered.Invoke();
+            anim.SetTrigger("PlayerEntered");
             numOfPlayersInTheArea += 1;
         }
     }

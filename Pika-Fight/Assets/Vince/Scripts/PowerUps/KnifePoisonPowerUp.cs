@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class KnifePoisonPowerUp : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class KnifePoisonPowerUp : MonoBehaviour
             poisonousKnife.AttackInterval = attackInterval;
             poisonousKnife.enabled = true;
             //Destroy(gameObject);
+            PickUpVfx();
             gameObject.SetActive(false);
         }
     }

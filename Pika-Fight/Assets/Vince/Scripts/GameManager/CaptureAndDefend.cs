@@ -45,8 +45,8 @@ public class CaptureAndDefend : MonoBehaviour
             if (playerJoinedData.GetPlayConfig[i].HoldPercentage >= percentageValueToWin)
             {
                 playerJoinedData.GetPlayConfig[i].Winner = true;
-                OnWinnerFound.Invoke();
                 StartCoroutine(OnWinnerDeclare());
+                OnWinnerFound.Invoke();
                 break;
             }
         }

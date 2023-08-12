@@ -20,6 +20,7 @@ public class GemHunt : MonoBehaviour
     float timeToStartAnim;
     [SerializeField] UnityEvent OnTimerDone;
     float currentTime;
+    bool timerDone;
 
     [Header("Player Reference")]
     [SerializeField] PlayerJoinedData playerJoinedData;
@@ -32,14 +33,19 @@ public class GemHunt : MonoBehaviour
     private void OnEnable()
     {
         StartCoroutine(ShowTimer());
+        InitTimer();
+        OnEnableScript.Invoke();
+        ResetGemScore();
+    }
+
+    private void InitTimer()
+    {
         timerAnim = timer.gameObject.GetComponent<Animator>();
         timeToStartAnim = timerDuration / 2;
         timer.maxValue = timerDuration - 5;
         timer.value = timerDuration;
         fillImage.color = timerGradient.Evaluate(1f);
         currentTime = timerDuration;
-        OnEnableScript.Invoke();
-        ResetGemScore();
     }
 
     IEnumerator ShowTimer()
@@ -52,6 +58,7 @@ public class GemHunt : MonoBehaviour
     {
         StartTimer();
         UpdateTimerText();
+        LookForHighestGemScore();
     }
 
     void ResetGemScore()
@@ -71,8 +78,7 @@ public class GemHunt : MonoBehaviour
         else
         {
             currentTime = 0;
-            LookForHighestGemScore();
-            OnWinnerFound.Invoke();
+            timerDone = true;
             StartCoroutine(OnWinnerDeclare());
         }
     }
@@ -96,7 +102,12 @@ public class GemHunt : MonoBehaviour
             {
                 highestGemScore = playerJoinedData.GetPlayersJoined[i].GemScore;
                 playerIndex = i;
-                playerJoinedData.GetPlayersJoined[playerIndex].Winner = true;
+
+                if (timerDone)
+                {
+                    playerJoinedData.GetPlayersJoined[playerIndex].Winner = true;
+                    OnWinnerFound.Invoke();
+                }
             }
         }
     }

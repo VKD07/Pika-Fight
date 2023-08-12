@@ -28,9 +28,9 @@ public class LastManStanding : MonoBehaviour
     {
         if(numOfPlayersDied.Value >= numOfPlayers -1)
         {
-            StartCoroutine(Invoke());
-            StartCoroutine(OnWinnerDeclare());
             GiveScoreToPlayer();
+            StartCoroutine(OnWinnerDeclare());
+            StartCoroutine(Invoke());
         }
     }
 

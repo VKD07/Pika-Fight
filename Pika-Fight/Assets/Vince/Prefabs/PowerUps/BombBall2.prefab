@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a4c46780885faf04a99eb73127f5e852, type: 2}
+  - {fileID: 2100000, guid: 596a4bccc9634354a9a50baebae5e00d, type: 2}
   - {fileID: 2100000, guid: 25be01ddc2629af4c883008bf9bb77c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -199,6 +199,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   OnPlayerImpact:
+    m_PersistentCalls:
+      m_Calls: []
+  OnChickenCatched:
     m_PersistentCalls:
       m_Calls: []
   previousOwner: {fileID: 0}
