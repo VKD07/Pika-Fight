@@ -7,6 +7,7 @@ public class ChickenDebuf : MonoBehaviour
 {
     [SerializeField] GameObject chickenModel;
     [SerializeField] PlayerConfigBridge playerConfigBridge;
+    [SerializeField] float chickenFormDuration = 5f;
     [SerializeField] UnityEvent OnChickenMode;
     [SerializeField] UnityEvent NormalMode;
     float chickenDuration;
@@ -34,7 +35,8 @@ public class ChickenDebuf : MonoBehaviour
 
     IEnumerator DisableChickenForm()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(chickenFormDuration);
+        NormalMode.Invoke();
         NormalForm(true);
         this.enabled = false;
     }

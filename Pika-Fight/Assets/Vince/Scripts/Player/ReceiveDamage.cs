@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -17,21 +18,22 @@ public class ReceiveDamage : MonoBehaviour
 
     public void GetDamage(float damage)
     {
-        if(this.enabled && !shield.activeSelf)
+        if (this.enabled && !shield.activeSelf)
         {
             playerHealth.Value -= damage;
         }
         OnImpact.Invoke();
     }
 
+
     private void OnDisable()
     {
-       // playerHealth.Value = initHealth;
+        // playerHealth.Value = initHealth;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Ball")
+        if (collision.gameObject.tag == "Ball")
         {
             Ball ballScript = collision.gameObject.GetComponent<Ball>();
         }
@@ -45,8 +47,9 @@ public class ReceiveDamage : MonoBehaviour
     IEnumerator DisableShield(float shieldDuration)
     {
         yield return new WaitForSeconds(shieldDuration);
-        shield.SetActive(false);     
+        shield.SetActive(false);
     }
 
-    public FloatReference PlayerHealth { set =>  playerHealth = value; }
+    public FloatReference PlayerHealth { set => playerHealth = value; }
+    public GameObject Shield => shield;
 }

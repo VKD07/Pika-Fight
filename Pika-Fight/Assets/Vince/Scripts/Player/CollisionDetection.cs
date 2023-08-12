@@ -26,6 +26,12 @@ public class CollisionDetection : MonoBehaviour
         }
     }
 
+    public void DisarmBall()
+    {
+        ballDetected = null;
+        chickenDetected = null;
+    }
+
     public GameObject BallDetected { get => ballDetected; set => ballDetected = value; }
     public GameObject ChickenDetected { get => chickenDetected; set => chickenDetected = value; }
 }

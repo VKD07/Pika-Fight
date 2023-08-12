@@ -9,9 +9,7 @@ public class PlayerWinCamera : MonoBehaviour
     [SerializeField] GameObject winBanner;
     [SerializeField] UnityEvent OnWinnerFound;
     int index;
-    void Start()
-    {
-    }
+    bool enableCamera;
 
     private void Update()
     {
@@ -20,24 +18,28 @@ public class PlayerWinCamera : MonoBehaviour
 
     private void FindPlayerWinner()
     {
-        players = GameObject.FindGameObjectsWithTag("Player");
-
-        for (int i = 0; i < players.Length; i++)
+        if (enableCamera)
         {
-            if (players[i].GetComponent<PlayerConfigBridge>().PlayerConfig.Winner)
+            players = GameObject.FindGameObjectsWithTag("Player");
+
+            for (int i = 0; i < players.Length; i++)
             {
-                index = i;
-                break;
+                if (players[i].GetComponent<PlayerConfigBridge>().PlayerConfig.Winner)
+                {
+                    index = i;
+                    players[index].GetComponentInChildren<PlayerWinCameraEnabler>().EnableCamera();
+                    players[index].GetComponent<Animator>().SetTrigger("ModeWinner");
+                    players[index].GetComponent<PlayerMovement>().enabled = false;
+                    winBanner.SetActive(true);
+                    OnWinnerFound.Invoke();
+                    break;
+                }
             }
         }
     }
 
     public void EnableWinCamera()
     {
-        players[index].GetComponentInChildren<PlayerWinCameraEnabler>().EnableCamera();
-        players[index].GetComponent<Animator>().SetTrigger("ModeWinner");
-        players[index].GetComponent<PlayerMovement>().enabled = false;
-        winBanner.SetActive(true);
-        OnWinnerFound.Invoke();
+        enableCamera = true;
     }
 }

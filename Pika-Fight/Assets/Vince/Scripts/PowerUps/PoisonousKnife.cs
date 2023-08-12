@@ -18,12 +18,18 @@ public class PoisonousKnife : MonoBehaviour
     {
         if(this.enabled)
         {
-            Poison poison = targetPlayer.GetComponentInChildren<Poison>();
-            poison.AttackInterval = attackInterval;
-            poison.PoisonDuration = poisonDuration;
-            poison.PoisonDamage = poisonDamage;
-            print("Poisoned" + targetPlayer.name);
-            poison.enabled = true;
+            if(targetPlayer != null && !targetPlayer.GetComponentInChildren<MeleeFight>().Stabbing)
+            {
+                Poison poison = targetPlayer.GetComponentInChildren<Poison>();
+                poison.AttackInterval = attackInterval;
+                poison.PoisonDuration = poisonDuration;
+                poison.PoisonDamage = poisonDamage;
+                poison.enabled = true;
+            }
+            else
+            {
+                DisablePoisonKnife();
+            }
         }
     }
     

@@ -4037,7 +4037,7 @@ RectTransform:
   m_GameObject: {fileID: 345000998}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.44730014, y: 0.44730014, z: 0.44730014}
+  m_LocalScale: {x: 0.3879971, y: 0.3879971, z: 0.3879971}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1660156035}
@@ -4068,7 +4068,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3a80029acd5764c4f8768547eb99b33e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0fa2ce09fa3ddac49b122e914dd70ee9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8309,7 +8309,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 42, y: -68}
+  m_AnchoredPosition: {x: 42, y: -94}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &679258067
@@ -24614,7 +24614,7 @@ MonoBehaviour:
   playerJoinedData: {fileID: 11400000, guid: 7e9c4ddcd905cae479e8c9ba51ce6c8e, type: 2}
   playerDataDictionary: {fileID: 11400000, guid: 1f462b492cf6cb8478cf3be48cf57c81,
     type: 2}
-  playerPrefab: {fileID: 8413177583846242522, guid: 3c83bfbe1232d794e8481268fa4d5a69,
+  playerPrefab: {fileID: 3851144575798681086, guid: 3c83bfbe1232d794e8481268fa4d5a69,
     type: 3}
   timeToSpawn: 2
   playerSpawnerParent: {fileID: 0}

@@ -27,8 +27,8 @@ public class GemHunt : MonoBehaviour
     [SerializeField] UnityEvent OnWinnerFound;
     [SerializeField] UnityEvent OnEnableScript;
 
-    float highestGemScore;
-    int playerIndex;
+    float highestGemScore = -1;
+    int playerIndex = -1;
 
     private void OnEnable()
     {
@@ -96,14 +96,29 @@ public class GemHunt : MonoBehaviour
 
     void LookForHighestGemScore()
     {
-        for (int i = 0; i < playerJoinedData.NumberOfPlayersJoined; i++)
+        if (timerDone)
         {
-            if (playerJoinedData.GetPlayersJoined[i].GemScore > highestGemScore && playerJoinedData.GetPlayersJoined[i].GemScore > 0)
+            for (int i = 0; i < playerJoinedData.NumberOfPlayersJoined; i++)
             {
-                highestGemScore = playerJoinedData.GetPlayersJoined[i].GemScore;
-                playerIndex = i;
+                if (playerJoinedData.GetPlayersJoined[i].GemScore > highestGemScore && playerJoinedData.GetPlayersJoined[i].GemScore > 0)
+                {
+                    highestGemScore = playerJoinedData.GetPlayersJoined[i].GemScore;
+                    playerIndex = i;
+                }
+            }
 
-                if (timerDone)
+            if (playerIndex != -1)
+            {
+                List<int> playersWithHighestScore = new List<int>();
+                for (int i = 0; i < playerJoinedData.NumberOfPlayersJoined; i++)
+                {
+                    if (playerJoinedData.GetPlayersJoined[i].GemScore == highestGemScore && i != playerIndex)
+                    {
+                        playersWithHighestScore.Add(i);
+                    }
+                }
+
+                if (playersWithHighestScore.Count == 0)
                 {
                     playerJoinedData.GetPlayersJoined[playerIndex].Winner = true;
                     OnWinnerFound.Invoke();

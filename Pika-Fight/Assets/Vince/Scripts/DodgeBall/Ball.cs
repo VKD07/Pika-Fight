@@ -143,6 +143,7 @@ public class Ball : MonoBehaviour
             foreach (Collider playersInside in playersDetected)
             {
                 playersInside.GetComponent<PlayerMovement>().enabled = false;
+                ChickenMode(playersInside.gameObject, explosionDamage);
                 playersInside.GetComponent<ReceiveDamage>().GetDamage(explosionDamage);
                 playersInside.GetComponent<Rigidbody>().AddForce((playersInside.transform.position - transform.position).normalized * explosionForce, ForceMode.Impulse);
             }
@@ -246,6 +247,7 @@ public class Ball : MonoBehaviour
             InstantiateExplosion(transform);
         }
     }
+
     //private void OnDrawGizmos()
     //{
     //    Gizmos.color = Color.red;

@@ -15,7 +15,7 @@ public class MushroomPoint : MonoBehaviour
     public float Damage { set => damage = value; }
     public float DamageInterval { set => damageInterval = value; }
     public float PoisonDuration { set => poisonDuration = value; }
-    
+
     GameObject player;
 
     private void Start()
@@ -32,7 +32,7 @@ public class MushroomPoint : MonoBehaviour
     {
         OnPoisonReleased.Invoke();
         poisonCloud.SetActive(true);
-        poisonActivated = false;
+        poisonActivated = true;
         StartCoroutine(DisablePoison());
     }
 
@@ -63,12 +63,9 @@ public class MushroomPoint : MonoBehaviour
 
     IEnumerator DamagePlayer()
     {
-        while (player != null)
+        while (player != null && poisonActivated)
         {
-            if (player != null)
-            {
-                player.GetComponent<ReceiveDamage>().GetDamage(damage);
-            }
+            player.GetComponent<ReceiveDamage>().GetDamage(damage);
             yield return new WaitForSeconds(damageInterval);
         }
     }
