@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ShowWinner : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class ShowWinner : MonoBehaviour
     [SerializeField] FloatReference maxScoreToWin;
     [SerializeField] FloatReference timeScale;
     [SerializeField] PlayerJoinedData playerJoinedData;
+    [SerializeField] GameObject fireworks;
+    [SerializeField] float fireworksDelay;
     GameObject playerWinner;
     int pos;
     bool slowDown;
@@ -19,6 +22,13 @@ public class ShowWinner : MonoBehaviour
         Time.timeScale = 1.0f;
         LookForGameWinner();
         PlaceOtherPlayers();
+        StartCoroutine(EnableFireworks());
+    }
+
+    IEnumerator EnableFireworks()
+    {
+        yield return new WaitForSeconds(fireworksDelay);
+        fireworks.SetActive(true);
     }
 
     private void Update()

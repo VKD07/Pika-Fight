@@ -21,7 +21,7 @@ MonoBehaviour:
   holdPercentage: 0
   damageDealtToChicken: 0
   winner: 0
-  playerIsReady: 1
+  playerIsReady: 0
   playerIsDead: 0
   playerCharacter: {fileID: 7032743981702343751, guid: 0329e4d173c6061479c7519ad91be501,
     type: 3}
