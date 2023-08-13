@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Stations : MonoBehaviour
 {
     [SerializeField] StationType stationType;
     [SerializeField] GameObject interactVfx;
+    [SerializeField] UnityEvent OnPlayerEnter;
     public enum StationType
     {
         dodgeball,
@@ -15,6 +17,7 @@ public class Stations : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            OnPlayerEnter.Invoke();
             if (stationType == StationType.dodgeball)
             {
                 other.GetComponentInChildren<DodgeBall>().enabled = true;
