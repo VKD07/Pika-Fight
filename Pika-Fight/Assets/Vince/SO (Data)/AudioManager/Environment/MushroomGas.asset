@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 366eb864397b6bb40a7165d1e7a2c34d, type: 3}
-  m_Name: JoiningControls
+  m_Script: {fileID: 11500000, guid: bcda980e49e614b4989af229df99166d, type: 3}
+  m_Name: MushroomGas
   m_EditorClassIdentifier: 
-  Player_WASD: 106
-  Player_Arrow: 99
-  Player_Joystick1: 350
-  Player_Joystick2: 370
-  Player_Joystick3: 390
+  audioClip: {fileID: 8300000, guid: c85f8d280208a5849bb6b9c98322c6cb, type: 3}
+  playOneShot: 1
+  looping: 0
+  soundVolume: 0.8

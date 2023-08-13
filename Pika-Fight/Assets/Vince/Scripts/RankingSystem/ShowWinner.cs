@@ -9,6 +9,7 @@ public class ShowWinner : MonoBehaviour
     [SerializeField] Transform winnerPos;
     [SerializeField] Transform[] otherPlayersPos;
     [SerializeField] FloatReference maxScoreToWin;
+    [SerializeField] FloatReference timeScale;
     [SerializeField] PlayerJoinedData playerJoinedData;
     GameObject playerWinner;
     int pos;
@@ -24,7 +25,8 @@ public class ShowWinner : MonoBehaviour
     {
         if (slowDown)
         {
-            Time.timeScale = 0.05f;
+            Time.timeScale = timeScale.Value;
+            timeScale.Value = 0.05f;
         }
         
     }

@@ -70,7 +70,8 @@ public class ChickenStateManager : MonoBehaviour
 
     private void OnDisable()
     {
-        if(chickenUI != null)
+        OnDisableScript.Invoke();
+        if (chickenUI != null)
         {
             chickenUI.SetActive(false);
         }

@@ -16,6 +16,8 @@ public class PlayerJoinManager : MonoBehaviour
 
     [Header("PlayerControls")]
     [SerializeField] PlayerControls[] availableControls;
+    [Header("Time Scale")]
+    [SerializeField] FloatReference timeScale;
 
     [SerializeField] UnityEvent OnCharacterJoin;
 
@@ -50,6 +52,8 @@ public class PlayerJoinManager : MonoBehaviour
 
     void ResetCoopData()
     {
+        Time.timeScale = 1f;
+        timeScale.Value = Time.timeScale;
         for (int i = 0; i < playerJoinedData.GetPlayersJoined.Length; i++)
         {
             playerJoinedData.GetPlayersJoined[i] = null;
@@ -58,6 +62,11 @@ public class PlayerJoinManager : MonoBehaviour
             playerJoinedData.GetPlayConfig[i].Winner = false;
             playerJoinedData.GetPlayConfig[i].PlayerIsReady = false;
             playerJoinedData.GetPlayConfig[i].PlayerIsDead = false;
+        }
+
+        for (int i = 0; i < availableControls.Length; i++)
+        {
+            availableControls[i].ControlIsTaken = false;
         }
     }
 
