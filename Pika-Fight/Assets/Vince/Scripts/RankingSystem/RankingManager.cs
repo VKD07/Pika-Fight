@@ -14,6 +14,7 @@ public class RankingManager : MonoBehaviour
     [SerializeField] float timeToLoad = 4f;
     [SerializeField] UnityEvent OnFinishScoring;
     [SerializeField] UnityEvent OnDeclareWinner;
+    [SerializeField] UnityEvent WinnerSfx;
     bool declareWinner;
     private void Awake()
     {
@@ -83,6 +84,7 @@ public class RankingManager : MonoBehaviour
                 if (playerJoinedData.GetPlayersJoined[i].PlayerScore >= maxScoreToWin.Value)
                 {
                     declareWinner = true;
+                    WinnerSfx.Invoke();
                     StartCoroutine(LoadToRanking());
                     break;
                 }

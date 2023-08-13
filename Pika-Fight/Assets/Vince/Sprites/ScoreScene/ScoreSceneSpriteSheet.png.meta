@@ -113,9 +113,9 @@ TextureImporter:
       name: ScoreSceneSpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 568
+        x: 891
         y: 782
-        width: 868
+        width: 219
         height: 230
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

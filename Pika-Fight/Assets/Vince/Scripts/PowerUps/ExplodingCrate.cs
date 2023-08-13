@@ -15,11 +15,13 @@ public class ExplodingCrate : MonoBehaviour
     [SerializeField] float explosionForce = 20f;
     [SerializeField] UnityEvent OnIgnite;
     [SerializeField] UnityEvent OnExplosion;
+    [SerializeField] UnityEvent OnEnableScript;
     Animator anim;
     bool ignited;
     private void OnEnable()
     {
         anim = GetComponent<Animator>();
+        OnEnableScript.Invoke();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -27,9 +29,7 @@ public class ExplodingCrate : MonoBehaviour
         {
             if(collision.gameObject.GetComponent<Ball>().GetBallDamage > 10)
             {
-                Ignite();
-                anim.SetTrigger("Explode");
-                StartCoroutine(Explode());
+                TriggerExplosion();
             }
         }
     }
@@ -40,9 +40,7 @@ public class ExplodingCrate : MonoBehaviour
         {
             if (collision.gameObject.GetComponentInChildren<MeleeFight>().Stabbing)
             {
-                Ignite();
-                anim.SetTrigger("Explode");
-                StartCoroutine(Explode());
+                TriggerExplosion();
             }
         }
     }
@@ -54,6 +52,13 @@ public class ExplodingCrate : MonoBehaviour
             ignited = true;
             OnIgnite.Invoke();
         }
+    }
+
+    public void TriggerExplosion()
+    {
+        Ignite();
+        anim.SetTrigger("Explode");
+        StartCoroutine(Explode());
     }
 
     IEnumerator Explode()

@@ -34,7 +34,7 @@ public class UISlotHandler : MonoBehaviour
 
     void UpdateNumOfSlots()
     {
-        if (connectedGamePads.Count > 0 && connectedGamePads.Count < 3)
+        if (connectedGamePads.Count > 0 && connectedGamePads.Count < 5)
         {
             slotsToJoin[2].SetActive(true);
         }
@@ -43,7 +43,7 @@ public class UISlotHandler : MonoBehaviour
             slotsToJoin[2].SetActive(false);
         }
 
-        if (connectedGamePads.Count > 1 && connectedGamePads.Count < 3)
+        if (connectedGamePads.Count > 1 && connectedGamePads.Count < 5)
         {
             slotsToJoin[3].SetActive(true);
         }
@@ -81,7 +81,7 @@ public class UISlotHandler : MonoBehaviour
 
     void ShowReadyButton(int i, string control)
     {
-        if (control == "Joystick1" || control == "Joystick2")
+        if (control == "Joystick1" || control == "Joystick2" || control == "Joystick3")
         {
             readyTxt[i].SetText("A READY?");
         }
@@ -99,7 +99,7 @@ public class UISlotHandler : MonoBehaviour
     {
         if (playerJoinedData.GetPlayersJoined[i].PlayerIsReady)
         {
-            if (control == "Joystick1" || control == "Joystick2")
+            if (control == "Joystick1" || control == "Joystick2" || control == "Joystick3")
             {
                 readyTxt[i].SetText("B to Cancel");
             }

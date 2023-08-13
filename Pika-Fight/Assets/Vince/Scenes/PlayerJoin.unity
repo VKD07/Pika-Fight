@@ -15509,6 +15509,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8496037b6201d8d409f324591f76a851, type: 2}
   - {fileID: 11400000, guid: 316dc08d453899747bb5e3b72bc8ddcf, type: 2}
   - {fileID: 11400000, guid: 65d70b53c00b69144b60e5b118e3dea8, type: 2}
+  - {fileID: 11400000, guid: 2dfffed087167f04cbf8a9d518cc6f8b, type: 2}
   OnCharacterJoin:
     m_PersistentCalls:
       m_Calls:

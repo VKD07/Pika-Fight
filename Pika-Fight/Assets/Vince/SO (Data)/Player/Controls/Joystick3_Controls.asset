@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 366eb864397b6bb40a7165d1e7a2c34d, type: 3}
-  m_Name: JoiningControls
+  m_Script: {fileID: 11500000, guid: f3816ed2b72461443a5ad6c50a837e3d, type: 3}
+  m_Name: Joystick3_Controls
   m_EditorClassIdentifier: 
-  Player_WASD: 106
-  Player_Arrow: 99
-  Player_Joystick1: 350
-  Player_Joystick2: 370
-  Player_Joystick3: 391
+  playerMovementAxes: 4
+  attackKey: 391
+  dashKey: 392
+  playerReadyKey: 391
+  playerUnreadyKey: 392
+  playerStartKey: 397
+  controlIstaken: 0

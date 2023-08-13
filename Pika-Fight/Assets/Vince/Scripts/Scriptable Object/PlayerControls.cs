@@ -35,6 +35,8 @@ public class PlayerControls : ScriptableObject
         Arrow,
         Joystick1,
         Joystick2,
+        Joystick3,
+        Joystick4,
     }
     private void OnDisable()
     {

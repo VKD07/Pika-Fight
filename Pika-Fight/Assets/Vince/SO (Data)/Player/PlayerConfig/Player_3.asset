@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81306ee4bc7f9148a3cabb7cb223c68, type: 3}
   m_Name: Player_3
   m_EditorClassIdentifier: 
-  playerControl: {fileID: 11400000, guid: 316dc08d453899747bb5e3b72bc8ddcf, type: 2}
+  playerControl: {fileID: 11400000, guid: 2dfffed087167f04cbf8a9d518cc6f8b, type: 2}
   playerColor: {r: 0.33490568, g: 1, b: 0.50343955, a: 0.34901962}
-  characterSprite: {fileID: 50399517, guid: 231f7547bca149740a5872a0c4c3bc98, type: 3}
-  characterName: Girl
-  playerOverallScore: 1
+  characterSprite: {fileID: -480773686, guid: 45bdea5e57305bf499f43f1338a8757d, type: 3}
+  characterName: ChemicalMan
+  playerOverallScore: 0
   gemScore: 0
   holdPercentage: 0
   damageDealtToChicken: 0
   winner: 0
   playerIsReady: 1
   playerIsDead: 0
-  playerCharacter: {fileID: 4006341026387044044, guid: b51e16215cb9496479ea06f18763034c,
+  playerCharacter: {fileID: 2435251451558624804, guid: 2e330211d5363e142b5822a97b9c9e95,
     type: 3}

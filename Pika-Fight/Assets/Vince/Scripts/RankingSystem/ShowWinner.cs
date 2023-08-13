@@ -10,12 +10,23 @@ public class ShowWinner : MonoBehaviour
     [SerializeField] Transform[] otherPlayersPos;
     [SerializeField] FloatReference maxScoreToWin;
     [SerializeField] PlayerJoinedData playerJoinedData;
+    GameObject playerWinner;
     int pos;
+    bool slowDown;
     private void Awake()
     {
         Time.timeScale = 1.0f;
         LookForGameWinner();
         PlaceOtherPlayers();
+    }
+
+    private void Update()
+    {
+        if (slowDown)
+        {
+            Time.timeScale = 0.05f;
+        }
+        
     }
 
     private void LookForGameWinner()
@@ -24,13 +35,14 @@ public class ShowWinner : MonoBehaviour
         {
             if (playerJoinedData.GetPlayersJoined[i] != null && playerJoinedData.GetPlayersJoined[i].PlayerScore >= maxScoreToWin.Value)
             {
-                GameObject playerWinner = Instantiate(playerPrefab, winnerPos.position, Quaternion.Euler(0,-90f,0));
+                playerWinner = Instantiate(playerPrefab, winnerPos.position, Quaternion.Euler(0,-90f,0));
                 playerWinner.name = $"{playerJoinedData.GetPlayersJoined[i].name}_{playerJoinedData.GetPlayersJoined[i].CharacterName}";
 
                 EnableCharacterModel(playerWinner, playerJoinedData.GetPlayersJoined[i].CharacterName);
 
                 playerWinner.GetComponent<Rigidbody>().isKinematic = false;
-                playerWinner.GetComponent<Animator>().SetBool("Victory", true);
+                //playerWinner.GetComponent<Animator>().SetBool("Victory", true);
+                StartCoroutine(VictoryPose());
 
                 //enabling all scripts
                 playerWinner.GetComponent<PlayerStatus>().EnableScripts(false);
@@ -58,6 +70,21 @@ public class ShowWinner : MonoBehaviour
                 pos++;
             }
         }
+    }
+
+    IEnumerator VictoryPose()
+    {
+        yield return new WaitForSeconds(1.5f);
+        if (playerWinner != null)
+        {
+            playerWinner.GetComponent<Animator>().SetTrigger("Chosen");
+        }
+    }
+
+    public void ReduceTimeScale()
+    {
+      
+        slowDown = true;
     }
 
     void EnableCharacterModel(GameObject player, string characterName)

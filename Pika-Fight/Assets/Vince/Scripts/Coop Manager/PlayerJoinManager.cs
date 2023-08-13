@@ -35,6 +35,7 @@ public class PlayerJoinManager : MonoBehaviour
         PlayerJoin(joinControls.Player_Arrow, 1);
         PlayerJoin(joinControls.Player_Joystick1, 2);
         PlayerJoin(joinControls.Player_Joystick2, 3);
+        PlayerJoin(joinControls.Player_Joystick3, 4);
     }
 
     void PlayerJoin(KeyCode key, int keyboardControlIndex)
