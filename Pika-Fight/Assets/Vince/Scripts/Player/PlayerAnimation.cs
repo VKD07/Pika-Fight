@@ -17,6 +17,7 @@ public class PlayerAnimation : MonoBehaviour
 
     private void OnEnable()
     {
+        anim.SetBool("Alive", false);
         anim.SetBool("Alive", true);
     }
 

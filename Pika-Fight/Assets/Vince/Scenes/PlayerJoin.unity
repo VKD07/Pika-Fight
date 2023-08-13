@@ -25630,7 +25630,7 @@ MonoBehaviour:
   playerJoinedData: {fileID: 11400000, guid: 7e9c4ddcd905cae479e8c9ba51ce6c8e, type: 2}
   playerDataDictionary: {fileID: 11400000, guid: 1f462b492cf6cb8478cf3be48cf57c81,
     type: 2}
-  playerPrefab: {fileID: 2185095279361863318, guid: 3c83bfbe1232d794e8481268fa4d5a69,
+  playerPrefab: {fileID: 3909486104836873534, guid: 3c83bfbe1232d794e8481268fa4d5a69,
     type: 3}
   timeToSpawn: 2
   playerSpawnerParent: {fileID: 0}
