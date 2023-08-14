@@ -25,6 +25,10 @@ public class StartGame : MonoBehaviour
         ShowStartBtn();
         playerJoinedData.GetNumOfPlayersReady();
         playerJoinedData.GetNumberOfPlayersJoined();
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            SceneManager.LoadScene("VinceOptionsTest");
+        }
     }
 
     private void ShowStartBtn()

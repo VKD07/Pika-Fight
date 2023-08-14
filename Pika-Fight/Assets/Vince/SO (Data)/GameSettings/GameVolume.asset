@@ -9,13 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3816ed2b72461443a5ad6c50a837e3d, type: 3}
-  m_Name: Joystick2_Controls
+  m_Script: {fileID: 11500000, guid: 97061c92999bcb34692d5737ba21ae2e, type: 3}
+  m_Name: GameVolume
   m_EditorClassIdentifier: 
-  playerMovementAxes: 3
-  attackKey: 370
-  dashKey: 371
-  playerReadyKey: 370
-  playerUnreadyKey: 371
-  playerStartKey: 377
-  controlIstaken: 0
+  value: 0.7

@@ -114,7 +114,7 @@ public class KillTheChickenTimer : MonoBehaviour
 
     IEnumerator Scene(string sceneName)
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(sceneName);
 
     }

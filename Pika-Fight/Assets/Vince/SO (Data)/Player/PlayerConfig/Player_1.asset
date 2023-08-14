@@ -21,7 +21,7 @@ MonoBehaviour:
   holdPercentage: 100
   damageDealtToChicken: 180.7583
   winner: 0
-  playerIsReady: 0
+  playerIsReady: 1
   playerIsDead: 0
   playerCharacter: {fileID: 5861507685882267482, guid: ba128691428cd68478841eff49f4c26e,
     type: 3}

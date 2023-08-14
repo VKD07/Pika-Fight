@@ -1464,7 +1464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d9a31d6fbc5d94dac27a0cdcb773d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 2185095279361863318, guid: 3c83bfbe1232d794e8481268fa4d5a69,
+  playerPrefab: {fileID: 3909486104836873534, guid: 3c83bfbe1232d794e8481268fa4d5a69,
     type: 3}
   winnerPos: {fileID: 1319233962}
   otherPlayersPos:
@@ -2208,6 +2208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1060895493}
   - component: {fileID: 1060895492}
+  - component: {fileID: 1060895494}
   m_Layer: 0
   m_Name: audioSource
   m_TagString: Untagged
@@ -2326,6 +2327,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1060895494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060895491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0974526854ec8fd4d94353f05645140f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameVolume: {fileID: 11400000, guid: 698e73c21c6fabf4e94b5b01a12aa9b7, type: 2}
 --- !u!1 &1065921040
 GameObject:
   m_ObjectHideFlags: 0

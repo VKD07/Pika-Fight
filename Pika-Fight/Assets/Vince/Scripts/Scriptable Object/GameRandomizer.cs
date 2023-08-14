@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,16 +19,28 @@ public class GameRandomizer : ScriptableObject
     [Header("Game Goal")]
     public GameMode[] gameGoals;
     public int randomGoal;
+    int prevGoal;
 
     [Header("Scenes")]
     public string[] sceneNames;
     public int randomScenes;
+    int prevScene;
 
     public void RandomizeGameMode()
     {
         randomCombat = Random.Range(0, combatEvents.Length);
-        randomGoal = Random.Range(0, gameGoals.Length);
-        randomScenes = Random.Range(0, sceneNames.Length);
+
+        prevGoal = randomGoal;
+        while (randomGoal == prevGoal)
+        {
+            randomGoal = Random.Range(0, gameGoals.Length);
+        }
+
+        prevScene = randomScenes;
+        while(randomScenes == prevScene)
+        {
+            randomScenes = Random.Range(0, sceneNames.Length);
+        }
     }
 
     public void ApplyGeneratedRandoms()
@@ -52,6 +65,6 @@ public class GameRandomizer : ScriptableObject
 
     public void LoadRandomScene()
     {
-         SceneManager.LoadScene(sceneNames[randomScenes]);
+        SceneManager.LoadScene(sceneNames[randomScenes]);
     }
 }
