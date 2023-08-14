@@ -231,14 +231,9 @@ public class Ball : MonoBehaviour
             collision.gameObject.GetComponent<PlayerMovement>().enabled = false;
             collision.gameObject.GetComponent<Rigidbody>().AddForce((transform.position - collision.transform.position).normalized * ballForce, ForceMode.Impulse);
             collision.gameObject.GetComponent<ReceiveDamage>().GetDamage(ballDamage);
+            Beehive(collision.gameObject.transform);
             ChickenMode(collision.gameObject, ballDamage);
             ChickenBall(collision.gameObject);
-        }
-
-        if (rb.velocity.magnitude > 10 && ballTaken)
-        {
-            OnImpact.Invoke();
-            Beehive(collision.gameObject.transform);
         }
 
         if (exploding && rb.velocity.magnitude > 10 && ballTaken)
