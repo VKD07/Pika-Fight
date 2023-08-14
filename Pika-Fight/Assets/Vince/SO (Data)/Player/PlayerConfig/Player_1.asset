@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81306ee4bc7f9148a3cabb7cb223c68, type: 3}
   m_Name: Player_1
   m_EditorClassIdentifier: 
-  playerControl: {fileID: 11400000, guid: 8e1be352d6d596b43abfee919e054f44, type: 2}
+  playerControl: {fileID: 0}
   playerColor: {r: 1, g: 0.2688679, b: 0.2688679, a: 0.34901962}
   characterSprite: {fileID: -1955456937, guid: 52cc04a7a8bfed34cb68725879f90b91, type: 3}
   characterName: Alien
@@ -21,7 +21,7 @@ MonoBehaviour:
   holdPercentage: 47.729137
   damageDealtToChicken: 180.7583
   winner: 0
-  playerIsReady: 1
+  playerIsReady: 0
   playerIsDead: 0
   playerCharacter: {fileID: 5861507685882267482, guid: ba128691428cd68478841eff49f4c26e,
     type: 3}
