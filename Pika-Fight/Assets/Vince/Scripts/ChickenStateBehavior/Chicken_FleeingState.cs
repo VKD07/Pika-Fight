@@ -15,7 +15,6 @@ public class Chicken_FleeingState : ChickenState
 
     public override void OnUpdateState(ChickenStateManager state)
     {
-        Debug.Log("Fleeing State");
         FleeMovement(state.transform, state.Players, state.navAgent, state.WalkRange);
 
         //if (state.navAgent.remainingDistance <= state.navAgent.stoppingDistance)

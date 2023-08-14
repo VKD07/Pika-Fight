@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -23,6 +24,14 @@ public class CollisionDetection : MonoBehaviour
         if (other.tag == "Chicken")
         {
             chickenDetected = other.gameObject;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Chicken")
+        {
+            chickenDetected = null;
         }
     }
 

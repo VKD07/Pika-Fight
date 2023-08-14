@@ -9860,6 +9860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2114386837817447052}
   - component: {fileID: 7135909281974803485}
+  - component: {fileID: 6540154784854942622}
   - component: {fileID: 3369154590241839931}
   - component: {fileID: 3862493645033268425}
   m_Layer: 0
@@ -9953,6 +9954,21 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   bombStartDelay: 5
+--- !u!114 &6540154784854942622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6666691734689713306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca158f072684d5d4fb43252bde3fddc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiIndicatorPrefab: {fileID: 801354219376064734, guid: 37e0e3b70af5a194680d7c204cb1ad6a,
+    type: 3}
+  uiLocation: {fileID: 0}
 --- !u!135 &3369154590241839931
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -19,13 +19,14 @@ public class Bomb : MonoBehaviour
     [SerializeField] UnityEvent OnExplosion;
     [SerializeField] UnityEvent OnChangeCarrier;
     [SerializeField] float bombStartDelay = 5f;
+    UIIndicator uIIndicator;
     bool transfered;
     float currentTime;
 
     private void Start()
     {
+        uIIndicator = GetComponent<UIIndicator>();
         playersInScene = GameObject.FindGameObjectsWithTag("Player");
-
         for (int i = 0; i < playersInScene.Length; i++)
         {
             playersAlive.Add(playersInScene[i]);
@@ -75,6 +76,7 @@ public class Bomb : MonoBehaviour
         yield return new WaitForSeconds(0);
         if (numOfPlayersDead.Value >= numOfPlayersJoined - 1)
         {
+            uIIndicator.SetActiveUIIndicator(false);
             Destroy(gameObject);
         }
         else
@@ -100,6 +102,7 @@ public class Bomb : MonoBehaviour
         yield return new WaitForSeconds(startDelay);
         randomPlayer = Random.Range(0, playersAlive.Count);
         playerCarrier = playersAlive[randomPlayer];
+        EnableBombUiIndicator();
     }
 
     void DisablePlayersRecevingDamage()
@@ -107,6 +110,15 @@ public class Bomb : MonoBehaviour
         for (int i = 0; i < playersInScene.Length; i++)
         {
             playersInScene[i].GetComponent<ReceiveDamage>().enabled = false;
+        }
+    }
+
+    void EnableBombUiIndicator()
+    {
+        if(playerCarrier != null)
+        {
+            uIIndicator.UILocation = playerCarrier.transform.Find("PlayerUILocation");
+            uIIndicator.TriggerAnimation();
         }
     }
 
@@ -123,6 +135,7 @@ public class Bomb : MonoBehaviour
         {
             OnChangeCarrier.Invoke();
             playerCarrier = other.gameObject;
+            EnableBombUiIndicator();
         }
     }
 

@@ -31,6 +31,7 @@ public class PickUpChicken : MonoBehaviour
         {
             if (!collisionDetection.ChickenDetected.GetComponent<ChickenStateManager>().ChickenIsTaken)
             {
+                collisionDetection.ChickenDetected.GetComponent<ChickenStateManager>().PlayerHolding = gameObject.transform.parent.gameObject;
                 chicken = collisionDetection.ChickenDetected;
             }
         }
@@ -60,7 +61,7 @@ public class PickUpChicken : MonoBehaviour
 
     void IncreaseHoldPercentage()
     {
-        if(configBridge.PlayerConfig.HoldPercentage < 100)
+        if (configBridge.PlayerConfig.HoldPercentage < 100)
         {
             configBridge.PlayerConfig.HoldPercentage += percentageRate * Time.deltaTime;
         }
@@ -68,8 +69,9 @@ public class PickUpChicken : MonoBehaviour
 
     public void DropChicken()
     {
-        if (chicken != null && playerHealth.Value <=0)
+        if (chicken != null && playerHealth.Value <= 0)
         {
+            chicken.GetComponent<ChickenStateManager>().PlayerHolding = null;
             chicken.GetComponent<ChickenStateManager>().ChickenIsTaken = false;
             chicken.GetComponent<ChickenStateManager>().enabled = true;
             chicken.GetComponent<Animator>().SetBool("Flap", false);

@@ -8,6 +8,7 @@ using UnityEngine.Events;
 
 public class ChickenStateManager : MonoBehaviour
 {
+    [SerializeField] GameObject playerHolding;
     [SerializeField] Transform centerPosition;
     [SerializeField] float initSpeed = 5f;
     [SerializeField] float maxSpeed = 10f;
@@ -20,6 +21,7 @@ public class ChickenStateManager : MonoBehaviour
     [SerializeField] UnityEvent OnDisableScript;
     bool chickenIsTaken;
     GameObject playerDetected;
+    UIIndicator uIIndicator;
 
     NavMeshAgent agent;
     ChickenState currentState;
@@ -28,6 +30,7 @@ public class ChickenStateManager : MonoBehaviour
     public bool flee;
     void Start()
     {
+        uIIndicator = GetComponent<UIIndicator>();
         centerPosition = GameObject.Find("CenterOfTheMap").transform;
         agent = GetComponent<NavMeshAgent>();
         agent.speed = initSpeed;
@@ -75,6 +78,7 @@ public class ChickenStateManager : MonoBehaviour
         {
             chickenUI.SetActive(false);
         }
+        EnableChickenUIIndicator();
     }
 
     private void OnEnable()
@@ -84,8 +88,25 @@ public class ChickenStateManager : MonoBehaviour
         {
             chickenUI.SetActive(true);
         }
+
+        if(uIIndicator != null)
+        {
+            uIIndicator.SetActiveUIIndicator(false);
+        }
     }
 
+    void EnableChickenUIIndicator()
+    {
+        if (playerHolding != null)
+        {
+            uIIndicator.UILocation = playerHolding.transform.Find("PlayerUILocation");
+            uIIndicator.TriggerAnimation();
+            uIIndicator.SetActiveUIIndicator(true);
+        }
+    }
+
+   
+    public GameObject PlayerHolding { set => playerHolding = value; }
     public Transform centerPos => centerPosition;
     public float MaxSpeed => maxSpeed;
     public float WalkRange => walkingrange;

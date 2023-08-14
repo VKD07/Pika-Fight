@@ -31,16 +31,19 @@ public class GameRandomizer : ScriptableObject
         randomCombat = Random.Range(0, combatEvents.Length);
 
         prevGoal = randomGoal;
-        while (randomGoal == prevGoal)
-        {
-            randomGoal = Random.Range(0, gameGoals.Length);
-        }
+        //while (randomGoal == prevGoal)
+        //{
+        //    randomGoal = Random.Range(0, gameGoals.Length);
+        //}
+        randomGoal = Random.Range(0, gameGoals.Length);
 
         prevScene = randomScenes;
-        while(randomScenes == prevScene)
-        {
-            randomScenes = Random.Range(0, sceneNames.Length);
-        }
+        //while(randomScenes == prevScene)
+        //{
+        //    randomScenes = Random.Range(0, sceneNames.Length);
+        //}
+        randomScenes = Random.Range(0, sceneNames.Length);
+
     }
 
     public void ApplyGeneratedRandoms()
