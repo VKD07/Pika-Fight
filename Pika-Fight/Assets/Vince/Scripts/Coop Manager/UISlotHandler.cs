@@ -57,7 +57,6 @@ public class UISlotHandler : MonoBehaviour
     {
         for (int i = 0; i < playerJoinedData.GetPlayersJoined.Length; i++)
         {
-
             if (playerJoinedData.GetPlayersJoined[i] != null)
             {
                 var keyControl = playerJoinedData.GetPlayersJoined[i].Player_Controls.GetMovementAxes;
@@ -111,7 +110,6 @@ public class UISlotHandler : MonoBehaviour
             {
                 readyTxt[i].SetText("Q to Cancel");
             }
-
 
             slotsToJoin[i].transform.Find("Ready").gameObject.SetActive(false);
             slotsToJoin[i].transform.Find("Cancel").gameObject.SetActive(true);

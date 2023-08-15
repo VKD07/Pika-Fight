@@ -1,0 +1,27 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement name="HealthAndMovement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); height: -90px;">
+        <ui:Label tabindex="-1" text="HEALTH &amp; MOVEMENT" display-tooltip-when-elided="true" name="PlayerHealthAndMovement" style="-unity-font: initial; -unity-font-style: bold; font-size: 13px; -unity-text-align: upper-center; color: rgb(255, 255, 255); align-self: auto; margin-top: 13px; -unity-text-outline-color: rgba(255, 255, 255, 0); background-color: rgba(255, 255, 255, 0); padding-bottom: 4px;" />
+        <uie:PropertyField name="StartingHealth" binding-path="startingHealth" />
+        <ui:Slider picking-mode="Ignore" label="Movement Speed" value="42" high-value="20" name="movementSpeed" binding-path="movementSpeed" show-input-field="true" />
+    </ui:VisualElement>
+    <ui:VisualElement name="Dashsettings" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:Label tabindex="-1" text="DASH SETTINGS" display-tooltip-when-elided="true" name="DashLabel" style="-unity-font: initial; -unity-font-style: bold; font-size: 13px; -unity-text-align: upper-center; color: rgb(255, 255, 255); align-self: auto; margin-top: 16px; -unity-text-outline-color: rgba(255, 255, 255, 0); background-color: rgba(255, 255, 255, 0);" />
+        <ui:Slider picking-mode="Ignore" label="Dash Force" value="42" high-value="30" name="DashForce" binding-path="dashForce" show-input-field="true" />
+        <ui:Slider picking-mode="Ignore" label="Dash Time" value="42" high-value="1" name="DashTime" binding-path="dashTime" show-input-field="true" />
+        <ui:Slider picking-mode="Ignore" label="Dash Cooldown" value="42" high-value="5" name="DashCoolDown" binding-path="dashCooldown" show-input-field="true" />
+    </ui:VisualElement>
+    <ui:VisualElement name="MeleeSettings" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:Label tabindex="-1" text="MELEE SETTINGS" display-tooltip-when-elided="true" name="MeleeLabe" style="-unity-font: initial; -unity-font-style: bold; font-size: 13px; -unity-text-align: upper-center; color: rgb(255, 255, 255); align-self: auto; margin-top: 16px; -unity-text-outline-color: rgba(255, 255, 255, 0); background-color: rgba(255, 255, 255, 0);" />
+        <ui:Slider picking-mode="Ignore" label="Weapon Damage" value="42" high-value="100" name="WeaponDamage" binding-path="weaponDamage" show-input-field="true" />
+        <ui:Slider picking-mode="Ignore" label="Attack Range" value="42" high-value="3" name="AttackRange" binding-path="attackRange" show-input-field="true" focusable="false" />
+        <ui:Slider picking-mode="Ignore" label="Attack Dash Force" value="42" high-value="50" name="AttackDashForce" binding-path="attackDashForce" show-input-field="true" style="opacity: 1; -unity-text-outline-color: rgba(0, 0, 0, 0);" />
+        <ui:Slider picking-mode="Ignore" label="Attack Dash Time" value="42" high-value="1" name="AttackDashTime" binding-path="attackDashTime" show-input-field="true" style="opacity: 1; -unity-text-outline-color: rgba(0, 0, 0, 0);" />
+        <ui:Slider picking-mode="Ignore" label="Attack Cool Down" value="42" high-value="5" name="AttackCoolDown" binding-path="attackDashCoolDown" show-input-field="true" style="opacity: 1; -unity-text-outline-color: rgba(0, 0, 0, 0);" />
+    </ui:VisualElement>
+    <ui:VisualElement name="DodgeBallSettings" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:Label tabindex="-1" text="DODGEBALL SETTINGS" display-tooltip-when-elided="true" name="MeleeLabe" style="-unity-font: initial; -unity-font-style: bold; font-size: 13px; -unity-text-align: upper-center; color: rgb(255, 255, 255); align-self: auto; margin-top: 16px; -unity-text-outline-color: rgba(255, 255, 255, 0); background-color: rgba(255, 255, 255, 0);" />
+        <ui:Slider picking-mode="Ignore" label="Ball Max Force" value="42" high-value="100" name="BallMaxForce" binding-path="ballMaxDamageForce" show-input-field="true" />
+        <ui:Slider picking-mode="Ignore" label="Force Increase Rate" value="42" high-value="100" name="ForceIncreaseRate" binding-path="forceIncreaseRate" show-input-field="true" focusable="false" />
+        <ui:Label tabindex="-1" display-tooltip-when-elided="true" name="Border" style="-unity-font-style: bold; -unity-text-align: upper-center;" />
+    </ui:VisualElement>
+</ui:UXML>

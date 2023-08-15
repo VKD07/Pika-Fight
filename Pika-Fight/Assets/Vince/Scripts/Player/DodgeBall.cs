@@ -10,8 +10,8 @@ public class DodgeBall : MonoBehaviour
 
     [Header("Ball Settings")]
     [SerializeField] float ballForce = 50f;
-    [SerializeField] float maxForce = 100f;
-    [SerializeField] float forceIncreaseRate = 20f;
+    [SerializeField] FloatReference maxForce;
+    [SerializeField] FloatReference forceIncreaseRate;
     [SerializeField] bool allowToThrow = true;
     bool ballCharging;
 
@@ -58,7 +58,7 @@ public class DodgeBall : MonoBehaviour
     private void InitDirectionBar()
     {
         directionBar.SetActive(false);
-        directionFillBar.maxValue = maxForce;
+        directionFillBar.maxValue = maxForce.Value;
         directionFillBar.value = 0;
     }
 
@@ -123,14 +123,14 @@ public class DodgeBall : MonoBehaviour
     {
         if (Input.GetKey(playerControls.GetAttackKey) && ballOnHand && allowToThrow)
         {
-            if (ballForce < maxForce)
+            if (ballForce < maxForce.Value)
             {
                 ChargeBallVfx();
                 playerAnimData.IsThrowing = true;
                 playerMovementSpeed.Value = 0.5f;
                 velocity.Value = 0f;
                 directionBar.SetActive(true);
-                ballForce += Time.deltaTime * forceIncreaseRate;
+                ballForce += Time.deltaTime * forceIncreaseRate.Value;
             }
         }
     }

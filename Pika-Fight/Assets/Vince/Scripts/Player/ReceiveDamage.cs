@@ -6,14 +6,14 @@ using UnityEngine.Events;
 
 public class ReceiveDamage : MonoBehaviour
 {
+    [SerializeField] FloatReference startingHealth;
     [SerializeField] FloatReference playerHealth;
     [SerializeField] GameObject shield;
     [SerializeField] UnityEvent OnImpact;
-    float initHealth;
 
     private void Start()
     {
-        initHealth = playerHealth.Value;
+        startingHealth.Value = playerHealth.Value;
     }
 
     public void GetDamage(float damage)

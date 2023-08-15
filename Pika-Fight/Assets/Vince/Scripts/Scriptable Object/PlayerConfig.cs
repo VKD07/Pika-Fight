@@ -10,7 +10,7 @@ public class PlayerConfig : ScriptableObject
     [SerializeField] PlayerControls playerControl;
     [SerializeField] Color playerColor;
     [SerializeField] Sprite characterSprite;
-    [SerializeField] string characterName;
+    [SerializeField] CharacterEnums characterName;
     [SerializeField] int playerOverallScore;
     [SerializeField] float gemScore;
     [SerializeField] float holdPercentage;
@@ -33,7 +33,7 @@ public class PlayerConfig : ScriptableObject
 
     public Color PlayerColor { get => playerColor; }
 
-    public string CharacterName { get => characterName; set => characterName = value; }
+    public CharacterEnums CharacterName { get => characterName; set => characterName = value; }
 
     public int PlayerScore { get => playerOverallScore; set => playerOverallScore = value; }
 

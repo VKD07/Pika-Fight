@@ -15,7 +15,7 @@ MonoBehaviour:
   playerControl: {fileID: 11400000, guid: 316dc08d453899747bb5e3b72bc8ddcf, type: 2}
   playerColor: {r: 0.33490568, g: 1, b: 0.50343955, a: 0.34901962}
   characterSprite: {fileID: 50399517, guid: 231f7547bca149740a5872a0c4c3bc98, type: 3}
-  characterName: Girl
+  characterName: 5
   playerOverallScore: 0
   gemScore: 0
   holdPercentage: 0

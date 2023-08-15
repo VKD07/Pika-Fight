@@ -51,7 +51,7 @@ public class SpawnPlayers : MonoBehaviour
             //set game object name
             player.name = $"{playerJoinedData.GetPlayersJoined[i].name}_{playerJoinedData.GetPlayersJoined[i].CharacterName}";
             //enable specific character 3D model
-            EnableCharacterModel(player, playerJoinedData.GetPlayersJoined[i].CharacterName);
+            EnableCharacterModel(player, playerJoinedData.GetPlayersJoined[i].CharacterName.ToString());
             //setting player UI identifier color
             player.GetComponent<PlayerIdentifierUI>().PlayerColor = playerJoinedData.GetPlayersJoined[i].PlayerColor;
             
@@ -63,10 +63,10 @@ public class SpawnPlayers : MonoBehaviour
             player.GetComponent<PlayerStatus>().EnableScripts(true);
             ////Setting player data from player data dictionary
             SetPlayerControlsToPlayerScripts(player, playerJoinedData.GetPlayersJoined[i].Player_Controls);
-            SetPlayerVelocityVariable(player, playerDataDictionary.myDict[playerJoinedData.GetPlayersJoined[i].CharacterName].playerVeloctiy);
-            SetPlayerMovementSpeed(player, playerDataDictionary.myDict[playerJoinedData.GetPlayersJoined[i].CharacterName].movementSpeed);
-            SetPlayerAnimationData(player, playerDataDictionary.myDict[playerJoinedData.GetPlayersJoined[i].CharacterName].playerAnimData);
-            SetPlayerHealth(player, playerDataDictionary.myDict[playerJoinedData.GetPlayersJoined[i].CharacterName].playerHealth);
+            SetPlayerVelocityVariable(player, playerDataDictionary.myDict[playerJoinedData.GetPlayersJoined[i].CharacterName.ToString()].playerVeloctiy);
+            SetPlayerMovementSpeed(player, playerDataDictionary.myDict[playerJoinedData.GetPlayersJoined[i].CharacterName.ToString()].movementSpeed);
+            SetPlayerAnimationData(player, playerDataDictionary.myDict[playerJoinedData.GetPlayersJoined[i].CharacterName.ToString()].playerAnimData);
+            SetPlayerHealth(player, playerDataDictionary.myDict[playerJoinedData.GetPlayersJoined[i].CharacterName.ToString()].playerHealth);
         }
     }
 

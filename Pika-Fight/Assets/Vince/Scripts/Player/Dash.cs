@@ -8,8 +8,8 @@ using UnityEngine.Events;
 public class Dash : MonoBehaviour
 {
     Rigidbody rb;
-    [SerializeField] float dashForce = 10f;
-    [SerializeField] float dashTime = 1f;
+    [SerializeField] FloatReference dashForce;
+    [SerializeField] FloatReference dashTime;
     [SerializeField] FloatReference dashCooldown;
     [SerializeField] PlayerControls playerControls;
     [SerializeField] UnityEvent IsDashing;
@@ -32,7 +32,7 @@ public class Dash : MonoBehaviour
         {
             IsDashing.Invoke();
 
-            rb.velocity = transform.forward * dashForce;
+            rb.velocity = transform.forward * dashForce.Value;
             isDashing = true;
             StartCoroutine(StopDash());
             StartCoroutine(EnableDash());
@@ -41,7 +41,7 @@ public class Dash : MonoBehaviour
 
     IEnumerator StopDash()
     {
-        yield return new WaitForSeconds(dashTime);
+        yield return new WaitForSeconds(dashTime.Value);
         IsNotDashing.Invoke();
         rb.velocity = Vector3.zero;
     }

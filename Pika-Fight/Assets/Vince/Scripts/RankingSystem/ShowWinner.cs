@@ -50,7 +50,7 @@ public class ShowWinner : MonoBehaviour
                 playerWinner = Instantiate(playerPrefab, winnerPos.position, Quaternion.Euler(0,-90f,0));
                 playerWinner.name = $"{playerJoinedData.GetPlayersJoined[i].name}_{playerJoinedData.GetPlayersJoined[i].CharacterName}";
 
-                EnableCharacterModel(playerWinner, playerJoinedData.GetPlayersJoined[i].CharacterName);
+                EnableCharacterModel(playerWinner, playerJoinedData.GetPlayersJoined[i].CharacterName.ToString());
 
                 playerWinner.GetComponent<Rigidbody>().isKinematic = false;
                 //playerWinner.GetComponent<Animator>().SetBool("Victory", true);
@@ -72,7 +72,7 @@ public class ShowWinner : MonoBehaviour
                 GameObject player = Instantiate(playerPrefab, otherPlayersPos[pos].position, Quaternion.Euler(0, -90f, 0));
                 player.name = $"{playerJoinedData.GetPlayersJoined[i].name}_{playerJoinedData.GetPlayersJoined[i].CharacterName}";
 
-                EnableCharacterModel(player, playerJoinedData.GetPlayersJoined[i].CharacterName);
+                EnableCharacterModel(player, playerJoinedData.GetPlayersJoined[i].CharacterName.ToString());
 
                 player.GetComponent<Rigidbody>().isKinematic = false;
                 player.GetComponent<Animator>().SetBool("Dead", true);

@@ -6,7 +6,7 @@ public class CharacterBtn : MonoBehaviour
 {
     [SerializeField] GameObject characterPrefab;
     [SerializeField] Sprite characterSprite;
-    [SerializeField] string characterName;
+    [SerializeField] CharacterEnums characterName;
     [SerializeField] bool characterIsTaken;
 
     public string GetCharacterName()
@@ -22,5 +22,5 @@ public class CharacterBtn : MonoBehaviour
         set { characterIsTaken = value; }
     }
 
-    public string CharacterName { get => characterName; set => characterName = value; }
+    public CharacterEnums CharacterName { get => characterName; set => characterName = value; }
 }

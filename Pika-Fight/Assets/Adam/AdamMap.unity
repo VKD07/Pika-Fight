@@ -5924,6 +5924,90 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585769860}
   m_Mesh: {fileID: 4300000, guid: 47943899a650b134b9da7b846c2c30a7, type: 3}
+--- !u!1 &1615396640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1615396642}
+  - component: {fileID: 1615396643}
+  m_Layer: 0
+  m_Name: Settings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1615396642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615396640}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1630.1527, y: 117.2444, z: 9.8425455}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1615396643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615396640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb18546a92f0ed488a3db35545d5c74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  movementSpeed: 7
+  dashForce: 20
+  dashTime: 0.2
+  dashCoolDown: 2
+  weaponDamage: 20
+  attackRange: 1.2
+  attackDashForce: 15
+  attackDashTime: 0.1
+  attackDashCoolDown: 0.5
+  ballMaxDamageForce: 60
+  forceIncreaseRate: 60
+  playerStartingHealth: {fileID: 11400000, guid: d125c79fed0f4a443b0cb570ead6c672,
+    type: 2}
+  playermovementSpeed:
+  - {fileID: 11400000, guid: ab1bdf165e1b10a45a7a1c63d32c902a, type: 2}
+  - {fileID: 11400000, guid: 0b5b10bfec1623441999109735d297f2, type: 2}
+  - {fileID: 11400000, guid: 3f3541fcf6eafb94997da70ed85b9305, type: 2}
+  - {fileID: 11400000, guid: 0c93cc4a8d311624b8e356338a14ed1f, type: 2}
+  - {fileID: 11400000, guid: eac6fa851f8bba646b8834aec5ffcfe5, type: 2}
+  - {fileID: 11400000, guid: edd7227f90e803541a5e3d9d2277471b, type: 2}
+  - {fileID: 11400000, guid: abeb81ac58909414fb69592815f607f6, type: 2}
+  - {fileID: 11400000, guid: 6c1ca2aca5f4b5a47b03531736367a7c, type: 2}
+  - {fileID: 11400000, guid: e2e6e4d457aabe347ac52f396e155399, type: 2}
+  - {fileID: 11400000, guid: 6cd084ea738e1794fb95089cd2c2071c, type: 2}
+  playerdashForce: {fileID: 11400000, guid: 4dfd3425c70267a4f848211cdb7f2217, type: 2}
+  playerdashTime: {fileID: 11400000, guid: f404123d955e65745ad8a4e77721455b, type: 2}
+  playerdashCoolDown: {fileID: 11400000, guid: d929f52a71c722c4ea6b61af9bae8589, type: 2}
+  playerweaponDamage: {fileID: 11400000, guid: 863546dc2b5a5434ba5572906f3210c9, type: 2}
+  playerattackRange: {fileID: 11400000, guid: 7184c9d4699f2f84c9778e37f8452f76, type: 2}
+  playerattackDashForce: {fileID: 11400000, guid: c2391501514a444448c595574be03dee,
+    type: 2}
+  playerattackDashTime: {fileID: 11400000, guid: cbf9a10de67043c49a037ef04f249138,
+    type: 2}
+  playerattackDashCoolDown: {fileID: 11400000, guid: 86a220511fa2a6c4ba0df03bc65602c5,
+    type: 2}
+  playerballMaxDamageForce: {fileID: 11400000, guid: 174435e6385f59c4f93253fa2d26a74e,
+    type: 2}
+  playerforceIncreaseRate: {fileID: 11400000, guid: cde26039568f0ee4d87116666b7c3e6f,
+    type: 2}
 --- !u!1 &1633831616
 GameObject:
   m_ObjectHideFlags: 0

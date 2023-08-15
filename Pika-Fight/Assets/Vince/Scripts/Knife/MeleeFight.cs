@@ -8,8 +8,8 @@ public class MeleeFight : MonoBehaviour
 {
     [Header("Weapon Settings")]
     [SerializeField] GameObject knifeWeapon;
-    [SerializeField] float weaponDamage = 33f;
-    [SerializeField] float weaponAttackRange = 1f;
+    [SerializeField] FloatReference weaponDamage;
+    [SerializeField] FloatReference weaponAttackRange;
     [SerializeField] public bool playerDetected;
     [SerializeField] Transform weaponRangeOrigin;
     [SerializeField] LayerMask layerToStab;
@@ -22,9 +22,9 @@ public class MeleeFight : MonoBehaviour
 
     [Header("Dashing")]
     Rigidbody rb;
-    [SerializeField] float dashForce = 10f;
-    [SerializeField] float dashTime = 1f;
-    [SerializeField] float attackCoolDown = 2f;
+    [SerializeField] FloatReference dashForce;
+    [SerializeField] FloatReference dashTime;
+    [SerializeField] FloatReference attackCooldown;
     [SerializeField] UnityEvent IsDashing;
     [SerializeField] UnityEvent IsNotDashing;
     [SerializeField] UnityEvent OnStab;
@@ -76,7 +76,7 @@ public class MeleeFight : MonoBehaviour
         //    playerDetected = false;
         //}
 
-        players = Physics.OverlapSphere(weaponRangeOrigin.position, weaponAttackRange, layerToStab);
+        players = Physics.OverlapSphere(weaponRangeOrigin.position, weaponAttackRange.Value, layerToStab);
         if (players.Length > 0)
         {
             playerDetected = true;
@@ -104,8 +104,8 @@ public class MeleeFight : MonoBehaviour
                     }
                     else
                     {
-                        ChickenMode(players[i].gameObject, weaponDamage);
-                        players[i].GetComponent<ReceiveDamage>().GetDamage(weaponDamage);
+                        ChickenMode(players[i].gameObject, weaponDamage.Value);
+                        players[i].GetComponent<ReceiveDamage>().GetDamage(weaponDamage.Value);
                     }
                     OnPlayerImpact.Invoke();
                     ApplyPoison(players[0].gameObject);
@@ -118,7 +118,7 @@ public class MeleeFight : MonoBehaviour
     private void BeginDash()
     {
         IsDashing.Invoke();
-        rb.velocity = transform.forward * dashForce;
+        rb.velocity = transform.forward * dashForce.Value;
         isDashing = true;
         StartCoroutine(StopDash());
         StartCoroutine(EnableDash());
@@ -126,14 +126,14 @@ public class MeleeFight : MonoBehaviour
 
     IEnumerator StopDash()
     {
-        yield return new WaitForSeconds(dashTime);
+        yield return new WaitForSeconds(dashTime.Value);
         IsNotDashing.Invoke();
         rb.velocity = Vector3.zero;
     }
 
     IEnumerator EnableDash()
     {
-        yield return new WaitForSeconds(attackCoolDown);
+        yield return new WaitForSeconds(attackCooldown.Value);
         isDashing = false;
     }
 
@@ -141,7 +141,7 @@ public class MeleeFight : MonoBehaviour
     {
         if (playerDetected)
         {
-            hit.collider.GetComponent<ReceiveDamage>().GetDamage(weaponDamage);
+            hit.collider.GetComponent<ReceiveDamage>().GetDamage(weaponDamage.Value);
         }
     }
 
@@ -167,11 +167,11 @@ public class MeleeFight : MonoBehaviour
     {
         Gizmos.color = Color.red;
         //Gizmos.DrawRay(weaponRangeOrigin.position, weaponRangeOrigin.forward * weaponAttackRange);
-        Gizmos.DrawWireSphere(weaponRangeOrigin.position, weaponAttackRange);
+        Gizmos.DrawWireSphere(weaponRangeOrigin.position, weaponAttackRange.Value);
     }
 
     public PlayerControls SetPlayerControls { set { playerControls = value; } }
     public bool IStunned { set => isStunned = value; }
     public bool Stabbing => isDashing;
-    public float AttackCoolDown { get => attackCoolDown; set => attackCoolDown = value; }
+    public float AttackCoolDown { get => attackCooldown.Value; set => attackCooldown.Value = value; }
 }

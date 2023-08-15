@@ -8787,7 +8787,7 @@ MonoBehaviour:
   characterPrefab: {fileID: 4724938619719301259, guid: 72324f59befd2034387ce60c6ba5dfbc,
     type: 3}
   characterSprite: {fileID: 1644535876, guid: 95258e6548789df44b6121b200640da8, type: 3}
-  characterName: Chicken
+  characterName: 3
   characterIsTaken: 0
 --- !u!1 &692059658
 GameObject:
@@ -9787,7 +9787,7 @@ MonoBehaviour:
   characterPrefab: {fileID: 3073818340599491789, guid: 04f4bc6bdbd1e6b43a62072af666c2ed,
     type: 3}
   characterSprite: {fileID: -1321876750, guid: 81c9b9a7d5782c446a872adcf836ede5, type: 3}
-  characterName: Robot
+  characterName: 8
   characterIsTaken: 0
 --- !u!1001 &735821499
 PrefabInstance:
@@ -11532,7 +11532,7 @@ MonoBehaviour:
   characterPrefab: {fileID: 2435251451558624804, guid: 2e330211d5363e142b5822a97b9c9e95,
     type: 3}
   characterSprite: {fileID: -480773686, guid: 45bdea5e57305bf499f43f1338a8757d, type: 3}
-  characterName: ChemicalMan
+  characterName: 2
   characterIsTaken: 0
 --- !u!1001 &938011254
 PrefabInstance:
@@ -12730,7 +12730,7 @@ MonoBehaviour:
   characterPrefab: {fileID: 5861507685882267482, guid: ba128691428cd68478841eff49f4c26e,
     type: 3}
   characterSprite: {fileID: -1955456937, guid: 52cc04a7a8bfed34cb68725879f90b91, type: 3}
-  characterName: Alien
+  characterName: 0
   characterIsTaken: 0
 --- !u!1001 &1150500797
 PrefabInstance:
@@ -14592,7 +14592,7 @@ MonoBehaviour:
   characterPrefab: {fileID: 3869439605163870521, guid: 459f67e56227daf4c8afa713ef3516c6,
     type: 3}
   characterSprite: {fileID: -621291075, guid: 90f54c85010d030418825dba9d00e43d, type: 3}
-  characterName: Knight
+  characterName: 6
   characterIsTaken: 0
 --- !u!1001 &1283483733
 PrefabInstance:
@@ -22109,7 +22109,7 @@ MonoBehaviour:
   characterPrefab: {fileID: 7032743981702343751, guid: 0329e4d173c6061479c7519ad91be501,
     type: 3}
   characterSprite: {fileID: 1075911197, guid: 2862c9382961ea5409eda079359e9b05, type: 3}
-  characterName: Bear
+  characterName: 1
   characterIsTaken: 0
 --- !u!1001 &1881998699
 PrefabInstance:
@@ -23364,7 +23364,7 @@ MonoBehaviour:
   characterPrefab: {fileID: 5191527098949881722, guid: e0d653268c88c8a42958fe0767280b06,
     type: 3}
   characterSprite: {fileID: -325801220, guid: 4049c4fcd5850a142ade2d2219d32979, type: 3}
-  characterName: Samurai
+  characterName: 9
   characterIsTaken: 0
 --- !u!1001 &2006422214
 PrefabInstance:
@@ -24000,7 +24000,7 @@ MonoBehaviour:
   characterPrefab: {fileID: 4006341026387044044, guid: b51e16215cb9496479ea06f18763034c,
     type: 3}
   characterSprite: {fileID: 50399517, guid: 231f7547bca149740a5872a0c4c3bc98, type: 3}
-  characterName: Girl
+  characterName: 5
   characterIsTaken: 0
 --- !u!1001 &2067874561
 PrefabInstance:
@@ -24557,7 +24557,7 @@ MonoBehaviour:
   characterPrefab: {fileID: 4213983663638008978, guid: e5d903857d9cf0844bf4134993c45596,
     type: 3}
   characterSprite: {fileID: -622417283, guid: 356e1cc2682e96b4cad91b18f4f818e3, type: 3}
-  characterName: PaperHead
+  characterName: 7
   characterIsTaken: 0
 --- !u!1 &2106841864
 GameObject:
@@ -24918,7 +24918,7 @@ MonoBehaviour:
   characterPrefab: {fileID: 366099384126448805, guid: 327af7dea87408449acdf22cd9462420,
     type: 3}
   characterSprite: {fileID: -142610570, guid: cfc449b5ec039ec419d86fb4f41db438, type: 3}
-  characterName: Clown
+  characterName: 4
   characterIsTaken: 0
 --- !u!1001 &2140757375
 PrefabInstance:

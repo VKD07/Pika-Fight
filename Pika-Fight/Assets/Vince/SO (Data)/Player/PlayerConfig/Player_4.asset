@@ -15,7 +15,7 @@ MonoBehaviour:
   playerControl: {fileID: 11400000, guid: 65d70b53c00b69144b60e5b118e3dea8, type: 2}
   playerColor: {r: 1, g: 0.92376935, b: 0.25943398, a: 0.34901962}
   characterSprite: {fileID: 21300000, guid: 0c23032d43c2f7a4996e1f68cc2fc477, type: 3}
-  characterName: Knight
+  characterName: 6
   playerOverallScore: 0
   gemScore: 0
   holdPercentage: 61.321022
