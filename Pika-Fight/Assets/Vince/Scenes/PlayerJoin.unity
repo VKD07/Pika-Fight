@@ -25695,12 +25695,11 @@ MonoBehaviour:
   playerPrefab: {fileID: 3909486104836873534, guid: 3c83bfbe1232d794e8481268fa4d5a69,
     type: 3}
   timeToSpawn: 2
-  playerSpawnerParent: {fileID: 0}
   playerSpawners:
-  - {fileID: 437704131}
-  - {fileID: 1796469093}
-  - {fileID: 265514569}
-  - {fileID: 100904961}
+  - {x: -5.6933756, y: -40.444157, z: 88.655556}
+  - {x: -7.7685747, y: -40.406063, z: 88.746506}
+  - {x: -3.562079, y: -40.44524, z: 88.8088}
+  - {x: -9.708149, y: -40.439034, z: 88.9733}
   OnSpawn:
     m_PersistentCalls:
       m_Calls: []

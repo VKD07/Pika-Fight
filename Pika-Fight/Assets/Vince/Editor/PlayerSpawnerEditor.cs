@@ -6,35 +6,67 @@ using UnityEditor;
 [CustomEditor(typeof(SpawnPlayers))]
 public class PlayerSpawnerEditor : Editor
 {
+    SpawnPlayers playerSpawner;
+    float handleSize = 0.5f;
     public override void OnInspectorGUI()
     {
-        SpawnPlayers spawnPlayers = (SpawnPlayers)target;
+        playerSpawner = (SpawnPlayers)target;
         base.OnInspectorGUI();
-        AddPlayerSpawnPointButton(spawnPlayers);
-        RemoveAllSpawnPointsBtn(spawnPlayers);
+        AddPlayerSpawnPointButton();
+        RemoveAPointButton();
+        RemoveAllSpawnPointsBtn();
     }
 
-    void AddPlayerSpawnPointButton(SpawnPlayers spawnPlayers)
+    private void OnSceneGUI()
     {
-        if(GUILayout.Button("Add Spawn Point"))
+        DrawMoveHandlers();
+    }
+
+    void DrawMoveHandlers()
+    {
+        Handles.color = Color.red;
+        if (playerSpawner.SpawnPoints.Count > 0)
         {
-            GameObject playerSpawnPoint = new GameObject("PlayerSpawnPoint");
-            playerSpawnPoint.transform.SetParent(spawnPlayers.playerSpawnerParent);
-            playerSpawnPoint.transform.position = spawnPlayers.playerSpawnerParent.position;
-            playerSpawnPoint.transform.rotation = Quaternion.identity;
-            spawnPlayers.AddToSpawnList(playerSpawnPoint.transform);
+            for (int i = 0; i < playerSpawner.SpawnPoints.Count; i++)
+            {
+                Vector3 newPos = Handles.FreeMoveHandle(playerSpawner.SpawnPoints[i], handleSize, Vector3.zero, Handles.CylinderHandleCap);
+                if (playerSpawner.SpawnPoints[i] != newPos)
+                {
+                    Undo.RecordObject(playerSpawner, "MovePoint");
+                    playerSpawner.MoveSpawnPoint(i, newPos);
+                }
+            }
         }
     }
 
-    void RemoveAllSpawnPointsBtn(SpawnPlayers spawnPlayers)
+    void AddPlayerSpawnPointButton()
+    {
+        if(GUILayout.Button("Add Spawn Point"))
+        {
+            if(playerSpawner.SpawnPoints.Count > 0)
+            {
+                playerSpawner.SpawnPoints.Add(playerSpawner.SpawnPoints[playerSpawner.SpawnPoints.Count - 1]);
+            }
+            else
+            {
+                playerSpawner.SpawnPoints.Add(Vector3.one * 2f);
+            }
+        }
+    }
+
+    void RemoveAPointButton()
+    {
+        if (GUILayout.Button("Remove Previous SpawnPoint"))
+        {
+            playerSpawner.SpawnPoints.Remove(playerSpawner.SpawnPoints[playerSpawner.SpawnPoints.Count - 1]);
+        }
+    }
+
+    void RemoveAllSpawnPointsBtn()
     {
         if (GUILayout.Button("Remove All SpawnPoints"))
         {
-            for (int i = spawnPlayers.PlayerSpawners.Count - 1; i >= 0; i--)
-            {
-                DestroyImmediate(spawnPlayers.PlayerSpawners[i].gameObject);
-            }
-            spawnPlayers.PlayerSpawners.Clear();
+            playerSpawner.SpawnPoints.Clear();
         }
     }
 }

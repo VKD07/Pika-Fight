@@ -12,8 +12,7 @@ public class SpawnPlayers : MonoBehaviour
     [SerializeField] GameObject playerPrefab;
     [SerializeField] float timeToSpawn = 2f;
     //[SerializeField] int numberOfPlayers;
-    [SerializeField] public Transform playerSpawnerParent;
-    [SerializeField] List<Transform> playerSpawners;
+    [SerializeField] List<Vector3> playerSpawners;
     [SerializeField] UnityEvent OnSpawn;
     float numberOfPlayers;
     private void Awake()
@@ -46,7 +45,7 @@ public class SpawnPlayers : MonoBehaviour
     {
         for (int i = 0; i < numberOfPlayers; i++)
         {
-            GameObject player = Instantiate(playerPrefab, playerSpawners[i].position, Quaternion.identity);
+            GameObject player = Instantiate(playerPrefab, playerSpawners[i], Quaternion.identity);
 
             //set game object name
             player.name = $"{playerJoinedData.GetPlayersJoined[i].name}_{playerJoinedData.GetPlayersJoined[i].CharacterName}";
@@ -151,14 +150,13 @@ public class SpawnPlayers : MonoBehaviour
     void SpawnPlayerRandomly(GameObject player)
     {
         int randomPos = Random.Range(0, playerSpawners.Count);
-        player.transform.position = playerSpawners[randomPos].position;
+        player.transform.position = playerSpawners[randomPos];
     }
-
-    public void AddToSpawnList(Transform spawner)
+    public void MoveSpawnPoint(int i, Vector3 pos)
     {
-        playerSpawners.Add(spawner);
+        playerSpawners[i] = pos;
     }
 
     public Transform SpawnerParent { get => SpawnerParent; }
-    public List<Transform> PlayerSpawners { get => playerSpawners;}
+    public List<Vector3> SpawnPoints { get => playerSpawners;}
 }
