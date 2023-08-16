@@ -6,6 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerSettings : MonoBehaviour
 {
+    [SerializeField] bool EnableRunTimeAdjustment;
     //Health and movement
     [HideInInspector] public float startingHealth = 100f;
     [HideInInspector] public float movementSpeed = 7f;
@@ -42,7 +43,10 @@ public class PlayerSettings : MonoBehaviour
 
     private void Update()
     {
-        UpdatePlayerValues();
+        if(EnableRunTimeAdjustment)
+        {
+            UpdatePlayerValues();
+        }
     }
     public void UpdatePlayerValues()
     {

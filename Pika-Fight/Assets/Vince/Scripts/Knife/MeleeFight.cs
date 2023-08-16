@@ -163,12 +163,12 @@ public class MeleeFight : MonoBehaviour
     }
 
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        //Gizmos.DrawRay(weaponRangeOrigin.position, weaponRangeOrigin.forward * weaponAttackRange);
-        Gizmos.DrawWireSphere(weaponRangeOrigin.position, weaponAttackRange.Value);
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    //Gizmos.DrawRay(weaponRangeOrigin.position, weaponRangeOrigin.forward * weaponAttackRange);
+    //    Gizmos.DrawWireSphere(weaponRangeOrigin.position, weaponAttackRange.Value);
+    //}
 
     public PlayerControls SetPlayerControls { set { playerControls = value; } }
     public bool IStunned { set => isStunned = value; }

@@ -19,30 +19,30 @@ public class GameRandomizer : ScriptableObject
     [Header("Game Goal")]
     public GameMode[] gameGoals;
     public int randomGoal;
-    int prevGoal;
+    int prevGoal = -1;
 
     [Header("Scenes")]
     public string[] sceneNames;
     public int randomScenes;
-    int prevScene;
+    int prevScene= -1;
 
     public void RandomizeGameMode()
     {
         randomCombat = Random.Range(0, combatEvents.Length);
 
         prevGoal = randomGoal;
-        //while (randomGoal == prevGoal)
-        //{
-        //    randomGoal = Random.Range(0, gameGoals.Length);
-        //}
-        randomGoal = Random.Range(0, gameGoals.Length);
+        while (randomGoal == prevGoal)
+        {
+            randomGoal = Random.Range(0, gameGoals.Length);
+        }
+        //randomGoal = Random.Range(0, gameGoals.Length);
 
         prevScene = randomScenes;
-        //while(randomScenes == prevScene)
-        //{
-        //    randomScenes = Random.Range(0, sceneNames.Length);
-        //}
-        randomScenes = Random.Range(0, sceneNames.Length);
+        while (randomScenes == prevScene)
+        {
+            randomScenes = Random.Range(0, sceneNames.Length);
+        }
+        //randomScenes = Random.Range(0, sceneNames.Length);
 
     }
 

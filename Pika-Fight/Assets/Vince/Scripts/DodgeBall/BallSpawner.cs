@@ -5,8 +5,15 @@ using UnityEngine.Events;
 
 public class BallSpawner : MonoBehaviour
 {
+    [SerializeField] GameObject dodgeBall;
     private void OnEnable()
     {
-        GameObject.Find("DodgeBalls").SetActive(true);
+        StartCoroutine(EnableDodgeBall());
+    }
+
+    IEnumerator EnableDodgeBall()
+    {
+        yield return new WaitForSeconds(2);
+        dodgeBall.SetActive(true);
     }
 }

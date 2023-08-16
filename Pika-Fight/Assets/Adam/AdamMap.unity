@@ -5983,31 +5983,7 @@ MonoBehaviour:
         m_CallState: 2
   OnEnableScript:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8844720647714450586}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &153686759184152857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16435,8 +16411,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178188828272874188}
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: 0}
-  m_LocalPosition: {x: 15.701992, y: -0.5217161, z: 7.169041}
-  m_LocalScale: {x: 100, y: 1.3768164, z: 100}
+  m_LocalPosition: {x: 8.1004, y: -0.51288, z: 25.264}
+  m_LocalScale: {x: 27.701904, y: 0.38140437, z: 27.701904}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6257467705453717344}
@@ -35896,6 +35872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb18546a92f0ed488a3db35545d5c74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnableRunTimeAdjustment: 0
   startingHealth: 100
   movementSpeed: 7
   dashForce: 20
@@ -41381,7 +41358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatTypes: 1
-  gameGoals: 3
+  gameGoals: 1
   environments: 2
   applyGamemodes: 0
   gameRandomizer: {fileID: 11400000, guid: 64396c5ae0b16e54eb875a731d352909, type: 2}
@@ -62444,26 +62421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce15b4f187819241aedd9bec52b8843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 2467508144955364019}
-  spawnPoint: {fileID: 8787959882256235929}
-  dodgeBallsParent: {fileID: 0}
-  gameRandomizer: {fileID: 11400000, guid: 64396c5ae0b16e54eb875a731d352909, type: 2}
-  ballsSpawned: []
-  OnEnableScript:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2467508144955364019}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  dodgeBall: {fileID: 2467508144955364019}
 --- !u!64 &8122144045997192991
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -69325,6 +69283,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3270142003818770933}
   - {fileID: 7253094084318040211}
   - {fileID: 1859081907754663769}
   - {fileID: 3319818705394221554}
@@ -69341,7 +69300,6 @@ Transform:
   - {fileID: 5309800158299489314}
   - {fileID: 4130539897581009047}
   - {fileID: 2918087791156527614}
-  - {fileID: 3270142003818770933}
   - {fileID: 4398290224836511870}
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -69540,6 +69498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3703741003952294312}
   - component: {fileID: 7099909907776368507}
+  - component: {fileID: 8844720647714450587}
   m_Layer: 0
   m_Name: GemRandomizer
   m_TagString: Untagged
@@ -69547,6 +69506,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8844720647714450587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8844720647714450586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3567cd126c5384f4aa914429084b1a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameModeList:
+  - gameMode: {fileID: 11400000, guid: 8c181b59f8809ed45818fb719a6c16d0, type: 2}
+    listOfScriptsToEnable:
+    - {fileID: 7099909907776368507}
 --- !u!1 &8845514048628239584
 GameObject:
   m_ObjectHideFlags: 0
