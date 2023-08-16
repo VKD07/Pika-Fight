@@ -12,11 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7945d7399f8dc243b69ec4dcf75626d, type: 3}
   m_Name: SurvivalPowerUps
   m_EditorClassIdentifier: 
-  objectsToPool:
-  - {fileID: 1872457816990918724, guid: 4bb8b63d062133d49ab529d942d05972, type: 3}
-  - {fileID: 4886961560991900909, guid: d6ab0f492425c3d4d8d1d1ad26fb2837, type: 3}
-  - {fileID: 7966285523819929835, guid: ec4ecbdab33394c43b0b489ad27fdf4b, type: 3}
-  - {fileID: 5120971170868095502, guid: 4c58e46b355b5e842ab191402431dc60, type: 3}
+  objectsToPool: []
   listOfObjs: []
   parent: {fileID: 0}
   poolAmount: 4

@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ObjectsPool", menuName = "Pattern/ObjectsPooling")]
 public class ObjectsPooling : ScriptableObject
 {
-    [SerializeField] GameObject[] objectsToPool;
+    [SerializeField] List<GameObject> objectsToPool;
     [SerializeField] List<GameObject> listOfObjs;
     [SerializeField] Transform parent;
     [SerializeField] float poolAmount;
@@ -14,7 +14,7 @@ public class ObjectsPooling : ScriptableObject
     {
         for (int i = 0; i < poolAmount; i++)
         {
-            for (int j = 0; j < objectsToPool.Length; j++)
+            for (int j = 0; j < objectsToPool.Count; j++)
             {
                 GameObject obj = Instantiate(objectsToPool[i], Vector3.zero, objRotation);
                 obj.transform.SetParent(parent);
@@ -24,14 +24,14 @@ public class ObjectsPooling : ScriptableObject
         }
     }
 
-    public void PickObjFromPoolRandomly(Transform locationToSpawn)
+    public void PickObjFromPoolRandomly(Vector3 locationToSpawn)
     {
         int randomIndex = Random.Range(0, listOfObjs.Count);
         while (listOfObjs[randomIndex].activeSelf)
         {
             randomIndex = Random.Range(0, listOfObjs.Count);
         }
-        listOfObjs[randomIndex].transform.position = locationToSpawn.position;
+        listOfObjs[randomIndex].transform.position = locationToSpawn;
         listOfObjs[randomIndex].SetActive(true);
         pickedObj = listOfObjs[randomIndex];
     }
@@ -44,7 +44,9 @@ public class ObjectsPooling : ScriptableObject
     public void ClearList()
     {
         listOfObjs.Clear();
+        objectsToPool.Clear();
     }
 
+    public List<GameObject>ObjectsToPool { get =>  objectsToPool; set => objectsToPool = value; }
     public GameObject GetPickedObj { get { return pickedObj; } }
 }

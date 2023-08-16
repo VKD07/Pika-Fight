@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <uie:PropertyField binding-path="playerSpawners" />
+    <ui:Button text="Add Points" display-tooltip-when-elided="true" binding-path="AddPlayerSpawnPointButton" name="AddPoints" style="background-color: rgb(142, 190, 153);" />
+    <ui:Button text="Remove Previous Point" display-tooltip-when-elided="true" name="RemovePoint" focusable="false" style="background-color: rgb(192, 106, 106);" />
+</ui:UXML>

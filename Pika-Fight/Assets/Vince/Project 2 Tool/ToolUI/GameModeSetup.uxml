@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:Label tabindex="-1" text="SETUP GAME MODES:" display-tooltip-when-elided="true" name="GameModeSetupTitle" style="margin-top: 6px; margin-bottom: 8px; -unity-font-style: bold; font-size: 14px;" />
+    <uie:PropertyField name="CombatType" binding-path="combatTypes" />
+    <uie:PropertyField name="GameGoals" binding-path="gameGoals" />
+    <uie:PropertyField name="Environments" binding-path="environments" />
+    <ui:Label tabindex="-1" display-tooltip-when-elided="true" name="Space" style="margin-bottom: -7px;" />
+    <uie:PropertyField name="ApplyGameModes" binding-path="applyGamemodes" style="margin-top: 0;" />
+    <ui:Label tabindex="-1" display-tooltip-when-elided="true" name="Space" style="margin-bottom: 10px;" />
+</ui:UXML>

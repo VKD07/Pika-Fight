@@ -16514,17 +16514,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948ff80153b157d49a3a80ff5f9ee89d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpsToSpawn: []
   objectsToPool: {fileID: 11400000, guid: b185c75380e906a4e98743762f25be49, type: 2}
-  poolParent: {fileID: 1516168285}
   spawnPoints:
-  - {fileID: 1094969201}
-  - {fileID: 726173983}
-  - {fileID: 1738440756}
-  - {fileID: 1717566443}
-  - {fileID: 1173742222}
-  - {fileID: 1747224530}
-  - {fileID: 1236868902}
-  - {fileID: 2131464258}
+  - {x: -0.0032407008, y: 8.77e-43, z: -0.0051331893}
+  - {x: 8.77e-43, y: 5.8678573e-10, z: 8.77e-43}
+  - {x: 4.6e-44, y: 7.406418e+28, z: -0.0032407008}
+  - {x: 8.77e-43, y: -0.0032407679, z: 8.77e-43}
+  - {x: 5.867875e-10, y: 8.77e-43, z: 6.9e-44}
+  - {x: 6.2115245e+22, y: -0.0032407008, z: 8.77e-43}
+  - {x: -0.0032407679, y: 8.77e-43, z: -0.0032407902}
+  - {x: 8.77e-43, y: 6.712587e+22, z: 1.7561105e-19}
   minSpawnTime: 5
   maxSpawnTime: 10
 --- !u!1001 &539403798
@@ -54451,7 +54451,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850033420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -132.99, y: -3.3018, z: 8.7861}
+  m_LocalPosition: {x: -132.99, y: -3.584, z: 8.7861}
   m_LocalScale: {x: 0.52845657, y: 0.52845657, z: 0.52845657}
   m_ConstrainProportionsScale: 0
   m_Children:

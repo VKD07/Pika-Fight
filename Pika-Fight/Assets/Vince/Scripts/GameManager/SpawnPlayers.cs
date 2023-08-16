@@ -12,7 +12,7 @@ public class SpawnPlayers : MonoBehaviour
     [SerializeField] GameObject playerPrefab;
     [SerializeField] float timeToSpawn = 2f;
     //[SerializeField] int numberOfPlayers;
-    [SerializeField] List<Vector3> playerSpawners;
+    public List<Vector3> playerSpawners;
     [SerializeField] UnityEvent OnSpawn;
     float numberOfPlayers;
     private void Awake()

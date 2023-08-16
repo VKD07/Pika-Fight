@@ -24,7 +24,6 @@ public class PlayerConfig : ScriptableObject
     {
         set { 
             playerControl = value;
-            ForceSerialization();
         }
         get { return playerControl; }
     }
@@ -54,15 +53,8 @@ public class PlayerConfig : ScriptableObject
 
     public GameObject PlayerCharacter { get => playerCharacter; set => playerCharacter = value; }
 
-    private void OnDisable()
-    {
-        playerControl = null;
-    }
-
-    void ForceSerialization()
-    {
-#if UNITY_EDITOR
-        UnityEditor.EditorUtility.SetDirty(this);
-#endif
-    }
+    //private void OnDisable()
+    //{
+    //    playerControl = null;
+    //}
 }

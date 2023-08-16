@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <uie:PropertyField binding-path="powerUpsToSpawn" label="Objects To Spawn" name="ObjectToSpawn" />
+    <uie:PropertyField binding-path="spawnPoints" label="SpawnPoints" name="SpawnPoints" />
+    <ui:Button text="Add Spawn Point" display-tooltip-when-elided="true" name="AddPoints" style="background-color: rgb(78, 164, 102);" />
+    <ui:Button text="Remove Previous Point" display-tooltip-when-elided="true" name="RemovePoint" style="background-color: rgb(176, 75, 39);" />
+    <ui:Label tabindex="-1" display-tooltip-when-elided="true" name="Space" />
+    <uie:PropertyField binding-path="minSpawnTime" name="MinSpawnTime" />
+    <uie:PropertyField binding-path="maxSpawnTime" name="MaxSpawnTime" />
+    <ui:Label tabindex="-1" display-tooltip-when-elided="true" name="Space" />
+</ui:UXML>

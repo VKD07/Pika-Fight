@@ -2,23 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PowerUpSpawner : MonoBehaviour
 {
+    public GameObject[] powerUpsToSpawn;
     [SerializeField] ObjectsPooling objectsToPool;
-    [SerializeField] Transform poolParent;
-    [SerializeField] List<Transform> spawnPoints;
-    [SerializeField] float minSpawnTime;
-    [SerializeField] float maxSpawnTime;
+    [SerializeField] public List<Vector3> spawnPoints;
+    [SerializeField] public float minSpawnTime;
+    [SerializeField] public float maxSpawnTime;
     int randomIndex;
     float randomSpawnTime;
     void Start()
     {
-        objectsToPool.SetParent(poolParent);
+        AddPowerUpSpawnsToPool();
+        objectsToPool.SetParent(transform);
         objectsToPool.InitPoolOfObjects(Quaternion.Euler(-90, 0, 0));
         StartCoroutine(StartSpawning());
     }
 
+    void AddPowerUpSpawnsToPool()
+    {
+        foreach (GameObject obj in powerUpsToSpawn)
+        {
+            objectsToPool.ObjectsToPool.Add(obj);
+        }
+    }
     IEnumerator StartSpawning()
     {
         while (true)
@@ -28,55 +37,24 @@ public class PowerUpSpawner : MonoBehaviour
             objectsToPool.PickObjFromPoolRandomly(spawnPoints[randomIndex]);
             CheckIfItsAGemPowerUP();
             yield return new WaitForSeconds(randomSpawnTime);
-            //StartCoroutine(DisableObj());
         }
     }
 
     void CheckIfItsAGemPowerUP()
     {
-        if (objectsToPool.GetPickedObj.GetComponent<Gem>()!= null)
+        if (objectsToPool.GetPickedObj.GetComponent<Gem>() != null)
         {
             objectsToPool.GetPickedObj.GetComponent<Gem>().enabled = true;
         }
     }
 
-    //IEnumerator DisableObj()
-    //{
-    //    yield return new WaitForSeconds(disableAfterSpawnDuration);
-
-    //    Ball ball = objectsToPool.GetPickedObj.GetComponent<Ball>();
-    //    ExplodingCrate explodingCrate = objectsToPool.GetPickedObj.GetComponent<ExplodingCrate>();
-
-    //    if (ball != null && !ball.BallTaken)
-    //    {
-    //        objectsToPool.GetPickedObj.SetActive(false);
-    //    }
-    //    else if (explodingCrate != null)
-    //    {
-    //        //Nothing
-    //    }
-    //    else
-    //    {
-    //        objectsToPool.GetPickedObj.SetActive(false);
-    //    }
-    //}
-
-    public void AddToList(GameObject point)
+    public void MoveSpawnPoint(int i, Vector3 pos)
     {
-        spawnPoints.Add(point.transform);
-    }
-
-    public void ClearList()
-    {
-        for (int i = 0; i < spawnPoints.Count; i++)
-        {
-            DestroyImmediate(spawnPoints[i]);
-        }
-        spawnPoints.Clear();
+        spawnPoints[i] = pos;
     }
 
     private void OnDisable()
     {
-        //objectPool.ClearList();
+        objectsToPool.ClearList();
     }
 }

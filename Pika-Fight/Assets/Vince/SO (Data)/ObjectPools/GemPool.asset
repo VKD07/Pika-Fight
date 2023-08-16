@@ -12,10 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7945d7399f8dc243b69ec4dcf75626d, type: 3}
   m_Name: GemPool
   m_EditorClassIdentifier: 
-  objectsToPool:
-  - {fileID: 1000013656696560, guid: cd34118c604e29141afea74caecd70f2, type: 3}
-  - {fileID: 1000013656696560, guid: cd34118c604e29141afea74caecd70f2, type: 3}
-  - {fileID: 1000013656696560, guid: cd34118c604e29141afea74caecd70f2, type: 3}
+  objectsToPool: []
   listOfObjs: []
   parent: {fileID: 0}
   poolAmount: 3

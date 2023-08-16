@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7945d7399f8dc243b69ec4dcf75626d, type: 3}
   m_Name: MeleePowerUps
   m_EditorClassIdentifier: 
-  objectsToPool:
-  - {fileID: 3401064111677948664, guid: a24a21d230b2dbd4bbb37b0fafa183af, type: 3}
-  - {fileID: 1872457816990918724, guid: 4bb8b63d062133d49ab529d942d05972, type: 3}
+  objectsToPool: []
   listOfObjs: []
   parent: {fileID: 0}
   poolAmount: 2

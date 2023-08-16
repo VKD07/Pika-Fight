@@ -12378,7 +12378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d69d0d45155a94fac30d4a0ef2a3a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerControls: {fileID: 11400000, guid: 8e1be352d6d596b43abfee919e054f44, type: 2}
+  playerControls: {fileID: 0}
   velocity: {fileID: 0}
   playerAnimData: {fileID: 0}
 --- !u!114 &3764407319714614144
