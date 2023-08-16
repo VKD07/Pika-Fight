@@ -13,6 +13,6 @@ public class rotation : MonoBehaviour
     
     void Update()
     {
-        transform.Rotate(0, 10, 0, Space.Self);
+        transform.Rotate(0, rotationSpeed * Time.deltaTime, 0, Space.Self);
     }
 }
