@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Vince/Scenes/VinceOptionsTest.unity
     guid: 4c5d9073a53238b4d88584392fa866e7
+  - enabled: 1
+    path: Assets/Adam/SpinnyIsland.unity
+    guid: 74cc75953cb1cc842ae6096485a24fc8
   m_configObjects: {}

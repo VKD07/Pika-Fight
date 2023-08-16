@@ -1148,16 +1148,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ecbae4f81c952e3469410ffd56362da3, type: 3}
   - {fileID: 21300000, guid: d37dc31b42cb550479a66124fbdc66b9, type: 3}
   - {fileID: 21300000, guid: aef31253c5f34f34ab0acaf8675f6409, type: 3}
+  - {fileID: -1073118123, guid: 4882c70e92f43de4e897b12368e9f3d1, type: 3}
   categoryTitleImg: {fileID: 1247595255}
   categoryTitles:
   - {fileID: 21300000, guid: 60e687238bb66cf48b41a606cff8270a, type: 3}
   - {fileID: 21300000, guid: 0f790b5d1b3f18442bfca4631bab45a1, type: 3}
   - {fileID: 21300000, guid: 9ce4ceea4bfd2c043b4537a17dbe3f45, type: 3}
+  - {fileID: 21300000, guid: 1d4a9a5a948505d47a120df2778c9142, type: 3}
   environmentImage: {fileID: 937056608}
   environments:
   - {fileID: 21300000, guid: 35ac8af1e8532a546a946ba073a082d4, type: 3}
   - {fileID: 21300000, guid: bece8a6eccad289418fb8c244df21908, type: 3}
   - {fileID: 21300000, guid: d8d3adeb51de32f4199e9c2a85be0907, type: 3}
+  - {fileID: 21300000, guid: 66318d279da22b444a47683062c75d38, type: 3}
   randomInterval: 0.03
   chooseDelaytime: 3.5
   gameRandomizer: {fileID: 11400000, guid: 64396c5ae0b16e54eb875a731d352909, type: 2}

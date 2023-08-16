@@ -17,6 +17,7 @@ public class SceneLoaderEditor : EditorWindow
         EditorGUILayout.BeginHorizontal();
         LoadVinceScenes("Player Join Scene", "PlayerJoin");
         LoadAdamSceneButton("Adam Scene", "AdamMap");
+        LoadAdamSceneButton("Spinny Island", "SpinnyIsland");
         LoadAlyScenes("Moving Land", "ShrinkLevel1");
         LoadAlyScenes("Fiery Land", "ExplosionLevel");
         EditorGUILayout.EndHorizontal();

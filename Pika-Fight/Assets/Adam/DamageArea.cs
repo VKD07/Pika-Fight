@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class DamageArea : MonoBehaviour
 {
-    [SerializeField] float time = 5f, damage = 5f;
-    private void OnTriggerEnter(Collider other)
+    [SerializeField] float damage = 5f;
+    private void OnTriggerStay(Collider other)
     {
         if (other.GetComponent<ReceiveDamage>())
         {
             ReceiveDamage health = other.GetComponent<ReceiveDamage>();
-            health.GetDamage(damage);
-        } 
+            DealDamage(health);
+        }
     }
-    IEnumerator TakeDamage(float time, ReceiveDamage health)
+    void DealDamage(ReceiveDamage health)
     {
         health.GetDamage(damage);
-        yield return new WaitForSeconds(time);
     }
 
 }
