@@ -152,6 +152,4 @@ public class CharacterSelection : MonoBehaviour
             playerJoinedData.GetPlayersJoined[btnIndex].PlayerIsReady = false;
         }
     }
-
-    //MAKE SURE PLAYER DOESNT PICK THESAME CHAMPIONS (ADD A BOOL SCRIPT TO THE CHARACTERBTN)
 }

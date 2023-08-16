@@ -6,7 +6,6 @@ public class PauseManager : MonoBehaviour
 {
     public GameObject pausePannel;
 
-
     void Update()
     {
         if (!pausePannel.activeSelf)

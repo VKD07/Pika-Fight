@@ -5776,7 +5776,7 @@ GameObject:
   - component: {fileID: 440883329}
   - component: {fileID: 440883328}
   m_Layer: 5
-  m_Name: AttackBtn
+  m_Name: DashBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5799,7 +5799,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 26.586105, y: -1.3650513}
+  m_AnchoredPosition: {x: 36.1, y: -1.3650513}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &440883328
@@ -5822,7 +5822,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1061027fd4e9d0145a20ef386663cb76, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c58dd5e1dae7f494aa5397d5777b85e9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6712,7 +6712,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 26.586105, y: -1.3650513}
+  m_AnchoredPosition: {x: 40.1, y: -1.3650513}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &519845173
@@ -6735,7 +6735,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 47fe9f3dd86bbee44a48271219d5d0be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 67d5a86ce8bcfc14b8faada26ab31ae2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16115,8 +16115,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -247.79999, y: -114.00003}
-  m_SizeDelta: {x: -44.0558, y: 0}
+  m_AnchoredPosition: {x: -414.45312, y: -114.00003}
+  m_SizeDelta: {x: -24.1233, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1444033274
 MonoBehaviour:
@@ -16213,6 +16213,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 316dc08d453899747bb5e3b72bc8ddcf, type: 2}
   - {fileID: 11400000, guid: 65d70b53c00b69144b60e5b118e3dea8, type: 2}
   - {fileID: 11400000, guid: 2dfffed087167f04cbf8a9d518cc6f8b, type: 2}
+  - {fileID: 11400000, guid: 4400264f911bcbc40b5446450b7eb842, type: 2}
   timeScale: {fileID: 11400000, guid: 38582f608995a1f4a9da3b7ee5abb462, type: 2}
   OnCharacterJoin:
     m_PersistentCalls:
@@ -21659,8 +21660,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 354, y: -114}
-  m_SizeDelta: {x: -44.0558, y: 0}
+  m_AnchoredPosition: {x: 437, y: -114}
+  m_SizeDelta: {x: -30.782, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1846825028
 MonoBehaviour:
@@ -25308,26 +25309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce15b4f187819241aedd9bec52b8843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 3626448332105603644, guid: 1bed23c96229791449fc9b805f98e744, type: 3}
-  spawnPoint: {fileID: 779292798697045047}
-  dodgeBallsParent: {fileID: 0}
-  gameRandomizer: {fileID: 11400000, guid: 64396c5ae0b16e54eb875a731d352909, type: 2}
-  ballsSpawned: []
-  OnEnableScript:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  dodgeBall: {fileID: 0}
 --- !u!114 &3644612051090923969
 MonoBehaviour:
   m_ObjectHideFlags: 0

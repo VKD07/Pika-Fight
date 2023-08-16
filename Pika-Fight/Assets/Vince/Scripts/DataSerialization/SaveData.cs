@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Serialization;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -12,11 +13,6 @@ public class SaveData : MonoBehaviour
     [SerializeField] PlayerControls wasdControl;
     [SerializeField] PlayerControls arrowControl;
     [SerializeField] string fileName = "GameSettings";
-
-    private void Awake()
-    {
-        
-    }
 
     public void SaveNewData()
     {
