@@ -131,7 +131,7 @@ public class Bomb : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && other.GetComponent<HealthBar>().healthValue > 0)
         {
             OnChangeCarrier.Invoke();
             playerCarrier = other.gameObject;

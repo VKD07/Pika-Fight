@@ -17,7 +17,7 @@ public class UISlotHandler : MonoBehaviour
     {
         DetectControllers();
         RemoveEmptyControllerNames();
-        UpdateNumOfSlots();
+        //UpdateNumOfSlots();
         PlayerHasJoined();
         // Unready();
     }

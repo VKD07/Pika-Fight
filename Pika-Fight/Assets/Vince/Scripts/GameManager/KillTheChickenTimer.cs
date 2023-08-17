@@ -21,6 +21,7 @@ public class KillTheChickenTimer : MonoBehaviour
     [Space]
     [SerializeField] UnityEvent OnTimerDone;
     float currentTime;
+    bool lookForHighDamage;
 
     [Header("Player Reference")]
     [SerializeField] PlayerJoinedData playerJoinedData;
@@ -58,6 +59,7 @@ public class KillTheChickenTimer : MonoBehaviour
     {
         StartTimer();
         UpdateTimer();
+        LookForHighestDamage();
     }
 
     void ResetGemScore()
@@ -76,8 +78,8 @@ public class KillTheChickenTimer : MonoBehaviour
         }
         else
         {
+            lookForHighDamage = true;
             currentTime = 0;
-            LookForHighestDamage();
             OnTimerDone.Invoke();
         }
     }
@@ -101,8 +103,12 @@ public class KillTheChickenTimer : MonoBehaviour
             {
                 highestDamageDealt = playerJoinedData.GetPlayersJoined[i].DamageDealtToChicken;
                 playerIndex = i;
-                playerJoinedData.GetPlayersJoined[playerIndex].Winner = true;
-                OnWinnerFound.Invoke();
+
+                if (lookForHighDamage)
+                {
+                    playerJoinedData.GetPlayersJoined[playerIndex].Winner = true;
+                    OnWinnerFound.Invoke();
+                }
             }
         }
     }

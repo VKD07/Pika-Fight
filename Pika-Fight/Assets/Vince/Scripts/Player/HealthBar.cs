@@ -33,7 +33,6 @@ public class HealthBar : MonoBehaviour
         healthBarSlider.value = playerHealth.Value;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(healthBar != null)

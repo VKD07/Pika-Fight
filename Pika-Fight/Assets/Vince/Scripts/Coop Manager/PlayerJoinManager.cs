@@ -11,7 +11,6 @@ public class PlayerJoinManager : MonoBehaviour
 {
     [Header("Keys to join the game")]
     [SerializeField] JoinControls joinControls;
-
     [SerializeField] PlayerJoinedData playerJoinedData;
 
     [Header("PlayerControls")]

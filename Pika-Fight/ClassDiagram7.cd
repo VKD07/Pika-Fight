@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PlayerJoinManager">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAgAAAAAAIgAAAQAAAAAAAAAAAAAAAAAUU=</HashCode>
+      <FileName>Assets\Vince\Scripts\Coop Manager\PlayerJoinManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerJoinedData" />
+      <Field Name="availableControls" />
+      <Field Name="joinControls" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerJoinedData">
+    <Position X="2.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAIQAAQAAAgUAAAAgACGAQAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\PlayerJoinedData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerConfig" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerControls">
+    <Position X="7.25" Y="4" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="PlayerControls.PlayerControl" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Vince\Scripts\Scriptable Object\PlayerControls.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CAACAAAAAAAAAAAIABAAABAAAAAAIAIIAhAAECACAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\PlayerControls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JoinControls">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAwCEAAAAAAAAAAAAAAAAAAAAgAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Coop Manager\JoinControls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerConfig">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABCAAAQAAgAAIgIAAjIAAAAAAAAAIKAQAgAgEASAIA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\PlayerConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

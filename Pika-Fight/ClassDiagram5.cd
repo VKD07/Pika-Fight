@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PlayerJoinManager">
+    <Position X="4.5" Y="1.5" Width="1.5" />
+    <AssociationLine Name="joinControls" Type="JoinControls">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.11" Y="0.06" Height="0.182" Width="1.052" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAgAAAAAAIgAAAQAAAAAAAAAAAAAAAAAUU=</HashCode>
+      <FileName>Assets\Vince\Scripts\Coop Manager\PlayerJoinManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="joinControls" />
+      <Field Name="playerJoinedData" />
+      <Field Name="availableControls" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="JoinControls">
+    <Position X="1.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAwCEAAAAAAAAAAAAAAAAAAAAgAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Coop Manager\JoinControls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerJoinedData">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAIQAAQAAAgUAAAAgACGAQAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\PlayerJoinedData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerControls">
+    <Position X="1.5" Y="4.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="PlayerControls.PlayerControl" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Vince\Scripts\Scriptable Object\PlayerControls.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CAACAAAAAAAAAAAIABAAABAAAAAAIAIIAhAAECACAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\PlayerControls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
