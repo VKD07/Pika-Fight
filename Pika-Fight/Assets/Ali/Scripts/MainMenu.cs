@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator PlayGame1() 
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1f);
     
         SceneManager.LoadScene(MenuNumberSceneToLoad);
     }
@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator OptionsButton1()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.5f);
 
         SceneManager.LoadScene(OptionNumberSceneToLoad);
     }

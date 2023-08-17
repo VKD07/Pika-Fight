@@ -75,7 +75,6 @@ public class BeeBoids : MonoBehaviour
         var boid = other.GetComponent<BeeBoids>();
         if (boid != null)
         {
-            print("Bee detected");
             Node<BeeBoids> newBoid = new Node<BeeBoids>(boid);
             neighbours.AddFirst(newBoid);
         }

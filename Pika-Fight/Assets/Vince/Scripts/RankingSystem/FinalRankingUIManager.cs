@@ -56,7 +56,7 @@ public class FinalRankingUIManager : MonoBehaviour
             if (playerJoinedData.GetPlayersJoined[i].PlayerScore >= 6)
             {
                 playerWinnerImg.sprite = playerWinners[i];
-                proceedBtn = playerJoinedData.GetPlayersJoined[i].Player_Controls.PlayerReadyKey;
+                proceedBtn = playerJoinedData.GetPlayersJoined[i].Player_Controls.PlayerStartKey;
                 break;
             }
         }
