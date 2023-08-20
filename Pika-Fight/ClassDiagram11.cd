@@ -1,0 +1,1452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PlayerJoinManager">
+    <Position X="97" Y="33" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAgAAAAAAIgAAAQAAAAAAAAAAAAAAAAAUU=</HashCode>
+      <FileName>Assets\Vince\Scripts\Coop Manager\PlayerJoinManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="joinControls" />
+      <Field Name="playerJoinedData" />
+      <Field Name="availableControls" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerControls">
+    <Position X="92.75" Y="38.75" Width="2" />
+    <NestedTypes>
+      <Enum Name="PlayerControls.PlayerControl" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Vince\Scripts\Scriptable Object\PlayerControls.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CAACAAAAAAAAAAAIABAAABAAAAAAIAIIAhAAECACAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\PlayerControls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JoinControls">
+    <Position X="93" Y="31.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAwCEAAAAAAAAAAAAAAAAAAAAgAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Coop Manager\JoinControls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerJoinedData">
+    <Position X="93" Y="34.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAIQAAQAAAgUAAAAgACGAQAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\PlayerJoinedData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playersJoined" />
+      <Field Name="playerConfig" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="UISlotHandler">
+    <Position X="99.5" Y="33.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAACAAAAAIAIAAAAAgQAAQAAAAAAAEAAAEQAAQAQA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Coop Manager\UISlotHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerJoinedData" />
+      <Field Name="joinControls" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CharacterSelection">
+    <Position X="99.5" Y="37" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ggQAAAAACAAEABAARgAgBEAAQAABAAABAEAAAAAAAQA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Coop Manager\CharacterSelection.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="characterPool" />
+      <Field Name="playerJoinedData" />
+      <Field Name="joinControls" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CharacterObjectPooling">
+    <Position X="103" Y="37" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABgDAAAAAAAAEAAABgAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\CharacterObjectPooling.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CharactersHandler">
+    <Position X="102.75" Y="33.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAABAAAAAAAACAAAAAAIAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Coop Manager\CharactersHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pooling" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="StartGame">
+    <Position X="99.5" Y="41.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAIACAAABAAEAAACAAAAAAgAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Coop Manager\StartGame.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerJoinedData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="UIAnimations">
+    <Position X="101.75" Y="41.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Coop Manager\UIAnimations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrainingMode">
+    <Position X="93.75" Y="47.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAIBAEAAAAAAAAAAAAAIAAAIAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\TrainingScene\TrainingMode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Stations">
+    <Position X="97.25" Y="47.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Stations.StationType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Vince\Scripts\TrainingScene\Stations.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAACAAAAAAAAAAAQAAAAAAKAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\TrainingScene\Stations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StartGameStation">
+    <Position X="99.75" Y="47.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAACCAAMBAAABQACEAAIAAAAICAQQAAAAAUgQA=</HashCode>
+      <FileName>Assets\Vince\Scripts\TrainingScene\StartGameStation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerJoinedData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerJoinCountdown">
+    <Position X="105.75" Y="33.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAACAAAAAAAAAABAACIAAAAAiIAAQICAAAAAAACAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Countdown\PlayerJoinCountdown.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PauseManager">
+    <Position X="88" Y="46" Width="1.75" />
+    <AssociationLine Name="playerControls" Type="PlayerControls" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="88" Y="46.438" />
+        <Point X="87.833" Y="46.438" Type="JumpStart" />
+        <Point X="87.667" Y="46.438" Type="JumpEnd" />
+        <Point X="87.625" Y="46.438" />
+        <Point X="87.625" Y="45.625" />
+        <Point X="92.375" Y="45.625" />
+        <Point X="92.375" Y="41.635" />
+        <Point X="92.75" Y="41.635" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AgSIACgAAAACAAgAtAAAAAAAAAAAAAAAMAAgABgBAgA=</HashCode>
+      <FileName>Assets\Adam\PauseManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerControls" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CustomSerializer">
+    <Position X="96.75" Y="28.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\DataSerialization\CustomSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataToSave">
+    <Position X="98.75" Y="28.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAYAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\DataSerialization\DataToSave.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoadData">
+    <Position X="91.75" Y="28.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAKAAAAIAAAAAACAAAAEAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\DataSerialization\LoadData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="gameVolume" />
+      <Field Name="wasdControl" />
+      <Field Name="arrowControl" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="FloatReference">
+    <Position X="81" Y="33.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\FloatReference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveData">
+    <Position X="94.5" Y="28.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAQAAAIAAAAAACAAAAAAAAAIAEAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\DataSerialization\SaveData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="gameVolume" />
+      <Field Name="wasdControl" />
+      <Field Name="arrowControl" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DontDestroy">
+    <Position X="96.5" Y="44.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAUA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\DontDestroy.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerConfig" />
+      <Field Name="playerJoinedData" />
+      <Field Name="versusScreen" />
+      <Field Name="gameRandomizer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GameRandomizer">
+    <Position X="65.5" Y="62.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAwCAAQBEAAAAAAAgAAFAAAQAAAQgAAAAAAAAAAAAQE=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\GameRandomizer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerConfig">
+    <Position X="87.5" Y="38.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AABCAAAQAAgAAIgIAAjIAAAAAAAAAIKAQAgAgEASAIA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\PlayerConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoolReference">
+    <Position X="82" Y="38.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\BoolReference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameVolumeUpdater">
+    <Position X="85.5" Y="28.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameSettings\GameVolumeUpdater.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="gameVolume" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CanvasAnimation">
+    <Position X="102.25" Y="47.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAIAAAAAAAAAAAAAACAGAAEAAAAEAACAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\RandomizationScene\CanvasAnimation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MushroomPoint">
+    <Position X="64.5" Y="50" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>BBAAQACAACAAgAAAABAAAAAAAAAoAIBhQQCCAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Environment\MushroomPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MushroomPosionManager">
+    <Position X="62" Y="50" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ABAAIAAIACBAEAwAAAAIAAAAAAAAAAAAIAAAAAAAACA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Environment\MushroomPosionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpawnPlayers">
+    <Position X="70.25" Y="32.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AgAAACCIgCIEAAAQACEAAIACAAAAQCAIAgBAhACAAUA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\SpawnPlayers.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerJoinedData" />
+      <Field Name="playerDataDictionary" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerDataDictionary">
+    <Position X="71" Y="29" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAABAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\PlayerDataDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameModeSetUp">
+    <Position X="73.75" Y="40.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAABAQAAgAAAEAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Vince\Project 2 Tool\Manager\GameModeSetUp.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="combatTypes" />
+      <Field Name="gameGoals" />
+      <Field Name="environments" />
+      <Field Name="gameRandomizer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerSettings">
+    <Position X="74.75" Y="32.75" Width="2.5" />
+    <AssociationLine Name="playerdashTime" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.229" Y="-0.254" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="playerballMaxDamageForce" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.679" Y="0.398" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAgAEAiAAAAMAQBQAkAJBQBAAQAAAIAQYABAAwAAI=</HashCode>
+      <FileName>Assets\Vince\Project 2 Tool\Serializables\PlayerSettings.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerStartingHealth" />
+      <Field Name="playermovementSpeed" />
+      <Field Name="playerdashForce" />
+      <Field Name="playerdashTime" />
+      <Field Name="playerdashCoolDown" />
+      <Field Name="playerweaponDamage" />
+      <Field Name="playerattackRange" />
+      <Field Name="playerattackDashForce" />
+      <Field Name="playerattackDashTime" />
+      <Field Name="playerattackDashCoolDown" />
+      <Field Name="playerballMaxDamageForce" />
+      <Field Name="playerforceIncreaseRate" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PowerUpSpawner">
+    <Position X="74.75" Y="28.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>BAAACCAAQCCEAAEBACAAAAEAAAACAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\PowerUpSpawner.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="objectsToPool" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ObjectsPooling">
+    <Position X="79" Y="28.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAEACEQAAAAAAABAAAAACRAEAAAAAAAAAEAAAAAIAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\ObjectsPooling.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameModeListAdder">
+    <Position X="57" Y="62.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAIAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\GameModeListAdder.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="gameModeList" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GameModeListDrawer">
+    <Position X="59.25" Y="62.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Assets\Vince\Drawer\GameModeListDrawer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="gameMode" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GameMode">
+    <Position X="62.75" Y="62.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIABAAAAAAAAAAAAAAEBAAGAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\GameMode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LastManStanding">
+    <Position X="79.25" Y="53.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AARAAAAAkDAYAAAAAAAACAACAAQAAAAIAAAAAAEAAQA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\LastManStanding.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerJoinedData" />
+      <Field Name="numOfPlayersDied" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GemHunt">
+    <Position X="82" Y="53.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAARgEAAiAAAhgAACAADACAAAoGAAAEAAgEACUA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\GemHunt.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerJoinedData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CaptureAndDefend">
+    <Position X="85.25" Y="53.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQgAAABgDAAAAAAAAAQCAABAAAAAAAAAAAAAAEACQA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\CaptureAndDefend.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerJoinedData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ChickenStateManager">
+    <Position X="89.75" Y="53.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AFRMQAAAhSTgGQQEYCAEAACAAACggQQIIAAAAggQiAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\ChickenStateBehavior\ChickenStateManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="uIIndicator" />
+      <Field Name="currentState" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ChickenState">
+    <Position X="94.5" Y="53.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAQAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\ChickenStateBehavior\ChickenState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chicken_FleeingState">
+    <Position X="95.5" Y="56.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IIAAAAAAAAAAIAAAAAAAAAAAAAAAAAAIAAQAAAEAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\ChickenStateBehavior\Chicken_FleeingState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chicken_WalkingState">
+    <Position X="92.75" Y="56.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AIAAIAAAAAAAAAAAAAAAAAAAAAAEAACIAAUAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\ChickenStateBehavior\Chicken_WalkingState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChickenAnimation">
+    <Position X="96.5" Y="53.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAQAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\ChickenStateBehavior\ChickenAnimation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIIndicator">
+    <Position X="83.25" Y="67" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQIIAAgACAAEAAAACAAAAAAACABAAAAAAAIAAEACAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\UIIndicator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KillTheChicken">
+    <Position X="75.5" Y="53.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAACABQAAQAAIBAAAAAAQACACAAGASAIAACAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\KillTheChicken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KillTheChickenTimer">
+    <Position X="75.5" Y="58.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAARgEAAAAAAghAECAABACAAAoGIBAEAAgAACUA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\KillTheChickenTimer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerJoinedData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ReleaseTheBomb">
+    <Position X="71.25" Y="53.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\ReleaseTheBomb.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bomb">
+    <Position X="71.25" Y="56" Width="3.25" />
+    <AssociationLine Name="playerJoinedData" Type="PlayerJoinedData" ManuallyRouted="true">
+      <Path>
+        <Point X="73.719" Y="56" />
+        <Point X="73.719" Y="38.952" />
+        <Point X="73.392" Y="38.952" />
+        <Point X="73.392" Y="28.056" />
+        <Point X="78.76" Y="28.056" Type="JumpStart" />
+        <Point X="78.958" Y="28.056" Type="JumpEnd" />
+        <Point X="81.401" Y="28.056" Type="JumpStart" />
+        <Point X="81.568" Y="28.056" Type="JumpEnd" />
+        <Point X="81.573" Y="28.056" Type="JumpStart" />
+        <Point X="81.739" Y="28.056" Type="JumpEnd" />
+        <Point X="81.745" Y="28.056" Type="JumpStart" />
+        <Point X="81.911" Y="28.056" Type="JumpEnd" />
+        <Point X="81.917" Y="28.056" Type="JumpStart" />
+        <Point X="82.323" Y="28.056" Type="JumpEnd" />
+        <Point X="82.862" Y="28.056" Type="JumpStart" />
+        <Point X="83.028" Y="28.056" Type="JumpEnd" />
+        <Point X="83.282" Y="28.056" Type="JumpStart" />
+        <Point X="83.588" Y="28.056" Type="JumpEnd" />
+        <Point X="83.95" Y="28.056" Type="JumpStart" />
+        <Point X="84.117" Y="28.056" Type="JumpEnd" />
+        <Point X="84.667" Y="28.056" Type="JumpStart" />
+        <Point X="84.958" Y="28.056" Type="JumpEnd" />
+        <Point X="84.995" Y="28.056" Type="JumpStart" />
+        <Point X="85.443" Y="28.056" Type="JumpEnd" />
+        <Point X="87.835" Y="28.056" />
+        <Point X="87.835" Y="35.952" />
+        <Point X="89.219" Y="35.952" Type="JumpStart" />
+        <Point X="89.386" Y="35.952" Type="JumpEnd" />
+        <Point X="91.26" Y="35.952" Type="JumpStart" />
+        <Point X="91.583" Y="35.952" Type="JumpEnd" />
+        <Point X="91.885" Y="35.952" Type="JumpStart" />
+        <Point X="92.052" Y="35.952" Type="JumpEnd" />
+        <Point X="92.667" Y="35.952" Type="JumpStart" />
+        <Point X="92.99" Y="35.952" Type="JumpEnd" />
+        <Point X="93" Y="35.952" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAACgACyABAAAQAAEAIECQAQAAAACkRAASgkAQAQA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\Bomb.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerJoinedData" />
+      <Field Name="numOfPlayersDead" />
+      <Field Name="uIIndicator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EventListeners">
+    <Position X="65.25" Y="57" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAEAAAAAAAAAAAAACACAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\Events\EventListeners.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="gameEventListeners" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GameEventListener">
+    <Position X="62.25" Y="57" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAEAAAgAAAAAAAAAAAAAAAAAgAAAAAAAQAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\Events\GameEventListener.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="gameEvent" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GameEvent">
+    <Position X="59.25" Y="57" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgIAAAAAAAAAAAIAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\Events\GameEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VersusManager">
+    <Position X="60.5" Y="29.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AIICAAAAAKAAAAAABAAAAAIQCAAgEEAAIZAAgACAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\VersusManager\VersusManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="versusSlotManager" />
+      <Field Name="versusScreenPlayed" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="VersusSlotManager">
+    <Position X="64.5" Y="29.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAgAAAAAQAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Assets\Vince\Scripts\VersusManager\VersusSlotManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CrownActivator">
+    <Position X="57" Y="29.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACEAAAAAAEAIAAAAAAQACAAAIAAAAAACABA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\CrownActivator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerWinCamera">
+    <Position X="54.25" Y="33" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAgAAAAAAAAAEQAEAAABAAAAAAIAAAAAABAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\PlayerWinCamera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GamePlayCountdown">
+    <Position X="63.5" Y="31.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAkAAAAACAAAAAAAIACAAYAQEiAAAQIKAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Countdown\GamePlayCountdown.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="versusScreenPlayed" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PitchAdjuster">
+    <Position X="54.25" Y="29.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAICAAQAAAAgAAAAAAAAAAAAAEAAABAgAIAAACAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\PitchAdjuster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShakeCamera">
+    <Position X="56.75" Y="34" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAIAAAAAAAAAAAAAAAAEAABAAAgAAAAAAAAAAUA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameJuice\ShakeCamera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DamageArea">
+    <Position X="60" Y="50" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAgBAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Adam\DamageArea.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="rotation">
+    <Position X="60" Y="52.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Assets\Adam\rotation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovingWalls">
+    <Position X="58" Y="50" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAECAAAAABAAAAAAAAAAIAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Assets\Ali\Scripts\MovingWalls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParticleLoopDelay">
+    <Position X="56" Y="50" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAACAAABCAAAAAAAEAAAAMAAAAYAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Ali\Scripts\ParticleLoopDelay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShowWinner">
+    <Position X="64.25" Y="43.75" Width="2.25" />
+    <AssociationLine Name="maxScoreToWin" Type="FloatReference" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="66.5" Y="47.67" />
+        <Point X="71.667" Y="47.67" Type="JumpStart" />
+        <Point X="71.833" Y="47.67" Type="JumpEnd" />
+        <Point X="73.636" Y="47.67" Type="JumpStart" />
+        <Point X="73.802" Y="47.67" Type="JumpEnd" />
+        <Point X="74.792" Y="47.67" Type="JumpStart" />
+        <Point X="74.958" Y="47.67" Type="JumpEnd" />
+        <Point X="75.042" Y="47.67" Type="JumpStart" />
+        <Point X="75.208" Y="47.67" Type="JumpEnd" />
+        <Point X="78.667" Y="47.67" Type="JumpStart" />
+        <Point X="78.833" Y="47.67" Type="JumpEnd" />
+        <Point X="80.01" Y="47.67" Type="JumpStart" />
+        <Point X="80.177" Y="47.67" Type="JumpEnd" />
+        <Point X="81.375" Y="47.67" />
+        <Point X="81.375" Y="35.761" />
+        <Point X="81.542" Y="35.761" Type="JumpStart" />
+        <Point X="81.708" Y="35.761" Type="JumpEnd" />
+        <Point X="82.021" Y="35.761" />
+        <Point X="82.021" Y="35.386" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.935" Y="0.481" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AIQAABAIqAAgAEAAgIAAAIAQCAAAACAAIAAAAAAAAUA=</HashCode>
+      <FileName>Assets\Vince\Scripts\RankingSystem\ShowWinner.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="maxScoreToWin" />
+      <Field Name="playerJoinedData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="FinalRankingUIManager">
+    <Position X="61.5" Y="43.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAgAQCAAAAAAQAAAAAAAAgAAAEAAAAAQICAABQA=</HashCode>
+      <FileName>Assets\Vince\Scripts\RankingSystem\FinalRankingUIManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerJoinedData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RandomizeGameMode">
+    <Position X="53.5" Y="62.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\RandomizeGameMode.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="gameRandomizer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RankingManager">
+    <Position X="57.25" Y="43.5" Width="2.5" />
+    <AssociationLine Name="maxScoreToWin" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0" Y="0.408" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAABASgACggALABIIQACAAAAAAAAAABAAAAAAAAAcA=</HashCode>
+      <FileName>Assets\Vince\Scripts\RankingSystem\RankingManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerJoinedData" />
+      <Field Name="maxScoreToWin" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerScoreSheet">
+    <Position X="54.25" Y="43.75" Width="2.25" />
+    <AssociationLine Name="currentScore" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.197" Y="0.203" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQEAAAAACAAAgAAAAIIAAAAAAAAAAAICAAgCAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\RankingSystem\PlayerScoreSheet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="currentScore" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerConfigBridge">
+    <Position X="91" Y="19.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAACAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\PlayerConfigBridge.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerConfig" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CharacterModelActivator">
+    <Position X="88.25" Y="19.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\CharacterModelActivator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerMovement">
+    <Position X="78.75" Y="19.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAADqCCAAAEAAAAAAEAEAIAAAAIAARAAIAIACA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\PlayerMovement.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerControls" />
+      <Field Name="velocity" />
+      <Field Name="movementSpeed" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerAnimation">
+    <Position X="82.25" Y="19.25" Width="2.25" />
+    <AssociationLine Name="velocity" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.06" Y="0.258" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="playerAnimData" Type="PlayerAnimationData">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.072" Y="0.443" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAgACAIAAAAAAAAECAAIAAAAKAQQAAAAAiEA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\PlayerAnimation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerControls" />
+      <Field Name="velocity" />
+      <Field Name="playerAnimData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerAnimationData">
+    <Position X="82.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAYAAIAGAACAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\PlayerAnimationData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerVfx">
+    <Position X="74" Y="19.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAAABAAAAAAAAABAAAAAAAIEQACEAAASAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\PlayerVfx.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="dashVfxPool" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ObjectPooling">
+    <Position X="74.25" Y="23.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAEAAAAAAAABAAAAAARAGAAAAAAAAAEAAAAAIAAE=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\ObjectPooling.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dash">
+    <Position X="85" Y="19.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAQAAAEAACACAAAMAAAgCAEAAAYAAAAAABAAAAAgAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\Dash.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="dashForce" />
+      <Field Name="dashTime" />
+      <Field Name="dashCooldown" />
+      <Field Name="playerControls" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HealthBar">
+    <Position X="88.5" Y="22" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAQAAAAAACARAACAgAAAACAAAAAAAAAIBAAAAIAQDAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\HealthBar.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerHealth" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ReceiveDamage">
+    <Position X="92" Y="22" Width="1.5" />
+    <AssociationLine Name="startingHealth" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.051" Y="0.038" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gAACAAAAACkAAAABgAAAAABIAAAAAAAIAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\ReceiveDamage.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="startingHealth" />
+      <Field Name="playerHealth" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Stun">
+    <Position X="86" Y="23" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAAAAAAAEABAAAgCBAAAAAAAAAQgAgAAAAAACCygA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\Stun.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerAnimData" />
+      <Field Name="playerHealth" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerIdentifierUI">
+    <Position X="78.75" Y="13.75" Width="2.25" />
+    <AssociationLine Name="dashCoolDown" Type="FloatReference" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="81" Y="14.844" />
+        <Point X="81.656" Y="14.844" />
+        <Point X="81.656" Y="32.875" />
+        <Point X="81.745" Y="32.875" Type="JumpStart" />
+        <Point X="81.911" Y="32.875" Type="JumpEnd" />
+        <Point X="82.01" Y="32.875" Type="JumpStart" />
+        <Point X="82.323" Y="32.875" Type="JumpEnd" />
+        <Point X="82.385" Y="32.875" />
+        <Point X="82.385" Y="33.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.548" Y="0.792" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAYAAAIABSBAAAAAAAAkAAIIAGAAAAAABAgEAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\PlayerIdentifierUI.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="dashCoolDown" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CollisionDetection">
+    <Position X="73.25" Y="14" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAIAAAACAAAAAgAAAAAAAAAAIAIQAIAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\CollisionDetection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerStatus">
+    <Position X="69.5" Y="16" Width="2.5" />
+    <AssociationLine Name="playerHealth" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.084" Y="0.435" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="PlayerHealth" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.187" Y="0.247" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gAQAAAAAACgAAAIAgAIQAIAAAAAAAAAgAQAAAAAAAEA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\PlayerStatus.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerHealth" />
+      <Property Name="PlayerHealth" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DodgeBall">
+    <Position X="92.5" Y="10.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQJgAAAACGCAYoQABAAAIEQgAaEEBgAAAQAEAAAkBA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\DodgeBall.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="maxForce" />
+      <Field Name="forceIncreaseRate" />
+      <Field Name="playerControls" />
+      <Field Name="velocity" />
+      <Field Name="playerMovementSpeed" />
+      <Field Name="collisionDetection" />
+      <Field Name="playerAnimData" />
+      <Property Name="PlayerMovementSpeed" />
+      <Property Name="PlayerAnimData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MeleeFight">
+    <Position X="96.75" Y="10.5" Width="2.25" />
+    <AssociationLine Name="weaponDamage" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.741" Y="0.156" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="weaponAttackRange" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.815" Y="0.609" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="playerConfigBridge" Type="PlayerConfigBridge">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.511" Y="0.197" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="dashForce" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.081" Y="0.052" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="dashTime" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.168" Y="0.25" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="attackCooldown" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.625" Y="0.35" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>QAQUAAMIASCCAgAcAAQBCIEBoGYAEIAIIRAAAAA5SEg=</HashCode>
+      <FileName>Assets\Vince\Scripts\Knife\MeleeFight.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="weaponDamage" />
+      <Field Name="weaponAttackRange" />
+      <Field Name="poisonousKnife" />
+      <Field Name="swordSparkVfx" />
+      <Field Name="playerControls" />
+      <Field Name="playerConfigBridge" />
+      <Field Name="dashForce" />
+      <Field Name="dashTime" />
+      <Field Name="attackCooldown" />
+      <Property Name="SetPlayerControls" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ObjectSpawner">
+    <Position X="100" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\ObjectSpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PoisonousKnife">
+    <Position X="83.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAIAAAACYAAAAAAAAABAAAAABAAAAAAAAADAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\PowerUps\PoisonousKnife.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GemScoreUI">
+    <Position X="89.75" Y="10.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIACACAABAAAEAAAAAAAAAAAAZAAAAAAAASAg=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\GemScoreUI.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerConfigBridge" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DropGems">
+    <Position X="87" Y="10.25" Width="2" />
+    <AssociationLine Name="playerConfigBridge" Type="PlayerConfigBridge">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.664" Y="0" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAAABAAAAAAAAAgAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\DropGems.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerConfigBridge" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PickUpChicken">
+    <Position X="99.75" Y="12.75" Width="2.25" />
+    <AssociationLine Name="playerVelocity" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.607" Y="0.666" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="playerHealth" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.441" Y="0.768" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="collisionDetection" Type="CollisionDetection" ManuallyRouted="true">
+      <Path>
+        <Point X="99.75" Y="14.683" />
+        <Point X="99.25" Y="14.683" />
+        <Point X="99.25" Y="18.636" />
+        <Point X="95.083" Y="18.636" Type="JumpStart" />
+        <Point X="94.917" Y="18.636" Type="JumpEnd" />
+        <Point X="94.443" Y="18.636" Type="JumpStart" />
+        <Point X="94.276" Y="18.636" Type="JumpEnd" />
+        <Point X="94.216" Y="18.636" Type="JumpStart" />
+        <Point X="94.049" Y="18.636" Type="JumpEnd" />
+        <Point X="93.99" Y="18.636" Type="JumpStart" />
+        <Point X="93.823" Y="18.636" Type="JumpEnd" />
+        <Point X="93.763" Y="18.636" Type="JumpStart" />
+        <Point X="93.596" Y="18.636" Type="JumpEnd" />
+        <Point X="93.536" Y="18.636" Type="JumpStart" />
+        <Point X="93.37" Y="18.636" Type="JumpEnd" />
+        <Point X="93.31" Y="18.636" Type="JumpStart" />
+        <Point X="93.143" Y="18.636" Type="JumpEnd" />
+        <Point X="92.333" Y="18.636" Type="JumpStart" />
+        <Point X="92.042" Y="18.636" Type="JumpEnd" />
+        <Point X="91.833" Y="18.636" Type="JumpStart" />
+        <Point X="91.667" Y="18.636" Type="JumpEnd" />
+        <Point X="91.458" Y="18.636" Type="JumpStart" />
+        <Point X="91.292" Y="18.636" Type="JumpEnd" />
+        <Point X="84.958" Y="18.636" Type="JumpStart" />
+        <Point X="84.792" Y="18.636" Type="JumpEnd" />
+        <Point X="84.583" Y="18.636" Type="JumpStart" />
+        <Point X="84.417" Y="18.636" Type="JumpEnd" />
+        <Point X="83.583" Y="18.636" Type="JumpStart" />
+        <Point X="83.417" Y="18.636" Type="JumpEnd" />
+        <Point X="82.177" Y="18.636" Type="JumpStart" />
+        <Point X="82.01" Y="18.636" Type="JumpEnd" />
+        <Point X="81.739" Y="18.636" Type="JumpStart" />
+        <Point X="81.573" Y="18.636" Type="JumpEnd" />
+        <Point X="74.96" Y="18.636" />
+        <Point X="74.96" Y="17.605" />
+        <Point X="74.625" Y="17.605" />
+        <Point X="74.625" Y="17.098" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gAQAAAAAICEAAhQAwAAAAAEAAAAAAAAAAAAAEAUAAAQ=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\PickUpChicken.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerVelocity" />
+      <Field Name="playerHealth" />
+      <Field Name="collisionDetection" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HoldPercentageUI">
+    <Position X="102.25" Y="12.75" Width="2.25" />
+    <AssociationLine Name="playerConfigBridge" Type="PlayerConfigBridge">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.475" Y="-0.255" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAQAIABAACAAAAAAEQAAAAAAAAAgAAAIAAAAAAEASAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\HoldPercentageUI.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerConfigBridge" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ChickenMode">
+    <Position X="96.5" Y="19.75" Width="2.75" />
+    <AssociationLine Name="movementSpeed" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.344" Y="0.196" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="velocity" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.79" Y="0.492" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ACQAAAAAgACAAAAAAAAAggEEAQQAACAMAAQAAABASAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\ChickenMode.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="movementSpeed" />
+      <Field Name="playerConfigBridge" />
+      <Field Name="velocity" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ChickenDamageScoreUI">
+    <Position X="100.25" Y="19.75" Width="2.5" />
+    <AssociationLine Name="playerConfigBridge" Type="PlayerConfigBridge">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.387" Y="-2.295" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACACAAFAAAAAAAAAAAAABAAYAAAAAAAASAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\ChickenDamageScoreUI.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerConfigBridge" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="VFX">
+    <Position X="87" Y="14.25" Width="2.25" />
+    <AssociationLine Name="vfxPool" Type="ObjectPooling" ManuallyRouted="true">
+      <Path>
+        <Point X="87" Y="15.381" />
+        <Point X="84.958" Y="15.381" Type="JumpStart" />
+        <Point X="84.792" Y="15.381" Type="JumpEnd" />
+        <Point X="84.5" Y="15.381" />
+        <Point X="84.5" Y="19.125" />
+        <Point X="83.583" Y="19.125" Type="JumpStart" />
+        <Point X="83.417" Y="19.125" Type="JumpEnd" />
+        <Point X="82.177" Y="19.125" Type="JumpStart" />
+        <Point X="82.01" Y="19.125" Type="JumpEnd" />
+        <Point X="81.739" Y="19.125" Type="JumpStart" />
+        <Point X="81.573" Y="19.125" Type="JumpEnd" />
+        <Point X="81.568" Y="19.125" Type="JumpStart" />
+        <Point X="81.401" Y="19.125" Type="JumpEnd" />
+        <Point X="77.201" Y="19.125" />
+        <Point X="77.201" Y="23.125" />
+        <Point X="75.406" Y="23.125" />
+        <Point X="75.406" Y="23.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACABAAAAAAAAAAAAAAAACAAIAQABAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\DodgeBall\VFX.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vfxPool" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ChickenDebuf">
+    <Position X="103.25" Y="19.75" Width="2.25" />
+    <AssociationLine Name="playerConfigBridge" Type="PlayerConfigBridge">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.637" Y="-0.031" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAEAAAAAAAAQAAkAAAAAAAAAAAAAgAQAACSAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\PowerUps\ChickenDebuf.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerConfigBridge" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ActivateCrown">
+    <Position X="78.25" Y="11" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\ActivateCrown.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Poison">
+    <Position X="81.25" Y="10.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAASAAAAEAAAAQAAgAAAAEABAAAAABgAAAAAAAADAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\PowerUps\Poison.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="receiveDamage" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerWinCameraEnabler">
+    <Position X="76.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Player\PlayerWinCameraEnabler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerData">
+    <Position X="68" Y="29.75" Width="2" />
+    <AssociationLine Name="playerHealth" Type="FloatReference">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.176" Y="0.433" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIIAAAAAAAgAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\PlayerData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerVeloctiy" />
+      <Field Name="movementSpeed" />
+      <Field Name="playerHealth" />
+      <Field Name="playerAnimData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="StartMenuManager">
+    <Position X="104.75" Y="28.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAACABACAAAQAAAAAAAAAAAAAAAAAAAAAAAAACAEA=</HashCode>
+      <FileName>Assets\Vince\Scripts\MainMenu\StartMenuManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BtnSelection">
+    <Position X="107.5" Y="28.75" Width="2.5" />
+    <AssociationLine Name="playerControls" Type="PlayerControls" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="108.906" Y="32.165" />
+        <Point X="108.906" Y="41" />
+        <Point X="102.25" Y="41" />
+        <Point X="102.25" Y="41.242" />
+        <Point X="101.5" Y="41.242" />
+        <Point X="101.5" Y="41" />
+        <Point X="99.333" Y="41" Type="JumpStart" />
+        <Point X="99.167" Y="41" Type="JumpEnd" />
+        <Point X="96.802" Y="41" Type="JumpStart" />
+        <Point X="96.635" Y="41" Type="JumpEnd" />
+        <Point X="95.661" Y="41" Type="JumpStart" />
+        <Point X="95.495" Y="41" Type="JumpEnd" />
+        <Point X="95.125" Y="41" />
+        <Point X="95.125" Y="41.688" />
+        <Point X="95.083" Y="41.688" Type="JumpStart" />
+        <Point X="94.823" Y="41.688" Type="JumpEnd" />
+        <Point X="94.75" Y="41.688" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AgSIACAAACACAAAAtAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\MainMenu\BtnSelection.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerControls" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MainMenu">
+    <Position X="110.25" Y="28.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAgAAAgAAAEBAAAACIEAAAAAAIAAAAEAAEAAIAE=</HashCode>
+      <FileName>Assets\Ali\Scripts\MainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TitleAnimationSounds">
+    <Position X="113.75" Y="28.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAABEMAAAAABABAACAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\MainMenu\TitleAnimationSounds.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OptionUISelection">
+    <Position X="109.75" Y="34.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAABAAAEAAAAAAgAAAAAAAAAAARAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameSettings\OptionUISelection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VolumeSetter">
+    <Position X="112" Y="34.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAACIAAgAAAAAAiAAAAAQAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameSettings\VolumeSetter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="volumeSO" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="KeyboardBindings">
+    <Position X="113.75" Y="34.25" Width="3" />
+    <NestedTypes>
+      <Enum Name="KeyboardBindings.AbilityName" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Vince\Scripts\GameSettings\KeyboardBindings.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <AssociationLine Name="playerControls" Type="PlayerControls">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.207" Y="-0.253" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IAQIAABEAAACBAAAAAAAIAAAAAAAAAAIAAgAAAAAAEA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameSettings\KeyboardBindings.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerControls" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BeeBoids">
+    <Position X="23.25" Y="8.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACABAASAACACAAAABQACAICQQAQAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Bees\BeeBoids.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="neighbours" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="beeAttack">
+    <Position X="27" Y="8.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAQAAAAAABAAAAAgAAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Bees\beeAttack.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="beeBoids" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CustomLinkedList&lt;T&gt;">
+    <Position X="19" Y="8.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAABAABAEAJCAAAAAYAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Data Structures\CustomLinkedList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ball">
+    <Position X="17.25" Y="13" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AKQCAAIQCCE0AiQFDAIAAoACgwAEACAIAYgGBAAIAgk=</HashCode>
+      <FileName>Assets\Vince\Scripts\DodgeBall\Ball.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="beehive" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Beehive">
+    <Position X="21.5" Y="13" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAGAAAAAEAhAAAAAAAgAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Bees\Beehive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gem">
+    <Position X="30.5" Y="11.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAIAAAACAAAAAAAAAAAAAAAAAAQAAAAAgACCA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\Gem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GemAnimation">
+    <Position X="32.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\GameManager\GemAnimation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerUpDisabler">
+    <Position X="22.25" Y="16.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQIgEAAACAAAAAACAAAAAAAAAAAAACIAAAAAAAECAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\PowerUps\PowerUpDisabler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="ball" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ExplodingCrate">
+    <Position X="28" Y="11.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAQAACAAAAAAgSAABggBAQAAICAIAQgCAIAACAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\PowerUps\ExplodingCrate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heal">
+    <Position X="32.75" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAACAAAAAAQAAAABAAACA=</HashCode>
+      <FileName>Assets\Vince\Scripts\PowerUps\Heal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnifePoisonPowerUp">
+    <Position X="26" Y="11.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAABCAAAABAQAAAAAAAACA=</HashCode>
+      <FileName>Assets\Vince\Scripts\PowerUps\KnifePoisonPowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shield">
+    <Position X="30.75" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAACAAAAAAQAAAAAAAACA=</HashCode>
+      <FileName>Assets\Vince\Scripts\PowerUps\Shield.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeedUp">
+    <Position X="27.75" Y="17" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAKAAAAAAQBAAAAAAACA=</HashCode>
+      <FileName>Assets\Vince\Scripts\PowerUps\SpeedUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AudioManager">
+    <Position X="23" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAgAQAIEEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\AudioManager\AudioManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="sounds" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SoundData">
+    <Position X="26.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAgAAACAAAAAAIAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Scriptable Object\AudioManager\SoundData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="CombatTypes">
+    <Position X="70" Y="42.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Enums\CombatTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Environments">
+    <Position X="70" Y="44.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAgAAAAAAAAAAAAAAAAAAAAhAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Enums\Environments.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameGoals">
+    <Position X="70" Y="40.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAgAAAAGAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Vince\Scripts\Enums\GameGoals.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

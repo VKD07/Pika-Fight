@@ -11,7 +11,6 @@ public class CharacterSelection : MonoBehaviour
 {
     [SerializeField] CharacterObjectPooling characterPool;
     [SerializeField] PlayerJoinedData playerJoinedData;
-    [SerializeField] JoinControls joinControls;
     [SerializeField] RectTransform[] pointers;
     [SerializeField] RectTransform[] characters;
     [SerializeField] int[] characterIndeces;

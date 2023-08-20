@@ -25407,130 +25407,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5601142971170027899}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2259696436072201183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6726408805977286509}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 852ce43b1eac81847ac28968ebfc3bae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: {fileID: 0}
-  showTimerDelay: 3
-  timerDuration: 60
-  timerGradient:
-    serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_ColorSpace: -1
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
-  fillImage: {fileID: 0}
-  OnTimerDone:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2259696436072201183}
-        m_TargetAssemblyTypeName: GemHunt, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: ScoreScene
-          m_BoolArgument: 0
-        m_CallState: 2
-  playerJoinedData: {fileID: 11400000, guid: 7e9c4ddcd905cae479e8c9ba51ce6c8e, type: 2}
-  OnWinnerFound:
-    m_PersistentCalls:
-      m_Calls: []
-  OnEnableScript:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
---- !u!114 &2401644714926514227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6726408805977286509}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bc3ed7eb8cef204c9d067b22e08487f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerJoinedData: {fileID: 11400000, guid: 7e9c4ddcd905cae479e8c9ba51ce6c8e, type: 2}
-  numOfPlayersDied: {fileID: 11400000, guid: 80559163d8f0f7e46b3031b0d0e4d7fe, type: 2}
-  OnWinnerFound:
-    m_PersistentCalls:
-      m_Calls: []
-  OnWinnerDeclared:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2401644714926514227}
-        m_TargetAssemblyTypeName: LastManStanding, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: ScoreScene
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &2467508146277162774
 GameObject:
   m_ObjectHideFlags: 0
@@ -25547,48 +25423,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3402056829580263308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6726408805977286509}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ce15b4f187819241aedd9bec52b8843, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dodgeBall: {fileID: 0}
---- !u!114 &3644612051090923969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6726408805977286509}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ceb2c44fc54ad5428c088a6258b1397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEventListeners:
-  - gameEvent: {fileID: 11400000, guid: a3a63f40dfde2bf4a89d57e1635862b8, type: 2}
-    response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5779866629817199205}
-          m_TargetAssemblyTypeName: SpawnPlayers, Assembly-CSharp
-          m_MethodName: SpawnAPlayer
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!96 &3813500531820945599
 TrailRenderer:
   serializedVersion: 3
@@ -25702,33 +25536,6 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!114 &4494449144018861855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6726408805977286509}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c833064007f01d94d93903a826b76fae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnEnableScript:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!4 &5284799749637817689
 Transform:
   m_ObjectHideFlags: 0
@@ -25744,53 +25551,6 @@ Transform:
   m_Father: {fileID: 1005675626}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5441943028378835598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6726408805977286509}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6dd390fbe96b094dad8b31b163569d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerJoinedData: {fileID: 11400000, guid: 7e9c4ddcd905cae479e8c9ba51ce6c8e, type: 2}
-  percentageValueToWin: 100
-  OnEnableScript:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  OnWinnerFound:
-    m_PersistentCalls:
-      m_Calls: []
-  OnWinnerDeclared:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5441943028378835598}
-        m_TargetAssemblyTypeName: CaptureAndDefend, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: ScoreScene
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &5504354516505555134
 GameObject:
   m_ObjectHideFlags: 0
@@ -25945,12 +25705,6 @@ GameObject:
   m_Component:
   - component: {fileID: 779292798697045047}
   - component: {fileID: 5779866629817199205}
-  - component: {fileID: 3402056829580263308}
-  - component: {fileID: 2401644714926514227}
-  - component: {fileID: 2259696436072201183}
-  - component: {fileID: 5441943028378835598}
-  - component: {fileID: 4494449144018861855}
-  - component: {fileID: 3644612051090923969}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
