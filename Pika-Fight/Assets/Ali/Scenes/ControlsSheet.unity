@@ -979,7 +979,7 @@ MonoBehaviour:
   OptionNumberSceneToLoad: 0
   BackToMenuButtonNumberSceneToLoad: 0
   ControlSheetButtonToLoad: 11
-  BackToOptionsNumberSceneToLoad: 12
+  BackToOptionsNumberSceneToLoad: 14
 --- !u!1 &1062246994
 GameObject:
   m_ObjectHideFlags: 0

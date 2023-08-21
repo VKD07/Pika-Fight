@@ -22,6 +22,8 @@ public class SceneLoaderEditor : EditorWindow
         LoadAlyScenes("Fiery Land", "ExplosionLevel");
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.BeginHorizontal();
+        LoadAlyScenes("Start Menu", "StartMenu");
+        LoadAlyScenes("options", "OptionsMenu2");
         LoadVinceScenes("Final Ranking", "FinalRanking");
         LoadVinceScenes("Score Scene", "ScoreScene");
         LoadVinceScenes("Random Scene", "RandomizationScene");

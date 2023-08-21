@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class StartMenuManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class StartMenuManager : MonoBehaviour
     private void Awake()
     {
         StartCoroutine(EnableMenuManager());
+        Time.timeScale = 1f;
     }
 
     IEnumerator EnableMenuManager()
@@ -34,5 +36,21 @@ public class StartMenuManager : MonoBehaviour
             onAnyKeyPressed.Invoke();
             menuEnabled = false;
         }
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void StartGame()
+    {
+        StartCoroutine(StartGameWithDelay());
+    }
+
+    IEnumerator StartGameWithDelay()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("PlayerJoin");
     }
 }

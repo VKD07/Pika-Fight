@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ParticleLoopDelay : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ParticleLoopDelay : MonoBehaviour
     public float FireDuration;
     public bool FireIsWorking;
     public float Damage;
+    public UnityEvent OnFireActivated;
 
     void Start()
     {
@@ -25,6 +27,7 @@ public class ParticleLoopDelay : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(DelayTimer);
+            OnFireActivated.Invoke();
             Fire.SetActive(true);
             FireIsWorking = true;
             yield return StartCoroutine(FireIsActivated());

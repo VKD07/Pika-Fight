@@ -15,7 +15,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] UnityEvent OnMovePointer;
     [SerializeField] UnityEvent OnSelectBtn;
     [SerializeField] float delayTime = 0.2f;
-    int index;
+    [SerializeField] int index;
     bool startDelay = false;
     public float y;
 
@@ -24,6 +24,11 @@ public class PauseManager : MonoBehaviour
         foreach (var key in playerControls)
         {
             PauseGame(key.PlayerStartKey);
+
+            if (pausePannel.activeSelf)
+            {
+                MovePointers(key);
+            }
         }
     }
 
@@ -37,12 +42,6 @@ public class PauseManager : MonoBehaviour
                 Time.timeScale = 0;
                 OnPause.Invoke();
             }
-            else
-            {
-                OnResume.Invoke();
-                Time.timeScale = 1;
-                pausePannel.SetActive(false);
-            }
         }
     }
 
@@ -50,30 +49,19 @@ public class PauseManager : MonoBehaviour
     {
       y = Input.GetAxis($"{playerControls.GetMovementAxes}_Vertical");
 
-        if (!startDelay)
+        if (y < 0 && index < buttons.Length - 1)
         {
-            if (y < 0 && index < buttons.Length - 1)
-            {
-                StartCoroutine(TimerDelay());
-                index++;
-                buttons[index].Select();
-
-            }
-            else if (y > 0 && index > 0)
-            {
-                StartCoroutine(TimerDelay());
-                index--;
-                buttons[index].Select();
-            }
-            SelectBtn(playerControls, index);
+            OnMovePointer.Invoke();
+            index++;
         }
+        else if (y > 0 && index > 0)
+        {
+            OnMovePointer.Invoke();
+            index--;
+        }
+        SelectBtn(playerControls, index);
+        buttons[index].Select(); // Ensure the selected button is explicitly set
     }
-
-    public void InvokeOnResume()
-    {
-        OnResume.Invoke();
-    }
-
     void SelectBtn(PlayerControls playerControls, int index)
     {
         if (Input.GetKeyDown(playerControls.GetAttackKey))
@@ -85,7 +73,6 @@ public class PauseManager : MonoBehaviour
     private IEnumerator TimerDelay()
     {
         startDelay = true;
-        OnMovePointer.Invoke();
         yield return new WaitForSeconds(delayTime);
         startDelay = false;
     }
@@ -96,12 +83,13 @@ public class PauseManager : MonoBehaviour
         {
             pausePannel.SetActive(false);
             Time.timeScale = 1;
-            OnPause.Invoke();
+            OnResume.Invoke();
         }
     }
 
     public void Exit()
     {
+        OnResume.Invoke();
         SceneManager.LoadScene("StartMenu");
     }
 }

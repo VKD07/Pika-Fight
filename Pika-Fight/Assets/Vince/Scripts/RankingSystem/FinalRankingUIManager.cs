@@ -50,10 +50,10 @@ public class FinalRankingUIManager : MonoBehaviour
 
     void SetUpPlayerWinnerImg()
     {
-        numberOfPlayersJoined = playerJoinedData.NumberOfPlayersJoined;
+        numberOfPlayersJoined = playerJoinedData.GetNumberOfPlayersJoined();
         for (int i = 0; i < numberOfPlayersJoined; i++)
         {
-            if (playerJoinedData.GetPlayersJoined[i].PlayerScore >= 6)
+            if (playerJoinedData.GetPlayersJoined[i].PlayerScore >= 4)
             {
                 playerWinnerImg.sprite = playerWinners[i];
                 proceedBtn = playerJoinedData.GetPlayersJoined[i].Player_Controls.PlayerStartKey;

@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97061c92999bcb34692d5737ba21ae2e, type: 3}
-  m_Name: GameVolume
+  m_Script: {fileID: 11500000, guid: bcda980e49e614b4989af229df99166d, type: 3}
+  m_Name: FireExplosion
   m_EditorClassIdentifier: 
-  value: 1
+  audioClip: {fileID: 8300000, guid: 1abb8e4f303d96c49aec99f8690c75a0, type: 3}
+  playOneShot: 1
+  looping: 0
+  soundVolume: 0.1

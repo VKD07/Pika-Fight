@@ -7,6 +7,8 @@ public class Stations : MonoBehaviour
 {
     [SerializeField] StationType stationType;
     [SerializeField] GameObject interactVfx;
+    [SerializeField] Transform ballSpawner;
+    [SerializeField] GameObject dodgeBallPrefab;
     [SerializeField] UnityEvent OnPlayerEnter;
     public enum StationType
     {
@@ -20,6 +22,7 @@ public class Stations : MonoBehaviour
             OnPlayerEnter.Invoke();
             if (stationType == StationType.dodgeball)
             {
+                SpawnBall();
                 other.GetComponentInChildren<DodgeBall>().enabled = true;
                 other.GetComponentInChildren<MeleeFight>().enabled = false;
             }
@@ -30,6 +33,11 @@ public class Stations : MonoBehaviour
             }
             SpawnVfx(other.transform);
         }
+    }
+
+    void SpawnBall()
+    {
+        Instantiate(dodgeBallPrefab, ballSpawner.position, Quaternion.identity);
     }
 
     void SpawnVfx(Transform spawnPos)

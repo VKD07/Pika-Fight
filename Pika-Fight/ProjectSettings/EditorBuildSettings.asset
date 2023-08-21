@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Adam/SpinnyIsland.unity
     guid: 74cc75953cb1cc842ae6096485a24fc8
+  - enabled: 1
+    path: Assets/Ali/Scenes/OptionsMenu2.unity
+    guid: 930081ae5c200b44bac164ada433b809
   m_configObjects: {}

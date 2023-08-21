@@ -15,7 +15,7 @@ public class VolumeSetter : MonoBehaviour
     private void Start()
     {
         volumeSlider.maxValue = maxValue;
-        volumeSlider.value = startingValue;
+        volumeSlider.value = volumeSO.Value;
     }
     void Update()
     {

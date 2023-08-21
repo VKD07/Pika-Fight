@@ -16,7 +16,7 @@ MonoBehaviour:
   playerColor: {r: 0.21226418, g: 0.53388184, b: 1, a: 0.34901962}
   characterSprite: {fileID: 1075911197, guid: 2862c9382961ea5409eda079359e9b05, type: 3}
   characterName: 1
-  playerOverallScore: 0
+  playerOverallScore: 4
   gemScore: 0
   holdPercentage: 0
   damageDealtToChicken: 0

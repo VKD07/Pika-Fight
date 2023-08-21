@@ -88,7 +88,7 @@ public class KillTheChickenTimer : MonoBehaviour
     {
         timer.value = currentTime;
         fillImage.color = timerGradient.Evaluate(timer.normalizedValue);
-        if(timer.value <= timeToStartAnim)
+        if (timer.value <= timeToStartAnim)
         {
             float speedValue = 1.0f - (currentTime / timerDuration);
             timerAnim.SetFloat("AnimationSpeed", speedValue * 2f);
@@ -97,21 +97,25 @@ public class KillTheChickenTimer : MonoBehaviour
 
     void LookForHighestDamage()
     {
-        for (int i = 0; i < playerJoinedData.NumberOfPlayersJoined; i++)
+        if (lookForHighDamage)
         {
-            if (playerJoinedData.GetPlayersJoined[i].DamageDealtToChicken > highestDamageDealt && playerJoinedData.GetPlayersJoined[i].DamageDealtToChicken > 0)
+            for (int i = 0; i < playerJoinedData.NumberOfPlayersJoined; i++)
             {
-                highestDamageDealt = playerJoinedData.GetPlayersJoined[i].DamageDealtToChicken;
-                playerIndex = i;
-
-                if (lookForHighDamage)
+                if (playerJoinedData.GetPlayersJoined[i].DamageDealtToChicken > highestDamageDealt && playerJoinedData.GetPlayersJoined[i].DamageDealtToChicken > 0)
                 {
-                    playerJoinedData.GetPlayersJoined[playerIndex].Winner = true;
-                    OnWinnerFound.Invoke();
+                    highestDamageDealt = playerJoinedData.GetPlayersJoined[i].DamageDealtToChicken;
+                    playerIndex = i;
                 }
+            }
+
+            if (playerIndex != -1)
+            {
+                playerJoinedData.GetPlayersJoined[playerIndex].Winner = true;
+                OnWinnerFound.Invoke();
             }
         }
     }
+
 
     public void LoadScene(string sceneName)
     {

@@ -504,16 +504,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2065193172}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 1926060058}
+        m_TargetAssemblyTypeName: StartMenuManager, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: PlayerJoin
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1716909905}
@@ -2184,7 +2184,44 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1343086730}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1926060058}
+        m_TargetAssemblyTypeName: StartMenuManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: OptionsMenu2
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1716909905}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Shake
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1851021870}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 12ecc53b32d37be4ab8b23e0f2902017,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1343086730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3053,6 +3090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1851021871}
   - component: {fileID: 1851021870}
+  - component: {fileID: 1851021872}
   m_Layer: 0
   m_Name: AudioSource
   m_TagString: Untagged
@@ -3171,6 +3209,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1851021872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851021869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0974526854ec8fd4d94353f05645140f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameVolume: {fileID: 11400000, guid: 698e73c21c6fabf4e94b5b01a12aa9b7, type: 2}
 --- !u!1 &1904375871
 GameObject:
   m_ObjectHideFlags: 0
@@ -3457,6 +3508,7 @@ GameObject:
   - component: {fileID: 1926060057}
   - component: {fileID: 1926060058}
   - component: {fileID: 1926060059}
+  - component: {fileID: 1926060060}
   m_Layer: 0
   m_Name: '[MenuManager]'
   m_TagString: Untagged
@@ -3661,6 +3713,22 @@ MonoBehaviour:
           m_StringArgument: Slide
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1926060060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926060056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775b012f44a90974a8b6fa2f41596e57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameVolume: {fileID: 11400000, guid: 698e73c21c6fabf4e94b5b01a12aa9b7, type: 2}
+  wasdControl: {fileID: 11400000, guid: 8e1be352d6d596b43abfee919e054f44, type: 2}
+  arrowControl: {fileID: 11400000, guid: 8496037b6201d8d409f324591f76a851, type: 2}
+  fileName: GameSettings
 --- !u!1 &1986344845
 GameObject:
   m_ObjectHideFlags: 0
@@ -3828,7 +3896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuNumberSceneToLoad: 1
-  OptionNumberSceneToLoad: 12
+  OptionNumberSceneToLoad: 14
   BackToMenuButtonNumberSceneToLoad: 0
   ControlSheetButtonToLoad: 0
   BackToOptionsNumberSceneToLoad: 0

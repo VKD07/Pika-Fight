@@ -5,7 +5,7 @@ using UnityEngine;
 public class DamageArea : MonoBehaviour
 {
     [SerializeField] float damage = 5f;
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<ReceiveDamage>())
         {
