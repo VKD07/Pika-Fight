@@ -220,7 +220,7 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (rb.velocity.magnitude > 10)
+        if (rb?.velocity.magnitude > 10)
         {
             OnImpact.Invoke();
         }

@@ -59,5 +59,6 @@ public class PlayerStatus : MonoBehaviour
             OnDeath.Invoke();
         }
     }
+
     public FloatReference PlayerHealth { set { playerHealth = value; } }
 }

@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81306ee4bc7f9148a3cabb7cb223c68, type: 3}
   m_Name: Player_1
   m_EditorClassIdentifier: 
-  playerControl: {fileID: 11400000, guid: 316dc08d453899747bb5e3b72bc8ddcf, type: 2}
+  playerControl: {fileID: 11400000, guid: 8e1be352d6d596b43abfee919e054f44, type: 2}
   playerColor: {r: 1, g: 0.2688679, b: 0.2688679, a: 0.34901962}
-  characterSprite: {fileID: -1955456937, guid: 52cc04a7a8bfed34cb68725879f90b91, type: 3}
-  characterName: 0
-  playerOverallScore: 0
-  gemScore: 0
-  holdPercentage: 100.025475
+  characterSprite: {fileID: -622417283, guid: 356e1cc2682e96b4cad91b18f4f818e3, type: 3}
+  characterName: 7
+  playerOverallScore: 2
+  gemScore: 1
+  holdPercentage: 100
   damageDealtToChicken: 0
-  winner: 0
+  winner: 1
   playerIsReady: 1
   playerIsDead: 0
-  playerCharacter: {fileID: 5861507685882267482, guid: ba128691428cd68478841eff49f4c26e,
+  playerCharacter: {fileID: 4213983663638008978, guid: e5d903857d9cf0844bf4134993c45596,
     type: 3}

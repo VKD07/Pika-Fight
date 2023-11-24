@@ -23,7 +23,7 @@ public class PauseManager : MonoBehaviour
     {
         foreach (var key in playerControls)
         {
-            PauseGame(key.PlayerStartKey);
+            PauseGame(key.PauseKey);
 
             if (pausePannel.activeSelf)
             {
@@ -64,7 +64,7 @@ public class PauseManager : MonoBehaviour
     }
     void SelectBtn(PlayerControls playerControls, int index)
     {
-        if (Input.GetKeyDown(playerControls.GetAttackKey))
+        if (Input.GetKeyDown(playerControls.SelectKey))
         {
             OnSelectBtn.Invoke();
             buttons[index].onClick.Invoke();

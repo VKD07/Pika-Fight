@@ -19,3 +19,5 @@ MonoBehaviour:
   playerUnreadyKey: 391
   playerStartKey: 397
   controlIstaken: 0
+  pauseKey: 397
+  selectKey: 390

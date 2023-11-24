@@ -15,6 +15,9 @@ public class PlayerControls : ScriptableObject
     [SerializeField] KeyCode playerUnreadyKey = KeyCode.Escape;
     [SerializeField] KeyCode playerStartKey = KeyCode.J;
     [SerializeField] public bool controlIstaken;
+    [SerializeField] KeyCode pauseKey = KeyCode.Escape;
+    [SerializeField] KeyCode selectKey = KeyCode.Return;
+
     public PlayerControl GetMovementAxes => playerMovementAxes;
     public KeyCode GetAttackKey { get => attackKey; set => attackKey = value; }
     public KeyCode GetDashKey { get => dashKey; set => dashKey = value; }
@@ -22,6 +25,9 @@ public class PlayerControls : ScriptableObject
     public KeyCode PlayerReadyKey => playerReadyKey;
     public KeyCode PlayerUnreadyKey => playerUnreadyKey;
     public KeyCode PlayerStartKey => playerStartKey;
+
+    public KeyCode PauseKey => pauseKey;
+    public KeyCode SelectKey => selectKey;
 
     public bool ControlIsTaken
     {
