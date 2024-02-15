@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -27,6 +28,9 @@ public class RandomizationEffect : MonoBehaviour
     [Header("For Environment Category ========")]
     [SerializeField] Image environmentImage;
     [SerializeField] Sprite [] environments;
+    [Header("Mode Descriptions ========")]
+    [SerializeField] TextMeshProUGUI descriptionTMP;
+    [SerializeField] string[] modeDescriptions;
     [Header("Randomization Settings ========")]
     [SerializeField] float randomInterval = 1f;
     [SerializeField] float chooseDelaytime = 5f;
@@ -69,18 +73,21 @@ public class RandomizationEffect : MonoBehaviour
                 texture.SetActive(true);
                 videoPlayer.clip = clips[gameRandomizer.randomCombat];
                 categoryTitleImg.sprite = categoryTitles[gameRandomizer.randomCombat];
+                descriptionTMP.SetText(modeDescriptions[gameRandomizer.randomCombat]);
                 break;
             case Category.Goal:
                 mainImage.enabled = false;
                 texture.SetActive(true);
                 videoPlayer.clip = clips[gameRandomizer.randomGoal];
                 categoryTitleImg.sprite = categoryTitles[gameRandomizer.randomGoal];
+                descriptionTMP.SetText(modeDescriptions[gameRandomizer.randomGoal]);
                 break;
             case Category.Environment:
                 mainImage.enabled = false;
                 texture.SetActive(true);
                 environmentImage.sprite = environments[gameRandomizer.randomScenes];
                 categoryTitleImg.sprite = categoryTitles[gameRandomizer.randomScenes];
+                descriptionTMP.SetText(modeDescriptions[gameRandomizer.randomScenes]);
                 break;
         }
     }
