@@ -1545,8 +1545,8 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1956323516}
         m_TargetAssemblyTypeName: StartTheGame, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: set_DoneChoosing
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
